@@ -1,0 +1,75 @@
+section {
+  .header {
+    // position: fixed;
+    // width: 100%;
+    // z-index: 9;
+    padding: 15px;
+    // background-color: white;
+    display: grid;
+    grid-template-columns: 40% 20%;
+    justify-content: space-between;
+    align-items: center;
+    // height: 80px;
+    .logo_button {
+      display: flex;
+      .company{
+        width: 30px;
+      }
+      img {
+        width: 150px;
+      }
+      .side_nav_btn{
+        color: #a3a2a2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        mat-icon {
+          font-size: 20px;
+        }
+      }
+    }
+    .header_right {
+      display: flex;
+      // grid-template-columns: 10% 10% 10%;
+      justify-content: space-evenly;
+      align-items: center;
+
+
+        .dropdown{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+          border: none;
+          text-align: center;
+          .userName{
+            font-size: 10px;
+            padding-right: 6px;
+          }
+          .profileIcon{
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+          }
+
+          ::ng-deep{
+            .mat-menu-content{
+              padding-top: 0px;
+              padding-bottom: 0px;
+            }
+          }
+        }
+
+      .HELP{
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 2px;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<section>
+  <div class="header">
+    <div class="logo_button">
+      <img *ngIf="this.isExpanded" src="../../../../assets/images/appinventiv_logo.png" />
+      <img class="company" *ngIf="!this.isExpanded" src="../../../../assets/images/company_logo.svg" />
+      <button (click)="expand()">
+        <mat-icon class="side_nav_btn">menu</mat-icon>
+      </button>
+    </div>
+    <div class="header_right">
+      <a class="dropdown" [matMenuTriggerFor]="menu">
+        <span class="userName">Nikhil Dubey</span>
+        <img class="profileIcon" src="../../../../assets/images/profile_icon.jpg" />
+        <mat-icon class="down">expand_more</mat-icon>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>person</mat-icon>
+            <span>My Profile</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>key</mat-icon>
+            <span>Change Password</span>
+          </button>
+          <hr />
+          <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Sign Out</span>
+          </button>
+        </mat-menu>
+      </a>
+
+      <button class="HELP">Help</button>
+      <mat-icon style="color: grey">notifications</mat-icon>
+    </div>
+  </div>
+</section>

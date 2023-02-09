@@ -1,0 +1,24 @@
+<section>
+  <header>
+    <app-header [isExpanded]="isExpanded" (stateChnage)="updateISExpanded($event)"></app-header>
+  </header>
+
+    <mat-sidenav-container class="example-container" autosize >
+      <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+        <app-side-nav [isExpanded]="isExpanded" [isShowing]="isShowing"></app-side-nav>
+      </mat-sidenav>
+      <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+      </div>
+        <footer>
+          <button>Covid-19 DESK</button>
+          2023 @ Appinventiv HR system
+        </footer>
+
+    </mat-sidenav-container>
+
+
+
+
+
+</section>

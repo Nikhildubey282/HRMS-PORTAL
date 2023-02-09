@@ -1,0 +1,192 @@
+.main{
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 0px 10px 10px 0px;
+
+  .wrapper-main{
+
+    border-right: 1px dotted grey;
+
+section {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0px ;
+    align-items: baseline;
+    .header-text {
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px;
+      margin-bottom: 0px;
+    }
+    .header-button {
+      font-size: 10px;
+      margin-bottom: 10px;
+     min-height: 30px;
+      min-width: 50px;
+
+    }
+  }
+  .job-detail-card {
+    margin-top: 19px;
+    margin: 0px 20px 10px 10px;
+    border: 1px solid gainsboro;
+    .image {
+      background: #F3F7FC;
+      border-radius: 10px;
+      padding: 7px 10px;
+      figure {
+        display: flex;
+        justify-content: center;
+
+        .showImage {
+        }
+      }
+      .address {
+        display: flex;
+        justify-content: space-between;
+
+        .location {
+          display: flex;
+          gap: 10px;
+          align-items: baseline;
+          background-color: white;
+          border-radius: 50px;
+          padding: 5px;
+          #location-icon {
+            color: red;
+          }
+          .location-name {
+            font-size: 12px;
+            margin-bottom: 0px !important;
+          }
+        }
+        .date {
+        }
+      }
+    }
+    .area {
+      h3{
+      font-weight: 500;
+      margin-bottom: 0px;
+      }
+      p{
+        font-size: 10px;
+        color: grey
+      }
+    }
+    .requirement {
+    display: flex;
+    justify-content: space-between;
+      border-top: 1px solid gainsboro;
+      padding-top: 5px;
+      font-size: 12px;
+      // color: white
+    }
+    .requirement1 {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid gainsboro;
+      font-weight: 500;
+
+
+    }
+    .buttonGroup {
+      display: flex;
+      gap: 10px;
+      padding-top: 8px;
+      .button-view {
+        padding: 10px 50px;
+        font-size: 12px;
+        background-color: white;
+        color:#0095ff ;
+        border: 1px solid lightgrey;
+      }
+      .button-refer {
+        padding: 10px 40px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+button {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  // font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  // padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  // -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+button:hover,
+button:focus {
+  opacity: 0.80;
+
+}
+
+button:focus {
+}
+
+button:active {
+  background-color: #0064bd;
+  box-shadow: none;
+}
+
+  }
+
+  .referals{
+    padding: 20px;
+
+    P{
+      color:rgb(31, 186, 237);
+    }
+    .referal-bonus{
+      display: grid;
+      grid-template-columns: 45% 45% ;
+      grid-column-gap: 15px;
+
+    .boxs{
+      // margin-left: 10px;
+      .box1{
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+
+        h2{
+          // background-color: aliceblue;
+    font-size: 50px;
+    color: #199CFF;
+    font-weight: 500;
+    line-height: 1.4;
+    // margin: 5px 0;
+        }
+        p{
+          color:grey
+        }
+      }
+    }
+  }
+  }
+}

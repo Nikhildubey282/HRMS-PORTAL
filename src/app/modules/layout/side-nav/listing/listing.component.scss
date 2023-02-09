@@ -1,0 +1,64 @@
+section {
+  .parent{
+    .name{
+      display: flex;
+      align-items: center;
+
+
+      .mat-icon{
+        font-size: 20px;
+      }
+
+      .full-width{
+        padding-left: 5px;
+        width: 120px;
+      }
+    }
+
+  ::ng-deep{
+    .mat-list-item-content{
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 500;
+
+      :hover{
+        color: rgb(67, 67, 225);
+        background-color: transparent;
+
+      }
+    }
+  }
+}
+
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(-90deg);
+  }
+  .menu-button.rotated {
+    transform: rotate(0deg);
+  }
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 900ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 20px;
+  }
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+}
+
+:host::ng-deep {
+  .mat-drawer .mat-sidenav {
+      position: fixed !important;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      outline: 0;
+      box-sizing: border-box;
+      overflow-y: auto;
+      transform: translate3d(-100%, 0, 0);
+      opacity: 0.25;
+  }
+}

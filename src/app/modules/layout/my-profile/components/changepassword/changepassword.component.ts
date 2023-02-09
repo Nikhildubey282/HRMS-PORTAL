@@ -1,0 +1,37 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { slideAnimation } from 'src/animation';
+
+import { CHANGE_PASSWORD } from 'src/app/constant/routes';
+import { FormService } from 'src/app/services/form.service';
+
+@Component({
+  selector: 'app-changepassword',
+  templateUrl: './changepassword.component.html',
+  styleUrls: ['./changepassword.component.scss'],
+  animations:[
+    slideAnimation
+  ]
+
+})
+export class ChangepasswordComponent implements OnInit {
+
+  changepasswordForm!:FormGroup;
+
+  constructor(
+    private _fb:FormBuilder,
+    private formservice:FormService
+  ) { }
+
+  ngOnInit(): void {
+    this.createForm();
+
+  }
+
+  createForm(){
+    this.changepasswordForm=this._fb.group({
+      changepassword:this.formservice.getControl('password')
+    })
+  }
+
+}

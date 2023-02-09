@@ -1,0 +1,66 @@
+section {
+  height: 100vh;
+}
+
+.example-container {
+  height: calc(100vh - 65px);
+  // height: 100%;
+  ::ng-deep {
+    .mat-drawer-content {
+      background-color: aliceblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+    }
+
+  }
+}
+.example-sidenav-content {
+  background-color: aliceblue;
+  // height: 100%;
+
+}
+
+footer {
+  button {
+    font-weight: 600;
+    color: red;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 5px;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 3px 5px 0 rgb(119 119 119 / 16%);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+
+    outline: none;
+    min-height: 50px;
+  }
+
+  background-color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.example-sidenav {
+  user-select: none;
+  border-top: 0px;
+
+  ::ng-deep {
+    .mat-drawer-inner-container::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+// ::ng-deep {
+//   .mat-drawer-content {
+//     background-color: aliceblue;
+
+//   }
+
+// }
+

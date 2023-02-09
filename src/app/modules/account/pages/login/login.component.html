@@ -1,0 +1,56 @@
+<section>
+  <div class="login-card">
+    <mat-card class="example-card">
+      <div class="header">
+        <div  class="header-image">
+          <img  src="https://dashboard.appinventiv.com/skin/hrsale_assets/img/applogo.png" alt="logo">
+        </div>
+      </div>
+      <div *ngIf="show" class="content">
+
+         <div class="logingoogle">
+          <div class="googlebutton">
+          <img class="google-logo" src="../../../../../assets/images/google_logo.png" >
+          <p class="signup">Sign up with google</p>
+        </div>
+          </div>
+         <p class="official">Please use your official Email id</p>
+      </div>
+      <div class="manuallogin" *ngIf="!show" >
+        <form [formGroup]="loginForm"  type="submit" >
+          <div class="inputField">
+            <label>Email</label>
+          <mat-form-field class="example-full-width"  >
+            <input type="email" matInput formControlName="email"  >
+            <mat-error *ngIf="frmCtrl.email.hasError('required')" > {{errorMsg.EMAIL_REQ}} </mat-error>
+            <mat-error *ngIf="frmCtrl.email.hasError('pattern')" > {{errorMsg.INVALID__EMAIL}} </mat-error>
+
+          </mat-form-field>
+          <label>  Password</label>
+          <mat-form-field class="example-full-width">
+            <input type="password" matInput formControlName="password" [type]="hide ? 'password' : 'text'"  >
+            <mat-icon style="color:#26B4FF ; font-size: 20px;" class="pointer" matSuffix (click)="hide = !hide">
+              <span>{{hide ? 'visibility_off' : 'visibility'}}</span>
+            </mat-icon>
+            <mat-error *ngIf="frmCtrl.password.hasError('required')" >{{errorMsg.PASSWORD_REQ}}</mat-error>
+            <mat-error *ngIf="frmCtrl.password.hasError('pattern')" >{{errorMsg.INVALID_PASSWORD}}</mat-error>
+          </mat-form-field>
+          <a style="padding-top: 7px ;" [routerLink]="'ABS_FORGOT_PASSWORD' | absoluteRouting">forget password?</a>
+        </div>
+        </form>
+        <div  class="buttonss">
+        <button (click)="nav_to_dashboard()" >
+          <mat-icon style="font-size: 20px ;">lock_person</mat-icon>
+          LOGIN</button>
+      </div>
+      </div>
+      <div class="logincredential">
+        <div class="buttonlogin">
+        <button *ngIf="show" (click)="showcontent()" >LOGIN WITH CREDENTIAL</button>
+        <button (click)="show1()" class="button_google" *ngIf="!show" >LOGIN WITH GOOGLE</button>
+        <p class="slogan">2023 @ Appinventiv HR system</p>
+      </div>
+      </div>
+    </mat-card>
+  </div>
+</section>

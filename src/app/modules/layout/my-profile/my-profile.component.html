@@ -1,0 +1,40 @@
+<section>
+  <div class="user-detail">
+    <img src="../../../../assets/images/profile_icon.jpg" >
+    <div class="details" >
+      <h2>Nikhil Dubey</h2>
+      <div><strong>Email:</strong><span>  Nikhil Dubey</span></div>
+      <div><strong>Employee Id:</strong><span>  AI 1612</span></div>
+      <div><strong>Designation:</strong><span>  Software Engineer</span></div>
+      <div><strong>Last Login:</strong><span>  Feb-01-2023</span></div>
+    </div>
+  </div>
+<content>
+  <div class="wrap-tag">
+    <span [routerLink]="['basic-info']" class="tags1" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Basic Information</span>
+    <span [routerLink]="['profilepicture']" class="tags" routerLinkActive="active" ><mat-icon>photo_camera</mat-icon>Profile Picture</span>
+    <span class="tags"><mat-icon>library_books</mat-icon>Qualification</span>
+    <span class="tags"><mat-icon>person_add</mat-icon>shift</span>
+    <span [routerLink]="['change-password']" class="tags" routerLinkActive="active" ><mat-icon>key</mat-icon>Change password</span>
+    <span [routerLink]="['apprasial']" class="tags" routerLinkActive="active" ><mat-icon>thumb_up</mat-icon>Apprasial</span>
+    </div>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+
+
+  </content>
+
+
+
+  <!-- <div>
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+      <mat-tab label="Basic information">Basic Information</mat-tab>
+      <mat-tab label="Second">Content 2</mat-tab>
+      <mat-tab label="Third">Content 3</mat-tab>
+    </mat-tab-group>
+  </div> -->
+
+</section>

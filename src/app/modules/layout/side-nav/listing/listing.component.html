@@ -1,0 +1,24 @@
+<section>
+  <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]="navlist.routerLink" >
+
+    <div class="name">
+      <mat-icon>{{ navlist.logo }}</mat-icon>
+      <span class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
+    </div>
+
+
+
+    <mat-icon class="menu-button" [ngClass]="{ rotated: showSubmenu }" *ngIf="navlist.options">expand_more</mat-icon>
+
+  </mat-list-item>
+  <ng-container *ngIf="navlist.options">
+    <div class="submenu" [ngClass]="{ expanded: showSubmenu }" *ngIf="showSubmenu && isShowing">
+      <span *ngFor="let item of navlist.options">
+        <mat-list-item>
+          <mat-icon>{{ item.subLogo }}</mat-icon>
+          <span>{{ item.subTitle }}</span>
+        </mat-list-item>
+      </span>
+    </div>
+  </ng-container>
+</section>
