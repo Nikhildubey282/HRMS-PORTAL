@@ -1,0 +1,121 @@
+.main{
+  background-color: white;
+  margin: 17px 0px 0px 20px;
+  border-radius: 10px;
+  .heading{
+    h6{
+      font-size: 20px;
+      color: #3246d3;
+      // font-family: 'Segoe UI';
+      padding: 11px 25px 11px 15px;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 700;
+      border-bottom: 1px solid #f3f7fc;
+
+    }
+  }
+  .input-field{
+    padding: 1.5rem 1.5rem 0px 1.5rem;
+    .inputs1{
+      display: flex;
+      flex-wrap: wrap;
+
+      .input{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        padding-bottom: 20px;
+        ::ng-deep{
+
+          .mat-form-field-flex{
+
+            width: 550px;
+            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          }
+        }
+      }
+
+    }
+
+    .inputs2{
+      display: flex;
+      flex-wrap: wrap;
+      .input{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        padding-bottom: 20px;
+        ::ng-deep{
+
+          .mat-form-field-flex{
+
+            width: 550px;
+            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          }
+        }
+
+      }
+      .to_date{
+        margin-left: 20px;
+        margin-top: 20px;
+      }
+
+
+      ::ng-deep{
+
+
+      .mat-icon-button{
+        position: absolute;
+        top: -5px;
+        right: -8px;
+      }
+    }
+    }
+
+    .inputs3{
+      display: flex;
+      flex-wrap: wrap;
+      .input{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        padding-bottom: 20px;
+        ::ng-deep{
+
+          .mat-form-field-flex{
+            width: 550px;
+            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          }
+        }
+      }
+    }
+    .inputs4{
+      .input{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+        padding-bottom: 20px;
+
+      }
+    }
+  }
+
+  .group{
+    padding: 0px 20px 20px 42px ;
+    button{
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+      background-blend-mode: soft-light, normal;
+      border: 1px solid rgba(150, 165, 184, 0.2);
+      box-sizing: border-box;
+      box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+      border-radius: 4px;
+      color: #FFFFFF;
+      padding: 10px;
+    }
+  }
+
+
+
+
+}
+

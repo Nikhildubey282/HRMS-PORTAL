@@ -1,9 +1,9 @@
-import { ABS_HOME, ABS_PROFILE } from "./absolute-route"
+import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE } from "./absolute-route"
 
 export const sideNavList = [
   { title: 'Home', logo: 'home', isActiv: true, routerLink:ABS_HOME  },
   { title: 'My Profile', logo: 'person', isActiv: true,routerLink:ABS_PROFILE },
-  { title: 'Directory', logo: 'description', isActiv: true, },
+  { title: 'Directory', logo: 'description', isActiv: true,routerLink:ABS_DIRECTORY },
   { title: 'Enterpreneurship Program', logo: 'person', options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule' },], isActiv: true, },
   { title: 'My Links', logo: 'grid_view', options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist' }], isActiv: true, },
   { title: 'Finance', logo: 'payments', options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule' }], isActiv: true, },

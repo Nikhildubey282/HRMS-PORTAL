@@ -1,0 +1,48 @@
+<div class="main">
+  <div class="header">
+    <h1>Employee Directory</h1>
+  </div>
+  <div class="input-field">
+    <div class="input">
+    <label>Name</label>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input type="email"  matInput placeholder="Ex. pat@example.com">
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <label>Department</label>
+    <mat-form-field appearance="outline">
+      <mat-select>
+        <mat-option value="option1">Option 1</mat-option>
+        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+        <mat-option value="option3">Option 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="btn_grp">
+    <button class="reset">Reset</button>
+    <button class="save">
+     <p><mat-icon>search</mat-icon>Search</p>
+    </button>
+  </div>
+  </div>
+  <div class="card_data">
+  <div *ngFor="let items of DATA" class="card">
+
+    <div class="image">
+      <img src={{items.IMAGE}}>
+      <div>
+        <h3>{{items.EMP_NAME}}</h3>
+        <h4>{{items.EMP_DESIGNATION}}</h4>
+      </div>
+    </div>
+    <div class="birthdate">
+      <p ><mat-icon>alternate_email</mat-icon>{{items.EMAIL}}</p>
+      <p><mat-icon>cake</mat-icon>{{items.BIRTH_DATE}}</p>
+    </div>
+
+  </div>
+</div>
+
+
+</div>

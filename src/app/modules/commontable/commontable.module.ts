@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { CommontableRoutingModule } from './commontable-routing.module';
 import { CommontableComponent } from './commontable.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 
@@ -14,7 +18,13 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     CommonModule,
     CommontableRoutingModule,
-    MatTableModule
-  ]
+    MatTableModule,
+    MatSortModule,
+    MatIconModule,
+    MatPaginatorModule,
+    
+
+  ],
+  exports:[CommontableComponent]
 })
 export class CommontableModule { }

@@ -1,5 +1,6 @@
 import { animate, animation, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { slideAnimation } from 'src/animation';
 
 @Component({
@@ -13,9 +14,29 @@ import { slideAnimation } from 'src/animation';
 })
 export class ApprasialComponent implements OnInit {
 
+  dataSource = new MatTableDataSource<any>();
+
+  heading = [
+    { heading: 'S.No', key:'sNo',type:'text'},
+    { heading: 'First Name', key: 'fName', type: 'link', link: '/dashboard/client-details' },
+    { heading: 'Middle Name', key:'mName',type:'text'},
+    { heading: 'Last Name', key:'lName',type:'text'},
+    { heading: 'Email Address', key:'email',type:'text'},
+    { heading: 'Phone', key:'phone',type:'text'},
+    { heading: 'Registered On', key:'registerOn',type:'text'},
+  ]
+  Table_DATA: any[] = [
+    {'sNo': 1, 'fName': 'abc','mName':'kumar','lName': 'qwe', 'email': 'H@gmail.com', 'phone':132423534654,'registerOn':110044},
+    {'sNo': 2, 'fName': 'lkj','mName':'kumar','lName': 'sii', 'email': 'He@gmail.com','phone':132423534654,'registerOn':110044},
+    {'sNo': 3, 'fName': 'xyz','mName':'kumar','lName': 'sii', 'email': 'Li@gmail.com','phone':132423534654,'registerOn':110044},
+    {'sNo': 4, 'fName': 'efg','mName':'kumar','lName': 'sii', 'email': 'Be@gmail.com','phone':132423534654,'registerOn':110044},
+  ];
   constructor() { }
 
   ngOnInit(): void {
+
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+
   }
 
 }

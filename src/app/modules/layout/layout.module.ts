@@ -12,6 +12,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ListingComponent } from './side-nav/listing/listing.component';
 import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-routing.module';
+import { CommontableModule } from '../commontable/commontable.module';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-r
     MatListModule,
     MatIconModule,
     MatMenuModule,
-    AbsoluteRoutingModule
+    AbsoluteRoutingModule,
+    CommontableModule
   ]
 })
 export class LayoutModule { }

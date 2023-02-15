@@ -2,7 +2,7 @@
   background-color: white;
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 0px 10px 10px 0px;
+  margin: 0px 0px 0px 20px;
 
   .wrapper-main{
 
@@ -29,9 +29,9 @@ section {
     }
   }
   .job-detail-card {
-    margin-top: 19px;
     margin: 0px 20px 10px 10px;
     border: 1px solid gainsboro;
+    // max-width: 500px;
     .image {
       background: #F3F7FC;
       border-radius: 10px;
@@ -40,8 +40,8 @@ section {
         display: flex;
         justify-content: center;
 
-        .showImage {
-        }
+        // .showImage {
+        // }
       }
       .address {
         display: flex;

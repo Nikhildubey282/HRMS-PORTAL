@@ -1,0 +1,36 @@
+<section>
+  <div class="heading">
+    <h3 class="header">Latest at Appinventiv</h3>
+  </div>
+
+
+<app-courosel [carouselConfiguration]="carouselConfig" [listToShow]="dataSource" ></app-courosel>
+<ng-container *ngFor="let member of arr">
+  <ng-template #listofDivs>
+  <div  class="main">
+    <div *ngIf="member.division_name==='left'" >
+      <app-appreciation></app-appreciation>
+    </div>
+    <div *ngIf="member.division_name==='right'">
+
+      <app-awards></app-awards>
+    </div>
+    <div *ngIf="member.division_name==='jimmy'">
+      <app-birthday></app-birthday>
+    </div>
+    <div *ngIf="member.division_name==='work'">
+      <app-work-aniversary></app-work-aniversary>
+    </div>
+
+  </div>
+  </ng-template>
+</ng-container>
+
+
+
+
+
+
+
+
+</section>

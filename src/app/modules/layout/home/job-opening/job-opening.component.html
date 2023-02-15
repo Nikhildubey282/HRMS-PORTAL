@@ -5,7 +5,11 @@
         <p class="header-text">Latest job opening</p>
         <button class="header-button" >View All</button>
       </div>
+
       <mat-card class="job-detail-card">
+        <app-courosel [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
+      <ng-container *ngFor="let member of listOfNewFamilyMembers">
+      <ng-template #listofDivs>
         <div class="image">
           <figure>
           <img src="https://dashboard.appinventiv.com/uploads/award/blockchain.svg" class="showImage">
@@ -40,6 +44,8 @@
             Refer a Candidates
           </button>
         </div>
+      </ng-template>
+    </ng-container>
       </mat-card>
     </section>
 

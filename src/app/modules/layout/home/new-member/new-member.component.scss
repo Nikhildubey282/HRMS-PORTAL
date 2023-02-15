@@ -39,8 +39,10 @@
 
 .new_member_card {
   // padding: 1.5rem 1.5rem 2rem -0.5rem;
-  padding: 1px 0px 5px 0px;
+  // padding: 1px 0px 5px 0px;
   background-color: white;
+  margin: 0px 15px;
+  padding: 10px 20px;
 
   p{
 
@@ -50,8 +52,8 @@
   }
 
   .item {
-      height: 402px;
-      width: 310px;
+      height: 387px;
+      width: 270px;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;

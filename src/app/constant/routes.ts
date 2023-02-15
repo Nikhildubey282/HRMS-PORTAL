@@ -15,6 +15,7 @@ export const APPRASIAL='apprasial';
 export const CHANGE_PASSWORD = 'change-password';
 export const PROFILE_PICTURE ='profilepicture';
 export const QUALIFICATION ='qualification';
+export const DIRECTORY='directory';
 
 
 
@@ -28,3 +29,12 @@ export const ADMIN_MANAGMENT = 'admin-managment'
 
 export const DASHBOARD = 'content';
 export const USER_MANAGMENT ='user-managment'
+
+export interface TableColumn {
+  heading: string;
+  key: string;
+  sort?: boolean;
+  type: string;
+  link:string
+  align?: 'right' | 'left' | 'center';
+}

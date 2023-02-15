@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { CommontableModule } from '../../commontable/commontable.module';
 
 
 
@@ -23,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    CommontableModule
   ]
 })
 export class MyProfileModule { }

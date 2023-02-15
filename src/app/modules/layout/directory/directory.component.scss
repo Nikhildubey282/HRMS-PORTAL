@@ -1,0 +1,101 @@
+.main{
+
+  .header{
+    padding: 20px 0px 20px 20px ;
+    h1{
+      // font-family: "Lato";
+      font-size: 26px;
+      color: #199CFF;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+  .input-field{
+    display: flex;
+    flex-wrap: wrap;
+
+    .input{
+      display: flex;
+      flex-direction: column;
+      margin-left: 20px;
+      padding-bottom: 20px;
+      ::ng-deep{
+
+        .mat-form-field-flex{
+
+          width: 450px;
+          box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+        }
+        .mat-form-field-appearance-outline .mat-form-field-outline{
+          background-color: white;
+        }
+      }
+    }
+
+    .btn_grp{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+      padding-bottom: 15px;
+
+      .reset{
+        border: 1.5px solid rgba(150, 165, 184, 0.5);
+        background-color: #ffffff;
+        font-size: 14px;
+        color: #96A5B8;
+        font-weight: 500;
+        line-height: 1.4;
+        border-radius: 4px;
+        padding: 10px 20px;
+        // font-size: 18px;
+        margin-right: 15px;
+
+
+      }
+      .save{
+        // font-size: 15px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(150, 165, 184, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 3px 10px ;
+
+      }
+    }
+  }
+  .card_data{
+    display: grid;
+    grid-template-columns: auto auto auto;
+  .card{
+    background-color: #f7f5ec;
+    margin: 20px;
+    padding: 30px 20px;
+    .image{
+      text-align: center;
+      h3{
+        font-size: 1.563rem;
+        margin-bottom: 0px;
+        padding-top: 10px;
+      }
+      img{
+        border-radius: 50%;
+      }
+    }
+    .birthdate{
+      .mat-icon{
+        margin-right: 10px;
+      }
+      p{
+        display: flex;
+        align-items: center;
+      }
+    }
+
+  }
+}
+}

@@ -1,0 +1,41 @@
+<section>
+  <div class="main">
+    <div class="awards">
+      <div class="heading">
+        <h3><mat-icon>circle</mat-icon>Awards</h3>
+      </div>
+      <div class="content">
+        <p>Dear</p>
+        <app-courosel  [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
+          <ng-container *ngFor="let member of listOfNewFamilyMembers">
+            <ng-template #listofDivs>
+        <div class="photos">
+          <div class="first_image">
+          <img src="https://dashboard.appinventiv.com//uploads/profile/profile_1656914382.jpg">
+          <div class="details">
+            <h1>Nikhil Dubey</h1>
+              <p>Software Engineer</p>
+          </div>
+          </div>
+          <div class="second_image">
+            <img src="https://dashboard.appinventiv.com//uploads/profile/profile_1624645358.jpeg">
+            <div class="details">
+            <h1>Nikhil Dubey</h1>
+            <p>Software Engineer</p>
+          </div>
+          </div>
+
+        </div>
+      </ng-template>
+    </ng-container>
+        <div class="despriction">
+          <p>Happy birthday, gorgeous!&nbsp;You are another year older and I just can’t see it. Have a blast!&nbsp;Wishing you the best of the best!</p>
+        </div>
+        <div class="cheers">
+          <p>Cheers!</p>
+          <h5>Appinventiv</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

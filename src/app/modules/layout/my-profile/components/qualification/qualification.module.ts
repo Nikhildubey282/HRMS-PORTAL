@@ -3,6 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { QualificationRoutingModule } from './qualification-routing.module';
 import { QualificationComponent } from './qualification.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -11,7 +17,12 @@ import { QualificationComponent } from './qualification.component';
   ],
   imports: [
     CommonModule,
-    QualificationRoutingModule
+    QualificationRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class QualificationModule { }

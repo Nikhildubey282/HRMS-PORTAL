@@ -12,14 +12,30 @@
   </div>
 </section> -->
 
+
+
+
+
 <div class="new_member_card">
   <p>New Family Members</p>
 
-  <div class="item">
-      <figure>
-          <img src="../../../../../assets/images/profile_icon.jpg" alt="new_member">
-          <h3>New Member</h3>
-          <p>Designition of Member</p>
-      </figure>
-  </div>
+  <app-courosel [buttonShow]="true" [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
+
+  <ng-container *ngFor="let member of listOfNewFamilyMembers">
+      <ng-template #listofDivs>
+        <div class="item">
+          <figure>
+              <img src="../../../../../assets/images/profile_icon.jpg" alt="new_member">
+              <h3>New Member</h3>
+              <p>Designition of Member</p>
+          </figure>
+      </div>
+      </ng-template>
+  </ng-container>
+
+
+
+
+
+
 </div>

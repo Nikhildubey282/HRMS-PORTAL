@@ -24,17 +24,17 @@ section{
     flex-direction: column;
     background-color: white;
     margin: 15px 0px ;
-    height: 280px;
+    height: 330px;
     border-radius: 5px;
 
     .tags1{
       display: flex;
       align-items: center;
-      font-size: 12px;
-      padding: 12px;
+      font-size: 15px;
+      padding: 15px;
       color: grey;
       .mat-icon{
-        padding-right: 8px;
+        padding-right: 10px;
       }
 
     }
@@ -43,8 +43,8 @@ section{
       display: flex;
       align-items: center;
       border-top: 1px solid rgb(235, 234, 234) ;
-      font-size: 12px;
-      padding: 10px;
+      font-size: 15px;
+      padding: 15px;
       color: grey;
       .mat-icon{
         padding-right: 8px;
