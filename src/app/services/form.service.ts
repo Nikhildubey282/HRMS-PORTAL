@@ -22,6 +22,10 @@ export class FormService {
       // Validators.minLength(VALIDATION_CRITERIA.passwordMinLength),
       // Validators.maxLength(VALIDATION_CRITERIA.passwordMaxLength),
     ],
+    university:[
+      Validators.required,
+      
+    ]
   };
   getControl(name: string, requierd = true) {
     //@ts-ignore: unreachable code error

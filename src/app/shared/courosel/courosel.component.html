@@ -7,5 +7,8 @@
     </ngu-item>
       <button *ngIf="buttonShow" NguCarouselPrev class="leftRs"  >&lt;</button>
       <button *ngIf="buttonShow" NguCarouselNext class="rightRs"  >&gt;</button>
+      <ul *ngIf="mypoint" class="myPoint" NguCarouselPoint>
+        <li *ngFor="let i of myCarousel.pointNumbers; let j = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"></li>
+      </ul>
     </ngu-carousel>
   </ng-container>

@@ -1,1 +1,102 @@
-<p [@slideinOut]  >basic-info works!</p>
+<section [@slideinOut]>
+  <div class="main">
+    <div class="heading">
+      <h5>Basic Information</h5>
+    </div>
+    <form [formGroup]="basicinfoForm" >
+    <div class="content">
+      <div class="row">
+        <div class="input">
+          <label>First Name</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <input type="text" matInput formControlName="firstName">
+            <mat-error *ngIf="formCtrl.firstName.hasError('required')" >{{errorMsg.FIRSTNAME_REQUIRED}}</mat-error>
+
+
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <label>Last Name</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <input type="text" matInput formControlName="lastName">
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <label>Date Of Birth</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <input type="text" matInput >
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="row">
+          <div class="input">
+            <label>Gender</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput formControlName="gender">
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <label>Martial Status</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput formControlName="martialStatus">
+            </mat-form-field>
+          </div>
+
+        <div class="input">
+          <label>Contact Number</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <input type="text" matInput formControlName="contactNumber">
+          </mat-form-field>
+        </div>
+      </div>
+      <div style="position:relative ;" class="row1">
+        <label style="position:absolute; bottom:90px; left:14px; ">Total working</label>
+        <div class="row">
+          <div class="input">
+            <label> School/University</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <label> School/University</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput>
+            </mat-form-field>
+          </div>
+
+        </div>
+        <!-- <label>Total working</label> -->
+        <div class="row">
+          <!-- <label>Total working</label> -->
+          <div class="input">
+            <label> School/University</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <label> School/University</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="inputs4">
+        <div class="input">
+          <label>Description</label>
+          <mat-form-field class="text" appearance="outline">
+            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="group">
+        <button>SAVE</button>
+      </div>
+
+    </div>
+  </form>
+  </div>
+</section>

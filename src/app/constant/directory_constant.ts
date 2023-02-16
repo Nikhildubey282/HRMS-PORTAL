@@ -70,10 +70,10 @@ export interface IDIRECTORY_DATA {
 
 
 export const Gallery_DATA :IGALLERYDATA[]=[
-  {IMAGE:'/assets/images/award_1674822333816.jpg',HEADING:'Republic Day-2023',NUM:5,BUTTON:'View'},
-  {IMAGE:'/assets/images/award_1672378171227.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View'},
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Republic Day-2023',NUM:5,BUTTON:'View'},
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View'},
   {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View'},
-  {IMAGE:'/assets/images/award_166719426194.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View'},
+  {IMAGE:'/assets/images/award_1672292016846.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View'},
 
 ]
 

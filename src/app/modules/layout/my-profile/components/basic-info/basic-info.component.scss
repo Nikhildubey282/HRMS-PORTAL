@@ -1,0 +1,93 @@
+section {
+  background-color: white;
+  margin: 15px;
+
+  .main {
+    .heading {
+      h5 {
+        font-size: 20px;
+        color: #3246d3;
+        padding: 11px 25px 11px 15px;
+        border-bottom: 1px solid #f3f7fc;
+        font-weight: 700;
+        border-bottom: 1px solid gainsboro;
+      }
+    }
+    .content{
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        .input{
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+        }
+      }
+      .row1{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .row{
+          margin-top: 10px;
+
+        }
+        ::ng-deep{
+
+          .mat-form-field-flex{
+            // margin-left: 20px;
+            // height: 47px;
+
+            width: 270px;
+            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          }
+        }
+      }
+      .inputs4{
+        .input{
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+          margin-right: 20px;
+          padding-bottom: 20px;
+        }
+        ::ng-deep{
+
+          .mat-form-field-flex{
+            // margin-left: 20px;
+            // height: 47px;
+
+            width: 100%;
+            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          }
+        }
+      }
+      .group{
+        padding: 0px 20px 20px 20px ;
+        button{
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+          background-blend-mode: soft-light, normal;
+          border: 1px solid rgba(150, 165, 184, 0.2);
+          box-sizing: border-box;
+          box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+          border-radius: 4px;
+          color: #FFFFFF;
+          padding: 10px;
+        }
+      }
+
+
+
+    }
+    ::ng-deep{
+
+      .mat-form-field-flex{
+        // margin-left: 20px;
+        // height: 47px;
+
+        width: 370px;
+        box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+      }
+    }
+  }
+
+}

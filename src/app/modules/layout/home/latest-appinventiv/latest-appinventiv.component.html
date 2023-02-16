@@ -4,7 +4,7 @@
   </div>
 
 
-<app-courosel [carouselConfiguration]="carouselConfig" [listToShow]="dataSource" ></app-courosel>
+<app-courosel [mypoint]="true" [carouselConfiguration]="carouselConfig" [listToShow]="dataSource" ></app-courosel>
 <ng-container *ngFor="let member of arr">
   <ng-template #listofDivs>
   <div  class="main">

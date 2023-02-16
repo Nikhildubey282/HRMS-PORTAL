@@ -15,7 +15,7 @@ section {
     position: relative;
     .imageResize {
       height: 256px;
-      width: 420px;
+      width: 100%;
       -o-object-fit: cover;
       object-fit: cover;
     }
@@ -25,7 +25,7 @@ section {
     position: absolute;
     bottom: 20px;
     margin-left: 40px;
-    padding: 0px 10px;
+    padding: 0px 15px;
     .img-count {
       .count {
         background-color: rgba(0, 0, 0, 0.3);
@@ -40,6 +40,7 @@ section {
     }
     .event {
       display: flex;
+      justify-content: space-between;
       .event-text {
         width: 250px;
         color: white;
@@ -70,3 +71,61 @@ section {
     }
   }
 }
+
+// // @media only screen and (max-width: 1200px) {
+// //   section{
+// //     .gallery-info{
+// //       .event{
+// //         .event-text{
+// //           width: 100px;
+// //         }
+// //         .view{
+// //           margin-left: 10px;
+// //         }
+// //       }
+
+
+// //     }
+
+
+//   // }
+
+// }
+
+@media (max-width:1199px){
+  .event{
+    .event-text {
+      width: 380px !important;
+    }
+  }
+}
+@media (max-width:685px){
+  .event{
+    flex-direction: column;
+    .event-text {
+      width: 240px !important;
+    }
+  }
+}
+
+@media (max-width:510px){
+  .event{
+    flex-direction: column;
+    .event-text {
+      width: 240px !important;
+    }
+  }
+}
+@media (max-width:431px){
+  .heading {
+  width: 120px;
+  }
+  .event{
+    flex-direction: column;
+    .event-text {
+      width: 100px !important;
+      padding: 0px !important;
+    }
+  }
+}
+

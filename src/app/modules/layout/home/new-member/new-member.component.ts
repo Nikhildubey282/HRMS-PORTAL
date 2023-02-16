@@ -12,7 +12,8 @@ export class NewMemberComponent implements OnInit,AfterViewInit {
   listOfNewFamilyMembers=[1,2,3]
   @ViewChildren("listofDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
   carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
+    grid: { xs: 1, sm: 1, md:2, lg: 1, all: 0 },
+    gridBreakpoints:{sm: 400, md: 800, lg: 1100, xl: 1200},
     load: 1,
     interval: { timing: 4000, initialDelay: 1000 },
     loop: true,
@@ -26,6 +27,8 @@ export class NewMemberComponent implements OnInit,AfterViewInit {
     this.listToShow.forEach((item:any)=>{
       this.dataSource.push(item);
     })
-
+// #ap0052
+// #ap0014 -react
+// #
   }
 }

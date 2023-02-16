@@ -26,6 +26,29 @@
   right: 0;
   border: none;
 }
+.myPoint {
+  list-style-type: none;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.myPoint  li {
+    display: inline-block;
+    border-radius: 50%;
+    border: 1px solid gainsboro;
+    background: lightgray;
+    padding: 4px;
+    margin: 0 3px;
+    transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    transition: 0.4s;
+}
+.myPoint  li.active {
+      background:grey;
+      transform: scale(1.2);
+    }
 
 :host::ng-deep{
 

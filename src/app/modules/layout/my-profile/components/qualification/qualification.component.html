@@ -1,24 +1,31 @@
-<div class="main">
+<div [@slideinOut] class="main">
 
   <div class="heading">
     <h6>Add New Qualification</h6>
   </div>
+  <form [formGroup]="qualificationForm">
   <div class="input-field">
     <div class="inputs1">
       <div class="input">
         <label> School/University</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input type="text" matInput formControlName="changepassword" placeholder="Ex. pat@example.com">
+          <input type="text" matInput formControlName="university" placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="formCtrl.university.hasError('required')" >{{errorMsg.UNIVERSITY_REQUIRED}}</mat-error>
+
+
         </mat-form-field>
       </div>
       <div class="input">
         <label>Education Level</label>
         <mat-form-field appearance="outline">
-          <mat-select>
+          <mat-select formControlName="educationLevel">
             <mat-option value="option1">Option 1</mat-option>
             <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
             <mat-option value="option3">Option 3</mat-option>
           </mat-select>
+          <mat-error *ngIf="formCtrl.educationLevel.hasError('required')" >{{errorMsg.EDUCATION_LEVEL}}</mat-error>
+
+
         </mat-form-field>
       </div>
     </div>
@@ -29,8 +36,8 @@
         <mat-form-field class="example-form-field" appearance="outline">
           <mat-date-range-input [rangePicker]="campaignOnePicker" [comparisonStart]="campaignTwo.value.start"
             [comparisonEnd]="campaignTwo.value.end">
-            <input matStartDate formControlName="start">
-            <input matEndDate formControlName="end">
+            <input matStartDate>
+            <input matEndDate >
           </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
           <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
@@ -41,8 +48,8 @@
 
           <mat-date-range-input [rangePicker]="campaignTwoPicker" [comparisonStart]="campaignOne.value.start"
             [comparisonEnd]="campaignOne.value.end">
-            <input matStartDate formControlName="start">
-            <input matEndDate formControlName="end">
+            <input matStartDate >
+            <input matEndDate >
           </mat-date-range-input>
           <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
           <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
@@ -54,29 +61,37 @@
       <div class="input">
         <label>Language</label>
         <mat-form-field appearance="outline">
-          <mat-select>
+          <mat-select formControlName="language">
             <mat-option value="option1">Option 1</mat-option>
             <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
             <mat-option value="option3">Option 3</mat-option>
           </mat-select>
+          <mat-error *ngIf="formCtrl.language.hasError('required')" >{{errorMsg.LANGUAGE}}</mat-error>
+
         </mat-form-field>
       </div>
       <div class="input">
         <label>Professional course </label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input type="password" matInput formControlName="changepassword" placeholder="Ex. pat@example.com">
+          <input type="text" matInput formControlName="professionalCourse"  placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="formCtrl.professionalCourse.hasError('required')" >{{errorMsg.PROFESSIONAL_REQUIRED}}</mat-error>
+
         </mat-form-field>
+
       </div>
     </div>
     <div class="inputs4">
       <div class="input">
         <label>Description</label>
         <mat-form-field class="text" appearance="outline">
-          <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
+          <textarea formControlName="descripition" matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
+          <mat-error *ngIf="formCtrl.descripition.hasError('required')" >{{errorMsg.DESCRIPITION_REQUIRED}}</mat-error>
+
         </mat-form-field>
       </div>
     </div>
   </div>
+</form>
   <div class="group">
     <button>SAVE</button>
   </div>

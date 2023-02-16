@@ -4,6 +4,7 @@ import { slideAnimation } from 'src/animation';
 
 import { CHANGE_PASSWORD } from 'src/app/constant/routes';
 import { FormService } from 'src/app/services/form.service';
+import { ACCOUNT_ERROR_MESSAGES } from 'src/app/constant/messages';
 
 @Component({
   selector: 'app-changepassword',
@@ -15,6 +16,7 @@ import { FormService } from 'src/app/services/form.service';
 
 })
 export class ChangepasswordComponent implements OnInit {
+  errorMsg = ACCOUNT_ERROR_MESSAGES;
 
   changepasswordForm!:FormGroup;
 
@@ -33,5 +35,7 @@ export class ChangepasswordComponent implements OnInit {
       changepassword:this.formservice.getControl('password')
     })
   }
+
+  get formCtrl() { return this.changepasswordForm.controls; }
 
 }

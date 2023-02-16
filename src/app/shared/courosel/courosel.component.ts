@@ -9,6 +9,8 @@ import { NguCarousel, NguCarouselConfig } from '@ngu/carousel';
 export class CouroselComponent implements OnInit,AfterViewInit {
   @Input() listToShow: any;
   @Input() buttonShow:boolean=false;
+  @Input()mypoint:boolean=false;
+
   @Input() carouselConfiguration:any;
   @ViewChild('myCarousel') carousel!: NguCarousel<any>;
   wait = false;

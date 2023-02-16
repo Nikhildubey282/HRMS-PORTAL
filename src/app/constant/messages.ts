@@ -28,3 +28,17 @@ export const ACCOUNT_ERROR_MESSAGES = {
   ADDUSER_EMAIL:'Invalid Email address'
 
 };
+
+export const QUALIFICATION_MESSAGE={
+  UNIVERSITY_REQUIRED:'Please Enter a university name',
+  EDUCATION_LEVEL:'Please choose a education level',
+  LANGUAGE:'Please choose Language',
+  PROFESSIONAL_REQUIRED:'Please Enter a Professional Course name',
+  DESCRIPITION_REQUIRED:'Please Enter a Descripition'
+
+}
+
+export const BASIC_INFO_MESSAGE={
+  FIRSTNAME_REQUIRED:'Please Enter a first name'
+
+}

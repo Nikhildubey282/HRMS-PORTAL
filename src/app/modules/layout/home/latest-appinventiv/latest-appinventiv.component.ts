@@ -13,12 +13,15 @@ export class LatestAppinventivComponent implements OnInit,AfterViewInit {
   @ViewChildren('listofDivs', { read: TemplateRef }) listToShow!: QueryList<
   ElementRef<HTMLDivElement>>;
 carouselConfig: NguCarouselConfig = {
-  grid: { xs: 1, sm: 1, md: 1, lg: 3, all: 0 },
+  grid: { xs: 1, sm: 1, md: 2, lg: 3, all: 0 },
   load: 3,
-  // interval: {timing: 1000, initialDelay: 1000},
+  // interval: {timing: 4000, initialDelay: 1000},
   loop: true,
   touch: true,
-  velocity: 0.2
+  velocity: 0.2,
+  point:{
+    visible:true
+  }
 }
 dataSource: any = [];
 arr = [
@@ -37,9 +40,17 @@ arr = [
   }
 
   ngAfterViewInit(): void {
-    this.listToShow.forEach((item: any) => {
-      this.dataSource.push(item);
-    });
+    // this.listToShow.forEach((item: any) => {
+    //   this.dataSource.push(item);
+    // });
+
+    setTimeout(() => {
+      this.listToShow.forEach((item: any) => {
+        this.dataSource.push(item);
+      });
+
+
+    },500);
   }
 
 }

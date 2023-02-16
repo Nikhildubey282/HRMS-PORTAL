@@ -13,12 +13,16 @@ imageData=Gallery_DATA;
   ElementRef<HTMLDivElement>
 >;
 carouselConfig: NguCarouselConfig = {
-  grid: { xs: 1, sm: 3, md: 3, lg: 3, all: 0 },
+  grid: { xs: 1, sm: 1, md: 1, lg: 3, all: 0 },
   load: 1,
   interval: { timing: 9000, initialDelay: 1000 },
   loop: true,
   touch: true,
   velocity: 0.2,
+  point:{
+    visible:true,
+
+  }
 };
 dataSource: any = [];
 
@@ -29,9 +33,17 @@ dataSource: any = [];
   }
 
   ngAfterViewInit(): void {
-    this.listToShow.forEach((item: any) => {
-      this.dataSource.push(item);
-    });
+
+    // this.listToShow.forEach((item: any) => {
+    //   this.dataSource.push(item);
+    // });
+
+    setTimeout(() => {
+      this.listToShow.forEach((item: any) => {
+        this.dataSource.push(item);
+      });
+
+    }, 500);
   }
 
 }

@@ -2,7 +2,7 @@
   <div class="heading">
     <h3 class="header">Appinventiv Gallery</h3>
   </div>
-  <app-courosel [listToShow]="dataSource" [buttonShow]="buttonShow" [carouselConfiguration]="carouselConfig" ></app-courosel>
+  <app-courosel [listToShow]="dataSource" [buttonShow]="buttonShow" [mypoint]="true" [carouselConfiguration]="carouselConfig" ></app-courosel>
   <ng-container *ngFor="let item of imageData">
     <ng-template #listofDivs>
     <figure>
