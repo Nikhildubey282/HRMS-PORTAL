@@ -35,14 +35,15 @@
             <mat-error *ngIf="frmCtrl.password.hasError('required')" >{{errorMsg.PASSWORD_REQ}}</mat-error>
             <mat-error *ngIf="frmCtrl.password.hasError('pattern')" >{{errorMsg.INVALID_PASSWORD}}</mat-error>
           </mat-form-field>
-          <a style="padding-top: 7px ;" [routerLink]="'ABS_FORGOT_PASSWORD' | absoluteRouting">forget password?</a>
+          <a style="padding-top: 7px ;" [routerLink]="'ABS_FORGOT_PASSWORD' | absoluteRouting">Forget password?</a>
         </div>
-        </form>
+
         <div  class="buttonss">
         <button (click)="nav_to_dashboard()" >
           <mat-icon style="font-size: 20px ;">lock_person</mat-icon>
           LOGIN</button>
       </div>
+    </form>
       </div>
       <div class="logincredential">
         <div class="buttonlogin">

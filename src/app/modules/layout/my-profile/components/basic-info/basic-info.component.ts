@@ -15,6 +15,10 @@ export class BasicInfoComponent implements OnInit {
 
   errorMsg=BASIC_INFO_MESSAGE;
   basicinfoForm!:FormGroup;
+  genderLabel='Gender';
+  martialLabel='Matrial Status'
+  genderData=['Male','Female'];
+  matrialData=['Single','Married','Divoced'];
 
   constructor(
     private _fb:FormBuilder
@@ -26,11 +30,16 @@ export class BasicInfoComponent implements OnInit {
 
   createForm(){
     this.basicinfoForm=this._fb.group({
-      firstName:['',[Validators.required]],
-      lastName:['',[Validators.required]],
+      firstName:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      lastName:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      dateofBirth:['',[Validators.required]],
       gender:['',[Validators.required]],
       martialStatus:['',[Validators.required]],
-      contactNumber:['',[Validators.required]]
+      contactNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
+      years:['',Validators.required,Validators.pattern(/^\d{10}/)],
+      months:['',Validators.required,Validators.pattern(/^\d{10}/)],
+      years2:['',Validators.required,Validators.pattern(/^\d{10}/)],
+      months2:['',Validators.required,Validators.pattern(/^\d{10}/)]
 
 
     })

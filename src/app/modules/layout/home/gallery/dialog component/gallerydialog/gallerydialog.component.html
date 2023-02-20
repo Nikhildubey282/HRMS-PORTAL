@@ -1,0 +1,16 @@
+<section>
+  <div class="cancel-icon" (click)="crossClick()">
+    <!-- <i class="fa-solid fa-xmark" ></i> -->
+    <mat-icon>close</mat-icon>
+  </div>
+  <app-courosel [listToShow]="dataSource"
+  [carouselConfiguration]="carouselConfig" [btnShow]="true" ></app-courosel>
+
+  <ng-container *ngFor="let item of data">
+    <ng-template #listofDivs>
+      <img [src]="[item.IMAGES]" class="image">
+    </ng-template>
+  </ng-container>
+</section>
+
+

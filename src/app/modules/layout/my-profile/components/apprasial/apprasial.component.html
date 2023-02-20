@@ -2,36 +2,41 @@
   <div class="apprasial-content">
     <h6>Apprasial Detail</h6>
   </div>
+  <form [formGroup]="apprasialForm">
   <div class="inputs-field">
+
 <div class="input">
 
   <label>Apprasial Cycle</label>
     <mat-form-field appearance="outline">
-      <mat-select>
+      <mat-select formControlName="apprasialCycle" >
         <mat-option value="option1">Option 1</mat-option>
         <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
         <mat-option value="option3">Option 3</mat-option>
       </mat-select>
+      <mat-error *ngIf="formCtrl.apprasialCycle.hasError('required')">{{
+        errorMsg.APPRASIALCYCLE_REQUIRED
+      }}</mat-error>
     </mat-form-field>
   </div>
 
   <div class="input">
     <label>Apprasial Month</label>
     <mat-form-field appearance="outline">
-      <mat-select>
+      <mat-select formControlName="apprasialMonth" >
         <mat-option value="option1">Option 1</mat-option>
         <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
         <mat-option value="option3">Option 3</mat-option>
       </mat-select>
+      <mat-error *ngIf="formCtrl.apprasialMonth.hasError('required')">{{
+        errorMsg.APPRASIALMONTH_REQUIRED
+      }}</mat-error>
     </mat-form-field>
   </div>
 
 
-  <app-commontable [columns]="heading" [dataSource]="dataSource"></app-commontable>
-
-
-
-
   </div>
+</form>
+
 
 </div>

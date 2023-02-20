@@ -1,7 +1,9 @@
 import { animate, animation, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { slideAnimation } from 'src/animation';
+import { APPRASIAL_MESSGAES } from 'src/app/constant/messages';
 
 @Component({
   selector: 'app-apprasial',
@@ -13,6 +15,9 @@ import { slideAnimation } from 'src/animation';
 
 })
 export class ApprasialComponent implements OnInit {
+
+  apprasialForm!:FormGroup;
+  errorMsg=APPRASIAL_MESSGAES;
 
   dataSource = new MatTableDataSource<any>();
 
@@ -31,12 +36,28 @@ export class ApprasialComponent implements OnInit {
     {'sNo': 3, 'fName': 'xyz','mName':'kumar','lName': 'sii', 'email': 'Li@gmail.com','phone':132423534654,'registerOn':110044},
     {'sNo': 4, 'fName': 'efg','mName':'kumar','lName': 'sii', 'email': 'Be@gmail.com','phone':132423534654,'registerOn':110044},
   ];
-  constructor() { }
+  constructor(
+    private _fb:FormBuilder
+  ) { }
 
   ngOnInit(): void {
 
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createform();
 
+  }
+
+  createform(){
+
+    this.apprasialForm=this._fb.group({
+      apprasialCycle:['',[Validators.required]],
+      apprasialMonth:['',[Validators.required]]
+
+    })
+
+  }
+  get formCtrl(){
+    return this.apprasialForm.controls;
   }
 
 }

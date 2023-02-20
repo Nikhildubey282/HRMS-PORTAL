@@ -9,11 +9,11 @@ import { NguCarouselConfig } from '@ngu/carousel';
 export class NewMemberComponent implements OnInit,AfterViewInit {
 
   constructor() { }
-  listOfNewFamilyMembers=[1,2,3]
+  listOfNewFamilyMembers=[1,2,3,4]
   @ViewChildren("listofDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
   carouselConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md:2, lg: 1, all: 0 },
-    gridBreakpoints:{sm: 400, md: 800, lg: 1100, xl: 1200},
+    gridBreakpoints:{sm: 400, md: 900, lg: 1300, xl: 1300},
     load: 1,
     interval: { timing: 4000, initialDelay: 1000 },
     loop: true,

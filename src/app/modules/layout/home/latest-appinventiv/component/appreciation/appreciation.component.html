@@ -1,8 +1,13 @@
 <div class="left" >
 
   <h1><mat-icon style="color:purple ; font-size:20px; ">circle</mat-icon> Appreciation</h1>
+  <app-courosel  [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
+          <ng-container *ngFor="let member of listOfNewFamilyMembers">
+            <ng-template #listofDivs>
   <P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more</P>
   <div class="btn_group">
-    <button>View</button>
+    <button (click)="openDialog()" >View</button>
   </div>
+            </ng-template>
+          </ng-container>
 </div>

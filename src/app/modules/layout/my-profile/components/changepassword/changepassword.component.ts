@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { slideAnimation } from 'src/animation';
 
 import { CHANGE_PASSWORD } from 'src/app/constant/routes';
@@ -32,7 +32,9 @@ export class ChangepasswordComponent implements OnInit {
 
   createForm(){
     this.changepasswordForm=this._fb.group({
-      changepassword:this.formservice.getControl('password')
+      changepassword:this.formservice.getControl('password'),
+      newpassword:['',[Validators.required]],
+      confirmpassowrd:['',[Validators.required]]
     })
   }
 

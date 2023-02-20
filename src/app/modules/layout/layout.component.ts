@@ -22,7 +22,7 @@ export class LayoutComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.observer.observe(['(max-width: 900px)']).pipe(delay(1)).subscribe((res:any) => {
+    this.observer.observe(['(max-width: 950px)']).pipe(delay(1)).subscribe((res:any) => {
       if (res.matches) {
         this.sidenav.mode = 'over';
         this.sidenav.close();

@@ -6,7 +6,7 @@ const routes: Routes = [
   {path:'',redirectTo:'',pathMatch:'full'},
   { path: '', loadChildren: () => import('./modules/account/account.module').then(m => m.AccountModule) },
   {path: LAYOUT, loadChildren:() => import('./modules/layout/layout.module').then(m => m.LayoutModule) },
-  {path:'**', loadChildren:() => import('./modules/account/pages/login/login.module').then(m => m.LoginModule )  }
+  {path:'**', loadChildren:() => import('./modules/not-found/not-found.module').then(m => m.NotFoundModule )  }
 ];
 
 @NgModule({

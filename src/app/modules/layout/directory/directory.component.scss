@@ -23,7 +23,6 @@
       ::ng-deep{
 
         .mat-form-field-flex{
-
           width: 450px;
           box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
         }
@@ -98,4 +97,79 @@
 
   }
 }
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .main{
+    .card_data{
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+
+
+}
+@media only screen and (max-width: 600px) {
+
+  .main{
+    .card_data{
+      display: grid;
+      grid-template-columns: auto;
+    }
+  }
+
+
+}
+@media only screen and (max-width: 600px) {
+
+  .main{
+    .card_data{
+      display: grid;
+      grid-template-columns: auto;
+      .card{
+        margin: 10px;
+        padding: 0px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .main{
+   .input-field{
+    .input{
+      ::ng-deep{
+        .mat-form-field-flex{
+          width: 300px;
+          box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+        }
+
+      }
+
+    }
+   }
+  }
+
+}
+
+@media only screen and (max-width: 350px) {
+
+  .main{
+   .input-field{
+    .input{
+      ::ng-deep{
+        .mat-form-field-flex{
+          width: 200px;
+          box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+        }
+
+      }
+
+    }
+   }
+  }
+
 }

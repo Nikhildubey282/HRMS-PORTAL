@@ -14,7 +14,7 @@
     </span>
     <div class="event">
       <h3 class="event-text">{{item.HEADING}}</h3>
-      <button class="view">{{item.BUTTON}}</button>
+      <button (click)="openDialog(item.SUBIMAGE)" class="view">{{item.BUTTON}}</button>
     </div>
   </div>
     </ng-template>

@@ -6,6 +6,10 @@ import { BasicInfoComponent } from './basic-info.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 
 
@@ -20,7 +24,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DropdownModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    
     ]
 })
 export class BasicInfoModule { }

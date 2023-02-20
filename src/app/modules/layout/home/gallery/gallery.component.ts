@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, TemplateRef, ViewChildren } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NguCarouselConfig } from '@ngu/carousel';
 import { Gallery_DATA } from 'src/app/constant/directory_constant';
+import { GallerydialogComponent } from './dialog component/gallerydialog/gallerydialog.component';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -13,7 +15,7 @@ imageData=Gallery_DATA;
   ElementRef<HTMLDivElement>
 >;
 carouselConfig: NguCarouselConfig = {
-  grid: { xs: 1, sm: 1, md: 1, lg: 3, all: 0 },
+  grid: { xs: 1, sm: 1, md: 2, lg: 3, all: 0 },
   load: 1,
   interval: { timing: 9000, initialDelay: 1000 },
   loop: true,
@@ -26,7 +28,9 @@ carouselConfig: NguCarouselConfig = {
 };
 dataSource: any = [];
 
-  constructor() { }
+  constructor(
+    public dialog:MatDialog
+  ) { }
 
   ngOnInit(): void {
 
@@ -46,4 +50,17 @@ dataSource: any = [];
     }, 500);
   }
 
+  openDialog(item) {
+    console.log(item,'images')
+    const dialogRef = this.dialog.open(GallerydialogComponent,{
+      data:item
+    }
+      );
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
+  }
 }
+
+

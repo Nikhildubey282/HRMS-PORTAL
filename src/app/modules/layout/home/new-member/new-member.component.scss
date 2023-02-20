@@ -42,17 +42,17 @@
   // padding: 1px 0px 5px 0px;
   background-color: white;
   margin: 0px 15px;
-  padding: 10px 20px;
+  padding: 0px 20px;
 
-  p{
-
-    font-size: 18px;
+  .heading{
+    padding: 15px 0px;
+    font-size: 20px;
     font-weight: 500;
 
   }
 
   .item {
-      height: 387px;
+      height: 385px;
       width: 270px;
       background-size: cover;
       background-position: center;
@@ -75,34 +75,31 @@
               border-radius: 50%;
           }
       }
-  }
-}
-
-@media only screen and (max-width: 900px)  {
-  .ngucarouselxPyoDz{
-    .ngucarousel{
-      .ngu-touch-container{
-        .ngucarousel-items{
-          .item{
-            width: 44%;
-          }
-        }
+      p{
+        font-size: 18px;
       }
-    }
   }
 }
 
-  @media only screen and (max-width: 768px)  {
 
+
+  @media (max-width:400px){
     .new_member_card{
-      .item{
-        height: 387px;
-        width: 270px;
+      .heading{
+        width: 150px;
       }
     }
 
   }
 
+  @media (max-width:1500px) and (min-width:1300px) {
+    .new_member_card{
+      .heading{
+        width: 180px;
+      }
+    }
+
+  }
 
 
 

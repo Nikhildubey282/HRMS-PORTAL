@@ -1,0 +1,29 @@
+.list{
+  background-color: white;
+  margin: 17px 0px 0px 20px;
+  border-radius: 10px;
+  .heading{
+    h6{
+      font-size: 20px;
+      color: #3246d3;
+      // font-family: 'Segoe UI';
+      padding: 11px 25px 11px 15px;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 700;
+      // border-bottom: 1px solid #f3f7fc;
+
+    }
+
+  }
+  .table{
+    // padding: 1.5rem 1.5rem 0px 1.5rem;
+    padding: 15px 20px;
+
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .list{
+    margin: 0px;
+  }
+}

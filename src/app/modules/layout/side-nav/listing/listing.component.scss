@@ -6,7 +6,7 @@ section {
 
 
       .mat-icon{
-        font-size: 20px;
+        font-size: 22px;
       }
 
       .full-width{
@@ -16,18 +16,22 @@ section {
       }
     }
 
+
+
   ::ng-deep{
     .mat-list-item-content{
       justify-content: space-between;
-      font-size: 18px;
-      font-weight: 400;
+      font-size: 16px;
+      font-weight: 500;
       padding: 30px 16px;
 
-      :hover{
-        color: rgb(67, 67, 225);
-        background-color: transparent;
 
-      }
+
+      // :hover{
+      //   color: rgb(67, 67, 225);
+      //   background-color: transparent;
+
+      // }
     }
   }
 }
@@ -49,7 +53,19 @@ section {
   .submenu.expanded {
     transform: scaleY(1);
   }
+  .active{
+    color: rgb(67, 67, 225);
+      background-color: transparent;
+
+  }
+
 }
+
+// .mat-list-item{
+//   &:disabled{
+//     background-color: rgb(125, 100, 100);
+//   }
+// }
 
 :host::ng-deep {
   .mat-drawer .mat-sidenav {
@@ -63,4 +79,5 @@ section {
       transform: translate3d(-100%, 0, 0);
       opacity: 0.25;
   }
+
 }

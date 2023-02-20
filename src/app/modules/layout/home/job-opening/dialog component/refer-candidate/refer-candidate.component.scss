@@ -1,0 +1,132 @@
+// @import "src/app/scss/_hash-heading.scss";
+// @import "src/app/scss/mixins.scss";
+// @import "src/app/scss/_var.scss";
+// @import "src/app/scss/_job-opening-button.scss";
+@mixin buttonSize(){
+  padding:0 25px;
+  height: 40px;
+}
+section{
+  // overflow: scroll;
+  .header{
+    background: #F3F3F3;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    .heading{
+      padding: 16px 16px 5px 16px;
+      font-size: 20px;
+      color: #199CFF;
+      font-weight: 500;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .cancel-icon{
+      background: lightgrey;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+       margin-right: 40px;
+       text-align: center;
+      cursor: pointer;
+      .fa-xmark{
+        font-size: 25px;
+        margin-left: 7px;
+      }
+    }
+  }
+  .form{
+  padding: 16px;
+    .inputs{
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 20px;
+      .formfield{
+        display: flex;
+        flex-direction: column;
+        .label{
+          font-size: 12px;
+          color: #96A5B8;
+          font-weight: 500;
+          line-height: 1.4;
+          margin-bottom: 4px;
+        }
+        .mat-form-field{
+          width: 385px;
+        }
+      }
+      .maxlength{
+        color: red;
+        margin-top: -22px;
+        font-weight: 600
+      }
+    }
+    .buttonGroup {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      .cancelButton {
+        // background-color: transparent;
+        // border-radius: 10px;
+        // color: white;
+        // border: 1.5px solid black;
+      //  @include buttonSize();
+      border: 1.5px solid rgba(150, 165, 184, 0.5);
+    background-color: #ffffff;
+    font-family: "Lato";
+    font-size: 14px;
+    color: #96A5B8;
+    font-weight: 500;
+    line-height: 1.4;
+    border-radius: 4px;
+    padding: 10px;
+
+
+      }
+      .classyButton {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+        background-blend-mode: soft-light, normal;
+        border: 1px solid rgba(150, 165, 184, 0.2);
+        box-sizing: border-box;
+        box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+        border-radius: 4px;
+        color:#FFFFFF;
+        padding: 10px;
+
+      }
+    }
+  }
+
+}
+.hash-heading {
+  position: relative;
+  display: flex;
+  width: 100%;
+  .mydetails {
+    font-size: 24px;
+    color: #606167;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 4px 5px;
+    background-color:white;
+    z-index: 1;
+    margin: 0px 10px;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    bottom: 20px;
+    border-top: 1px dashed lightgray;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+}
+::ng-deep{
+  .mat-dialog-container{
+    border-radius: 20px;
+    padding: 0px !important;
+  }
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}

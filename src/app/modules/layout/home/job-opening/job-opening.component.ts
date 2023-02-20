@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, TemplateRef, ViewChildren } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { NguCarouselConfig } from '@ngu/carousel';
+import { ReferCandidateComponent } from './dialog component/refer-candidate/refer-candidate.component';
 
 @Component({
   selector: 'app-job-opening',
@@ -8,7 +10,9 @@ import { NguCarouselConfig } from '@ngu/carousel';
 })
 export class JobOpeningComponent implements OnInit,AfterViewInit {
 
-  constructor() { }
+  constructor(
+    public dialog:MatDialog
+  ) { }
 
   listOfNewFamilyMembers=[1,2,3]
   @ViewChildren("listofDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
@@ -31,6 +35,14 @@ export class JobOpeningComponent implements OnInit,AfterViewInit {
       this.dataSource.push(item);
     })
 
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(ReferCandidateComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

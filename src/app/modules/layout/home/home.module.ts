@@ -14,6 +14,15 @@ import { AwardsComponent } from './latest-appinventiv/component/awards/awards.co
 import { AppreciationComponent } from './latest-appinventiv/component/appreciation/appreciation.component';
 import { BirthdayComponent } from './latest-appinventiv/component/birthday/birthday.component';
 import { WorkAniversaryComponent } from './latest-appinventiv/component/work-aniversary/work-aniversary.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ReferCandidateComponent } from './job-opening/dialog component/refer-candidate/refer-candidate.component';
+import { GallerydialogComponent } from './gallery/dialog component/gallerydialog/gallerydialog.component';
+import { DialogComponent } from './latest-appinventiv/component/dialog/dialog.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 
 
@@ -28,6 +37,10 @@ import { WorkAniversaryComponent } from './latest-appinventiv/component/work-ani
     AppreciationComponent,
     BirthdayComponent,
     WorkAniversaryComponent,
+    ReferCandidateComponent,
+    GallerydialogComponent,
+    DialogComponent,
+
 
 
   ],
@@ -36,7 +49,12 @@ import { WorkAniversaryComponent } from './latest-appinventiv/component/work-ani
     HomeRoutingModule,
     MatCardModule,
     CouroselModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class HomeModule { }

@@ -9,6 +9,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
+
 
 
 
@@ -26,6 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
+    CommontableModule,
+    DropdownModule
   ]
 })
 export class QualificationModule { }

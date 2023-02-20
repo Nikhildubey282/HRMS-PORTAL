@@ -3,100 +3,156 @@
     <div class="heading">
       <h5>Basic Information</h5>
     </div>
-    <form [formGroup]="basicinfoForm" >
-    <div class="content">
-      <div class="row">
-        <div class="input">
-          <label>First Name</label>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <input type="text" matInput formControlName="firstName">
-            <mat-error *ngIf="formCtrl.firstName.hasError('required')" >{{errorMsg.FIRSTNAME_REQUIRED}}</mat-error>
-
-
-          </mat-form-field>
-        </div>
-        <div class="input">
-          <label>Last Name</label>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <input type="text" matInput formControlName="lastName">
-          </mat-form-field>
-        </div>
-        <div class="input">
-          <label>Date Of Birth</label>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <input type="text" matInput >
-          </mat-form-field>
-        </div>
-
-      </div>
-      <div class="row">
-          <div class="input">
-            <label>Gender</label>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput formControlName="gender">
-            </mat-form-field>
-          </div>
-          <div class="input">
-            <label>Martial Status</label>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput formControlName="martialStatus">
-            </mat-form-field>
-          </div>
-
-        <div class="input">
-          <label>Contact Number</label>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <input type="text" matInput formControlName="contactNumber">
-          </mat-form-field>
-        </div>
-      </div>
-      <div style="position:relative ;" class="row1">
-        <label style="position:absolute; bottom:90px; left:14px; ">Total working</label>
+    <form [formGroup]="basicinfoForm">
+      <div class="content">
         <div class="row">
           <div class="input">
-            <label> School/University</label>
+            <label>First Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput>
+              <input type="text" matInput formControlName="firstName" />
+              <mat-error *ngIf="formCtrl.firstName.hasError('required')">{{
+                errorMsg.FIRSTNAME_REQUIRED
+              }}</mat-error>
+              <mat-error *ngIf="formCtrl.firstName.hasError('pattern')">
+                Invalid FirstName</mat-error>
             </mat-form-field>
           </div>
           <div class="input">
-            <label> School/University</label>
+            <label>Last Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput>
+              <input type="text" matInput formControlName="lastName" />
+              <mat-error *ngIf="formCtrl.lastName.hasError('required')">
+                Please enter a last name
+              </mat-error>
+              <mat-error *ngIf="formCtrl.lastName.hasError('pattern')">
+                Invalid Lastname</mat-error>
             </mat-form-field>
           </div>
-
+          <div class="input">
+            <label>Date Of Birth</label>
+            <!-- <mat-form-field class="example-full-width" appearance="outline">
+              <input type="date" type="text" matInput />
+            </mat-form-field> -->
+            <mat-form-field appearance="outline">
+              <mat-date-range-input [rangePicker]="picker">
+                <input formControlName="dateofBirth"  matStartDate>
+                <input matEndDate>
+              </mat-date-range-input>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+              <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">
+                Please Enter a date</mat-error>
+            </mat-form-field>
+          </div>
         </div>
-        <!-- <label>Total working</label> -->
         <div class="row">
-          <!-- <label>Total working</label> -->
           <div class="input">
-            <label> School/University</label>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput>
-            </mat-form-field>
+            <span>
+              <app-dropdown
+                [label]="genderLabel"
+                [myControlName]="basicinfoForm.controls.gender"
+                [Data]="genderData"
+              ></app-dropdown>
+            </span>
           </div>
           <div class="input">
-            <label> School/University</label>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput>
-            </mat-form-field>
+            <span>
+              <app-dropdown
+                [label]="martialLabel"
+                [myControlName]="basicinfoForm.controls.martialStatus"
+                [Data]="matrialData"
+              ></app-dropdown>
+            </span>
           </div>
-        </div>
-      </div>
-      <div class="inputs4">
-        <div class="input">
-          <label>Description</label>
-          <mat-form-field class="text" appearance="outline">
-            <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
-          </mat-form-field>
-        </div>
-      </div>
-      <div class="group">
-        <button>SAVE</button>
-      </div>
 
-    </div>
-  </form>
+          <div class="input">
+            <label>Contact Number</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="text" matInput formControlName="contactNumber" />
+              <mat-error *ngIf="formCtrl.contactNumber.hasError('required')">
+                Please Enter a Contact Number</mat-error>
+                <mat-error *ngIf="formCtrl.contactNumber.hasError('pattern')">
+                  Invalid Contact Number</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div style="position: relative" class="row1">
+          <div style="position: absolute; top:-10px; left:14px">
+            <label>Total working Experience</label>
+          </div>
+          <div class="row1">
+            <div class="input">
+              <label> Years</label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input type="text" matInput formControlName="years" />
+                <mat-error *ngIf="formCtrl.years.hasError('required')">{{
+                  errorMsg.YEARS_REQUIRED
+                }}</mat-error>
+                <mat-error *ngIf="formCtrl.years.hasError('pattern')">
+                  Enter a valid input
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input">
+              <label>Months</label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input type="text" matInput  formControlName="months" />
+                <mat-error *ngIf="formCtrl.months.hasError('required')">{{
+                  errorMsg.MONTHS_REQUIRED
+                }}</mat-error>
+                <mat-error *ngIf="formCtrl.months.hasError('pattern')">
+                  Enter a valid input
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div style="position: relative" class="row1">
+            <div style="position: absolute; top:-18px; left:14px" >
+              <label>Revalent Exprience</label>
+            </div>
+            <div class="input">
+              <label>Years</label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input type="text" matInput formControlName="years2" />
+                <mat-error *ngIf="formCtrl.years2.hasError('required')">{{
+                  errorMsg.YEARS_REQUIRED
+                }}</mat-error>
+                <mat-error *ngIf="formCtrl.years2.hasError('pattern')">
+                  Enter a valid input
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div class="input">
+              <label>Months</label>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <input type="text" matInput formControlName="months2" />
+                <mat-error *ngIf="formCtrl.months2.hasError('required')">{{
+                  errorMsg.MONTHS_REQUIRED
+                }}</mat-error>
+                <mat-error *ngIf="formCtrl.months2.hasError('pattern')">
+                  Enter a valid input
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="inputs4">
+          <div class="input">
+            <label>Description</label>
+            <mat-form-field class="text" appearance="outline">
+              <textarea
+                matInput
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="4"
+                cdkAutosizeMaxRows="5"
+              ></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="group">
+          <button>SAVE</button>
+        </div>
+      </div>
+    </form>
   </div>
 </section>

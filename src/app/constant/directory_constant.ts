@@ -70,10 +70,43 @@ export interface IDIRECTORY_DATA {
 
 
 export const Gallery_DATA :IGALLERYDATA[]=[
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Republic Day-2023',NUM:5,BUTTON:'View'},
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View'},
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View'},
-  {IMAGE:'/assets/images/award_1672292016846.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View'},
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Republic Day-2023',NUM:5,BUTTON:'View',
+  SUBIMAGE:[
+    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
+    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+  ],
+
+},
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View',
+  SUBIMAGE:[
+    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
+    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+  ],
+},
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View',
+  SUBIMAGE:[
+    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
+    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+  ],
+},
+  {IMAGE:'/assets/images/award_1672292016846.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View',
+  SUBIMAGE:[
+    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
+    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
+    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+  ],
+},
 
 ]
 
@@ -81,6 +114,8 @@ export interface IGALLERYDATA{
   IMAGE?:string,
   HEADING?:string,
   BUTTON?:string,
-  NUM?:number
+  NUM?:number,
+  SUBIMAGE?:any
+
 }
 

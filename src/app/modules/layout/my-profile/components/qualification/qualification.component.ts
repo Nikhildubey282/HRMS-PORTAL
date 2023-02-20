@@ -3,6 +3,7 @@ import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 import { slideAnimation } from 'src/animation';
 import { FormService } from 'src/app/services/form.service';
 import { QUALIFICATION_MESSAGE } from 'src/app/constant/messages';
+import { MatTableDataSource } from '@angular/material/table';
 
 
 const today = new Date();
@@ -17,6 +18,8 @@ const year = today.getFullYear();
 })
 export class QualificationComponent implements OnInit {
   errorMsg=QUALIFICATION_MESSAGE;
+  labelLanguage='language'
+  languageDropdown =['English','Hindi']
 
   qualificationForm!:FormGroup;
 
@@ -29,6 +32,18 @@ export class QualificationComponent implements OnInit {
     end: new FormControl(new Date(year, month, 19)),
   });
 
+  dataSource = new MatTableDataSource<any>();
+
+  heading = [
+    { heading: 'Action', key:'sNo',type:'text'},
+    { heading: 'School/University', key: 'fName', type: 'link', link: '/dashboard/client-details' },
+    { heading: 'Time period ', key:'mName',type:'text'},
+    { heading: 'Education Level', key:'lName',type:'text'},
+  ]
+  Table_DATA: any[] = [
+
+  ];
+
   constructor(
     private _fb:FormBuilder,
     private formservice:FormService
@@ -40,12 +55,16 @@ export class QualificationComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm()
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+
   }
 
   createForm(){
     this.qualificationForm=this. _fb.group({
       university:this.formservice.getControl('university'),
       educationLevel:['',[Validators.required]],
+      startdate:['',Validators.required],
+      enddate:['',Validators.required],
       language:['',[Validators.required]],
       professionalCourse:['',[Validators.required]],
       descripition:['',[Validators.required]]

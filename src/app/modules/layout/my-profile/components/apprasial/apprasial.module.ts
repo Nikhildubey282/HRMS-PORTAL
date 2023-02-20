@@ -6,6 +6,7 @@ import { ApprasialComponent } from './apprasial.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { CommontableModule_1 as CommontableModule } from "../../../../commontable/commontable.module";
 
 
@@ -21,6 +22,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
         MatFormFieldModule,
         MatSelectModule,
         CommontableModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class ApprasialModule { }

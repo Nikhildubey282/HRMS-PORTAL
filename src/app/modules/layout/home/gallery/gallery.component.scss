@@ -42,7 +42,7 @@ section {
       display: flex;
       justify-content: space-between;
       .event-text {
-        width: 250px;
+        width: 245px;
         color: white;
         font-size: 18px;
         font-weight: 550;
@@ -92,10 +92,11 @@ section {
 
 // }
 
-@media (max-width:1199px){
+@media (max-width:1200px) and (min-width:1000px){
   .event{
+    flex-direction: column;
     .event-text {
-      width: 380px !important;
+      width: 150px !important;
     }
   }
 }
@@ -128,4 +129,10 @@ section {
     }
   }
 }
+
+
+
+
+
+
 

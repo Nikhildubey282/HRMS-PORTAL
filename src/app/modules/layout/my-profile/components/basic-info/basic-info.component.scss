@@ -13,81 +13,201 @@ section {
         border-bottom: 1px solid gainsboro;
       }
     }
-    .content{
-      .row{
+
+    .content {
+      .row {
         display: flex;
         flex-wrap: wrap;
-        .input{
+        // display: grid;
+        // grid-template-columns: auto auto auto;
+
+        .input {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+
+
+      ::ng-deep{
+
+
+        .mat-icon-button{
+          position: absolute;
+          top: -5px;
+          right: -8px;
+          background-color: transparent;
+        }
+      }
+
+
+        }
+      }
+
+      .row1 {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 10px;
+
+        // align-items: center;
+        .input {
           display: flex;
           flex-direction: column;
           margin-left: 20px;
         }
+        ::ng-deep {
+
+            .mat-form-field-flex {
+              // margin-left: 20px;
+              // height: 47px;
+
+              width: 270px;
+              box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+            }
+          }
       }
-      .row1{
+
+      // ::ng-deep {
+
+      //   .mat-form-field-flex {
+      //     // margin-left: 20px;
+      //     // height: 47px;
+
+      //     width: 270px;
+      //     box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+      //   }
+      // }
+    }
+
+    .inputs4 {
+      .input {
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        .row{
-          margin-top: 10px;
-
-        }
-        ::ng-deep{
-
-          .mat-form-field-flex{
-            // margin-left: 20px;
-            // height: 47px;
-
-            width: 270px;
-            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-          }
-        }
-      }
-      .inputs4{
-        .input{
-          display: flex;
-          flex-direction: column;
-          margin-left: 20px;
-          margin-right: 20px;
-          padding-bottom: 20px;
-        }
-        ::ng-deep{
-
-          .mat-form-field-flex{
-            // margin-left: 20px;
-            // height: 47px;
-
-            width: 100%;
-            box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-          }
-        }
-      }
-      .group{
-        padding: 0px 20px 20px 20px ;
-        button{
-          background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
-          background-blend-mode: soft-light, normal;
-          border: 1px solid rgba(150, 165, 184, 0.2);
-          box-sizing: border-box;
-          box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
-          border-radius: 4px;
-          color: #FFFFFF;
-          padding: 10px;
-        }
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-bottom: 20px;
       }
 
+      ::ng-deep {
 
+        .mat-form-field-flex {
+          // margin-left: 20px;
+          // height: 47px;
 
-    }
-    ::ng-deep{
-
-      .mat-form-field-flex{
-        // margin-left: 20px;
-        // height: 47px;
-
-        width: 370px;
-        box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+          width: 100%;
+          box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+        }
       }
     }
+
+    .group {
+      padding: 0px 20px 20px 20px;
+
+      button {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+        background-blend-mode: soft-light, normal;
+        border: 1px solid rgba(150, 165, 184, 0.2);
+        box-sizing: border-box;
+        box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+        border-radius: 4px;
+        color: #FFFFFF;
+        padding: 10px;
+      }
+    }
+
+
+
   }
 
+  ::ng-deep {
+
+    .mat-form-field-flex {
+      // margin-left: 20px;
+      // height: 47px;
+
+      width: 370px;
+      box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+    }
+  }
 }
+
+@media only screen and (max-width: 500px)
+  {
+    section{
+      .main{
+        .content{
+          .row{
+            .input{
+              ::ng-deep {
+
+                .mat-form-field-flex {
+                  // margin-left: 20px;
+                  // height: 47px;
+
+                  width: 250px;
+                }
+              }
+
+            }
+          }
+          .row1{
+            .input{
+              ::ng-deep {
+
+                .mat-form-field-flex {
+                  // margin-left: 20px;
+                  // height: 47px;
+
+                  width: 230px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+
+}
+
+@media only screen and (max-width: 340px)
+  {
+    section{
+      .main{
+        .content{
+          .row{
+            .input{
+              ::ng-deep {
+
+                .mat-form-field-flex {
+                  // margin-left: 20px;
+                  // height: 47px;
+
+                  width: 180px;
+                }
+              }
+
+            }
+          }
+          .row1{
+            .input{
+              ::ng-deep {
+
+                .mat-form-field-flex {
+                  // margin-left: 20px;
+                  // height: 47px;
+
+                  width: 160px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+
+}
+

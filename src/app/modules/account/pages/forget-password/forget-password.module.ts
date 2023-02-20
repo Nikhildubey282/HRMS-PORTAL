@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-r
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
-    AbsoluteRoutingModule
+    AbsoluteRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ForgetPasswordModule { }

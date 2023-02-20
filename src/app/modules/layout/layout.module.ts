@@ -15,6 +15,7 @@ import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-r
 import { CommontableModule } from '../commontable/commontable.module';
 
 
+
 @NgModule({
   declarations: [
     LayoutComponent,

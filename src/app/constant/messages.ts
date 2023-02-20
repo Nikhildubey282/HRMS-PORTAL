@@ -10,7 +10,7 @@ export const ACCOUNT_ERROR_MESSAGES = {
   // INVALID_PASSWORD:
   //   'Password must contain at least 1 uppercase, 1 lowercase, 1 number, 1 special character, minimum 8 and maximum 16 characters',
   INVALID_PASSWORD:
-     'Password must contain 1 uppercase,1 lowercase,1 number,1 special character,minimum 8 and maximum 16 characters',
+     'Password must,minimum 8 and maximum 16 characters',
   NO_SPACE_PASSWORD: "Password can't start or end with a blank space",
   EMAIL_REQ: 'Please enter email address',
   INVALID__EMAIL: 'Please enter a valid email address',
@@ -39,6 +39,14 @@ export const QUALIFICATION_MESSAGE={
 }
 
 export const BASIC_INFO_MESSAGE={
-  FIRSTNAME_REQUIRED:'Please Enter a first name'
+  FIRSTNAME_REQUIRED:'Please Enter a first name',
+  YEARS_REQUIRED:'Please Enter a years',
+  MONTHS_REQUIRED:'Please Enter a months'
+
+}
+
+export const APPRASIAL_MESSGAES={
+  APPRASIALCYCLE_REQUIRED:'Please Enter a Apprasial Cycle',
+  APPRASIALMONTH_REQUIRED:'Please Enter a Apprasial Month'
 
 }

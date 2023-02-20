@@ -1,0 +1,101 @@
+<section>
+  <div class="header">
+    <h3 class="heading">Refer a Candidate</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+     <mat-icon>close</mat-icon>
+    </div>
+  </div>
+  <div class="form">
+    <div class="hash-heading">
+      <h3 class="mydetails">JOB DETAIL</h3>
+    </div>
+    <form [formGroup]="referCandidateForm">
+      <div class="inputs">
+        <div class="formfield 1">
+          <label class="label">Department Name</label>
+          <mat-form-field appearance="outline" >
+            <input formControlName="department_name"  matInput >
+          </mat-form-field>
+        </div>
+
+        <div class="formfield 2">
+          <label class="label">Job Code</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="job_code" readonly matInput >
+          </mat-form-field>
+        </div>
+        <div class="formfield 3">
+          <label class="label">Location</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="location" readonly matInput >
+          </mat-form-field>
+        </div>
+        <div class="formfield 4">
+          <label class="label">Exprience</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="experience" readonly matInput >
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="hash-heading">
+        <h3 class="mydetails">Candidate</h3>
+      </div>
+      <div class="inputs">
+        <div class="formfield 11">
+          <label class="label"> Job Location </label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 5">
+          <label class="label">Candidate Name</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 6">
+          <label class="label">Position Title</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 7">
+          <label class="label">Experience</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 8">
+          <label class="label">Email ID </label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 9">
+          <label class="label">Phone Number</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 10">
+          <label class="label">Upload CV</label>
+          <mat-form-field appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="formfield 12">
+          <label class="label">Skill Set</label>
+          <mat-form-field appearance="outline">
+            <textarea  #textarea matInput></textarea>
+          </mat-form-field>
+          <p class="maxlength">
+          0/200</p>
+        </div>
+      </div>
+        <div class="buttonGroup">
+          <button (click)="crossClick()" class="cancelButton">Cancel</button>
+          <button class="classyButton">Submit</button>
+        </div>
+    </form>
+  </div>
+</section>

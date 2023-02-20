@@ -25,6 +25,9 @@ const routes: Routes = [
     },
     {
       path:QUALIFICATION,loadChildren:() => import('./components/qualification/qualification.module').then((m)=> m.QualificationModule)
+    },
+    {
+      path:'shift',loadChildren:() => import('./components/shift/shift.module').then((m)=> m.ShiftModule)
     }
 
 

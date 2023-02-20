@@ -1,0 +1,45 @@
+// @import "src/app/scss/_var.scss";
+section {
+  padding: 1rem;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  .cancel-icon {
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    .fa-xmark {
+      font-size: 25px;
+      margin-right: -18px;
+      margin-top: -25px;
+      background-color: grey;
+      padding: 10px;
+      border-radius: 50%;
+      color: red;
+    }
+  }
+  .image {
+    display: flex;
+    width: 600px;
+    height: 550px;
+  }
+  ::ng-deep{
+    .mat-dialog-container{
+      padding: 0px !important;
+      border-radius: 20px;
+    }
+    .cdk-overlay-dark-backdrop{
+      background: rgba(0, 0, 0, 0.80);
+    }
+  }
+}
+
+@media (max-width:798px){
+  section{
+    width:auto;
+    .image{
+      width: fit-content;
+    }
+  }
+}
