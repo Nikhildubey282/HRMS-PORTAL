@@ -16,6 +16,7 @@ export const CHANGE_PASSWORD = 'change-password';
 export const PROFILE_PICTURE ='profilepicture';
 export const QUALIFICATION ='qualification';
 export const DIRECTORY='directory';
+export const ENTERPRENEUR='enterpreneurship'
 
 
 

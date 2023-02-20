@@ -1,5 +1,5 @@
 <section>
-  <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]="navlist.routerLink"  routerLinkActive="active" >
+  <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]="navlist.routerLink"  [routerLinkActive]="navlist.routerLink?'active':''" >
 
     <div class="name">
       <mat-icon>{{ navlist.logo }}</mat-icon>
@@ -14,7 +14,7 @@
   <ng-container *ngIf="navlist.options">
     <div class="submenu" [ngClass]="{ expanded: showSubmenu }" *ngIf="showSubmenu && isShowing">
       <span *ngFor="let item of navlist.options">
-        <mat-list-item [disabled]="item.isActiv">
+        <mat-list-item [routerLink]="item.routerLink" [routerLinkActive]="item.routerLink?'active':''" >
           <mat-icon>{{ item.subLogo }}</mat-icon>
           <span>{{ item.subTitle }}</span>
         </mat-list-item>

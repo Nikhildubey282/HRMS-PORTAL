@@ -10,7 +10,7 @@ section {
       }
 
       .full-width{
-        padding-left: 5px;
+        padding: 40px 0px 40px 5px;
         width: 180px;
         // padding-top: 20px;
       }
@@ -48,7 +48,8 @@ section {
     transition: transform 900ms ease;
     transform: scaleY(0);
     transform-origin: top;
-    padding-left: 20px;
+    // padding-left: 20px;
+    padding: 20px 10px;
   }
   .submenu.expanded {
     transform: scaleY(1);
@@ -67,17 +68,4 @@ section {
 //   }
 // }
 
-:host::ng-deep {
-  .mat-drawer .mat-sidenav {
-      position: fixed !important;
-      top: 0;
-      bottom: 0;
-      z-index: 3;
-      outline: 0;
-      box-sizing: border-box;
-      overflow-y: auto;
-      transform: translate3d(-100%, 0, 0);
-      opacity: 0.25;
-  }
 
-}

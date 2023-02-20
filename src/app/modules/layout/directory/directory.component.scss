@@ -74,6 +74,19 @@
     background-color: #f7f5ec;
     margin: 20px;
     padding: 30px 20px;
+    position: relative ;
+    overflow:hidden;
+    .card-hover{
+      width: 80%;
+      height: 0px;
+      margin-left: 32px;
+      border-radius: 90%;
+      // background-color: blue;
+      top: -30%;
+      opacity: 0.9;
+      position: absolute;
+    }
+
     .image{
       text-align: center;
       h3{
@@ -94,9 +107,55 @@
         align-items: center;
       }
     }
+    .social{
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      // background-color: blue;
+      position: absolute;
+      bottom: -100px;
+      left: 0;
+    }
+
 
   }
 }
+}
+
+.main{
+  .card_data{
+    .card:hover{
+      .card-hover {
+        height: 200px;
+        transition: all 1s ease 0.2s;
+        background-color: blue;
+
+
+       }
+       .image{
+        // box-shadow: #199CFF;
+
+        img{
+          // background-color:black;
+
+        border-radius: 50%;
+          box-shadow: 0 0 0 14px #f7f5ec;
+          transform: scale(0.7);
+          transition: all 1s ease 0.2s;
+
+        }
+       }
+       .social {
+        bottom: 0px;
+        transition: all 1s ease 0.2s;
+      background-color:blue;
+
+
+      }
+
+    }
+  }
+
 }
 
 @media only screen and (max-width: 1100px) {

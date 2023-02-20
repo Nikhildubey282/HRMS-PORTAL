@@ -1,0 +1,52 @@
+section{
+  display: flex;
+  .main{
+    padding: 100px 0px 0px 100px;
+    min-width: 418px;
+    max-width: 552px;
+
+    .heading{
+      h3{
+        font-size: 25px;
+        font-weight: 500;
+      }
+      p{
+        font-size:18px
+      }
+
+    }
+    .content{
+      h3{
+      font-size: 1.5rem;
+      font-size: 20px;
+      }
+      p{
+        font-size:18px
+      }
+      ul{
+        li{
+          font-size: 15px;
+          padding: 10px 0px;
+        }
+      }
+    }
+  }
+  .media{
+    .big_image{
+      position: relative;
+      .small_image{
+        position: absolute;
+        img{
+          width: 550px;
+          transform: perspective(1000px) rotateY(10deg) rotateX(2deg) rotateZ(-7deg) scaleY(0.95) translatex(2%);
+
+        }
+        top: 133px;
+        left: 40px;
+      }
+
+    }
+
+
+  }
+}
