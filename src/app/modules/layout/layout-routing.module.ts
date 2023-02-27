@@ -21,7 +21,16 @@ const routes: Routes = [
     },
     {
       path:ENTERPRENEUR,loadChildren:() => import('./enterpreneur/enterpreneur.module').then((m)=>m.EnterpreneurModule)
-    }
+    },
+    {
+      path:'add_pitch',loadChildren:() => import('./enterpreneur/share-ideas/shareideas/shareideas.module').then((m)=>m.ShareideasModule)
+    },
+    {
+      path:'',loadChildren:()=> import('./mylinks/mylinks.module').then((m) =>m.MylinksModule )
+    },
+    {
+      path:'reviews',loadChildren:()=> import('./reviews/reviews.module').then((m) =>m.ReviewsModule )
+    },
 
   ]
 

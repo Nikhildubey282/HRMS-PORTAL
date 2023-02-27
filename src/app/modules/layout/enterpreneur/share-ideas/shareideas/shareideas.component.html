@@ -1,0 +1,87 @@
+<section>
+
+  <div class="heading">
+    <h1>Add Pitch</h1>
+    <div class="button-group">
+      <button class="left">Cancel</button>
+      <button class="right">Submit</button>
+    </div>
+  </div>
+  <div class="main">
+    <div class="content">
+
+      <div class="hash-heading">
+        <h3 class="mydetails">MY DETAILS</h3>
+      </div>
+      <div class="input">
+        <label>Name</label>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <input type="email" matInput>
+        </mat-form-field>
+      </div>
+      <div class="input-field">
+        <div class="input">
+          <label>Employee Id</label>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <input type="email" matInput>
+          </mat-form-field>
+        </div>
+        <div class="input">
+          <label>Date of Birth</label>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <input type="email" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="hash-heading">
+        <h3 class="mydetails">PITCH DETAILS</h3>
+      </div>
+      <div class="input">
+        <label>Pitch Title</label>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <input type="email" matInput>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Industry</label>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <input type="email" matInput>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Type</label>
+        <mat-form-field appearance="outline" class="example-full-width">
+          <input type="email" matInput>
+        </mat-form-field>
+      </div>
+      <div>
+        <editor
+          [init]="{
+            height: 300,
+            plugins: [
+               'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+              'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+              'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+            ],
+            toolbar:
+             'undo redo | casechange blocks | bold italic backcolor | \
+             alignleft aligncenter alignright alignjustify | \
+             bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+          }"
+
+        ></editor>
+      </div>
+      <div class="document">
+        <input type="file">
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+</section>

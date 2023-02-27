@@ -13,6 +13,8 @@ import { BASIC_INFO_MESSAGE } from 'src/app/constant/messages';
 })
 export class BasicInfoComponent implements OnInit {
 
+  minDate:Date
+  maxDate:Date
   errorMsg=BASIC_INFO_MESSAGE;
   basicinfoForm!:FormGroup;
   genderLabel='Gender';
@@ -22,7 +24,11 @@ export class BasicInfoComponent implements OnInit {
 
   constructor(
     private _fb:FormBuilder
-  ) { }
+  ) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 60, 0, 1);
+    this.maxDate = new Date(currentYear - 20, 11, 31);
+   }
 
   ngOnInit(): void {
     this.createForm();

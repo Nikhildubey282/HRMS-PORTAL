@@ -1,0 +1,97 @@
+<section>
+  <div class="head">
+    <p>Home >Reviews >My performance</p>
+   <h1>Performance</h1>
+  </div>
+  <div class="card">
+    <div class="left">
+      <div class="profile">
+        <img src="/assets/images/profile_icon.jpg">
+        <div class="details">
+        <h3>Nikhil Dubey</h3>
+        <span class="destination">Software Engineer(Angular)</span>
+        <p class="year">0.11 years</p>
+        </div>
+      </div>
+      <div class="achievements">
+        <div class="awards">
+          <h6>AWARDS</h6>
+          <span>
+            N/A
+          </span>
+        </div>
+        <div class="honour">
+          <h6>HONOURS</h6>
+          <span>
+            N/A
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="rating">
+        <span>3.8</span>
+        <div class="month">
+          Jan 2021 - TILL NOW
+        </div>
+      </div>
+      <div class="rating-box">
+        <div class="technical">
+          <span>Technical Skills</span>
+          <b>3.4</b>
+        </div>
+        <div class="technical">
+          <span>Ownership of delivery</span>
+          <b>3.4</b>
+        </div>
+        <div class="technical">
+          <span>Teamwork</span>
+          <b>3.4</b>
+        </div>
+        <div class="technical">
+          <span>Process Adherence</span>
+          <b>3.4</b>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="second_card">
+    <header>
+      <div class="monthlyrating">
+        <a>Monthly Rating</a>
+      </div>
+    </header>
+    <div class="monthlycard">
+      <div class="heading">
+        <h2>Monthly Performance Calendar</h2>
+        <div class="select">
+        <label>Select Year:</label>
+        <mat-form-field appearance="outline">
+          <mat-select >
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      </div>
+      <div class="months_list">
+        <ng-container *ngFor="let items of data ">
+          <div  class="months">
+            <h3>{{items.month}}</h3>
+          </div>
+
+        </ng-container>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

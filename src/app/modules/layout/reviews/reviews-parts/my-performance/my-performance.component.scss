@@ -1,0 +1,277 @@
+section {
+  padding: 20px;
+
+  .head {
+    p {
+      color: rgb(117, 116, 116);
+      font-size: 15px;
+    }
+
+    h1 {
+      // font-family: "Lato";
+      padding: 10px 0px;
+      font-size: 20px;
+      color: #3246d3;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+
+  .card {
+    background-color: white;
+    padding: 25px 30px 70px 30px;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+
+    .left {
+      .profile {
+        display: flex;
+
+        img {
+          width: 77px;
+          height: 77px;
+          border-radius: 50%;
+          border: 2px solid lightgreen;
+        }
+
+        .details {
+          padding-left: 15px;
+
+          h3 {
+            color: #3a3a3a;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 0 5px 0;
+          }
+
+          .destination {
+            color: #727476;
+            font-size: 14px;
+            padding: 5px 0px;
+          }
+
+          .year {
+            background: #f7ffb3;
+            border-radius: 3px;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 500;
+            width: 69px;
+            text-align: center;
+            line-height: 1.7;
+            margin: 5px 0px;
+            padding: 5px 0px;
+          }
+        }
+      }
+
+      .achievements {
+        display: flex;
+        padding-top: 20px;
+
+        .awards {
+          background: #fff3cb;
+          width: 50%;
+          padding: 20px;
+          border-radius: 10px;
+
+          h6 {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+          }
+        }
+
+        .honour {
+          margin-left: 10px;
+          background-color: #cbe7ff;
+          width: 10%;
+          border-radius: 10px;
+          padding: 20px;
+          margin-right: 10px;
+
+          h6 {
+            font-size: 14px;
+            margin: 0 0 15px 0;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .right {
+      background: #dfffb0;
+      padding: 40px 20px;
+      border-radius: 10px;
+
+      .rating {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+
+
+        span {
+          font-size: 50px;
+        }
+
+        .month {
+          background-color: white;
+          padding: 5px;
+          text-align: center;
+          border-radius: 10px;
+          border: 1px solid rgb(194, 191, 191);
+          font-weight: 600;
+
+        }
+
+      }
+
+      .rating-box {
+        padding-top: 30px;
+        display: flex;
+
+        .technical {
+          background-color: #edffd2;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 8px;
+          width: 25%;
+          margin: 10px;
+
+          span {
+            color: #353535;
+          }
+        }
+      }
+
+
+    }
+  }
+
+  .second_card {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+
+    header {
+      .monthlyrating {
+        padding: 20px;
+        border-bottom: 2px solid rgb(244, 243, 243);
+
+        a {
+          background-color: #26B4FF;
+          color: white;
+          padding: 10px 33px;
+          font-size: 15px;
+          border-radius: 10px;
+          border: 5px solid rgb(251, 248, 248);
+        }
+      }
+    }
+
+    .monthlycard {
+      padding: 20px;
+
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          font-size: 24px;
+          color: #494949;
+          font-weight: 600;
+          // margin: 0 0 8px;
+        }
+        .select{
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .months_list {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        .months{
+        margin: 10px;
+        border: 1px solid #c3c2c2;
+        border-radius: 10px;
+        height: 145px;
+        padding: 20px;
+        margin-bottom: 20px;
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  section {
+    .card {
+      display: flex;
+      flex-direction: column;
+
+      .right {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  section {
+    .card {
+      display: flex;
+      flex-direction: column;
+
+      .left {
+        .achievements {
+          .honour {
+            width: 25%;
+          }
+        }
+      }
+
+      .right {
+        .rating-box {
+          flex-direction: column;
+          align-items: center;
+
+          .technical {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  section {
+    .second_card{
+      .monthlycard{
+        .months_list{
+          grid-template-columns: auto;
+        }
+      }
+
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  section {
+    .second_card{
+      .monthlycard{
+        .heading{
+          flex-direction: column;
+        }
+      }
+
+    }
+  }
+}

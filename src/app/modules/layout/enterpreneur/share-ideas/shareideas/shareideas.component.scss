@@ -1,0 +1,143 @@
+section {
+  padding: 45px 30px;
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+
+    h1 {
+      font-size: 26px;
+      color: #199CFF;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+
+    .button-group {
+      .left {
+        border: 1.5px solid rgba(150, 165, 184, 0.5);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 6px;
+        background-color: #E5E5E5;
+        padding: 10px;
+        font-size: 15px;
+
+      }
+
+      .right {
+        margin-left: 10px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+        background-blend-mode: soft-light, normal;
+        border: 1px solid rgba(150, 165, 184, 0.2);
+        box-sizing: border-box;
+        box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+        border-radius: 4px;
+        color: #FFFFFF;
+        padding: 10px;
+        font-size: 15px;
+
+      }
+    }
+  }
+
+  .main {
+    background-color: white;
+
+    .content {
+      padding: 20px 10px;
+
+      .hash-heading {
+        position: relative;
+        display: flex;
+        width: 100%;
+
+        .mydetails {
+          font-size: 24px;
+          color: #606167;
+          font-weight: 500;
+          line-height: 1.5;
+          padding: 4px 15px;
+          // background-color:white;
+          z-index: 1;
+          margin: 0px 10px;
+        }
+
+        &::after {
+          content: "";
+          width: 100%;
+          bottom: 20px;
+          border-top: 1.5px dashed lightgray;
+          position: absolute;
+          transform: translateY(-50%);
+        }
+      }
+
+
+      .input {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+      }
+
+      .input-field {
+        display: flex;
+
+        .input {
+          margin-left: 10px;
+        }
+
+        ::ng-deep {
+
+          .mat-form-field-flex {
+            width: 730px;
+            // box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+          }
+        }
+      }
+
+      .document {
+        border: 1px solid lightgrey;
+        padding: 20px 10px;
+        margin: 20px 0px 0px 10px;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .tox-tinymce {
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  section {
+    .main {
+      .content{
+
+        .input-field{
+          flex-direction: column;
+          ::ng-deep {
+
+            .mat-form-field-flex {
+              width: 100%;
+              // box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+            }
+          }
+        }
+
+      }
+
+    }
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  section{
+    padding: 10px;
+  }
+}
+

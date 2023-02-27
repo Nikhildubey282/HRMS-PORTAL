@@ -38,11 +38,20 @@ export class JobOpeningComponent implements OnInit,AfterViewInit {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ReferCandidateComponent);
+    const dialogRef = this.dialog.open(ReferCandidateComponent,{
+      data:
+        {
+          departmentName:'Marketing',
+          jobCode:'AP1002',
+          location:'Noida',
+          experience:'3 to 5 years'
+        }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
     });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
   }
 
 }

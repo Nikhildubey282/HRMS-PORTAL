@@ -4,7 +4,8 @@ import { EnterpreneurComponent } from './enterpreneur.component';
 
 const routes: Routes = [
   {
-    path:'',component:EnterpreneurComponent
+    path:'',component:EnterpreneurComponent,
+    
   }
 ];
 

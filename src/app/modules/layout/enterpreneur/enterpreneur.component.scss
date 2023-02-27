@@ -2,7 +2,7 @@ section{
   display: flex;
   .main{
     padding: 100px 0px 0px 100px;
-    min-width: 418px;
+    // min-width: 418px;
     max-width: 552px;
 
     .heading{
@@ -30,8 +30,22 @@ section{
         }
       }
     }
+    .btn{
+      button{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(150, 165, 184, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 10px;
+      }
+    }
+
   }
   .media{
+    padding-left: 20px;
     .big_image{
       position: relative;
       .small_image{
@@ -50,3 +64,64 @@ section{
 
   }
 }
+
+@media only screen and (max-width: 1650px) {
+  section{
+   .media{
+    .big_image{
+      img{
+        width: 600px;
+      }
+    }
+   }
+  }
+}
+@media only screen and (max-width: 1500px) {
+  section{
+   .media{
+    .big_image{
+      img{
+        width: 550px;
+      }
+      .small_image{
+        img{
+          width: 400px;
+        }
+      }
+    }
+   }
+  }
+}
+@media only screen and (max-width: 1250px) {
+  section{
+   .media{
+    display: none;
+   }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  section{
+    .main{
+      padding: 50px 0px 0px 50px;
+
+    }
+   .media{
+    display: none;
+   }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  section{
+    .main{
+      width: 100%;
+      padding: 30px 0px 0px 30px;
+
+    }
+  }
+}
+
+
+
+

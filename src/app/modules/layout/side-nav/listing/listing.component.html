@@ -14,11 +14,22 @@
   <ng-container *ngIf="navlist.options">
     <div class="submenu" [ngClass]="{ expanded: showSubmenu }" *ngIf="showSubmenu && isShowing">
       <span *ngFor="let item of navlist.options">
-        <mat-list-item [routerLink]="item.routerLink" [routerLinkActive]="item.routerLink?'active':''" >
+        <ng-container *ngIf="item.routerLink;else anchor" >
+      <mat-list-item class="subOptions" [routerLink]="item.routerLink" [routerLinkActive]="item.routerLink?'active':''" >
           <mat-icon>{{ item.subLogo }}</mat-icon>
-          <span>{{ item.subTitle }}</span>
+          <span class="subtitle">{{ item.subTitle }}</span>
         </mat-list-item>
+      </ng-container>
+        <ng-template #anchor>
+          <mat-list-item >
+            <a style="display:flex ; justify-content:center; align-items:center;  " [href]="item.link" target="_blank" class="sublist-content anchorLink">
+              <mat-icon class="sidenav-icon">{{item.subLogo}}</mat-icon>
+              <span class="subtitle">{{item.subTitle}}</span>
+            </a>
+          </mat-list-item>
+        </ng-template>
       </span>
     </div>
   </ng-container>
+
 </section>

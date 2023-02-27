@@ -124,10 +124,14 @@
 
 .main{
   .card_data{
+    .nodata{
+      text-align: end;
+      font-size:x-large;
+    }
     .card:hover{
       .card-hover {
         height: 200px;
-        transition: all 1s ease 0.2s;
+        transition: all 1s ease 0.1s;
         background-color: blue;
 
 
@@ -141,13 +145,13 @@
         border-radius: 50%;
           box-shadow: 0 0 0 14px #f7f5ec;
           transform: scale(0.7);
-          transition: all 1s ease 0.2s;
+          transition: all 1s ease 0.1s;
 
         }
        }
        .social {
         bottom: 0px;
-        transition: all 1s ease 0.2s;
+        transition: all 1s ease 0.1s;
       background-color:blue;
 
 

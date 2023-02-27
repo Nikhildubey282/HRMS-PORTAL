@@ -1,0 +1,86 @@
+section{
+  main{
+    padding: 20px;
+    .heading{
+      h1{
+        // font-family: "Lato";
+    font-size: 28px;
+    color: #199CFF;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 0;
+      }
+    }
+    .table{
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      ::ng-deep{
+
+        table{
+          border: none;
+
+          th{
+            border-right: none;
+            color: gray;
+            // padding-left: 28px;
+            text-align: unset;
+            padding-left: 24px;
+            border-bottom: 1px solid rgb(248, 246, 246);
+          }
+          td{
+            background-color: white;
+            border: none;
+            border-bottom: 1px solid rgb(248, 246, 246);
+            padding: 24px;
+            .download_link{
+              // background-color: rgb(244, 242, 242);
+              // display: flex;
+              // align-items: center;
+              // justify-content: center;
+              // width: 70%;
+              // padding: 5px 15px;
+
+            a{
+              background-color: rgb(244, 242, 242);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 70%;
+              padding: 5px 15px;
+              color: #199CFF;
+              text-decoration: none;
+              border-radius: 2px;
+              font-size: 17px;
+
+            }
+            a:hover{
+              box-shadow: 0 0 2px rgb(71, 71, 71);
+            }
+            mat-icon{
+              color: #199CFF;
+
+            }
+
+          }
+          .textIcon{
+            display: flex;
+            align-items: center;
+
+
+          }
+          }
+          tr{
+            text-align: start;
+            // padding-left: 100px;
+          }
+
+
+        }
+
+      }
+    }
+
+  }
+}

@@ -16,7 +16,13 @@ export const CHANGE_PASSWORD = 'change-password';
 export const PROFILE_PICTURE ='profilepicture';
 export const QUALIFICATION ='qualification';
 export const DIRECTORY='directory';
-export const ENTERPRENEUR='enterpreneurship'
+export const ENTERPRENEUR='enterpreneurship';
+export const SHAREIDEAS='add_pitch';
+export const HOLIDAYCALENDAR='holiday-calendar';
+export const POLICYDOCUMENT='policy-document';
+export const INSURANCEVERIFICATION='insurance-verification';
+export const REVIEWS='reviews';
+export const MYPERFORMANCE='my-performance';
 
 
 

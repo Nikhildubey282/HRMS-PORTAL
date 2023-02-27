@@ -5,8 +5,9 @@
   <div class="inputs-field">
 <div class="input">
 <label>Browse</label>
-  <input type="file">
-  <img src="../../../../../../assets/images/profile_icon.jpg">
+  <input #logo (change)="preview(logo.files)" type="file">
+  <img *ngIf="!imageShow" src="../../../../../../assets/images/profile_icon.jpg">
+  <img *ngIf="imageShow" [src]="imgURL">
   </div>
   <div class="group">
     <button>SAVE</button>

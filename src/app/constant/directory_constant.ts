@@ -2,8 +2,8 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   {
     IMAGE: '/assets/images/profile_icon.jpg',
     EMP_NAME: 'Aahan Verma',
-    EMP_DESIGNATION: 'Sr. Software Engineer-Android',
-    // EMP_TECHNOLOGY: 'Android',
+    EMP_DESIGNATION: 'Sr. Software Engineer',
+    EMP_TECHNOLOGY: 'Android',
     EMAIL_ICON: 'fas fa-at',
     EMAIL: 'aahan.verma@appinventiv.com',
     BIRTH_ICON: 'fas fa-birthday-cake',
@@ -13,8 +13,8 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   {
     IMAGE: '/assets/images/profile_icon.jpg',
     EMP_NAME: 'Deepak Yadav',
-    EMP_DESIGNATION: 'Software Engineer-Angular ',
-    // EMP_TECHNOLOGY: 'Angular',
+    EMP_DESIGNATION: 'Software Engineer ',
+    EMP_TECHNOLOGY: 'Angular',
     EMAIL_ICON: 'fas fa-at',
     EMAIL: 'deepak.yadav@appinventiv.com',
     BIRTH_ICON: 'fas fa-birthday-cake',
@@ -24,8 +24,8 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   {
     IMAGE: '/assets/images/profile_icon.jpg',
     EMP_NAME: 'Nikhil Dubey',
-    EMP_DESIGNATION: 'Software Engineer -Angular',
-    // EMP_TECHNOLOGY: 'Angular',
+    EMP_DESIGNATION: 'Software Engineer',
+    EMP_TECHNOLOGY: 'Angular',
     EMAIL_ICON: 'fas fa-at',
     EMAIL: 'nikhil.dubey@appinventiv.com',
     BIRTH_ICON: 'fas fa-birthday-cake',
@@ -35,8 +35,8 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   {
     IMAGE: '/assets/images/profile_icon.jpg',
     EMP_NAME: 'Harshit Kumar Jain',
-    EMP_DESIGNATION: 'Software Engineer-Angular',
-    // EMP_TECHNOLOGY: 'Angular',
+    EMP_DESIGNATION: 'Software Engineer',
+    EMP_TECHNOLOGY: 'Angular',
     EMAIL_ICON: 'fas fa-at',
     EMAIL: 'harshit.jain@appinventiv.com',
     BIRTH_ICON: 'fas fa-birthday-cake',
@@ -46,14 +46,65 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   {
     IMAGE: '/assets/images/profile_icon.jpg',
     EMP_NAME: 'Ayush Singh',
-    EMP_DESIGNATION: 'Software Engineer-Angular',
-    // EMP_TECHNOLOGY: 'Angular',
+    EMP_DESIGNATION: 'Software Engineer',
+    EMP_TECHNOLOGY: 'Angular',
     EMAIL_ICON: 'fas fa-at',
     EMAIL: 'ayush.singh@appinventiv.com',
     BIRTH_ICON: 'fas fa-birthday-cake',
     BIRTH_DATE: '07th Apr ',
     // BIRTH_MONTH: 'Apr',
   },
+  {
+    IMAGE: '/assets/images/profile_icon.jpg',
+    EMP_NAME: 'Ayush Singh',
+    EMP_DESIGNATION: 'Software Engineer',
+    EMP_TECHNOLOGY: 'Angular',
+    EMAIL_ICON: 'fas fa-at',
+    EMAIL: 'ayush.singh@appinventiv.com',
+    BIRTH_ICON: 'fas fa-birthday-cake',
+    BIRTH_DATE: '07th Apr ',
+    // BIRTH_MONTH: 'Apr',
+  },
+  {
+    IMAGE: '/assets/images/profile_icon.jpg',
+    EMP_NAME: 'Ayush Singh',
+    EMP_DESIGNATION: 'Software Engineer',
+    EMP_TECHNOLOGY: 'Angular',
+    EMAIL_ICON: 'fas fa-at',
+    EMAIL: 'ayush.singh@appinventiv.com',
+    BIRTH_ICON: 'fas fa-birthday-cake',
+    BIRTH_DATE: '07th Apr ',
+    // BIRTH_MONTH: 'Apr',
+  },
+  {
+    IMAGE: '/assets/images/profile_icon.jpg',
+    EMP_NAME: 'Aakash Bisht',
+    EMP_DESIGNATION: 'Executive',
+    EMP_TECHNOLOGY: 'Finance',
+    EMAIL_ICON: 'fas fa-at',
+    EMAIL: 'ayush.singh@appinventiv.com',
+    BIRTH_ICON: 'fas fa-birthday-cake',
+    BIRTH_DATE: '07th Apr ',
+    // BIRTH_MONTH: 'Apr',
+  },
+]
+
+export const monthdata=[
+  {month:'January'},
+  {month:'February'},
+  {month:'March'},
+  {month:'April'},
+  {month:'May'},
+  {
+    month:'June'
+  },
+  {month:'July'},
+  {month:'August'},
+  {month:'September'},
+  {month:'October'},
+  {month:'November'},
+  {month:'December'}
+
 ]
 
 export interface IDIRECTORY_DATA {

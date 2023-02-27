@@ -35,6 +35,8 @@ export class CommontableComponent implements OnInit,AfterViewInit {
       this.matHeaderRow.push(item.heading)
     });
     this.columns.map((tableColumn: TableColumn) => tableColumn.heading);
+    console.log(this.dataSource);
+
   }
 
   ngAfterViewInit(): void {

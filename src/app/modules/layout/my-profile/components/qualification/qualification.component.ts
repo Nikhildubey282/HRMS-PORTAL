@@ -20,17 +20,10 @@ export class QualificationComponent implements OnInit {
   errorMsg=QUALIFICATION_MESSAGE;
   labelLanguage='language'
   languageDropdown =['English','Hindi']
+  minDate:Date
+  maxDate:Date
 
   qualificationForm!:FormGroup;
-
-  campaignOne = new FormGroup({
-    start: new FormControl(new Date(year, month, 13)),
-    end: new FormControl(new Date(year, month, 16)),
-  });
-  campaignTwo = new FormGroup({
-    start: new FormControl(new Date(year, month, 15)),
-    end: new FormControl(new Date(year, month, 19)),
-  });
 
   dataSource = new MatTableDataSource<any>();
 
@@ -49,7 +42,11 @@ export class QualificationComponent implements OnInit {
     private formservice:FormService
 
 
-  ) { }
+  ) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date(currentYear - 60, 0, 1);
+    this.maxDate = new Date(currentYear - 20, 11, 31);
+   }
 
 
 

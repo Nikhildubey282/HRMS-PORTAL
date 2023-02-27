@@ -30,16 +30,10 @@
           </div>
           <div class="input">
             <label>Date Of Birth</label>
-            <!-- <mat-form-field class="example-full-width" appearance="outline">
-              <input type="date" type="text" matInput />
-            </mat-form-field> -->
             <mat-form-field appearance="outline">
-              <mat-date-range-input [rangePicker]="picker">
-                <input formControlName="dateofBirth"  matStartDate>
-                <input matEndDate>
-              </mat-date-range-input>
+              <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-date-range-picker #picker></mat-date-range-picker>
+              <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">
                 Please Enter a date</mat-error>
             </mat-form-field>
@@ -52,6 +46,7 @@
                 [label]="genderLabel"
                 [myControlName]="basicinfoForm.controls.gender"
                 [Data]="genderData"
+                [errorType]="basicinfoForm.controls.martialStatus"
               ></app-dropdown>
             </span>
           </div>
@@ -61,6 +56,7 @@
                 [label]="martialLabel"
                 [myControlName]="basicinfoForm.controls.martialStatus"
                 [Data]="matrialData"
+                [errorType]="basicinfoForm.controls.martialStatus"
               ></app-dropdown>
             </span>
           </div>
@@ -77,7 +73,7 @@
           </div>
         </div>
         <div style="position: relative" class="row1">
-          <div style="position: absolute; top:-10px; left:14px">
+          <div style="position: absolute; top:-8px; left:14px">
             <label>Total working Experience</label>
           </div>
           <div class="row1">

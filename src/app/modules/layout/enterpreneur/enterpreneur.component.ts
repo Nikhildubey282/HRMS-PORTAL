@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { SHAREIDEAS } from 'src/app/constant/routes';
+
 
 @Component({
   selector: 'app-enterpreneur',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterpreneurComponent implements OnInit {
 
-  constructor() { }
+  shareideas=SHAREIDEAS;
+
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
+  }
+  routeToShareIdea(){
+this.route.navigate(['layout/add_pitch'])
   }
 
 }

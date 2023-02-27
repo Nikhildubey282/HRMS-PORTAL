@@ -7,7 +7,7 @@
     <div class="input">
       <label>Name</label>
       <mat-form-field class="example-full-width" appearance="outline">
-        <input type="text" matInput placeholder="Ex. pat@example.com" (keyup)="_filter($event)" formControlName="name">
+        <input type="text" matInput placeholder="Ex. pat@example.com" (keyup)="keyup($event)" formControlName="name">
       </mat-form-field>
     </div>
 
@@ -23,7 +23,7 @@
     </div>
     <div class="btn_grp">
       <button class="reset">Reset</button>
-      <button class="save">
+      <button class="save" (click)="clickSearch()">
         <p>
           <mat-icon>search</mat-icon>Search
         </p>
@@ -33,13 +33,14 @@
   </div>
   </form>
   <div class="card_data">
+    <div class="nodata" *ngIf="this.DATA.length===0"  >NO DATA IS FOUND</div>
     <div *ngFor="let items of DATA" class="card">
       <div class="card-hover">&nbsp;</div>
       <div class="image">
         <img src={{items.IMAGE}}>
         <div>
           <h3>{{items.EMP_NAME}}</h3>
-          <h4>{{items.EMP_DESIGNATION}}</h4>
+          <h4>{{items.EMP_DESIGNATION}}-{{items.EMP_TECHNOLOGY}}</h4>
         </div>
       </div>
       <div class="birthdate">

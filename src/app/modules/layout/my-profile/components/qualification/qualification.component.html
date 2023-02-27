@@ -33,29 +33,21 @@
 
       <div class="input">
         <label>Time Period</label>
-        <mat-form-field class="example-form-field" appearance="outline">
-          <mat-date-range-input [rangePicker]="campaignOnePicker"  [comparisonStart]="campaignTwo.value.start"
-            [comparisonEnd]="campaignTwo.value.end">
-            <input matStartDate>
-            <input matEndDate >
-          </mat-date-range-input>
-          <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-          <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
-          <!-- <mat-error *ngIf="formCtrl.startdate.hasError('required')" >Please Enter a Date</mat-error> -->
-
+        <mat-form-field appearance="outline">
+          <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="startdate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="formCtrl.startdate.hasError('required')">
+            Please Enter a date</mat-error>
         </mat-form-field>
       </div>
       <div class="to_date">
-        <mat-form-field  class="example-form-field" appearance="outline">
-          <mat-date-range-input [rangePicker]="campaignTwoPicker"  [comparisonStart]="campaignOne.value.start"
-            [comparisonEnd]="campaignOne.value.end">
-            <input matStartDate >
-            <input matEndDate >
-          </mat-date-range-input>
-          <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
-          <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
-          
-
+        <mat-form-field appearance="outline">
+          <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker1" formControlName="enddate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+          <mat-error *ngIf="formCtrl.enddate.hasError('required')">
+            Please Enter a date</mat-error>
         </mat-form-field>
       </div>
 
@@ -64,7 +56,14 @@
       <div class="input">
 
         <span>
-          <app-dropdown [label]="labelLanguage"   [myControlName]="qualificationForm.controls.language" [Data]="languageDropdown"></app-dropdown>
+          <app-dropdown
+          [label]="labelLanguage"
+          [myControlName]="qualificationForm.controls.language"
+          [Data]="languageDropdown"
+          [errorType]="qualificationForm.controls.language"
+
+            >
+          </app-dropdown>
         </span>
       </div>
       <div class="input">

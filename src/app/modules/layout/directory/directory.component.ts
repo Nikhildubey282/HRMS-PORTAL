@@ -14,6 +14,7 @@ export class DirectoryComponent implements OnInit {
 
   directoryForm!:FormGroup;
   filteredOptions!: Observable<string[]>;
+  data:any;
 
 
   constructor(
@@ -22,34 +23,35 @@ export class DirectoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
-    this.filteredOptions = this.directoryForm.controls.name.valueChanges.pipe(
-      startWith(''),
-      map((value) => {
-        let res = this._filter(value || '');
-        if (!res.length) {
-          res = ['no results Found'];
-        }
-        console.log(res);
-        return res;
-      })
-    );
   }
 
 
   createForm(){
     this.directoryForm=this._fb.group({
-      name:['',[Validators.required]],
+      name:['',[]],
     })
   }
 
-   _filter(value: any): string[] {
-    // alert(`event value..... ${this.DATA?.filter((option:any) => option?.toLowerCase()?.includes(filterValue))}`);
-    const filterValue = value.target?.value?.toLowerCase();
-    console.log( this.DATA?.filter((option:any) => option.EMP_NAME.toLowerCase()?.includes(filterValue)));
+   _filter(value: any){
+    const filterValue = value.trim();
+    // console.log( this.DATA?.filter((option:any) => option.EMP_NAME.toLowerCase()?.includes(filterValue)),'jadsbjbzakskas');
+    this.DATA=this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
+    console.log(this.DATA,'sfjsjkjksjkssjjk')
 
+    return this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
 
+  }
 
-    return this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.startsWith(filterValue));
+  clickSearch(){
+    console.log("this is data>>>>",this.data);
+    this._filter(this.data)
+
+  }
+
+  keyup(value:any){
+    console.log(value.target?.value);
+    this.data = value.target.value;
+
   }
   }
 
