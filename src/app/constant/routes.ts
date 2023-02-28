@@ -23,6 +23,8 @@ export const POLICYDOCUMENT='policy-document';
 export const INSURANCEVERIFICATION='insurance-verification';
 export const REVIEWS='reviews';
 export const MYPERFORMANCE='my-performance';
+export const REFERCANDIDATE='refer-candidate';
+export const JOBOPENING='job-opening';
 
 
 

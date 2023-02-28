@@ -1,7 +1,4 @@
-// @import "src/app/scss/_hash-heading.scss";
-// @import "src/app/scss/mixins.scss";
-// @import "src/app/scss/_var.scss";
-// @import "src/app/scss/_job-opening-button.scss";
+
 @mixin buttonSize(){
   padding:0 25px;
   height: 40px;
@@ -22,11 +19,11 @@ section{
       margin: 0;
     }
     .cancel-icon{
-      background: lightgrey;
+      // background: lightgrey;
       border-radius: 50%;
       width: 30px;
       height: 30px;
-       margin-right: 40px;
+       margin-right: 10px;
        text-align: center;
       cursor: pointer;
       .fa-xmark{
@@ -130,3 +127,25 @@ section{
     background: rgba(0, 0, 0, 0.80);
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  section{
+    .form{
+      .inputs{
+        display: grid;
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+    ::ng-deep{
+      .mat-dialog-container{
+        height: unset;
+      }
+    }
+}
+
+
+

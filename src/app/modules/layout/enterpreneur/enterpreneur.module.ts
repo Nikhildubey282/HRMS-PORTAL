@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { EnterpreneurRoutingModule } from './enterpreneur-routing.module';
 import { EnterpreneurComponent } from './enterpreneur.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { EnterpreneurComponent } from './enterpreneur.component';
   ],
   imports: [
     CommonModule,
-    EnterpreneurRoutingModule
+    EnterpreneurRoutingModule,
+    MatIconModule
   ]
 })
 export class EnterpreneurModule { }

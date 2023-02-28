@@ -1,4 +1,4 @@
-import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE,ABS_ENTERPRENEUR,ABS_HOLIDAYCALENDAR,ABS_POLICYDOCUMENT,ABS_INSURANCEVERIFICATIONS,ABS_MYPERFORMANCE } from "./absolute-route"
+import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE,ABS_ENTERPRENEUR,ABS_HOLIDAYCALENDAR,ABS_POLICYDOCUMENT,ABS_INSURANCEVERIFICATIONS,ABS_MYPERFORMANCE,ABS_REFERCANDIDATE } from "./absolute-route"
 
 export const sideNavList = [
   { title: 'Home', logo: 'home', isActiv: true, routerLink:ABS_HOME  },
@@ -9,7 +9,7 @@ export const sideNavList = [
   { title: 'Finance', logo: 'payments',
   options: [{ subTitle: 'Salary slip', subLogo: 'horizontal_rule',type:'external',link:'https://hrms.easysourceindia.com/Payroll/' },{subTitle: 'Form 16', subLogo: 'horizontal_rule',type:'external',link:'https://hrms.easysourceindia.com/Payroll/'},{subTitle: 'Investment Declaration', subLogo: 'horizontal_rule',link:'https://hrms.easysourceindia.com/Payroll/'},], isActiv: true, },
   { title: 'Reviews', logo: 'grid_view', options: [{ subTitle: 'My performance', subLogo: 'event_available',routerLink:ABS_MYPERFORMANCE }], isActiv: true, },
-  { title: 'Refer a Friend', logo: 'groups',routerLink:'hweiuewiuieu', options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule' }], isActiv: true, },
+  { title: 'Refer a Friend', logo: 'groups', options: [{ subTitle: 'Job Opening',subLogo: 'work',routerLink:ABS_REFERCANDIDATE }], isActiv: true, },
   { title: 'Freshers Training', logo: 'school', routerLink:'hweiuewiuieu',options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule' }], isActiv: true, },
   { title: 'Training', logo: 'school',routerLink:'hweiuewiuieu', options: [], isActiv: true, },
   { title: 'Assests Inventory', logo: 'science',routerLink:'hweiuewiuieu', options: [], isActiv: true, },

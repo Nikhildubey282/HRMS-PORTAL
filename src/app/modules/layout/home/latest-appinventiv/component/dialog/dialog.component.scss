@@ -1,0 +1,87 @@
+// @import "src/app/scss/_var.scss";
+section{
+  max-width: 500px;
+  // position: relative;
+  // margin: 20px;
+  // padding: 1rem;
+  padding: 16px;
+  overflow: hidden;
+
+  .cancel-icon {
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    margin-bottom: 10px;
+    // position: absolute;
+
+    .fa-xmark {
+      font-size: 25px;
+      margin-right: -18px;
+      margin-top: -25px;
+      background-color:white;
+      padding: 10px;
+      border-radius: 50%;
+      color: grey;
+    }
+  }
+  .employee{
+    display: flex;
+    align-items: center;
+    background: #f3f7fc;
+    border-radius: 5px;
+    figure{
+      .emp-image{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+    .heading{
+      display: flex;
+      flex-direction: column;
+      color: black;
+      .emp-name{
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .project{
+        font-size: 15px;
+        font-weight: 300;
+        word-spacing: normal;
+      }
+    }
+  }
+  .message{
+    padding: 40px 5px 0px  5px;
+  }
+  .greet{
+    .greet-message{
+      padding: 15px 5px 10px 5px;
+    }
+  }
+  .team-name{
+    padding: 15px  5px;
+
+  }
+  .head-greet{
+    padding: 15px 5px 5px 5px;
+  }
+  footer{
+    color:grey;
+    font-size: 15px;
+    font-weight: 500;
+    .head-name{
+      padding:5px;
+    }
+  }
+}
+::ng-deep{
+  .mat-dialog-container{
+    border-radius: 20px;
+    padding: 0px;
+  }
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}

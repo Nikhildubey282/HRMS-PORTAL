@@ -13,3 +13,4 @@ export const ABS_HOLIDAYCALENDAR=`/${routes.LAYOUT}/${routes.HOLIDAYCALENDAR}`;
 export const ABS_POLICYDOCUMENT=`/${routes.LAYOUT}/${routes.POLICYDOCUMENT}`;
 export const ABS_INSURANCEVERIFICATIONS=`/${routes.LAYOUT}/${routes.INSURANCEVERIFICATION}`;
 export const ABS_MYPERFORMANCE=`/${routes.LAYOUT}/${routes.REVIEWS}/${routes.MYPERFORMANCE}`;
+export const ABS_REFERCANDIDATE=`/${routes.LAYOUT}/${routes.REFERCANDIDATE}/${routes.JOBOPENING}`
