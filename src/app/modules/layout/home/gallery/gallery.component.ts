@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, TemplateRef, ViewChildren } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { Gallery_DATA } from 'src/app/constant/directory_constant';
+import { Gallery_DATA } from 'src/app/constant/constant';
 import { GallerydialogComponent } from './dialog component/gallerydialog/gallerydialog.component';
 @Component({
   selector: 'app-gallery',

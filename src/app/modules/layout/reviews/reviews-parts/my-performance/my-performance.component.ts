@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { monthdata } from 'src/app/constant/directory_constant';
+import { monthdata } from 'src/app/constant/constant';
 
 @Component({
   selector: 'app-my-performance',
@@ -9,7 +9,7 @@ import { monthdata } from 'src/app/constant/directory_constant';
 export class MyPerformanceComponent implements OnInit {
 
   data=monthdata;
-  
+
 
 
 

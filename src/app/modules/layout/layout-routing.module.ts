@@ -34,6 +34,21 @@ const routes: Routes = [
     {
       path:'refer-candidate',loadChildren:()=> import('./refer-candidate/refer-candidate.module').then((m) =>m.ReferCandidateModule )
     },
+    {
+      path:'interview',loadChildren:()=> import('./recruitment/recruitment.module').then((m) =>m.RecruitmentModule )
+    },
+    {
+      path:'freshers',loadChildren:()=> import('./fresher/fresher.module').then((m) =>m.FresherModule )
+    },
+    {
+      path:'training',loadChildren:()=> import('./training/training.module').then((m) =>m.TrainingModule )
+    },
+    {
+      path:'assets-inventory',loadChildren:()=> import('./assets-inventory/assets-inventory.module').then((m) =>m.AssetsInventoryModule )
+    },
+    {
+      path:'attendance',loadChildren:()=> import('./attendance/attendance.module').then((m) =>m.AttendanceModule )
+    },
 
   ]
 

@@ -2,9 +2,19 @@
   <ng-container >
 
   </ng-container>
-  <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
+  <div class="head">
+    <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
     showFirstLastButtons>
   </mat-paginator>
+  <div *ngIf="searchBar">
+  <label style="margin-right:10px ;">Search</label>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <input matInput >
+  </mat-form-field>
+</div>
+  </div>
+
+<div  class="table">
   <table mat-table *ngIf="dataSource" matSortDirection="asc" [dataSource]="dataSource" matSort>
     <ng-container class="data" *ngFor="let row of columns" [matColumnDef]="row.heading">
       <ng-container *ngIf="row.sort; else noSortable">
@@ -49,7 +59,8 @@
     <tr mat-header-row *matHeaderRowDef="matHeaderRow"></tr>
     <tr mat-row *matRowDef="let row; columns: matHeaderRow;"></tr>
     <tr class="noData" class="mat-row" *matNoDataRow>
-      <td class="mat-cell" colspan="9">No data avaiable in table</td>
+      <td class="mat-cell" colspan="10">No data avaiable in table</td>
     </tr>
   </table>
+</div>
 </section>

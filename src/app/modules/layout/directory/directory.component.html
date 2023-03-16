@@ -7,7 +7,7 @@
     <div class="input">
       <label>Name</label>
       <mat-form-field class="example-full-width" appearance="outline">
-        <input type="text" matInput placeholder="Ex. pat@example.com" (keyup)="keyup($event)" formControlName="name">
+        <input type="text" matInput placeholder="Search By Name" (keyup)="keyup($event)" formControlName="name">
       </mat-form-field>
     </div>
 
@@ -22,7 +22,7 @@
       </mat-form-field>
     </div>
     <div class="btn_grp">
-      <button class="reset">Reset</button>
+      <button (click)="RESET()" class="reset">Reset</button>
       <button class="save" (click)="clickSearch()">
         <p>
           <mat-icon>search</mat-icon>Search

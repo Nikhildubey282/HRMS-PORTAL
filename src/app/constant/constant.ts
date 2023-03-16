@@ -107,6 +107,141 @@ export const monthdata=[
 
 ]
 
+export const JOBOPENING:JOBOPENING_DATA[]=[
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/quality-analyst.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/android-dev-icon.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/python.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/marketing.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/sales.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-default-department.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-default-department.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+  {
+    IMAGE:'https://dashboard.appinventiv.com/uploads/award/marketing.svg',
+    LOCATION:'Noida, Uttar Pradesh',
+    DATE:'09/03/2022',
+    POSITION:'Sr. Quality Analyst - Quality Analyst',
+    DESCRIPITION:'Hiring Sr. Quality Analyst - Automation with Selenium Or Appium tool.',
+    OPENINGS:'No. of Openings',
+    NO:'3',
+    EXPRIENCE:'Experience',
+    YEARS:'3 to 5 Years',
+    VIEW:'View Details',
+    REFER:'Refer a Candidate',
+
+  },
+
+
+]
+
+export interface JOBOPENING_DATA{
+  IMAGE?:string,
+  LOCATION?:string,
+  DATE?:String,
+  POSITION?:String,
+  DESCRIPITION?:String,
+  OPENINGS?:string,
+  NO?:string,
+  EXPRIENCE?:string,
+  YEARS?:string,
+  VIEW?:String,
+  REFER?:String
+
+
+
+
+}
+
 export interface IDIRECTORY_DATA {
   IMAGE?:string,
   EMP_NAME?:string,
@@ -169,4 +304,61 @@ export interface IGALLERYDATA{
   SUBIMAGE?:any
 
 }
+
+
+//freasher training data
+export const MYTRAINING=[
+  { id:1,
+    IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-training.svg',
+    TRAININGNAME:'Angular Training Feb- 2022',
+    STATUS:'Completed',
+    START:'Start Date',
+    END:'End date',
+    STARTDATE:'Feb-28-2022',
+    ENDDATE:'Apr-02-2022',
+    MODE:'Online',
+    VIEW:'View Details',
+    FEEDBACK:'Feedback',
+
+
+  },
+  {
+    id:2,
+    IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-training.svg',
+    TRAININGNAME:'HTML Training Feb- 2022',
+    STATUS:'Completed',
+    START:'Start Date',
+    END:'End date',
+    STARTDATE:'Feb-28-2022',
+    ENDDATE:'Apr-02-2022',
+    MODE:'Online',
+    VIEW:'View Details',
+    FEEDBACK:'Feedback',
+
+  },
+
+]
+
+//training data
+
+export const TRAINING=[
+  {
+    id:1,
+    IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-training.svg',
+    TRAININGNAME:'Micro Frontend Angular',
+    STATUS:'Enrolled',
+    START:'Start Date',
+    END:'End date',
+    STARTDATE:'Jan-05-2023',
+    ENDDATE:'Jan-05-2023',
+    MODE:'Online',
+    VIEW:'View Details',
+    FEEDBACK:'Cancel Enrolment',
+    ATTEND:'Angular',
+    DURATION:'1 Hour',
+    SEATS:'55'
+
+  }
+
+]
 

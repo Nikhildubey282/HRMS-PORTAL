@@ -1,0 +1,28 @@
+<section>
+  <div class="header">
+    <h3 class="heading">Cancel Enrollment</h3>
+    <div (click)="crossClick()" class="cancel-icon">
+     <mat-icon>close</mat-icon>
+    </div>
+  </div>
+  <div class="main">
+  <div class="text-danger">
+    <h5 >After cancelling this enrollment you can re-enroll one time only.</h5>
+  </div>
+  <div class="formfield">
+    <label>Please provide brief reason *</label>
+    <!-- <mat-form-field  appearance="outline">
+      <input matInput  >
+    </mat-form-field> -->
+    <mat-form-field appearance="outline">
+      <textarea  class="example-full-width" matInput></textarea>
+    </mat-form-field>
+     <p class="maxlength">
+    0/200</p>
+  </div>
+  <div class="buttonGroup">
+    <button  (click)="crossClick()"  class="cancelButton">Cancel</button>
+    <button class="classyButton">Submit</button>
+  </div>
+</div>
+</section>

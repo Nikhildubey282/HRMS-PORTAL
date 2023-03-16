@@ -5,7 +5,7 @@
   <div class="inputs-field">
 <div class="input">
 <label>Browse</label>
-  <input #logo (change)="preview(logo.files)" type="file">
+  <input #logo (change)="preview(logo.files)" type="file" accept="image/png, image/jpeg, image/jpg">
   <img *ngIf="!imageShow" src="../../../../../../assets/images/profile_icon.jpg">
   <img *ngIf="imageShow" [src]="imgURL">
   </div>

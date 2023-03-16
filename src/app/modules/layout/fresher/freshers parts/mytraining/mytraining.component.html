@@ -1,0 +1,41 @@
+<section>
+  <div class="head">
+    <h1>Trainings</h1>
+  </div>
+  <div class="card-main">
+  <ng-container *ngFor="let item of data">
+
+  <div class="job-detail-card">
+    <div class="image">
+      <figure>
+      <img src={{item.IMAGE}} class="showImage">
+    </figure>
+    </div>
+    <div class="area">
+      <h3>{{item.TRAININGNAME}}</h3>
+      <p>{{item.STATUS}}</p>
+    </div>
+    <div class="requirement">
+      <p>{{item.START}}</p>
+      <p>{{item.END}}</p>
+      <p>Mode</p>
+    </div>
+    <div class="requirement1">
+      <h4>22/03/2022</h4>
+      <h4>22/03/2022</h4>
+      <h4>{{item.MODE}}</h4>
+    </div>
+    <div class="buttonGroup">
+      <button (click)="viewDetails(item)" class="button-view"  mat-raised-button>
+        {{item.VIEW}}
+      </button>
+      <button class="button-refer"  mat-raised-button>
+        {{item.FEEDBACK}}
+      </button>
+    </div>
+
+
+  </div>
+</ng-container>
+</div>
+</section>

@@ -19,16 +19,17 @@ section{
       margin: 0;
     }
     .cancel-icon{
-      // background: lightgrey;
+      background: white;
       border-radius: 50%;
       width: 30px;
       height: 30px;
        margin-right: 10px;
        text-align: center;
+       padding: 5px;
       cursor: pointer;
-      .fa-xmark{
+      mat-icon{
         font-size: 25px;
-        margin-left: 7px;
+        // margin-left: 7px;
       }
     }
   }

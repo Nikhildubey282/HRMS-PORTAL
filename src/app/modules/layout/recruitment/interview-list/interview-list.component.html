@@ -1,0 +1,34 @@
+<section>
+  <div class="head">
+    <h1>List All Candidate</h1>
+  </div>
+  <div class="content">
+    <div class="inputs">
+      <div class="input1">
+        <label>Department</label>
+        <mat-form-field class=form-field appearance="outline">
+          <mat-select>
+            <mat-option>
+              food.viewValue
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="input1">
+        <label>Status</label>
+        <mat-form-field class=form-field appearance="outline">
+          <mat-select>
+            <mat-option>
+              food.viewValue
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="table">
+      <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+    </div>
+  </div>
+
+
+</section>

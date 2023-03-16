@@ -9,10 +9,9 @@
       <div class="input">
         <label> School/University</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input type="text" matInput formControlName="university" placeholder="Ex. pat@example.com">
+          <input type="text" matInput formControlName="university">
           <mat-error *ngIf="formCtrl.university.hasError('required')" >{{errorMsg.UNIVERSITY_REQUIRED}}</mat-error>
-
-
+          <mat-error *ngIf="formCtrl.university.hasError('pattern')" >Enter a valid University Name</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
@@ -69,8 +68,9 @@
       <div class="input">
         <label>Professional course </label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input type="text" matInput formControlName="professionalCourse"  placeholder="Ex. pat@example.com">
+          <input type="text" matInput formControlName="professionalCourse">
           <mat-error *ngIf="formCtrl.professionalCourse.hasError('required')" >{{errorMsg.PROFESSIONAL_REQUIRED}}</mat-error>
+          <mat-error *ngIf="formCtrl.professionalCourse.hasError('pattern')" >Enter a valid course name</mat-error>
 
         </mat-form-field>
 
@@ -82,7 +82,7 @@
         <mat-form-field class="text" appearance="outline">
           <textarea formControlName="descripition" matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
           <mat-error *ngIf="formCtrl.descripition.hasError('required')" >{{errorMsg.DESCRIPITION_REQUIRED}}</mat-error>
-
+          <mat-error *ngIf="formCtrl.descripition.hasError('pattern')" >Enter a Valid Descripition </mat-error>
         </mat-form-field>
       </div>
     </div>

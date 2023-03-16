@@ -55,6 +55,7 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule
-  ]
+  ],
+  exports:[ReferCandidateComponent]
 })
 export class HomeModule { }

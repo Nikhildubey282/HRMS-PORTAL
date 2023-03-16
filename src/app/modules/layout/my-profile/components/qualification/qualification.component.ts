@@ -58,13 +58,13 @@ export class QualificationComponent implements OnInit {
 
   createForm(){
     this.qualificationForm=this. _fb.group({
-      university:this.formservice.getControl('university'),
+      university:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
       educationLevel:['',[Validators.required]],
       startdate:['',Validators.required],
       enddate:['',Validators.required],
       language:['',[Validators.required]],
-      professionalCourse:['',[Validators.required]],
-      descripition:['',[Validators.required]]
+      professionalCourse:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
     })
   }
 

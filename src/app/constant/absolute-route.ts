@@ -13,4 +13,21 @@ export const ABS_HOLIDAYCALENDAR=`/${routes.LAYOUT}/${routes.HOLIDAYCALENDAR}`;
 export const ABS_POLICYDOCUMENT=`/${routes.LAYOUT}/${routes.POLICYDOCUMENT}`;
 export const ABS_INSURANCEVERIFICATIONS=`/${routes.LAYOUT}/${routes.INSURANCEVERIFICATION}`;
 export const ABS_MYPERFORMANCE=`/${routes.LAYOUT}/${routes.REVIEWS}/${routes.MYPERFORMANCE}`;
-export const ABS_REFERCANDIDATE=`/${routes.LAYOUT}/${routes.REFERCANDIDATE}/${routes.JOBOPENING}`
+export const ABS_REFERCANDIDATE=`/${routes.LAYOUT}/${routes.REFERCANDIDATE}/${routes.JOBOPENING}`;
+export const ABS_REFERALLIST=`/${routes.LAYOUT}/${routes.REFERCANDIDATE}/${routes.REFERALLIST}`;
+export const ABS_INTERVIEWLIST=`/${routes.LAYOUT}/${routes.INTERVIEW}/${routes.INTERVIEWLIST}`;
+export const ABS_FRESHERTRAINING=`/${routes.LAYOUT}/${routes.FRESHERS}/${routes.MYTRAINING}`;
+export const ABS_TRAINING=`/${routes.LAYOUT}/${routes.TRAINING}/${routes.UPCOMINGTRAINING}`;
+export const ABS_ONGOINGTRAINING=`/${routes.LAYOUT}/${routes.TRAINING}/${routes.ONGOINGTRAINING}`;
+export const ABS_MYTRAINING=`/${routes.LAYOUT}/${routes.TRAINING}/${routes.DEPARTMENTTRAINING}`;
+export const ABS_REQUESTEDTRAINING=`/${routes.LAYOUT}/${routes.TRAINING}/${routes.REQUESTEDTRAINING}`;
+export const ABS_ASSETSINVENTORY=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.MYASSETS}`;
+export const ABS_REQUESTASSETS=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.ASSETSREQUEST}`;
+export const ABS_ASSETSDECLARATIONS=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.ASSETSDECLARATION}`;
+
+
+
+
+
+
+

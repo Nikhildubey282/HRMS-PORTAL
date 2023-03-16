@@ -28,7 +28,12 @@ export class ReferCandidateComponent implements OnInit {
       departmentName: [{value: this.data.departmentName, disabled: true}, Validators.required],
       job_code:[{value: this.data.jobCode, disabled: true}, Validators.required],
       location:[{value: this.data.location, disabled: true}, Validators.required],
-      experience:[{value: this.data.experience, disabled: true}, Validators.required]
+      experience:[{value: this.data.experience, disabled: true}, Validators.required],
+      name:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      phoneNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
+      email:['',[Validators.required,Validators.email]],
+      experienceCandidate:['',[Validators.required]]
+
     })
 
   }
@@ -36,6 +41,9 @@ export class ReferCandidateComponent implements OnInit {
 
   crossClick() {
     this.dialogRef.close('cancel');
+  }
+  get formCtrl(){
+    return this.referCandidateForm.controls
   }
 
 }

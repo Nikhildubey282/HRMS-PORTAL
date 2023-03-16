@@ -4,7 +4,7 @@ import { JobOpeningComponent } from './job-opening.component';
 
 const routes: Routes = [
   {
-    path:'',component:JobOpeningComponent
+    path:'',component:JobOpeningComponent,
   }
 ];
 

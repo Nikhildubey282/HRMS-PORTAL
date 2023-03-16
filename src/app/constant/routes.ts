@@ -25,6 +25,21 @@ export const REVIEWS='reviews';
 export const MYPERFORMANCE='my-performance';
 export const REFERCANDIDATE='refer-candidate';
 export const JOBOPENING='job-opening';
+export const REFERALLIST='referal-list';
+export const INTERVIEW='interview';
+export const INTERVIEWLIST='interview-list';
+export const FRESHERS='freshers';
+export const MYTRAINING='mytrainings';
+export const TRAINING='training';
+export const UPCOMINGTRAINING='upcoming-training';
+export const ONGOINGTRAINING='ongoing-training';
+export const DEPARTMENTTRAINING='my-training';
+export const REQUESTEDTRAINING='requested-training';
+export const ASSETSINVENTORY='assets-inventory';
+export const MYASSETS='my-assets';
+export const ASSETSREQUEST='assets-request';
+export const ASSETSDECLARATION='assets-declarations';
+
 
 
 

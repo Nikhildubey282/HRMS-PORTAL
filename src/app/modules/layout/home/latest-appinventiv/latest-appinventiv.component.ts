@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, TemplateRef, ViewChildren } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
-import { Gallery_DATA } from 'src/app/constant/directory_constant';
+import { Gallery_DATA } from 'src/app/constant/constant';
 
 @Component({
   selector: 'app-latest-appinventiv',

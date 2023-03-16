@@ -1,3 +1,4 @@
+@import"../../../../../../../scss/var";
 .left{
   border: 1.5px solid rgba(150, 165, 184, 0.3);
   padding: 15px 25px;
@@ -7,7 +8,7 @@
     // padding: 0px 20px 20px 42px ;
     padding: 16px 16px 16px 0px;
     button{
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), $primay-blue;
       background-blend-mode: soft-light, normal;
       border: 1px solid rgba(150, 165, 184, 0.2);
       box-sizing: border-box;

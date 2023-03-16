@@ -42,10 +42,12 @@ export class BasicInfoComponent implements OnInit {
       gender:['',[Validators.required]],
       martialStatus:['',[Validators.required]],
       contactNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
-      years:['',Validators.required,Validators.pattern(/^\d{10}/)],
-      months:['',Validators.required,Validators.pattern(/^\d{10}/)],
-      years2:['',Validators.required,Validators.pattern(/^\d{10}/)],
-      months2:['',Validators.required,Validators.pattern(/^\d{10}/)]
+      years:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
+      months:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
+      years2:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
+      months2:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
+      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
+
 
 
     })

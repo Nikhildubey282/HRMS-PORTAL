@@ -16,7 +16,9 @@
         </figure>
           <div class="address">
             <div class="location">
-              <i class="fa-solid fa-location-dot" id="location-icon"></i>
+              <!-- <i class="fa-solid fa-location-dot" id="location-icon"></i> -->
+                          <mat-icon id="location-icon" > location_on</mat-icon>
+
               <p class="location-name">Noida, UttarPradesh</p>
             </div>
             <div class="date">
@@ -37,7 +39,7 @@
           <p>5 to 9 Years'</p>
         </div>
         <div class="buttonGroup">
-          <button class="button-view"  mat-raised-button>
+          <button (click)="open_viewdetail()" class="button-view"  mat-raised-button>
             View Details'
           </button>
           <button class="button-refer" (click)="openDialog()" mat-raised-button>

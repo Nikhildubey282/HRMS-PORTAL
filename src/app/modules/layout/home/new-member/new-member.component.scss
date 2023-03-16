@@ -1,46 +1,9 @@
-// section {
-
-
-
-//   .content {
-//     background-color: white;
-//     height: 450px;
-
-//     p{
-//       font-size: 18px;
-//       font-weight: 500;
-//       margin-bottom: 0px;
-//       padding-bottom: 15px;
-//     }
-//     .card {
-//       background-image: url(../../../../../assets/images/new-family-card.png);
-//      width: 295px;
-//      height: 380px;
-//      position: absolute;
-//      display: block;
-//      margin: 0px 0px 20px 20px;
-
-//      .image{
-//       position: absolute;
-//       top: 27%;
-//       left: 30%;
-//       h3{
-//         text-align: center;
-//       }
-//       p{
-//         text-align: center;
-//       }
-//      }
-
-
-//     }
-//   }
-// }
+@import"../../../../../scss/var";
 
 .new_member_card {
   // padding: 1.5rem 1.5rem 2rem -0.5rem;
   // padding: 1px 0px 5px 0px;
-  background-color: white;
+  background-color: $white;
   margin: 0px 15px;
   padding: 0px 20px;
 

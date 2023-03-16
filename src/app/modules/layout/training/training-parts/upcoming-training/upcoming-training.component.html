@@ -1,0 +1,45 @@
+<section>
+  <div class="head">
+    <h1>Upcoming Trainings</h1>
+  </div>
+  <div class="card-main">
+  <ng-container *ngFor="let item of data">
+
+  <div class="job-detail-card">
+    <div class="image">
+      <figure>
+      <img src={{item.IMAGE}} class="showImage">
+    </figure>
+    </div>
+    <div class="area">
+      <h3>{{item.TRAININGNAME}}</h3>
+      <p>{{item.STATUS}}</p>
+    </div>
+    <div class="attend">
+      <P class="whocanattend">Who can attend</P>
+      <p class="department">Angular</p>
+    </div>
+    <div class="requirement">
+      <p>{{item.START}}</p>
+      <p>{{item.END}}</p>
+      <p>SEAT</p>
+    </div>
+    <div class="requirement1">
+      <h4>{{item.STARTDATE}}</h4>
+      <h4>{{item.ENDDATE}}</h4>
+      <h4>40</h4>
+    </div>
+    <div class="buttonGroup">
+      <button (click)="viewDetails(item)" class="button-view"  mat-raised-button>
+        {{item.VIEW}}
+      </button>
+      <button (click)="openDialog()" class="button-refer"  mat-raised-button>
+        {{item.FEEDBACK}}
+      </button>
+    </div>
+
+
+  </div>
+</ng-container>
+</div>
+</section>

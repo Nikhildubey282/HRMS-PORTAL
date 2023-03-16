@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { DIRECTORY_EMPLOYEE_DATA } from 'src/app/constant/directory_constant';
+import { DIRECTORY_EMPLOYEE_DATA } from 'src/app/constant/constant';
 import { map, startWith } from 'rxjs/operators';
 
 @Component({
@@ -33,8 +33,8 @@ export class DirectoryComponent implements OnInit {
   }
 
    _filter(value: any){
+    this.DATA=DIRECTORY_EMPLOYEE_DATA;
     const filterValue = value.trim();
-    // console.log( this.DATA?.filter((option:any) => option.EMP_NAME.toLowerCase()?.includes(filterValue)),'jadsbjbzakskas');
     this.DATA=this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
     console.log(this.DATA,'sfjsjkjksjkssjjk')
 
@@ -51,6 +51,11 @@ export class DirectoryComponent implements OnInit {
   keyup(value:any){
     console.log(value.target?.value);
     this.data = value.target.value;
+
+  }
+
+  RESET(){
+    this.DATA=DIRECTORY_EMPLOYEE_DATA;
 
   }
   }

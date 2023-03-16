@@ -1,0 +1,141 @@
+section{
+  padding: 20px;
+  .first{
+    background-color: white;
+    padding: 10px 0px;
+    .button{
+      padding: 10px;
+      border-bottom: 1px solid rgb(247, 246, 246);
+      text-align: end;
+      button{
+        min-width: 120px;
+    background: #3246d3;
+    color: #fff;
+    // font-family: 'Segoe UI';
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    // outline: none;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: none;
+    margin-bottom: 5px;
+      }
+    }
+
+    .select{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 15px;
+      .input{
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        label{
+          font-weight:500 ;
+        }
+      }
+    }
+    .select2{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 0px 15px;
+      .input{
+        margin-left: 10px;
+        width: 360px;
+      }
+    }
+    .request-reason{
+      padding: 5px 22px;
+      label{
+        font-weight:500 ;
+        span{
+          color: red;
+        }
+      }
+
+      .fileinput{
+        margin-top: 10px;
+        border: 1px solid lightgray;
+        padding: 15px;
+        width: 23%;
+      }
+
+    }
+
+
+  }
+  .second{
+    margin-top: 30px;
+    section{
+      background-color: white;
+      border-radius: 10px;
+      .head{
+        border-bottom: 1px solid rgb(247, 246, 246);
+        h1{
+          font-size: 24px;
+          color: #3246d3;
+          // font-family: 'Segoe UI';
+          // padding: 11px 25px 11px 15px;
+          border-bottom: 1px solid #f3f7fc;
+          font-weight: 500;
+        }
+      }
+    }
+
+  }
+  ::ng-deep {
+
+    .mat-form-field-flex {
+
+
+      // width: 10px;
+      box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+    }
+  }
+
+}
+@media only screen and (max-width: 1200px) {
+  section{
+    .first{
+      .select{
+          grid-template-columns: auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  section{
+    .first{
+      .select{
+          grid-template-columns: auto;
+      }
+      .select2{
+        .input{
+          width: auto;
+
+        }
+      }
+      .request-reason{
+        .fileinput{
+          width: 100px
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  section{
+    .first{
+      .request-reason{
+        .fileinput{
+          margin-left: 0px;
+          width: 35%;
+        }
+      }
+    }
+  }
+}
+

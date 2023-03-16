@@ -1,0 +1,87 @@
+<section>
+  <div class="first">
+    <div class="button">
+      <button (click)="add()" > +Add new assets declaration</button>
+    </div>
+    <div *ngIf="addbutton" >
+    <div class="select">
+      <div class="input">
+        <label>Employee IdAI1612</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Unique Asset Code</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Serial Number </label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Model Number</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="select">
+      <div class="input">
+        <span>
+          <app-dropdown [label]="os" [Data]="genderData"></app-dropdown>
+        </span>
+      </div>
+      <div class="input">
+        <label>OS version</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Brand</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Brand</label>
+        <mat-form-field  appearance="outline">
+          <input matInput class="example-full-width" >
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="select2">
+      <div class="input">
+        <span>
+          <app-dropdown [label]="allocation" [Data]="genderData"></app-dropdown>
+        </span>
+      </div>
+
+    </div>
+    <div class="request-reason" >
+      <label>Asset Image(Allowed Format: jpg,jpeg,JPEG,JPG,png,PNG,GIF)<span> Upload front and backside image*</span></label>
+      <div class="fileinput">
+          <input type="file">
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+  <div class="second">
+    <section>
+      <div class="head">
+        <h1>List All Declaration Assets
+          </h1>
+      </div>
+      <div class="table">
+        <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+      </div>
+    </section>
+  </div>
+</section>

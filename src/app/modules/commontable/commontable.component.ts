@@ -16,6 +16,7 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @ViewChild(MatSort) set matSort(sort: MatSort) {
     this.dataSource.sort = sort;
   }
+  @Input() searchBar=false;
   @Input() columns!: any;
   @Input() dataSource!: any;
   @Input() Table_DATA!: any;
@@ -40,6 +41,7 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.dataSource.sort=this.matSort;
     this.dataSource.paginator = this.matPaginator;
   }
 

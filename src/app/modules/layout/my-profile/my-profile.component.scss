@@ -1,7 +1,8 @@
+@import"../../../../scss/var";
 section{
   padding: 10px 20px 10px 20px;
   .user-detail{
-    background-color: white;
+    background-color: $white;
     padding: 20px;
     display: flex;
     img{
@@ -21,7 +22,7 @@ section{
   .wrap-tag{
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: $white;
     margin: 15px 0px ;
     height: 330px;
     border-radius: 5px;
@@ -31,7 +32,7 @@ section{
       align-items: center;
       font-size: 15px;
       padding: 15px;
-      color: grey;
+      color: $grey;
       .mat-icon{
         padding-right: 10px;
       }
@@ -44,7 +45,7 @@ section{
       border-top: 1px solid rgb(235, 234, 234) ;
       font-size: 15px;
       padding: 15px;
-      color: grey;
+      color: $grey;
       .mat-icon{
         padding-right: 8px;
       }

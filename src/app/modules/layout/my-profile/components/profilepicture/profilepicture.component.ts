@@ -32,9 +32,6 @@ export class ProfilepictureComponent implements OnInit {
       reader.readAsDataURL(files[0]);
 
       reader.onload = (_event) => {
-        // let x = reader.result?.toString();
-        // let rawData = x?.split(',')?.pop();
-        // console.log(rawData,'skwe');
         this.imgURL = reader.result
       };
     }

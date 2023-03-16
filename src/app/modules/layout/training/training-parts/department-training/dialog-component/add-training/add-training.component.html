@@ -1,0 +1,63 @@
+<section>
+  <div class="header">
+    <h3 class="heading">
+      Request for training</h3>
+    <div  (click)="crossClick()" class="cancel-icon">
+     <mat-icon>close</mat-icon>
+    </div>
+  </div>
+  <div class="main">
+    <div class="input">
+      <label>Training name</label>
+    <mat-form-field appearance="outline">
+      <mat-select >
+        <mat-option>
+          food.viewValue
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="input">
+    <label>Team name</label>
+  <mat-form-field appearance="outline">
+    <mat-select  >
+      <mat-option>
+        food.viewValue
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="input">
+  <label>Please mention the training/learning area’s you feel can be beneficial for<br> your skill enhancement and job performance *</label>
+  <mat-form-field appearance="outline">
+    <textarea  class="example-full-width" matInput></textarea>
+  </mat-form-field>
+</div>
+<div class="input">
+  <label>Why do you feel these skills are needed and how they will benefit your<br> personal and organizational needs *</label>
+  <mat-form-field appearance="outline">
+    <textarea  class="example-full-width" matInput></textarea>
+  </mat-form-field>
+</div>
+<div class="input1">
+  <label>Are you interested to give the Trainings? *</label>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">yes</mat-radio-button>
+    <mat-radio-button value="2">No</mat-radio-button>
+  </mat-radio-group>
+</div>
+<div class="input1">
+  <label>What should be the timeline to conduct this training? *</label>
+  <mat-radio-group aria-label="Select an option" >
+    <mat-radio-button value="1">Immedaite</mat-radio-button>
+    <mat-radio-button value="2">3-6 Months</mat-radio-button>
+    <mat-radio-button value="2">More than  Months</mat-radio-button>
+
+  </mat-radio-group>
+</div>
+<div class="buttonGroup">
+  <button  (click)="crossClick()"  class="cancelButton">Cancel</button>
+  <button class="classyButton">Submit</button>
+</div>
+  </div>
+</section>

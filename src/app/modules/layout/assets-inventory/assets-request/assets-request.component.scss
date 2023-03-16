@@ -1,0 +1,137 @@
+section{
+  padding: 20px;
+  .first{
+    background-color: white;
+    padding: 10px 0px;
+    .button{
+      padding: 10px;
+      border-bottom: 1px solid rgb(247, 246, 246);
+      text-align: end;
+      button{
+        min-width: 120px;
+    background: #3246d3;
+    color: #fff;
+    // font-family: 'Segoe UI';
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    // outline: none;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    border: none;
+    margin-bottom: 5px;
+      }
+    }
+
+    .select{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 15px;
+      .input{
+        margin-left: 10px;
+        // width: 380px;
+      }
+      .date{
+        label{
+          font-weight: 500;
+        }
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        ::ng-deep{
+
+
+          .mat-icon-button{
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .select2{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 0px 15px;
+      .input{
+        margin-left: 10px;
+        width: 360px;
+      }
+    }
+    .request-reason{
+      padding: 0px 15px;
+      .date{
+        label{
+          font-weight: 500;
+        }
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        ::ng-deep{
+
+
+          .mat-icon-button{
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: transparent;
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+  .second{
+    margin-top: 30px;
+    section{
+      background-color: white;
+      border-radius: 10px;
+      .head{
+        border-bottom: 1px solid rgb(247, 246, 246);
+        h1{
+          font-size: 24px;
+          color: #3246d3;
+          // font-family: 'Segoe UI';
+          // padding: 11px 25px 11px 15px;
+          border-bottom: 1px solid #f3f7fc;
+          font-weight: 500;
+        }
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  section{
+    .first{
+      .select{
+        grid-template-columns: auto auto;
+
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 500px) {
+  section{
+    .first{
+      .select{
+        grid-template-columns:auto;
+
+      }
+      .select2{
+        .input{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
