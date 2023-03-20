@@ -1,0 +1,91 @@
+section{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 30% 68%;
+  gap: 20px;
+  .left{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    .head{
+      border-bottom: 1px solid #f3f7fc;
+      h6{
+        font-size: 20px;
+    color: #3246d3;
+    // font-family: 'Segoe UI';
+    padding-bottom: 10px;
+
+    font-weight: 600;
+      }
+
+    }
+    .input{
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      label{
+        font-weight:500 ;
+      }
+    }
+    .getbutton{
+      margin-left: 15px;
+      padding: 10px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+      background-blend-mode: soft-light, normal;
+      border: 1px solid rgba(150, 165, 184, 0.2);
+      box-sizing: border-box;
+      box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+      border-radius: 4px;
+      color: #FFFFFF;
+    }
+
+  }
+  .right{
+    background-color: white;
+    padding: 20px;
+    height: 200px;
+    border-radius: 10px;
+    .head{
+      display: flex;
+      justify-content: space-between;
+      h6{
+        font-size: 20px;
+    color: #3246d3;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3f7fc;
+    font-weight: 500;
+      }
+      button{
+        background: transparent;
+        -webkit-box-shadow: 0 0 0 1px #26b4ff inset;
+        box-shadow: 0 0 0 1px #26b4ff inset;
+        color: #26B4FF;
+        border: none;
+        padding: 5px;
+        height: 25px;
+      }
+    }
+    .table{
+      ::ng-deep{
+        table{
+          tr{
+          th{
+            width: 100px;
+          }
+        }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 850px){
+
+  section{
+    display: flex;
+    flex-direction: column;
+
+
+  }
+
+}

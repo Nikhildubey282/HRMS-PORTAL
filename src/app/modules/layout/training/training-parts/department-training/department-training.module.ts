@@ -10,6 +10,7 @@ import { AddTrainingComponent } from './dialog-component/add-training/add-traini
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -28,7 +29,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ]
 })

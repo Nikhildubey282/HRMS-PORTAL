@@ -1,0 +1,85 @@
+<section>
+  <div class="first">
+    <div class="head">
+      <h1>Create New Ticket</h1>
+      <button (click)="add()" >+ Add New</button>
+    </div>
+
+    <main *ngIf="addbutton">
+      <form [formGroup]="ticketForm" >
+    <div class="left">
+      <div class="input">
+        <label>Subject</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input formControlName="subject" matInput>
+          <mat-error *ngIf="formCtrl.subject.hasError('required')">
+            Please enter the required field
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <span>
+          <app-dropdown [label]="department" [Data]="genderData"
+          [myControlName]="ticketForm.controls.department"
+          [errorType]="ticketForm.controls.department"
+
+          ></app-dropdown>
+        </span>
+      </div>
+      <div class="input">
+        <span>
+          <app-dropdown [label]="ticketStatus" [Data]="genderData"
+          [myControlName]="ticketForm.controls.ticketCategory"
+          [errorType]="ticketForm.controls.ticketCategory"
+
+          ></app-dropdown>
+        </span>
+      </div>
+      <div class="input">
+        <span>
+          <app-dropdown [label]="priority" [Data]="genderData"
+          [myControlName]="ticketForm.controls.priority"
+          [errorType]="ticketForm.controls.priority"
+
+          ></app-dropdown>
+        </span>
+      </div>
+    </div>
+  </form>
+    <div class="right">
+      <label>Ticket Descripition</label>
+      <editor
+          [init]="{
+            height: 300,
+            plugins: [
+               'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+              'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+              'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+            ],
+            toolbar:
+             'undo redo | casechange blocks | bold italic backcolor | \
+             alignleft aligncenter alignright alignjustify | \
+             bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+          }"
+
+        ></editor>
+
+    </div>
+    <div class="save">
+      <button>Save</button>
+    </div>
+    </main>
+
+  </div>
+  <div class="second">
+    <section>
+      <div class="head">
+        <h1>List All Tickets
+          </h1>
+      </div>
+      <div class="table">
+        <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+      </div>
+    </section>
+  </div>
+</section>

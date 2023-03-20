@@ -3,9 +3,9 @@
 
   </ng-container>
   <div class="head">
-    <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
+    <!-- <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
     showFirstLastButtons>
-  </mat-paginator>
+  </mat-paginator> -->
   <div *ngIf="searchBar">
   <label style="margin-right:10px ;">Search</label>
   <mat-form-field class="example-full-width" appearance="outline">
@@ -62,5 +62,10 @@
       <td class="mat-cell" colspan="10">No data avaiable in table</td>
     </tr>
   </table>
+   <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
+    showFirstLastButtons>
+  </mat-paginator>
+
+
 </div>
 </section>

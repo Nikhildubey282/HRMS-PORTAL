@@ -18,6 +18,8 @@ section{
       border-radius: 10px;
       ::ng-deep{
 
+        .table{
+
         table{
           border: none;
 
@@ -78,6 +80,7 @@ section{
 
 
         }
+      }
 
       }
     }

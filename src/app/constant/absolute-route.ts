@@ -24,6 +24,18 @@ export const ABS_REQUESTEDTRAINING=`/${routes.LAYOUT}/${routes.TRAINING}/${route
 export const ABS_ASSETSINVENTORY=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.MYASSETS}`;
 export const ABS_REQUESTASSETS=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.ASSETSREQUEST}`;
 export const ABS_ASSETSDECLARATIONS=`/${routes.LAYOUT}/${routes.ASSETSINVENTORY}/${routes.ASSETSDECLARATION}`;
+export const ABS_ATTENDANCECALENDAR=`/${routes.LAYOUT}/${routes.ATTENDANCE}/${routes.ATTENDANCECALENDAR}`;
+export const ABS_MANUALPUNCH=`/${routes.LAYOUT}/${routes.ATTENDANCE}/${routes.MANUALPUNCH}`;
+export const ABS_PUNCHLOG=`/${routes.LAYOUT}/${routes.ATTENDANCE}/${routes.PUNCHLOG}`;
+export const ABS_FLOATINGLEAVE=`/${routes.LAYOUT}/${routes.LEAVE}/${routes.FLOATINGLEAVES}`;
+export const ABS_MYLEAVE=`/${routes.LAYOUT}/${routes.LEAVE}/${routes.MYLEAVES}`;
+
+export const ABS_MYTICKETS=`/${routes.LAYOUT}/${routes.TICKETS}/${routes.MYTICKETS}`;
+
+
+
+
+
 
 
 

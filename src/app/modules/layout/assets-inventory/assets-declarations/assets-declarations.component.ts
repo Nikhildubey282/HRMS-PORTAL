@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -13,6 +14,7 @@ export class AssetsDeclarationsComponent implements OnInit {
   allocation='Device is in working condition ?';
   addbutton:boolean=false;
   dataSource = new MatTableDataSource<any>();
+  declareForm!:FormGroup;
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
@@ -29,19 +31,40 @@ export class AssetsDeclarationsComponent implements OnInit {
     {heading:'Added'},
 
 
-
-
-
   ]
   Table_DATA: any[] = [
 
   ];
 
 
-  constructor() { }
+  constructor(
+    private _fb:FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createForm();
+
+  }
+
+  createForm(){
+    this.declareForm=this._fb.group({
+      employeeId:['',[Validators.required]],
+      code:['',[Validators.required]],
+      serialNo:['',Validators.required],
+      modelNo:['',[Validators.required]],
+      os:['',[Validators.required]],
+      osVersion:['',[Validators.required]],
+      brand:['',[Validators.required]],
+      color:['',[Validators.required]],
+      status:['',[Validators.required]],
+
+
+    })
+  }
+
+  get formCtrl(){
+    return this.declareForm.controls
 
   }
   add(){

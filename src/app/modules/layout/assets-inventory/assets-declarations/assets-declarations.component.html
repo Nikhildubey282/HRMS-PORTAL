@@ -3,62 +3,90 @@
     <div class="button">
       <button (click)="add()" > +Add new assets declaration</button>
     </div>
+    <form [formGroup]="declareForm">
     <div *ngIf="addbutton" >
     <div class="select">
       <div class="input">
         <label>Employee IdAI1612</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="employeeId" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.employeeId.hasError('required')">
+            Please enter a employeeId
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Unique Asset Code</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="code" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.code.hasError('required')">
+            Please enter a Assets code
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Serial Number </label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="serialNo" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.serialNo.hasError('required')">
+            Please enter a serialNo
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Model Number</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="modelNo" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.modelNo.hasError('required')">
+            Please enter a assets model
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
     <div class="select">
       <div class="input">
         <span>
-          <app-dropdown [label]="os" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="os" [Data]="genderData"
+          [myControlName]="declareForm.controls.os"
+          [errorType]="declareForm.controls.os"
+          ></app-dropdown>
         </span>
       </div>
       <div class="input">
         <label>OS version</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="osVersion" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.osVersion.hasError('required')">
+            Please enter a Os version
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Brand</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="brand" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.brand.hasError('required')">
+            Please enter a brand name
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="input">
-        <label>Brand</label>
+        <label>Color</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input matInput formControlName="color" class="example-full-width" >
+          <mat-error *ngIf="formCtrl.color.hasError('required')">
+            Please enter a color
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
     <div class="select2">
       <div class="input">
         <span>
-          <app-dropdown [label]="allocation" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="allocation" [Data]="genderData"
+          [myControlName]="declareForm.controls.status"
+          [errorType]="declareForm.controls.status"
+          ></app-dropdown>
         </span>
       </div>
 
@@ -71,6 +99,7 @@
 
     </div>
   </div>
+</form>
 
   </div>
   <div class="second">

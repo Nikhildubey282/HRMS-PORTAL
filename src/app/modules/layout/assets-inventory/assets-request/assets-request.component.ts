@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 
 
@@ -16,6 +17,7 @@ export class AssetsRequestComponent implements OnInit {
   allocation='Allocation Type *';
   addbutton:boolean=false;
   dataSource = new MatTableDataSource<any>();
+  assetsRequest!:FormGroup;
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
@@ -34,10 +36,29 @@ export class AssetsRequestComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(
+    private _fb:FormBuilder
+  ) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createForm();
+
+  }
+  createForm(){
+    this.assetsRequest=this._fb.group({
+      category:['',[Validators.required]],
+      quanity:['',[Validators.required]],
+      priority:['',[Validators.required]],
+      date:['',[Validators.required]],
+      type:['',[Validators.required]],
+      requestreason:['',[Validators.required]]
+
+
+    })
+  }
+  get formCtrl(){
+    return this.assetsRequest.controls;
 
   }
 

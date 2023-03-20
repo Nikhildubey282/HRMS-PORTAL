@@ -1,10 +1,12 @@
 section {
   .head{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   .table{
     // overflow-x: scroll;
+    position: relative;
+    padding: 20px;
 
   table {
     width: 100%;
@@ -46,15 +48,16 @@ section {
 }
   ::ng-deep{
     .mat-paginator-container{
-      display: block;
+      // display: block;
       .mat-paginator-range-actions{
-        display: none;
-      }
-      // .mat-select{
-      //   outline: auto;
-      //   padding: 5px;
 
-      // }
+      }
+      .mat-paginator-page-size{
+        position: absolute;
+       bottom: 180px;
+       left:15px;
+        // margin-top: 10px;
+      }
     }
   }
 

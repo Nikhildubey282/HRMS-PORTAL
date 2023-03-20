@@ -15,17 +15,15 @@
         </mat-form-field>
       </div>
       <div class="input">
-        <label>Education Level</label>
-        <mat-form-field appearance="outline">
-          <mat-select formControlName="educationLevel">
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
-          </mat-select>
-          <mat-error *ngIf="formCtrl.educationLevel.hasError('required')" >{{errorMsg.EDUCATION_LEVEL}}</mat-error>
-
-
-        </mat-form-field>
+        <span>
+          <app-dropdown
+          [label]="labelEducation"
+          [myControlName]="qualificationForm.controls.educationLevel"
+          [Data]="languageDropdown"
+          [errorType]="qualificationForm.controls.educationLevel"
+            >
+          </app-dropdown>
+        </span>
       </div>
     </div>
     <div class="inputs2">
@@ -42,8 +40,8 @@
       </div>
       <div class="to_date">
         <mat-form-field appearance="outline">
-          <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker1" formControlName="enddate">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <input matInput  [matDatepicker]="picker1" formControlName="enddate">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
           <mat-error *ngIf="formCtrl.enddate.hasError('required')">
             Please Enter a date</mat-error>
@@ -89,7 +87,7 @@
   </div>
 
   <div class="group">
-    <button>SAVE</button>
+    <button (click)="submitHandler()" >SAVE</button>
   </div>
 </form>
 

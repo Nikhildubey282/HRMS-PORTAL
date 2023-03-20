@@ -1,0 +1,42 @@
+
+<section>
+  <div class="left">
+    <div class="head">
+      <h6>Punch log</h6>
+    </div>
+    <form [formGroup]="punchLogForm">
+    <div class="input">
+      <label>Date</label>
+      <mat-form-field  appearance="outline">
+        <input matInput formControlName="date" class="example-full-width" >
+      </mat-form-field>
+    </div>
+    <div class="input">
+      <label>Employee</label>
+      <!-- <mat-form-field  appearance="outline">
+        <input matInput class="example-full-width" >
+      </mat-form-field> -->
+      <mat-form-field appearance="outline">
+        <mat-select formControlName="employee" >
+          <mat-option >
+          food.viewValue
+          </mat-option>
+          <mat-option>
+            option2
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <button class="getbutton">GET</button>
+  </form>
+
+  </div>
+  <div class="right">
+    <div class="head">
+      <h6>Punch Log</h6>
+    </div>
+    <div class="table">
+      <app-commontable [searchBar]="false" [columns]="heading" [isPageable]="false" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+    </div>
+  </div>
+</section>

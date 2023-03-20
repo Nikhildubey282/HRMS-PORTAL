@@ -1,0 +1,127 @@
+<section>
+  <div class="first">
+    <div class="leaves-section">
+      <mat-icon class="calendar">calendar_today</mat-icon>
+      <div class="balance">
+        <p>Planned Leave (CL) (1/6.00)<br>
+          Planned Leave (CL) Balance (5)</p>
+      </div>
+    </div>
+    <div class="leaves-section">
+      <mat-icon class="calendar">calendar_today</mat-icon>
+      <div class="balance">
+        <p>Privileged Leave (6.00)</p>
+        <p>Privileged Leave Balance (6)</p>
+      </div>
+    </div>
+    <div class="leaves-section">
+      <mat-icon class="calendar">calendar_today</mat-icon>
+      <div class="balance">
+        <p>Emergency Leave (CL) (6.00)
+        </p>
+        <p>Emergency Leave (CL) (6.00)
+          Balance (6)</p>
+      </div>
+    </div>
+    <div class="leaves-section">
+      <mat-icon class="calendar">calendar_today</mat-icon>
+      <div class="balance">
+        <p>Short Leaves (2/10.00)
+        </p>
+        <p>Short Leaves Balance (8)
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="second">
+    <div class="head">
+      <h1>Add Leave</h1>
+      <button (click)="add()">+ Add New</button>
+    </div>
+    <main *ngIf="addButton">
+      <div class="left">
+        <div class="dropdown">
+          <span>
+            <app-dropdown [label]="department" [Data]="genderData"
+            [myControlName]="leaveForm.controls.leavetype"
+            [errorType]="leaveForm.controls.leavetype"
+            ></app-dropdown>
+          </span>
+        </div>
+        <div class="date-select">
+          <div class="input">
+            <label>Start Date</label>
+            <mat-form-field class="example-form-field" appearance="outline">
+
+              <mat-date-range-input>
+                <input matStartDate formControlName="startdate">
+                <!-- <input matEndDate formControlName="end"> -->
+              </mat-date-range-input>
+              <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+              <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+            </mat-form-field>
+          </div>
+
+          <div class="last-date">
+            <div class="input">
+              <label>End Date</label>
+              <mat-form-field class="example-form-field" appearance="outline">
+                <mat-date-range-input>
+                  <!-- <input matStartDate formControlName="start"> -->
+                  <input matEndDate formControlName="enddate">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+                <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </div>
+        <div class="input">
+          <label>Remarks</label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput>
+          </mat-form-field>
+        </div>
+        <div class="input1">
+          <label>Upload Document</label>
+          <div class="fileinput">
+          <input type="file">
+        </div>
+        </div>
+      </div>
+      <div class="right">
+        <label>Leave Reason</label>
+        <editor
+        [init]="{
+          height: 400,
+          plugins: [
+             'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+            'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+            'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+          ],
+          toolbar:
+           'undo redo | casechange blocks | bold italic backcolor | \
+           alignleft aligncenter alignright alignjustify | \
+           bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+        }"
+
+      ></editor>
+
+      </div>
+
+    </main>
+
+  </div>
+  <div class="third">
+    <section>
+      <div class="head">
+        <h1>List All Leave
+          </h1>
+      </div>
+      <div class="table">
+        <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+      </div>
+    </section>
+  </div>
+</section>

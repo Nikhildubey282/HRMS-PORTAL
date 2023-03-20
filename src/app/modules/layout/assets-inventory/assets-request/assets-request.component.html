@@ -3,36 +3,52 @@
     <div class="button">
       <button (click)="add()" >+ Add New Assets Request</button>
     </div>
+    <form [formGroup]="assetsRequest" >
     <div *ngIf="addbutton" >
     <div class="select">
       <div class="input">
         <span>
-          <app-dropdown [label]="genderLabel" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="genderLabel" [Data]="genderData"
+          [myControlName]="assetsRequest.controls.category"
+          [errorType]="assetsRequest.controls.category"></app-dropdown>
         </span>
       </div>
       <div class="input">
         <span>
-          <app-dropdown [label]="quanity" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="quanity" [Data]="genderData"
+          [myControlName]="assetsRequest.controls.quanity"
+          [errorType]="assetsRequest.controls.quanity"
+          ></app-dropdown>
         </span>
       </div>
       <div class="input">
         <span>
-          <app-dropdown [label]="Priority" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="Priority" [Data]="genderData"
+          [myControlName]="assetsRequest.controls.priority"
+          [errorType]="assetsRequest.controls.priority"
+          ></app-dropdown>
         </span>
       </div>
       <div class="date">
         <label>Required by Date</label>
         <mat-form-field appearance="outline">
-          <input matInput [matDatepicker]="picker">
+          <input formControlName="date" matInput [matDatepicker]="picker" readonly>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="formCtrl.date.hasError('required')">
+            Please enter date
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
     <div class="select2">
       <div class="input">
         <span>
-          <app-dropdown [label]="allocation" [Data]="genderData"></app-dropdown>
+          <app-dropdown [label]="allocation" [Data]="genderData"
+          [myControlName]="assetsRequest.controls.type"
+          [errorType]="assetsRequest.controls.type"
+
+          ></app-dropdown>
         </span>
       </div>
 
@@ -41,12 +57,19 @@
       <div class="date">
         <label>Required by Date *</label>
         <mat-form-field  appearance="outline">
-          <input matInput class="example-full-width" >
+          <input formControlName="requestreason" matInput class="example-full-width" >
+          <mat-error *ngIf="formCtrl.requestreason.hasError('required')">
+            Please enter request reason
+          </mat-error>
         </mat-form-field>
       </div>
 
     </div>
+    <div class="submitbutton">
+    <button >Submit</button>
   </div>
+  </div>
+</form>
 
   </div>
   <div class="second">

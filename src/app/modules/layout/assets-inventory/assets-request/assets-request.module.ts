@@ -9,6 +9,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -27,7 +28,10 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
     MatFormFieldModule,
     MatNativeDateModule,
     MatInputModule,
-    CommontableModule
+    CommontableModule,
+    ReactiveFormsModule,
+    FormsModule
+
 
 
   ]

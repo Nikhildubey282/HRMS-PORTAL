@@ -18,6 +18,7 @@ const year = today.getFullYear();
 })
 export class QualificationComponent implements OnInit {
   errorMsg=QUALIFICATION_MESSAGE;
+  labelEducation='Education Level';
   labelLanguage='language'
   languageDropdown =['English','Hindi']
   minDate:Date
@@ -28,10 +29,10 @@ export class QualificationComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
 
   heading = [
-    { heading: 'Action', key:'sNo',type:'text'},
-    { heading: 'School/University', key: 'fName', type: 'link', link: '/dashboard/client-details' },
+    { heading: 'Action', key:'',type:'text'},
+    { heading: 'School/University', key: 'fschool', type: 'link', link: '/dashboard/client-details' },
     { heading: 'Time period ', key:'mName',type:'text'},
-    { heading: 'Education Level', key:'lName',type:'text'},
+    { heading: 'Education Level', key:'educationLevel',type:'text'},
   ]
   Table_DATA: any[] = [
 
@@ -70,6 +71,35 @@ export class QualificationComponent implements OnInit {
 
 
   get formCtrl() { return this.qualificationForm.controls; }
+
+
+  submitHandler() {
+    console.log(this.qualificationForm.valid,'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
+
+      this.Table_DATA.push({
+        school:  this.formCtrl['university'].value,
+        // fromTimetotoTime: this.getDatevalue(),
+        educationLevel: this.formCtrl['educationLevel'].value,
+        // id: Date.now(),
+        // language: this.formCtrl['language'].value,
+        // professionalCourses:
+        // this.formCtrl['professionalCourses'].value,
+        // description: this.formCtrl['description'].value,
+        // fromTime: this.formCtrl['fromTime'].value,
+        // toTime: this.formCtrl['toTime'].value,
+      });
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+
+
+      // this.dataSource = new MatTableDataSource<QUALIFICATIONTABLE>(
+      //   this.Table_DATA
+      // );
+      // this.resetForm();
+      this.createForm();
+  //   } else {
+  //     this.qualificationForm.markAllAsTouched();
+  //   }
+   }
 
 
 }

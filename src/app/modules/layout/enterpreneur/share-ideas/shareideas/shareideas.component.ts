@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ShareideasComponent implements OnInit {
 
+  addbutton:boolean=false;
   pitchForm!:FormGroup;
 
   constructor(
@@ -32,6 +33,16 @@ export class ShareideasComponent implements OnInit {
 
   get Formctrl(){
     return this.pitchForm.controls
+  }
+
+  add(){
+    if(this.addbutton===false)
+    this.addbutton=true;
+
+    else{
+      this.addbutton=false;
+
+    }
   }
 
 }

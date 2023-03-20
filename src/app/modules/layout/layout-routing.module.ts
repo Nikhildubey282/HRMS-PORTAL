@@ -49,6 +49,12 @@ const routes: Routes = [
     {
       path:'attendance',loadChildren:()=> import('./attendance/attendance.module').then((m) =>m.AttendanceModule )
     },
+    {
+      path:'leave',loadChildren:()=> import('./leave/leave.module').then((m) =>m.LeaveModule )
+    },
+    {
+      path:'tickets',loadChildren:()=> import('./tickets/tickets.module').then((m) =>m.TicketsModule )
+    },
 
   ]
 

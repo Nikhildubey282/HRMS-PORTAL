@@ -39,6 +39,15 @@ export const ASSETSINVENTORY='assets-inventory';
 export const MYASSETS='my-assets';
 export const ASSETSREQUEST='assets-request';
 export const ASSETSDECLARATION='assets-declarations';
+export const ATTENDANCE='attendance';
+export const ATTENDANCECALENDAR='attendance-calendar';
+export const MANUALPUNCH='manual-punch';
+export const PUNCHLOG='punch-log';
+export const LEAVE='leave';
+export const FLOATINGLEAVES='floating-leaves';
+export const MYLEAVES='my-leaves';
+export const TICKETS='tickets';
+export const MYTICKETS='my-tickets';
 
 
 
