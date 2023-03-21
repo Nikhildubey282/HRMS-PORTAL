@@ -1,4 +1,6 @@
+@import"../../../../../scss/heading";
 section {
+
   padding: 20px;
 
   .first {
@@ -39,6 +41,13 @@ section {
       display: grid;
       grid-template-columns: 50% 50%;
       .left {
+
+        label{
+          font-size: 14px;
+          font-weight: 500;
+          color: #2f3031;
+          margin-bottom: 5px;
+        }
         .input {
           display: flex;
           flex-direction: column;
@@ -46,9 +55,15 @@ section {
       }
       .right{
         padding: 20px;
-        label{
-        margin-bottom: 10px;
-        }
+
+          label{
+            font-size: 14px;
+            font-weight: 500;
+            color: #2f3031;
+            margin-bottom: 5px;
+          }
+
+
       }
       .save{
         // padding-left: 20px;

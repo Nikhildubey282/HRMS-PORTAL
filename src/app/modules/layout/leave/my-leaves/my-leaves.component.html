@@ -19,8 +19,7 @@
       <div class="balance">
         <p>Emergency Leave (CL) (6.00)
         </p>
-        <p>Emergency Leave (CL) (6.00)
-          Balance (6)</p>
+        <p>Emergency Leave (CL) Balance (6)</p>
       </div>
     </div>
     <div class="leaves-section">
@@ -38,7 +37,10 @@
       <h1>Add Leave</h1>
       <button (click)="add()">+ Add New</button>
     </div>
+    <form [formGroup]="leaveForm">
+
     <main *ngIf="addButton">
+
       <div class="left">
         <div class="dropdown">
           <span>
@@ -55,7 +57,7 @@
 
               <mat-date-range-input>
                 <input matStartDate formControlName="startdate">
-                <!-- <input matEndDate formControlName="end"> -->
+                <input matEndDate formControlName="startdate">
               </mat-date-range-input>
               <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
               <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
@@ -67,7 +69,7 @@
               <label>End Date</label>
               <mat-form-field class="example-form-field" appearance="outline">
                 <mat-date-range-input>
-                  <!-- <input matStartDate formControlName="start"> -->
+                  <input matStartDate formControlName="enddate">
                   <input matEndDate formControlName="enddate">
                 </mat-date-range-input>
                 <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
@@ -80,7 +82,7 @@
         <div class="input">
           <label>Remarks</label>
           <mat-form-field class="example-full-width" appearance="outline">
-            <input matInput>
+            <input matInput formControlName="remarks">
           </mat-form-field>
         </div>
         <div class="input1">
@@ -109,8 +111,9 @@
       ></editor>
 
       </div>
-
     </main>
+  </form>
+
 
   </div>
   <div class="third">

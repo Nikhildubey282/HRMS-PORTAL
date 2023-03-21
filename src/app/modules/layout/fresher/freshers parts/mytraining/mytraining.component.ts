@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { MYTRAINING } from 'src/app/constant/constant';
+import { FeedbackComponent } from '../training-details/dialog-component/feedback/feedback.component';
 
 @Component({
   selector: 'app-mytraining',
@@ -13,6 +15,7 @@ export class MytrainingComponent implements OnInit {
 
   constructor(
     private route:Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +30,14 @@ export class MytrainingComponent implements OnInit {
         this.route.createUrlTree([`/layout/freshers/training-details/${item.id}`])
       );
       window.open(url, '_blank');
+    }
+
+    openDialog() {
+      const dialogRef = this.dialog.open(FeedbackComponent);
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
     }
   }
 

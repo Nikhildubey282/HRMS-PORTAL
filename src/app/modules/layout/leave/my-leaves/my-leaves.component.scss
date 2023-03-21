@@ -164,3 +164,42 @@ section {
 
 
 }
+
+@media only screen and (max-width: 1000px){
+  section{
+
+    .first{
+      display: block;
+
+    }
+    .second{
+      main{
+        display: block;
+        .right{
+          margin-top: 20px;
+        }
+      }
+    }
+
+  }
+}
+@media only screen and (max-width: 550px){
+  section{
+
+
+    .second{
+      main{
+        display: block;
+        .left{
+          .date-select{
+            flex-direction: column;
+            .last-date{
+              margin: 0px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

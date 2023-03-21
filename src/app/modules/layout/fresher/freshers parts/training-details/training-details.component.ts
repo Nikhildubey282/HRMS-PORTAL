@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { MYTRAINING } from 'src/app/constant/constant';
+import { FeedbackComponent } from './dialog-component/feedback/feedback.component';
 
 @Component({
   selector: 'app-training-details',
@@ -9,7 +11,9 @@ import { MYTRAINING } from 'src/app/constant/constant';
 })
 export class TrainingDetailsComponent implements OnInit {
 
-  constructor(private _activatedRoute:ActivatedRoute,) { }
+  constructor(private _activatedRoute:ActivatedRoute,
+
+    ) { }
 
   // ngOnInit(): void {
   // }
@@ -26,5 +30,8 @@ export class TrainingDetailsComponent implements OnInit {
     this.trainingDetailData= this.data.find(x => x.id ==this.detailId)
     console.log(this.trainingDetailData,'index')
   }
+
+
+  
 
 }

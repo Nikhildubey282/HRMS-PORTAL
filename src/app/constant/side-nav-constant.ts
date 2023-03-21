@@ -1,4 +1,4 @@
-import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE,ABS_ENTERPRENEUR,ABS_HOLIDAYCALENDAR,ABS_POLICYDOCUMENT,ABS_INSURANCEVERIFICATIONS,ABS_MYPERFORMANCE,ABS_REFERCANDIDATE,ABS_REFERALLIST,ABS_INTERVIEWLIST,ABS_FRESHERTRAINING,ABS_TRAINING,ABS_ONGOINGTRAINING,ABS_MYTRAINING,ABS_REQUESTEDTRAINING, ABS_ASSETSINVENTORY, ABS_REQUESTASSETS, ABS_ASSETSDECLARATIONS, ABS_ATTENDANCECALENDAR, ABS_MANUALPUNCH, ABS_PUNCHLOG, ABS_FLOATINGLEAVE, ABS_MYTICKETS, ABS_MYLEAVE } from "./absolute-route"
+import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE,ABS_ENTERPRENEUR,ABS_HOLIDAYCALENDAR,ABS_POLICYDOCUMENT,ABS_INSURANCEVERIFICATIONS,ABS_MYPERFORMANCE,ABS_REFERCANDIDATE,ABS_REFERALLIST,ABS_INTERVIEWLIST,ABS_FRESHERTRAINING,ABS_TRAINING,ABS_ONGOINGTRAINING,ABS_MYTRAINING,ABS_REQUESTEDTRAINING, ABS_ASSETSINVENTORY, ABS_REQUESTASSETS, ABS_ASSETSDECLARATIONS, ABS_ATTENDANCECALENDAR, ABS_MANUALPUNCH, ABS_PUNCHLOG, ABS_FLOATINGLEAVE, ABS_MYTICKETS, ABS_MYLEAVE, ABS_MYDSR } from "./absolute-route"
 
 export const sideNavList = [
   { title: 'Home', logo: 'home', isActiv: true, routerLink:ABS_HOME  },
@@ -18,7 +18,7 @@ export const sideNavList = [
   { title: 'Attendance', logo: 'schedule', options: [{ subTitle: 'Attendance Calendar',subLogo: 'horizontal_rule',routerLink:ABS_ATTENDANCECALENDAR },{ subTitle: 'Manual Punch',subLogo: 'horizontal_rule',routerLink:ABS_MANUALPUNCH },{ subTitle: 'Punch Log',subLogo: 'horizontal_rule',routerLink:ABS_PUNCHLOG }], isActiv: true, },
   { title: 'Leave', logo: 'calendar_today',options: [{ subTitle: 'My Leaves',subLogo: 'horizontal_rule',routerLink:ABS_MYLEAVE },{ subTitle: 'Floating Leaves',subLogo: 'horizontal_rule',routerLink:ABS_FLOATINGLEAVE }], isActiv: true, },
   { title: 'Tickets', logo: 'view_day', options: [{ subTitle: 'Tickets',subLogo: 'horizontal_rule',routerLink:ABS_MYTICKETS }], isActiv: true, },
-  { title: 'DSR', logo: 'calendar_today',routerLink:'hweiuewiuieu', options: [], isActiv: true, },
+  { title: 'DSR', logo: 'calendar_today', options: [{ subTitle: 'My DSR',subLogo: 'horizontal_rule',routerLink:ABS_MYDSR }], isActiv: true, },
   { title: 'Projects', logo: 'view_day',routerLink:'hweiuewiuieu', isActiv: true, },
   { title: 'Expense', logo: 'monetization_on', routerLink:'hweiuewiuieu',isActiv: false, },
   { title: 'Announcements', logo: 'campaign',routerLink:'hweiuewiuieu', isActiv: false, },

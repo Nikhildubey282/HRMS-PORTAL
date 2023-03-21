@@ -48,6 +48,9 @@ export const FLOATINGLEAVES='floating-leaves';
 export const MYLEAVES='my-leaves';
 export const TICKETS='tickets';
 export const MYTICKETS='my-tickets';
+export const DSR='DSR';
+export const MYDSR='my-dsr';
+
 
 
 

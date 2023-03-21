@@ -29,8 +29,9 @@ export const ABS_MANUALPUNCH=`/${routes.LAYOUT}/${routes.ATTENDANCE}/${routes.MA
 export const ABS_PUNCHLOG=`/${routes.LAYOUT}/${routes.ATTENDANCE}/${routes.PUNCHLOG}`;
 export const ABS_FLOATINGLEAVE=`/${routes.LAYOUT}/${routes.LEAVE}/${routes.FLOATINGLEAVES}`;
 export const ABS_MYLEAVE=`/${routes.LAYOUT}/${routes.LEAVE}/${routes.MYLEAVES}`;
-
 export const ABS_MYTICKETS=`/${routes.LAYOUT}/${routes.TICKETS}/${routes.MYTICKETS}`;
+export const ABS_MYDSR=`/${routes.LAYOUT}/${routes.DSR}/${routes.MYDSR}`;
+
 
 
 

@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -32,7 +33,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
     MatNativeDateModule,
     MatInputModule,
     EditorModule,
-    CommontableModule
+    CommontableModule,
+    FormsModule,ReactiveFormsModule
   ]
 })
 export class MyLeavesModule { }

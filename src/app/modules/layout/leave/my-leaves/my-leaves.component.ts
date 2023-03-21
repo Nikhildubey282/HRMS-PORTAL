@@ -39,6 +39,7 @@ export class MyLeavesComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createForm();
 
   }
 

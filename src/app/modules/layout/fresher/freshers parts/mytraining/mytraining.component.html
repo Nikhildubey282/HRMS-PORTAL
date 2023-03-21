@@ -29,7 +29,7 @@
       <button (click)="viewDetails(item)" class="button-view"  mat-raised-button>
         {{item.VIEW}}
       </button>
-      <button class="button-refer"  mat-raised-button>
+      <button class="button-refer" (click)="openDialog()"  mat-raised-button>
         {{item.FEEDBACK}}
       </button>
     </div>
