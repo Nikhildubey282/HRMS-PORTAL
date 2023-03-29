@@ -11,13 +11,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 
 @NgModule({
   declarations: [
-    QualificationComponent
+    QualificationComponent,
+    EditDialogComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,8 @@ import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
     FormsModule,
     ReactiveFormsModule,
     CommontableModule,
-    DropdownModule
+    DropdownModule,
+    MatDialogModule
   ]
 })
 export class QualificationModule { }

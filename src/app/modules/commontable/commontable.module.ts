@@ -8,6 +8,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -24,7 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     MatSortModule,
     MatIconModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
 
 
   ],

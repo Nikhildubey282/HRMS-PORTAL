@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { MYTRAINING } from 'src/app/constant/constant';
 import { FeedbackComponent } from './dialog-component/feedback/feedback.component';
@@ -10,6 +11,8 @@ import { FeedbackComponent } from './dialog-component/feedback/feedback.componen
   styleUrls: ['./training-details.component.scss']
 })
 export class TrainingDetailsComponent implements OnInit {
+
+ 
 
   constructor(private _activatedRoute:ActivatedRoute,
 
@@ -32,6 +35,6 @@ export class TrainingDetailsComponent implements OnInit {
   }
 
 
-  
+
 
 }

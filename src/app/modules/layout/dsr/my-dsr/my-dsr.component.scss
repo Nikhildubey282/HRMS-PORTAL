@@ -113,35 +113,25 @@ section {
     .row1{
       display:grid;
       grid-template-columns: auto auto auto auto;
+      align-items: center;
       gap: 15px;
       padding: 10px;
       .input{
         display: flex;
         flex-direction: column;
       }
+      .buttongrp{
+      button{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+      background-blend-mode: soft-light, normal;
+      border: 1px solid rgba(150, 165, 184, 0.2);
+      box-sizing: border-box;
+      box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+      border-radius: 4px;
+      color: #FFFFFF;
+      padding: 10px;
+      }
     }
-    .row2{
-      display: grid;
-    grid-template-columns: 24% 24% 30%;
-    padding: 10px;
-    gap: 15px;
-    .input{
-      display: flex;
-      flex-direction: column;
-    }
-    .buttongrp{
-      margin-top: 30px;
-    button{
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
-    background-blend-mode: soft-light, normal;
-    border: 1px solid rgba(150, 165, 184, 0.2);
-    box-sizing: border-box;
-    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
-    border-radius: 4px;
-    color: #FFFFFF;
-    padding: 10px;
-    }
-  }
     }
 
   }
@@ -155,13 +145,60 @@ section {
         }
       }
     }
-
-
     background-color: white;
     margin-top: 20px;
     border-radius: 10px;
-
-
-
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  section{
+    .first{
+      main{
+        display: contents;
+        .left{
+          padding: 10px;
+        }
+        .right{
+          padding: 10px;
+        }
+      }
+    }
+    .second{
+      .row1{
+        grid-template-columns: auto auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  section{
+    .second{
+      .row1{
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  section{
+    .first{
+      main{
+        display: contents;
+        .left{
+          padding: 10px;
+          .row{
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    .second{
+      .row1{
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+
+

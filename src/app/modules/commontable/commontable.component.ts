@@ -1,9 +1,12 @@
 import { Component,AfterViewInit, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { ABS_DSRDETAIL, ABS_DSREDIT, ABS_PROJECTDETAIL } from 'src/app/constant/absolute-route';
 import { TableColumn } from 'src/app/constant/routes';
-
-
+import { EditDialogComponent } from '../layout/my-profile/components/qualification/edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-commontable',
@@ -11,6 +14,9 @@ import { TableColumn } from 'src/app/constant/routes';
   styleUrls: ['./commontable.component.scss']
 })
 export class CommontableComponent implements OnInit,AfterViewInit {
+  dsrdetail=ABS_DSRDETAIL;
+  DSREDIT=ABS_DSREDIT;
+  PROJECTDETAIL=ABS_PROJECTDETAIL;
   matHeaderRow: any = [];
   @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
   @ViewChild(MatSort) set matSort(sort: MatSort) {
@@ -29,15 +35,19 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @Output() userDetail: EventEmitter<any> = new EventEmitter();
   @Output() onIconClick: EventEmitter<any> = new EventEmitter();
   public displayedColumns!: string[];
-  constructor() { }
+  constructor(
+    private _route:Router,
+    public sanitizer:DomSanitizer,
+    public dialog: MatDialog
+
+  ) { }
 
   ngOnInit(): void {
     this.columns.forEach((item: any) => {
       this.matHeaderRow.push(item.heading)
     });
     this.columns.map((tableColumn: TableColumn) => tableColumn.heading);
-    console.log(this.dataSource);
-
+    console.log(this.dataSource,'nikky');
   }
 
   ngAfterViewInit(): void {
@@ -45,16 +55,23 @@ export class CommontableComponent implements OnInit,AfterViewInit {
     this.dataSource.paginator = this.matPaginator;
   }
 
-  handleClick(data: any, type: any) {
-    const iconData = {
-      data: data,
-      iconType:type
-    }
-    console.log(type, 'ji', data);
-    this.onIconClick.emit(iconData);
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+    console.log(this.dataSource.filter,'nikhildubey')
   }
   changePageSize(size: number) {
     this.matPaginator._changePageSize(size)
+  }
+  openDialog() {
+    const options:MatDialogConfig = {
+      panelClass:'full-abc'
+    }
+    const dialogRef = this.dialog.open(EditDialogComponent,options);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 

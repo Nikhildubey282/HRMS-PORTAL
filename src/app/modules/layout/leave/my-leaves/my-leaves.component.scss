@@ -1,180 +1,208 @@
+@import'../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
+
 section {
   padding: 20px;
+  main {
+    padding: 0px;
 
-  .first {
-    display: grid;
-    grid-template-columns: 32% 32% 32%;
-
-    .leaves-section {
-      background-color: white;
-      padding: 20px;
-      display: flex;
-      margin: 15px;
-
-      // align-items: center;
-      // justify-content: center;
-      .calendar {
-        font-size: 35px;
-        color: #23c823;
-
-      }
-
-      .balance {
-        margin-left: 20px;
-
-        p {
-          margin-bottom: 0px;
-          font-size: 85%;
-          font-weight: 400;
-          color: #a3a4a6;
-        }
-      }
-    }
-
-  }
-  .second{
-    margin: 15px;
-    background-color: white;
-    padding: 20x;
-    .head {
-      padding: 10px;
-      border-bottom: 1px solid #f3f7fc;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      h1 {
-        font-size: 20px;
-        color: #3246d3;
-        // font-family: 'Segoe UI';
-        // padding: 11px 25px 11px 15px;
-        font-weight: 550;
-      }
-
-      button {
-        background: transparent;
-        -webkit-box-shadow: 0 0 0 1px #26b4ff inset;
-        box-shadow: 0 0 0 1px #26b4ff inset;
-        color: #26B4FF;
-        border: none;
-        &:hover{
-          background-color: #26B4FF;
-          color: white;
-
-        }
-      }
-
-    }
-    main{
-      padding: 20px;
+    .first {
       display: grid;
-      grid-template-columns: 50% 50%;
-      gap: 20px;
-      .left{
-        label{
-          font-size: 14px;
-          font-weight: 500;
-          color: #2f3031;
-          margin-bottom: 5px;
+      grid-template-columns: 32% 32% 32%;
+
+      .leaves-section {
+        background-color: white;
+        padding: 20px;
+        display: flex;
+        margin: 15px;
+
+        // align-items: center;
+        // justify-content: center;
+        .calendar {
+          font-size: 35px;
+          color: #23c823;
+
         }
-        .date-select{
-          display: flex;
-          .input{
+
+        .balance {
+          margin-left: 20px;
+
+          p {
+            margin-bottom: 0px;
+            font-size: 85%;
+            font-weight: 400;
+            color: #a3a4a6;
+          }
+        }
+      }
+
+    }
+
+    .second {
+      margin: 15px;
+      background-color: white;
+      padding: 20x;
+
+      .head {
+        padding: 10px;
+        border-bottom: 1px solid #f3f7fc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          font-size: 20px;
+          color: #3246d3;
+          // font-family: 'Segoe UI';
+          // padding: 11px 25px 11px 15px;
+          font-weight: 550;
+        }
+
+        button {
+          background: transparent;
+          -webkit-box-shadow: 0 0 0 1px #26b4ff inset;
+          box-shadow: 0 0 0 1px #26b4ff inset;
+          color: #26B4FF;
+          border: none;
+
+          &:hover {
+            background-color: #26B4FF;
+            color: white;
+
+          }
+        }
+
+      }
+
+      main {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 20px;
+
+        .left {
+          label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2f3031;
+            margin-bottom: 5px;
+          }
+
+          .date-select {
+            display: flex;
+
+            .input {
+              display: flex;
+              flex-direction: column;
+            }
+
+            .last-date {
+
+              margin-left: 20px;
+            }
+
+            ::ng-deep {
+
+
+              .mat-icon-button {
+                position: absolute;
+                top: -5px;
+                right: -8px;
+                background-color: transparent;
+              }
+            }
+          }
+
+          .input {
             display: flex;
             flex-direction: column;
           }
 
-          .last-date{
+          .dropdown {
+            width: 50%;
 
-            margin-left: 20px;
           }
-          ::ng-deep{
 
+          .input1 {
+            display: flex;
+            flex-direction: column;
 
-            .mat-icon-button{
-              position: absolute;
-              top: -5px;
-              right: -8px;
-              background-color: transparent;
+            .fileinput {
+              border: 1px solid lightgray;
+              padding: 15px;
             }
           }
-        }
-        .input{
-          display: flex;
-          flex-direction: column;
-        }
-        .dropdown{
-          width: 350px;
 
         }
-        .input1{
-          display: flex;
-          flex-direction: column;
-          .fileinput{
-            border: 1px solid lightgray;
-            padding: 15px;
+
+        .right {
+          label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #2f3031;
+            margin-bottom: 5px;
           }
+
+          padding-right: 20px;
         }
 
       }
+    }
 
-      .right{
-        label{
-          font-size: 14px;
-          font-weight: 500;
-          color: #2f3031;
-          margin-bottom: 5px;
+    .third {
+      margin: 15px;
+      margin-top: 30px;
+
+      section {
+        background-color: white;
+        border-radius: 8px;
+
+        .head {
+          border-bottom: 1px solid rgb(247, 246, 246);
+
+          h1 {
+            font-size: 24px;
+            color: #3246d3;
+            // font-family: 'Segoe UI';
+            // padding: 11px 25px 11px 15px;
+            border-bottom: 1px solid #f3f7fc;
+            font-weight: 500;
+          }
         }
-        padding-right: 20px;
+
+        .table {
+          margin: 0px;
+          padding: 0px;
+
+          ::ng-deep {
+            .table {
+              padding: 0px;
+
+              table {
+                td {
+                  color: #606167;
+                  // border-right: 1px solid gainsboro;
+                }
+              }
+            }
+          }
+        }
+
       }
 
     }
   }
-  .third{
-    margin: 15px;
-    margin-top: 30px;
-    section{
-      background-color: white;
-      border-radius: 8px;
-      .head{
-        border-bottom: 1px solid rgb(247, 246, 246);
-        h1{
-          font-size: 24px;
-          color: #3246d3;
-          // font-family: 'Segoe UI';
-          // padding: 11px 25px 11px 15px;
-          border-bottom: 1px solid #f3f7fc;
-          font-weight: 500;
-        }
-      }
-      .table{
-        ::ng-deep{
-          table{
-            border:1px solid rgb(250, 250, 250);
-            th{
-              text-align: start;
-              padding-left: 20px;
-            }
-          }
-        }
-      }
-    }
-
-  }
-
 
 }
 
 @media only screen and (max-width: 1000px){
   section{
-
     .first{
-      display: block;
+      display: block !important;
 
     }
     .second{
       main{
-        display: block;
+        display: block !important;
         .right{
           margin-top: 20px;
         }
@@ -189,12 +217,12 @@ section {
 
     .second{
       main{
-        display: block;
+        display: block !important;
         .left{
           .date-select{
             flex-direction: column;
             .last-date{
-              margin: 0px;
+              margin: 0px !important;
             }
           }
         }

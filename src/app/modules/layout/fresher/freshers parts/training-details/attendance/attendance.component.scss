@@ -1,0 +1,57 @@
+@import'../../../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
+section {
+  padding: 15px;
+
+  main {
+    padding: 0px;
+    .head {
+      padding: 15px 0px;
+
+      h3 {
+        font-size: 18px;
+        color: #231E1E;
+        font-weight: 400;
+        line-height: 1.32;
+        margin-bottom: 0;
+
+      }
+
+      border-bottom: 1px solid rgb(235, 233, 233);
+    }
+
+    .table{
+      margin: 0px;
+      padding: 0px;
+
+      ::ng-deep{
+        .table{
+          padding: 0px;
+          table{
+            td{
+              color: #606167;
+            }
+          }
+        }
+
+       }
+
+
+
+    }
+  }
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

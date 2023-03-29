@@ -8,6 +8,12 @@ const routes: Routes = [
     children:[
       {
         path:'my-dsr',loadChildren:()=>import('./my-dsr/my-dsr.module').then((m)=>m.MyDsrModule)
+      },
+      {
+        path:'dsr-detail',loadChildren:()=>import('./dsr-detail/dsr-detail.module').then((m)=>m.DsrDetailModule)
+      },
+      {
+        path:'dsr-edit',loadChildren:()=>import('./dsr-edit/dsr-edit.module').then((m)=>m.DsrEditModule)
       }
     ]
   }

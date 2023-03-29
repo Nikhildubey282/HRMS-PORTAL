@@ -6,10 +6,10 @@
     <!-- <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
     showFirstLastButtons>
   </mat-paginator> -->
-  <div *ngIf="searchBar">
+  <div  *ngIf="searchBar">
   <label style="margin-right:10px ;">Search</label>
   <mat-form-field class="example-full-width" appearance="outline">
-    <input matInput >
+    <input (keyup)="applyFilter($event)" matInput >
   </mat-form-field>
 </div>
   </div>
@@ -34,24 +34,28 @@
           <ng-container *ngSwitchCase="'download'" >
             <div class="download_link">
               <a [href]="element.link" download >Download<mat-icon>download</mat-icon></a>
-              <!-- <mat-icon>download</mat-icon> -->
-
             </div>
-
           </ng-container>
+          <ng-container *ngSwitchCase="'HTML'">
+            <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(element[row.key])" ></div>
+           </ng-container>
           <ng-container *ngSwitchCase="'text'">
            {{element[row.key]}}
           </ng-container>
+          <ng-container *ngSwitchCase="'edit-button'" >
+            <button (click)="openDialog()" >Edit</button>
+            <button>Delete</button>
+          </ng-container>
           <ng-container *ngSwitchCase="'link'">
-            <a (click)="userDetail.emit(element)">{{element[row.key]}}</a>
+            <ng-container *ngFor="let icon of row.action; let i=index;" >
+            <a *ngIf="icon==1" [routerLink]="[element[row.key]]"><mat-icon class="arrow">arrow_forward</mat-icon></a>
+            <a *ngIf="icon==2" [routerLink]="[dsrdetail]" ><button class="pending" >Pending</button></a>
+            <a *ngIf="icon==3" [routerLink]="[DSREDIT]"><mat-icon class="edit"> border_color</mat-icon></a>
+            <a *ngIf="icon==4"[routerLink]="[PROJECTDETAIL]">{{element[row.key]}}</a>
+          </ng-container>
           </ng-container>
           <ng-container *ngSwitchCase="'action'">
-            <div class="actionIcon">
-              <ng-container *ngFor="let icon of row.action; let i=index;">
-                <mat-icon class="mat-18" (click)="handleClick(element,icon)">{{icon}}</mat-icon>
-
-              </ng-container>
-            </div>
+            <a (click)="userDetail.emit(element)">{{element[row.key]}}</a>
           </ng-container>
         </ng-container>
       </td>

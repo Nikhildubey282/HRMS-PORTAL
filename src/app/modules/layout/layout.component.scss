@@ -24,6 +24,7 @@ section {
 
 footer {
   button {
+    z-index: 999;
     font-weight: 600;
     color: red;
     border: none;
@@ -35,7 +36,6 @@ footer {
     box-shadow: 0 3px 5px 0 rgb(119 119 119 / 16%);
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-
     outline: none;
     min-height: 50px;
   }

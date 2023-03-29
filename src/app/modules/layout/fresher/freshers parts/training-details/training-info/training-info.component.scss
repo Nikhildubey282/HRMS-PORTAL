@@ -1,0 +1,87 @@
+@import'../../../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
+section {
+  padding: 15px;
+  main{
+    padding: 0px;
+
+  .head {
+    padding:15px 0px;
+
+    h3 {
+      font-size: 18px;
+      color: #231E1E;
+      font-weight: 400;
+      line-height: 1.32;
+      margin-bottom: 0;
+
+    }
+
+    border-bottom: 1px solid rgb(235, 233, 233);
+  }
+
+  .details {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    .tag {
+      display: flex;
+      padding: 5px;
+      label {
+        // font-family: "Lato";
+        font-size: 14px;
+        color: #606167;
+        font-weight: 400;
+        line-height: 1.5;
+        min-width: 160px;
+        margin: 0 10px 0 0;
+      }
+
+      p {
+        // font-family: "Lato";
+        font-size: 14px;
+        color: #231E1E;
+        font-weight: 400;
+        line-height: 1.5;
+        margin: 0;
+      }
+    }
+  }
+  .description{
+    background-color: #F4F8FF;
+    padding: 24px;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+
+  .table{
+    margin: 0px;
+    padding: 0px;
+
+    ::ng-deep{
+      .table{
+        padding: 0px;
+        table{
+          td{
+            color: #606167;
+          }
+        }
+      }
+     }
+  }
+}
+
+}
+
+@media only screen and (max-width: 800px) {
+  section{
+    main{
+      .details{
+        display: block;
+      }
+
+    }
+  }
+
+
+
+}

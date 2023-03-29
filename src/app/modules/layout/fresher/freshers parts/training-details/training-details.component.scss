@@ -1,12 +1,4 @@
-// section{
-//   padding: 20px;
-//   .breadcrumbs{
 
-//   }
-// }
-
-// @import '/home/appinventiv/Desktop/newHRMS/src/scss/buttons.scss';
-// @import 'src/scss/dashbord-card-heading.scss';
 section{
   padding: 20px;
   p{
@@ -31,6 +23,10 @@ section{
             //    border-bottom: 1px solid rgba(24,28,33,0.06);
 
                 .action{
+                  button{
+                    background-color: transparent;
+                    border: 1px solid gainsboro;
+                  }
                     position: absolute;
                     right: 0;
                     top: 11px;
@@ -42,7 +38,7 @@ section{
                         height: 10px;
                         vertical-align: middle;
                         width: 10px;
-                        background-color: var(--success-color);
+                        background-color:#02BC77;
 
                     }
                 }
@@ -52,13 +48,6 @@ section{
     }
 }
 ::ng-deep {
-    // .mat-tab-group {
-
-    // }
-    // .mat-tab-body-wrapper {
-    //         padding-top: 1px;
-    //        border-top: 1px solid rgba(24,28,33,0.06);
-    // }
     .mat-tab-header {
         align-self: start;
         border: none;
@@ -82,4 +71,14 @@ section{
         background-color: transparent;
         border: none;
     }
+    
+}
+
+::ng-deep{
+  @media only screen and (max-width: 700px) {
+    .mat-tab-list .mat-tab-labels{
+      display: grid;
+    }
+  }
+
 }

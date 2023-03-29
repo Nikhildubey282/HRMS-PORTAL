@@ -1,0 +1,46 @@
+<section>
+  <div class="head">
+    <h1>Edit Qualication</h1>
+    <button (click)="crossClick()">X</button>
+  </div>
+  <main>
+    <div class="row">
+      <div class="input">
+        <label>School/university</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Ex. It makes me feel...">
+        </mat-form-field>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelDepartment" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div class="input">
+        <label>Date Form</label>
+        <mat-form-field appearance="outline" appearance="outline">
+          <input readonly matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelDepartment" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div class="input">
+        <label>School/university</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <input matInput placeholder="Ex. It makes me feel...">
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>School/university</label>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </main>
+  <div class="button-wrapper">
+    <button class="left">Close</button>
+    <button class="right">Update</button>
+  </div>
+</section>

@@ -134,3 +134,41 @@ section {
   }
 }
 }
+
+@media only screen and (max-width: 1350px) {
+  section{
+    .card-main{
+      flex-direction: column;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 580px) {
+  section{
+    .area{
+      flex-direction: column;
+      p{
+        width: 55px;
+      }
+    }
+    .buttonGroup{
+      flex-direction: column;
+      align-items: center;
+    
+    }
+  }
+
+}
+
+@media only screen and (max-width: 580px) {
+  section{padding: 10px;
+    .card-main{
+      .job-detail-card{
+        padding: 10px;
+        margin: 10px;
+      }
+    }
+  }
+}
+

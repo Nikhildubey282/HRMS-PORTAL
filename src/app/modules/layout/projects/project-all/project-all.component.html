@@ -1,0 +1,44 @@
+<section>
+  <div class="card">
+    <div class="head">
+      <h4>
+        <a class="pro_name"(click)="naviagte_projectdetail()" >
+          Training Project React JS</a>
+      </h4>
+      <div><mat-icon>more_horiz</mat-icon></div>
+    </div>
+    <p><mat-icon>account_circle</mat-icon>
+       1
+    </p>
+    <div class="tags">
+    <div class="badge-primary">Time and Material (TNM)</div>
+    <div class="badge-danger">In Progress</div>
+  </div>
+  <p class="milestone">no milestone defined</p>
+  <ul class="list">
+    <li>
+      <mat-icon>group</mat-icon>
+      <span>11</span>
+      Resources
+    </li>
+    <li>
+      <span>N/A</span>
+      Hours
+    </li>
+
+  </ul>
+  <div class="image" >
+    <ng-container *ngFor="let item of imgArray" >
+      <img src="../../../../../assets/images/profile_icon.jpg">
+    </ng-container>
+
+  </div>
+  <div class="progress-wrapper">
+    <h4>Project Completed</h4>
+    0
+  </div>
+
+
+  </div>
+</section>
+

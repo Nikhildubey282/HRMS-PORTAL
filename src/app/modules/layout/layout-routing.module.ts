@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DIRECTORY } from 'src/app/constant/routes';
+import { ASSETSINVENTORY, ATTENDANCE, DIRECTORY, DSR, FRESHERS, HOME, INTERVIEW, LEAVE, PROFILE, PROJECTS, REFERCANDIDATE, REVIEWS, TICKETS, TRAINING } from 'src/app/constant/routes';
 import { ENTERPRENEUR } from 'src/app/constant/routes';
 import { LayoutComponent } from './layout.component';
+
 
 
 const routes: Routes = [
@@ -11,10 +12,10 @@ const routes: Routes = [
   children:[
     {path:'',redirectTo:'dashboard',pathMatch:'full'},
     {
-      path:'dashboard',loadChildren:() => import('./home/home.module').then((m) => m.HomeModule)
+      path:HOME,loadChildren:() => import('./home/home.module').then((m) => m.HomeModule)
     },
     {
-      path:'profile',loadChildren:() => import('./my-profile/my-profile.module').then((m) => m.MyProfileModule)
+      path:PROFILE,loadChildren:() => import('./my-profile/my-profile.module').then((m) => m.MyProfileModule)
     },
     {
       path:DIRECTORY,loadChildren:() => import('./directory/directory.module').then((m)=> m.DirectoryModule )
@@ -29,34 +30,40 @@ const routes: Routes = [
       path:'',loadChildren:()=> import('./mylinks/mylinks.module').then((m) =>m.MylinksModule )
     },
     {
-      path:'reviews',loadChildren:()=> import('./reviews/reviews.module').then((m) =>m.ReviewsModule )
+      path:REVIEWS,loadChildren:()=> import('./reviews/reviews.module').then((m) =>m.ReviewsModule )
     },
     {
-      path:'refer-candidate',loadChildren:()=> import('./refer-candidate/refer-candidate.module').then((m) =>m.ReferCandidateModule )
+      path:REFERCANDIDATE,loadChildren:()=> import('./refer-candidate/refer-candidate.module').then((m) =>m.ReferCandidateModule )
     },
     {
-      path:'interview',loadChildren:()=> import('./recruitment/recruitment.module').then((m) =>m.RecruitmentModule )
+      path:INTERVIEW,loadChildren:()=> import('./recruitment/recruitment.module').then((m) =>m.RecruitmentModule )
     },
     {
-      path:'freshers',loadChildren:()=> import('./fresher/fresher.module').then((m) =>m.FresherModule )
+      path:FRESHERS,loadChildren:()=> import('./fresher/fresher.module').then((m) =>m.FresherModule )
     },
     {
-      path:'training',loadChildren:()=> import('./training/training.module').then((m) =>m.TrainingModule )
+      path:TRAINING,loadChildren:()=> import('./training/training.module').then((m) =>m.TrainingModule )
     },
     {
-      path:'assets-inventory',loadChildren:()=> import('./assets-inventory/assets-inventory.module').then((m) =>m.AssetsInventoryModule )
+      path:ASSETSINVENTORY,loadChildren:()=> import('./assets-inventory/assets-inventory.module').then((m) =>m.AssetsInventoryModule )
     },
     {
-      path:'attendance',loadChildren:()=> import('./attendance/attendance.module').then((m) =>m.AttendanceModule )
+      path:ATTENDANCE,loadChildren:()=> import('./attendance/attendance.module').then((m) =>m.AttendanceModule )
     },
     {
-      path:'leave',loadChildren:()=> import('./leave/leave.module').then((m) =>m.LeaveModule )
+      path:LEAVE,loadChildren:()=> import('./leave/leave.module').then((m) =>m.LeaveModule )
     },
     {
-      path:'tickets',loadChildren:()=> import('./tickets/tickets.module').then((m) =>m.TicketsModule )
+      path:TICKETS,loadChildren:()=> import('./tickets/tickets.module').then((m) =>m.TicketsModule )
     },
     {
-      path:'DSR',loadChildren:()=> import('./dsr/dsr.module').then((m) =>m.DSRModule )
+      path:DSR,loadChildren:()=> import('./dsr/dsr.module').then((m) =>m.DSRModule )
+    },
+    {
+      path:PROJECTS,loadChildren:()=> import('./projects/projects.module').then((m) =>m.ProjectsModule )
+    },
+    {
+      path:'project-detail',loadChildren:()=> import('./projects/project-detail/project-detail.module').then((m) =>m.ProjectDetailModule )
     },
 
   ]

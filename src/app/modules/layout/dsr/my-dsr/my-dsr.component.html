@@ -27,7 +27,7 @@
           <div class="input">
             <label>Estimate Hours</label>
             <mat-form-field appearance="outline">
-              <input formControlName="hours" matInput>
+              <input type="time" formControlName="hours" matInput>
             </mat-form-field>
           </div>
         </div>
@@ -38,6 +38,7 @@
 
 
         <editor
+        formControlName="dsr"
             [init]="{
               height: 350,
               plugins: [
@@ -56,8 +57,7 @@
       </div>
 
       <div class="buttongrp">
-        <button>Add</button>
-
+        <button (click)="submitHandler()" >Add</button>
       </div>
 
     </main>
@@ -92,8 +92,7 @@
       </span>
     </div>
 
-  </div>
-  <div class="row2">
+  
     <div class="input">
       <span>
         <app-dropdown [label]="labelStatus" [Data]="statusData"

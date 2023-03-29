@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-detail',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public _route:Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  navigate_to_home(){
+    this._route.navigate(['./layout'])
   }
 
 }

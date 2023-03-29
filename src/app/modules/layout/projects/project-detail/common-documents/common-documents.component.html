@@ -1,0 +1,34 @@
+<div class="documents">
+
+  <div class="left">
+    <ng-container *ngFor="let item of tags1">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <div class="card-detail">
+      <div class="cardname">{{item.charAt(0)}}</div>
+      <div class="description">
+        <h2 class="mb-0">{{item}}</h2>
+        <p>No Document</p>
+      </div>
+    </div>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</ng-container>
+</div>
+<div class="right">
+  <ng-container *ngFor="let item of tags2">
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <div class="card-detail">
+    <div class="cardname">{{item.charAt(0)}}</div>
+    <div class="description">
+      <h2 class="mb-0">{{item}}</h2>
+      <p>No Document</p>
+    </div>
+  </div>
+  </mat-expansion-panel-header>
+</mat-expansion-panel>
+</ng-container>
+</div>
+
+</div>

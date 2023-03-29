@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { ABS_LEAVEDETAIL } from 'src/app/constant/absolute-route';
 
 @Component({
   selector: 'app-my-leaves',
@@ -12,16 +13,17 @@ export class MyLeavesComponent implements OnInit {
   genderData=['Male','Female'];
   addButton=false;
   leaveForm!:FormGroup;
+  leavedetail=ABS_LEAVEDETAIL;
 
   dataSource = new MatTableDataSource<any>();
 
 
   heading = [
-    { heading: 'Action', key:'sNo',type:'text'},
-    { heading: 'Leave Type', key:'mName',type:'text'},
-    { heading: 'Request From', key:'lName',type:'text'},
-    {heading:'Request To',key:'Name',type:'text'},
-    {heading:	'Applied On',key:'rd',type:'text'},
+    { heading: 'Action', key:'sNo',type:'link',action:[1] },
+    { heading: 'Leave Type', key:'type',type:'text'},
+    { heading: 'Request From', key:'request',type:'text'},
+    {heading:'Request To',key:'TO',type:'text'},
+    {heading:	'Applied On',key:'applied',type:'text'},
     {heading:'Status'},
     {heading:'Level 1'},
     {heading:'Level 2'},
@@ -31,6 +33,10 @@ export class MyLeavesComponent implements OnInit {
 
   ]
   Table_DATA: any[] = [
+    {sNo:this.leavedetail,type:'short leave',request:'sdjjkasjk',TO:'bmsbjbsd',applied:'bjhsjhsdjk'},
+    {sNo:this.leavedetail,type:'nikhil',request:'manu',TO:'govind',applied:'bjhsjhsdjk'},
+
+
 
   ];
 

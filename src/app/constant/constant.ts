@@ -266,7 +266,7 @@ export const Gallery_DATA :IGALLERYDATA[]=[
   ],
 
 },
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View',
+  {IMAGE:'/assets/images/award_1672378171227.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View',
   SUBIMAGE:[
     {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
     {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
@@ -275,7 +275,7 @@ export const Gallery_DATA :IGALLERYDATA[]=[
     // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
   ],
 },
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View',
+  {IMAGE:'/assets/images/award_166719426194.jpeg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View',
   SUBIMAGE:[
     {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
     {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
@@ -306,7 +306,7 @@ export interface IGALLERYDATA{
 }
 
 
-//freasher training data
+//fresher training data
 export const MYTRAINING=[
   { id:1,
     IMAGE:'https://dashboard.appinventiv.com/skin/hrsale_assets/img/ic-training.svg',
@@ -319,8 +319,6 @@ export const MYTRAINING=[
     MODE:'Online',
     VIEW:'View Details',
     FEEDBACK:'Feedback',
-
-
   },
   {
     id:2,
@@ -334,7 +332,6 @@ export const MYTRAINING=[
     MODE:'Online',
     VIEW:'View Details',
     FEEDBACK:'Feedback',
-
   },
 
 ]
@@ -361,4 +358,12 @@ export const TRAINING=[
   }
 
 ]
+
+//dropdown data
+
+export const PRIORITYDROPDOWN=[
+  'LOW','NORMAL','HIGH'
+]
+
+export const DEPARTMENTDROPDOWN=['IT','ADMIN','FRONTEND']
 

@@ -1,4 +1,5 @@
 @import"../../../../../scss/var";
+// @import"../../mylinks/mylinks-parts/policy-document/policy-document.component.scss";
 section{
   padding: 20px;
   .head{
@@ -26,5 +27,37 @@ section{
 
       }
     }
+    .table{
+      ::ng-deep{
+        .table{
+          padding: 30px 0px;
+          table{
+            // border: none;
+          }
+          @media only screen and (max-width: 550px) {
+            padding-left: 0px;
+          }
+
+        }
+      }
+    }
+
   }
 }
+
+@media only screen and (max-width: 750px) {
+  section{
+    .content{
+      .inputs{
+        display: block;
+      }
+    }
+  }
+
+}
+
+
+
+
+
+

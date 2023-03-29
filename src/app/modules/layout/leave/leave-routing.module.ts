@@ -12,6 +12,9 @@ const routes: Routes = [
       {
         path:'my-leaves',loadChildren:()=> import('./my-leaves/my-leaves.module').then((m) =>m.MyLeavesModule )
       },
+      {
+        path:'leave-details',loadChildren:()=> import('./leave-details/leave-details.module').then((m) =>m.LeaveDetailsModule )
+      },
     ]
   }
 ];

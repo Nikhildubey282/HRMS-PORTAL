@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NguCarouselConfig } from '@ngu/carousel';
 import { ReferCandidateComponent } from './dialog component/refer-candidate/refer-candidate.component';
+import { JOBOPENING } from 'src/app/constant/constant';
+
 
 @Component({
   selector: 'app-job-opening',
@@ -16,7 +18,9 @@ export class JobOpeningComponent implements OnInit,AfterViewInit {
     private routes:Router
   ) { }
 
-  listOfNewFamilyMembers=[1,2,3]
+  // listOfNewFamilyMembers=[1,2,3]
+  DATA:any[]=JOBOPENING;
+
   @ViewChildren("listofDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
   carouselConfig: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
@@ -46,7 +50,8 @@ export class JobOpeningComponent implements OnInit,AfterViewInit {
           departmentName:'Marketing',
           jobCode:'AP1002',
           location:'Noida',
-          experience:'3 to 5 years'
+          experience:'3 to 5 years',
+          positiontitle:'Sr.Bussiness Analyst'
         }
 
     });

@@ -1,0 +1,71 @@
+<section>
+  <div class="note-card">
+    <div class="head">
+      <h1>Filters</h1>
+    </div>
+    <div class="main">
+      <div class="row1">
+      <div class="input">
+        <label>Date Form</label>
+        <mat-form-field appearance="outline">
+          <input readonly matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <label>Date To</label>
+        <mat-form-field appearance="outline">
+          <input matInput  readonly [matDatepicker]="picker1">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelDepartment" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span> <app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div>
+        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+      </div>
+      <div class="button-wrapper">
+        <button>Apply</button>
+        <button>Reset</button>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <div class="analysis">
+    <div class="head">
+      <h1>DSR Analytics</h1>
+    </div>
+    <main>
+      <ul>
+        <ng-container *ngFor="let item of dsrAnalysis " >
+        <li><h4>{{item}}</h4>
+        <span class="ttl_dsr_submited">200</span></li>
+      </ng-container>
+      </ul>
+    </main>
+
+  </div>
+</section>

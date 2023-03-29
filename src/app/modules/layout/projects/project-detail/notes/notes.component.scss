@@ -1,0 +1,79 @@
+@import'../../../../../../scss/heading';
+
+section {
+  margin-top: 30px;
+
+  .note-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+
+    .head {
+      padding: 0px 10px;
+      .add-button {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        font-size: 21px;
+        padding: 0;
+        background: #3246d3;
+        border: none;
+        box-shadow: none;
+
+      }
+    }
+
+    .project-note {
+      padding: 15px;
+      margin: 20px 10px;
+      border: 1px solid rgba(0, 0, 0, 0.16);
+      box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+      border-radius: 10px;
+
+      .link {
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          text-decoration: underline;
+          color: black;
+          font-size: 22px;
+          font-weight: 500;
+        }
+      }
+
+      .download-wrap {
+        p {
+          color: #9a9c9c;
+          font-size: 16px;
+          font-weight: 500;
+          margin: 12px 0px;
+        }
+      }
+
+    }
+
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  section{
+    .note-card{
+      .project-note{
+        .link{
+          flex-direction: column;
+          span{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+
+
+

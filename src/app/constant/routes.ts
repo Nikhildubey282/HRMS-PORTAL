@@ -46,10 +46,17 @@ export const PUNCHLOG='punch-log';
 export const LEAVE='leave';
 export const FLOATINGLEAVES='floating-leaves';
 export const MYLEAVES='my-leaves';
+export const LEAVEDETAIL='leave-details';
 export const TICKETS='tickets';
 export const MYTICKETS='my-tickets';
 export const DSR='DSR';
 export const MYDSR='my-dsr';
+export const DSRDETAIL='dsr-detail';
+export const DSREDIT='dsr-edit';
+export const PROJECTS='projects';
+export const POJECTDETAIL='project-detail';
+
+
 
 
 

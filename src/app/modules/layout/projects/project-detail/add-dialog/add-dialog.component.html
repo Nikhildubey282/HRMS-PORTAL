@@ -1,0 +1,17 @@
+<section>
+  <div class="head">
+    <h5>Add Tags</h5>
+  </div>
+  <div class="body">
+    <form [formGroup]="addForm">
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput formControlName="addTag" >
+    </mat-form-field>
+  </form>
+  </div>
+  <div class="button-wrap">
+    <button>Cancel</button>
+    <button [mat-dialog-close]="this.addForm.controls.addTag.value" >add</button>
+  </div>
+</section>

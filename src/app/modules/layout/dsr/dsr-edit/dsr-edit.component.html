@@ -1,0 +1,68 @@
+<section>
+  <div class="first">
+    <div class="head">
+      <h1>DSR Edit</h1>
+    </div>
+    <form [formGroup]="dsrForm">
+    <main>
+      <div class="left">
+        <div>
+          <span>
+            <app-dropdown [label]="lableProject" [Data]="projectData"
+            [myControlName]="dsrForm.controls.project"
+            [errorType]="dsrForm.controls.project"
+            ></app-dropdown>
+          </span>
+        </div>
+        <div class="row">
+          <div class="input">
+            <label>Date</label>
+            <mat-form-field appearance="outline">
+              <input matInput formControlName="date" [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <label>Estimate Hours</label>
+            <mat-form-field appearance="outline">
+              <input type="time" formControlName="hours" matInput>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+
+          <label>Ticket Descripition</label>
+
+
+        <editor
+        formControlName="dsr"
+            [init]="{
+              height: 350,
+              plugins: [
+                 'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+                'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+                'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+              ],
+              toolbar:
+               'undo redo | casechange blocks | bold italic backcolor | \
+               alignleft aligncenter alignright alignjustify | \
+               bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+            }"
+
+          ></editor>
+
+      </div>
+
+      <div class="buttongrp">
+        <button>Add</button>
+
+      </div>
+
+    </main>
+  </form>
+
+
+  </div>
+</section>

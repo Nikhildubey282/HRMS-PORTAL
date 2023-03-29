@@ -1,0 +1,43 @@
+section
+{
+
+  .head{
+  border-bottom: 1px solid #393a3a;
+
+    h5{
+      font-size: 28px;
+    font-weight: 500;
+    color: #2f3031;
+    }
+  }
+  .body{
+
+  }
+  .button-wrap{
+    button{
+      min-width: 100px;
+    background: #3246d3;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 0px;
+    outline: none;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    }
+  }
+
+
+}
+
+::ng-deep{
+
+  .mat-dialog-container{
+    width: 700px !important;
+    // padding: 0px !important;
+  }
+  // .cdk-overlay-dark-backdrop{
+  //   background: rgba(0, 0, 0, 0.80);
+  // }
+}

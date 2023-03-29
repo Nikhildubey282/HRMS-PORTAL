@@ -1,12 +1,3 @@
-<!-- <section>
-  <div class="breadcrumbs">
-    <p><span style="color:  #0095ff;">HOME /</span> My Trainings / Details</p>
-  </div>
-  <div class="heading">
-    <h1>{{trainingDetailData.TRAININGNAME}}</h1>
-  </div>
-</section> -->
-
 <section>
   <p><span style="color:#0095ff;">HOME /</span>  My Trainings / Details</p>
   <div class="header">
@@ -18,12 +9,12 @@
       <div class="main_header">
           <div class="tabs">
               <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-                  <mat-tab label="Training Details">nikhil </mat-tab>
-                  <mat-tab label="Sub-Topics"> nikhil </mat-tab>
-                  <mat-tab label="Attendance"> nikhil </mat-tab>
+                  <mat-tab label="Training Details"><app-training-info></app-training-info> </mat-tab>
+                  <mat-tab label="Sub-Topics"><app-sub-topics></app-sub-topics></mat-tab>
+                  <mat-tab label="Attendance"><app-attendance></app-attendance></mat-tab>
               </mat-tab-group>
               <div class="action">
-                  <button class="btn_cancel" mat-raised-button>Completed</button>
+                  <button class="btn_cancel" mat-raised-button> Completed</button>
               </div>
           </div>
       </div>

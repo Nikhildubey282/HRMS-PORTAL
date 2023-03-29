@@ -167,4 +167,33 @@ section {
 }
 }
 
+@media only screen and (max-width: 550px) {
+  section{
+    .area{
+      flex-direction: column;
+      p{
+        width: 55px;
+      }
+    }
+    .buttonGroup{
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+  section{padding: 10px;
+    .card-main{
+      justify-content: center;
+      .job-detail-card{
+        padding: 10px;
+        margin: 10px;
+      }
+    }
+  }
+}
+
 

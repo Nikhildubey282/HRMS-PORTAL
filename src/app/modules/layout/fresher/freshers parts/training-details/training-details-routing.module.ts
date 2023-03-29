@@ -4,7 +4,8 @@ import { TrainingDetailsComponent } from './training-details.component';
 
 const routes: Routes = [
   {
-    path:'',component:TrainingDetailsComponent
+    path:'',component:TrainingDetailsComponent,
+   
   }
 ];
 

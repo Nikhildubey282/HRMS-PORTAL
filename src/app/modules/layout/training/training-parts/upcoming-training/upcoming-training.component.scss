@@ -155,31 +155,38 @@ section {
 }
 }
 
+
 @media only screen and (max-width: 550px) {
   section{
+    .area{
+      flex-direction: column;
+      p{
+        width: 55px;
+      }
+    }
+    .buttonGroup{
+      flex-direction: column;
+      align-items: center;
 
-    .job-detail-card{
-      width: 75%;
-
-      .image{
-        width: 70%;
-      }
-      .area{
-        width: 70%;
-      }
-      .requirement{
-        width: 70%7
-      }
-      .requirement1{
-        width: 70%;
-      }
-      .buttonGroup{
-        width: 70%;
-      }
     }
   }
 
+}
+
+@media only screen and (max-width: 550px) {
+  section{padding: 10px;
+    .card-main{
+      justify-content: center;
+      .job-detail-card{
+        padding: 10px;
+        margin: 10px;
+      }
+    }
   }
+}
+
+
+
 
 
 // @media only screen and (max-width: 440px) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { DEPARTMENTDROPDOWN, PRIORITYDROPDOWN } from 'src/app/constant/constant';
 
 @Component({
   selector: 'app-my-tickets',
@@ -9,9 +10,10 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class MyTicketsComponent implements OnInit {
   department='Department';
-  ticketStatus='Ticket Category';
+  ticketCategory='Ticket Category';
   priority='Priority';
-  genderData=['Male','Female'];
+  priorityData=PRIORITYDROPDOWN;
+  departmentData=DEPARTMENTDROPDOWN;
   addbutton:boolean=false;
   ticketForm!:FormGroup;
 
@@ -20,18 +22,16 @@ export class MyTicketsComponent implements OnInit {
 
 
   heading = [
-    { heading: 'Action', key:'sNo',type:'text'},
-    { heading: 'Ticket Code', key:'mName',type:'text'},
-    { heading: 'Priority', key:'lName',type:'text'},
-    {heading:'Employee',key:'Name',type:'text'},
-    {heading:	'Subject',key:'rd',type:'text'},
-    {heading:'Status'},
-    {heading:'Date'},
-
-
-
+    { heading:'Action', key:'action',type:'link',action:[1]},
+    { heading:'Ticket Code', key:'ticket_code',type:'text'},
+    { heading:'Priority', key:'priority',type:'text'},
+    {heading:'Employee',key:'employee',type:'text'},
+    {heading:'Subject',key:'subject',type:'text'},
+    {heading:'Status',key:'status',type:'text'},
+    {heading:'Date',key:'date',type:'text'},
   ]
   Table_DATA: any[] = [
+
 
   ];
 
@@ -69,5 +69,26 @@ export class MyTicketsComponent implements OnInit {
 
     }
   }
+
+  addTickets() {
+    console.log(this.ticketForm.value,'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
+
+      this.Table_DATA.push({
+        action:'',
+        ticket_code: 'APP-25032023/0082',
+        priority:this.formCtrl['priority'].value,
+        employee:'Nikhil Dubey',
+        subject:this.formCtrl['subject'].value,
+        status:'Open',
+        date:'25/04/2023 05:00pm',
+
+      });
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+      this.ticketForm.reset();
+      // this.createForm();
+  //   } else {
+  //     this.qualificationForm.markAllAsTouched();
+  //   }
+   }
 
 }

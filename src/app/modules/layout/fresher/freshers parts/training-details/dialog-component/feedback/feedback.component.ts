@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-feedback',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialogRef: MatDialogRef<FeedbackComponent>,
+
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  crossClick() {
+    this.dialogRef.close('cancel');
   }
 
 }

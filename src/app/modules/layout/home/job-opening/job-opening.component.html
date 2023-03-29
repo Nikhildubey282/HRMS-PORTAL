@@ -8,42 +8,42 @@
 
       <mat-card class="job-detail-card">
         <app-courosel [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
-      <ng-container *ngFor="let member of listOfNewFamilyMembers">
+      <ng-container *ngFor="let item of DATA">
       <ng-template #listofDivs>
         <div class="image">
           <figure>
-          <img src="https://dashboard.appinventiv.com/uploads/award/blockchain.svg" class="showImage">
+          <img [src]="item.IMAGE"  class="showImage">
         </figure>
           <div class="address">
             <div class="location">
               <!-- <i class="fa-solid fa-location-dot" id="location-icon"></i> -->
                           <mat-icon id="location-icon" > location_on</mat-icon>
 
-              <p class="location-name">Noida, UttarPradesh</p>
+              <p class="location-name">{{item.LOCATION}}</p>
             </div>
             <div class="date">
-              <p>03/02/2023</p>
+            <p>{{item.DATE}}</p>
             </div>
           </div>
         </div>
         <div class="area">
-          <h3>Graphic Designer - Designing Marketing</h3>
-          <p>We are looking for Graphic Designers to create engaging.</p>
+          <h3>{{item.POSITION}}</h3>
+          <p>{{item.DESCRIPITION}}</p>
         </div>
         <div class="requirement">
-          <p>No. of Openings</p>
-          <p>Experience</p>
+          <p>{{item.OPENINGS}}</p>
+          <p>{{item.EXPRIENCE}}</p>
         </div>
         <div class="requirement1">
-          <p>1</p>
-          <p>5 to 9 Years'</p>
+          <p>{{item.NO}}</p>
+          <p>{{item.YEARS}}</p>
         </div>
         <div class="buttonGroup">
           <button (click)="open_viewdetail()" class="button-view"  mat-raised-button>
-            View Details'
+            {{item.VIEW}}
           </button>
           <button class="button-refer" (click)="openDialog()" mat-raised-button>
-            Refer a Candidates
+            {{item.REFER}}
           </button>
         </div>
       </ng-template>

@@ -11,6 +11,10 @@ import { MatInputModule } from '@angular/material/input';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+// import { ToastrModule } from 'ngx-toastr';
+
+
+
 
 
 
@@ -30,7 +34,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
     EditorModule,
     FormsModule,
     ReactiveFormsModule,
-    CommontableModule
+    CommontableModule,
+
 
   ]
 })

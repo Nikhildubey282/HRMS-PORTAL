@@ -29,6 +29,7 @@ export class ReferCandidateComponent implements OnInit {
       job_code:[{value: this.data.jobCode, disabled: true}, Validators.required],
       location:[{value: this.data.location, disabled: true}, Validators.required],
       experience:[{value: this.data.experience, disabled: true}, Validators.required],
+      positiontitle:[{value:this.data.positiontitle,disabled:true},Validators.required],
       name:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
       phoneNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
       email:['',[Validators.required,Validators.email]],

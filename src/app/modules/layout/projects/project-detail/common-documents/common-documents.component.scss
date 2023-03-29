@@ -1,0 +1,80 @@
+.documents {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns:50% 50% ;
+  // gap: 10px;
+
+
+  .left {
+
+    .card-detail {
+      display: flex;
+      gap: 10px;
+      h2{
+        margin: 0px;
+      }
+      .cardname {
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+        background-color: #3246d3;
+        font-size: 31px;
+        font-weight: 600;
+        color: #fff;
+        // font-family: 'Segoe UI';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+    }
+  }
+  .right {
+    margin-left: 10px;
+
+    .card-detail {
+      display: flex;
+      gap: 10px;
+      h2{
+        margin: 0px;
+      }
+      .cardname {
+        width: 60px;
+        height: 60px;
+        border-radius: 7px;
+        background-color: #3246d3;
+        font-size: 31px;
+        font-weight: 600;
+        color: #fff;
+        // font-family: 'Segoe UI';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
+
+    }
+  }
+}
+
+::ng-deep{
+  .mat-expansion-panel{
+    border-radius: 0px
+  }
+  .mat-expansion-panel-header{
+    min-height: 90px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+  .documents{
+    display: block;
+    .right{
+      margin: 0px;
+    }
+
+  }
+}
+

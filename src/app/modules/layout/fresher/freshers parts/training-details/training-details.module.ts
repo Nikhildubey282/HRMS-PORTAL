@@ -10,6 +10,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { TrainingInfoComponent } from './training-info/training-info.component';
+import { SubTopicsComponent } from './sub-topics/sub-topics.component';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 
 
 
@@ -17,7 +21,9 @@ import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     TrainingDetailsComponent,
-    // FeedbackComponent
+    TrainingInfoComponent,
+    SubTopicsComponent,
+    AttendanceComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +34,8 @@ import { MatInputModule } from '@angular/material/input';
      ReactiveFormsModule,
      MatRadioModule,
      MatFormFieldModule,
-     MatInputModule
+     MatInputModule,
+     CommontableModule
 
 
 

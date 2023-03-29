@@ -1,0 +1,121 @@
+section {
+  padding: 20px;
+
+  .head {
+    display: grid;
+    // justify-content: space-between;
+    grid-template-columns: 75% auto;
+    margin-bottom: 30px;
+
+    .project_title {
+      font-size: 32px;
+      font-weight: 600;
+      // font-family: 'Segoe UI';
+      color: #3246d3;
+      line-height: 1.35;
+      height: unset;
+    }
+
+    .tags_wrapper {
+      background-color: white;
+      border-radius: 10px;
+
+      .header {
+        padding: 10px;
+        border-bottom: 1px solid #f3f7fc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          font-size: 22px;
+          color: black;
+          // font-family: 'Segoe UI';
+          // padding: 11px 25px 11px 15px;
+          font-weight: 550;
+        }
+
+        button {
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          color: #fff;
+          font-size: 21px;
+          padding: 0;
+          background: #3246d3;
+          border: none;
+        }
+      }
+
+      .hash-tags {
+        display: flex;
+        align-items: center;
+        margin: 20px 0px;
+
+        span {
+          margin: 10px;
+          background: rgba(178, 54, 241, 0.2);
+          padding:5px;
+          border-radius: 4px;
+          color: #727476;
+
+        }
+      }
+    }
+
+  }
+
+  .tabs {
+    // background-color: white;
+  }
+}
+
+::ng-deep {
+  .mat-tab-header {
+    align-self: start;
+    border: none;
+    background-color: white;
+    width: 100%;
+
+  }
+
+  .mat-tab-list .mat-tab-labels {
+    width: 100px;
+    padding: 3px;
+    border-radius: 7px;
+    color: black;
+    // display: block;
+  }
+
+  .mat-tab-label {
+    font-size: 20px;
+  }
+
+  .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination {
+    display: none !important;
+}
+
+}
+@media only screen and (max-width: 650px) {
+  section{
+    .head{
+      display: block;
+    }
+  }
+  ::ng-deep{
+  .mat-tab-list .mat-tab-labels {
+    width: unset;
+  }
+}
+}
+
+@media only screen and (max-width: 430px) {
+  ::ng-deep{
+  .mat-tab-list .mat-tab-labels {
+    display:grid;
+
+  }
+}
+
+}
+

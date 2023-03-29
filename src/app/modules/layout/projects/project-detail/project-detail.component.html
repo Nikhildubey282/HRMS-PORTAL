@@ -1,0 +1,32 @@
+<section>
+  <div class="head">
+    <h1 class="project_title">Training Project React JS</h1>
+    <div class="tags_wrapper">
+      <div class="header">
+        <h1>Project Tags/label</h1>
+        <button (click)="openDialog()" >+</button>
+      </div>
+      <div class="hash-tags">
+          <span>#Hello</span>
+          <span>#Hiiii</span>
+        <ng-container *ngFor="let item of totalTags"  >
+        <div>
+          <span>#{{item}}</span>
+        </div>
+      </ng-container>
+
+      </div>
+
+
+    </div>
+  </div>
+    <div class="tabs">
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+          <mat-tab label="Overview"><app-overview></app-overview> </mat-tab>
+          <mat-tab label="Notes"><app-notes></app-notes></mat-tab>
+          <mat-tab label="DSR Reports"><app-dsr-report></app-dsr-report></mat-tab>
+      </mat-tab-group>
+  </div>
+
+
+</section>

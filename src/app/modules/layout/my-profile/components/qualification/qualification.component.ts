@@ -29,12 +29,13 @@ export class QualificationComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
 
   heading = [
-    { heading: 'Action', key:'',type:'text'},
-    { heading: 'School/University', key: 'fschool', type: 'link', link: '/dashboard/client-details' },
-    { heading: 'Time period ', key:'mName',type:'text'},
+    { heading: 'Action', key:'btn',type:'edit-button'},
+    { heading: 'School/University', key:'school', type: 'text' },
+    { heading: 'Time period ', key:'time_period',type:'text'},
     { heading: 'Education Level', key:'educationLevel',type:'text'},
   ]
   Table_DATA: any[] = [
+    {btn:'',school:'st calres',time_period:'4 years',educationLevel:'2'}
 
   ];
 

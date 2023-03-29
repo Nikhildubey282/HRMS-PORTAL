@@ -1,0 +1,141 @@
+@import'../../../../../../scss/heading';
+
+section {
+  margin-top: 30px;
+
+  .note-card {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+
+    .head {
+      padding: 0px 10px;
+    }
+
+    .main {
+      padding: 10px;
+
+      .row1 {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 15px;
+        align-items: center;
+
+        .input {
+          display: flex;
+          flex-direction: column;
+
+          ::ng-deep {
+
+            .mat-icon-button {
+              position: absolute;
+              top: -5px;
+              right: -8px;
+              background-color: transparent;
+            }
+          }
+        }
+
+        .button-wrapper {
+          button {
+            border: none;
+            background: #3246d3;
+            color: #fff;
+            border-radius: 4px;
+            padding: 11px 15px 11px 15px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+            font-size: 18px;
+            font-weight: 600;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .analysis {
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    .head{
+      h1{
+        font-weight: 600;
+      }
+    }
+
+    main {
+      ul {
+        padding: 0px;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 20px;
+
+          h4 {
+            color: #3246d3;
+            font-size: 20px;
+            font-weight: 500;
+            width: 63%;
+          }
+
+          span {
+            border-radius: 5px;
+            box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+            background-color: #3246d3;
+            min-width: 80px;
+            color: #fff;
+            font-size: 22px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 0px;
+          }
+        }
+
+      }
+    }
+
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  section{
+    .note-card{
+      .main{
+        .row1{
+          grid-template-columns: auto auto auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  section{
+    .note-card{
+      .main{
+        .row1{
+          grid-template-columns: auto auto;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  section{
+    .note-card{
+      .main{
+        .row1{
+          grid-template-columns: auto ;
+        }
+      }
+    }
+  }
+}
+
+

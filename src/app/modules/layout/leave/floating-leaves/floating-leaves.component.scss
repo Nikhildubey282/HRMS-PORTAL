@@ -1,5 +1,8 @@
+@import'../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
 section{
   padding: 20px;
+  main{
+    padding: 0px;
   .head{
     h1{
     font-size: 24px;
@@ -11,8 +14,7 @@ section{
   }
   .table{
     background-color: white;
-    margin-top: 20px;
-    padding: 20px;
+    margin: 20px 0px;
 
 
 
@@ -30,7 +32,22 @@ section{
     }
 
 
+      ::ng-deep{
+        .table{
+          padding: 0px;
+          table{
+            td{
+              color: #606167;
+              // border-right: 1px solid gainsboro;
+            }
+          }
+        }
+       }
+    
+
+
   }
+}
 
 }
 
