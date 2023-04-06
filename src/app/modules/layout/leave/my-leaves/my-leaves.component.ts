@@ -10,7 +10,7 @@ import { ABS_LEAVEDETAIL } from 'src/app/constant/absolute-route';
 })
 export class MyLeavesComponent implements OnInit {
   department='Leave Type';
-  genderData=['Male','Female'];
+  genderData=['Planned Leave','Short Leave'];
   addButton=false;
   leaveForm!:FormGroup;
   leavedetail=ABS_LEAVEDETAIL;
@@ -24,19 +24,13 @@ export class MyLeavesComponent implements OnInit {
     { heading: 'Request From', key:'request',type:'text'},
     {heading:'Request To',key:'TO',type:'text'},
     {heading:	'Applied On',key:'applied',type:'text'},
-    {heading:'Status'},
-    {heading:'Level 1'},
-    {heading:'Level 2'},
-
-
-
-
+    {heading:'Status',key:'status',type:'text'},
+    {heading:'Level 1',key:'level_1',type:'text'},
+    {heading:'Level 2',key:'level_2',type:'text'},
   ]
   Table_DATA: any[] = [
-    {sNo:this.leavedetail,type:'short leave',request:'sdjjkasjk',TO:'bmsbjbsd',applied:'bjhsjhsdjk'},
-    {sNo:this.leavedetail,type:'nikhil',request:'manu',TO:'govind',applied:'bjhsjhsdjk'},
-
-
+    {sNo:this.leavedetail,type:'short leave',request:'sdjjkasjk',TO:'bmsbjbsd',applied:'bjhsjhsdjk',status:'Pending',level_1:'Suyash saxena',level_2:'HR'},
+    {sNo:this.leavedetail,type:'nikhil',request:'manu',TO:'govind',applied:'bjhsjhsdjk',status:'Pending',level_1:'Suyash saxena',level_2:'HR'}
 
   ];
 

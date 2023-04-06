@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
     CommontableModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    DropdownModule
   ]
 })
 export class ManualPunchModule { }

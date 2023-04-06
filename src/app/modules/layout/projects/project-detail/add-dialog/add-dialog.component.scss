@@ -1,7 +1,10 @@
 section
 {
+  width: 600px;
+  padding: 20px;
 
   .head{
+    padding: 20px;
   border-bottom: 1px solid #393a3a;
 
     h5{
@@ -11,9 +14,12 @@ section
     }
   }
   .body{
+    padding: 20px;
+
 
   }
   .button-wrap{
+    gap:20px;
     button{
       min-width: 100px;
     background: #3246d3;
@@ -26,6 +32,10 @@ section
     font-weight: 600;
     border: none;
     }
+    .add{
+      margin-left: 10px;
+
+    }
   }
 
 
@@ -34,8 +44,9 @@ section
 ::ng-deep{
 
   .mat-dialog-container{
-    width: 700px !important;
-    // padding: 0px !important;
+    border-radius: 20px;
+    // width: 700px !important;
+    padding: 0px !important;
   }
   // .cdk-overlay-dark-backdrop{
   //   background: rgba(0, 0, 0, 0.80);

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-my-dsr',
@@ -19,6 +20,7 @@ export class MyDsrComponent implements OnInit {
   labelsubmission='Submission Status';
   labelProject='Project';
   dsrForm!:FormGroup;
+  @Input() ngxMatTimepicker:any;
 
   dataSource = new MatTableDataSource<any>();
 
@@ -43,7 +45,7 @@ export class MyDsrComponent implements OnInit {
 
   constructor(
     private _fb:FormBuilder,
-    private toastrService: ToastrService
+    private snackbar_service:SnackBarService
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +58,7 @@ export class MyDsrComponent implements OnInit {
     this.dsrForm=this._fb.group({
       project:['',[Validators.required]],
       date:['',[Validators.required]],
-      hours:['',[Validators.required]],
+      hours:[''],
       dsr:['',[Validators.required]]
 
     })
@@ -78,7 +80,8 @@ export class MyDsrComponent implements OnInit {
   }
 
   showSuccess() {
-    this.toastrService.success('DSR Add Successfully!');
+    this.snackbar_service.showSuccess('Dsr add Successfully','')
+
   }
 
   submitHandler() {
@@ -98,6 +101,7 @@ export class MyDsrComponent implements OnInit {
       });
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
     this.showSuccess();
+    this.dsrForm.reset();
 
       // this.dataSource = new MatTableDataSource<QUALIFICATIONTABLE>(
       //   this.Table_DATA
@@ -110,3 +114,7 @@ export class MyDsrComponent implements OnInit {
    }
 
 }
+function input() {
+  throw new Error('Function not implemented.');
+}
+

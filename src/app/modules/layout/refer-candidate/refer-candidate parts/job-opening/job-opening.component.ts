@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { DETAILS } from 'src/app/constant/routes';
 import { ReferCandidateComponent } from '../../../home/job-opening/dialog component/refer-candidate/refer-candidate.component';
-// import { ReferCandidateComponent } from '../../../home/job-opening/dialog component/refer-candidate';
 import { JOBOPENING } from 'src/app/constant/constant';
 
 

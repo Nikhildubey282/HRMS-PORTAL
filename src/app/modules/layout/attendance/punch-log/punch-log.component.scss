@@ -1,3 +1,4 @@
+@import'../../../../../scss/label';
 section{
   padding: 20px;
   display: grid;
@@ -23,9 +24,6 @@ section{
       margin-left: 15px;
       display: flex;
       flex-direction: column;
-      label{
-        font-weight:500 ;
-      }
     }
     .getbutton{
       margin-left: 15px;

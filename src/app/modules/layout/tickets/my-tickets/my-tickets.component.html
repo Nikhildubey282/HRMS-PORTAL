@@ -11,7 +11,7 @@
       <div class="input">
         <label>Subject</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input formControlName="subject" matInput>
+          <input placeholder="Subject" formControlName="subject" matInput>
           <mat-error *ngIf="formCtrl.subject.hasError('required')">
             Please enter the required field
           </mat-error>
@@ -22,7 +22,6 @@
           <app-dropdown [label]="department" [Data]="departmentData"
           [myControlName]="ticketForm.controls.department"
           [errorType]="ticketForm.controls.department"
-
           ></app-dropdown>
         </span>
       </div>
@@ -73,6 +72,7 @@
   </div>
   <div class="second">
     <section>
+      <main>
       <div class="head">
         <h1>List All Tickets
           </h1>
@@ -80,6 +80,7 @@
       <div class="table">
         <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
       </div>
+    </main>
     </section>
   </div>
 </section>

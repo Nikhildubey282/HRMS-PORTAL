@@ -1,4 +1,5 @@
 @import"../../../../../scss/heading";
+@import"../../../../../scss/label";
 section {
   padding: 20px;
 
@@ -38,33 +39,16 @@ section {
     main{
       display: grid;
       grid-template-columns: 50% 50%;
-
-
       .left{
         padding: 20px;
-
-
         .row{
           display: flex;
           gap: 20px;
-
-
-
       .input{
         display: flex;
         flex-direction: column;
         // margin-left: 10px;
-
-        label{
-          font-size: 14px;
-          font-weight: 500;
-          color: #2f3031;
-          margin-bottom: 5px;
-        }
-
         ::ng-deep{
-
-
           .mat-icon-button{
             position: absolute;
             top: -5px;
@@ -79,15 +63,7 @@ section {
 
     .right{
       padding: 20px;
-
-        label{
-          font-size: 14px;
-          font-weight: 500;
-          color: #2f3031;
-          margin-bottom: 5px;
-        }
-
-
+      
     }
     .buttongrp{
       padding: 5px;

@@ -5,7 +5,7 @@ section
   .approval{
     display: flex;
     justify-content: space-around;
-    padding: 60px;
+    padding: 60px 60px 5px 60px;
     p{
       font-size: 25px;
     }
@@ -13,9 +13,19 @@ section
       background-color: red;
     }
   }
+  .line{
+    background-color: red;
+    color: red;
+    width: 48%;
+    margin-left: 25%;
+    height: 10px;
+    font-size: 1px;
+
+  }
   main{
     display: flex;
     gap: 10px;
+    margin-top: 8%;
 
   .leave-detail{
     border-radius: 10px;

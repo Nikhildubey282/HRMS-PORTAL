@@ -31,10 +31,24 @@
         </mat-menu>
       </a>
 
-      <button class="HELP">Help</button>
-      <mat-icon style="color: grey">notifications</mat-icon>
+      <button (click)="openDialog()" class="HELP">Help</button>
+      <mat-icon (click)="notification_drawer()" style="color: grey">notifications</mat-icon>
       <span class="lastlogin">Last login Feb 03 2023 12:00 pm 127.1234.12 </span>
     </div>
 
   </div>
+  <div  [@slideinOut] *ngIf="notification"  class="notification-box">
+    <div (click)="notification=false" class="close">X</div>
+    <div class="notify">
+      <div class="head">
+        <h1>No new notification</h1>
+      </div>
+      <div class="notification-body">
+        <p>--</p>
+      </div>
+    </div>
+  </div>
+
 </section>
+
+

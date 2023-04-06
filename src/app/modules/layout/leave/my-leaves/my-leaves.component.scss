@@ -1,7 +1,9 @@
 @import'../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
+@import'../../../../../scss/label';
 
 section {
   padding: 20px;
+
   main {
     padding: 0px;
 
@@ -80,13 +82,10 @@ section {
         gap: 20px;
 
         .left {
-          label {
-            font-size: 14px;
-            font-weight: 500;
-            color: #2f3031;
-            margin-bottom: 5px;
+          .timer-wrapper{
+            display: flex;
+            gap: 10px;
           }
-
           .date-select {
             display: flex;
 
@@ -131,6 +130,40 @@ section {
               padding: 15px;
             }
           }
+
+          .button_wrapper {
+            padding: 20px 20px 20px 0px ;
+
+            .left {
+              background: #1da81b !important;
+              border-radius: 0 !important;
+              cursor: pointer;
+              border: none;
+              padding: 10px;
+              background-blend-mode: soft-light, normal;
+              border: 1px solid rgba(150, 165, 184, 0.2);
+              box-sizing: border-box;
+              box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+              // border-radius: 4px;
+              color: #FFFFFF;
+            }
+
+            .right {
+              background: #d9534f;
+              -webkit-box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%);
+              box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%);
+              color: #fff;
+              padding: 10px;
+              border: none;
+              background-blend-mode: soft-light, normal;
+              margin-left: 10px;
+
+            }
+
+          }
+
+
+
 
         }
 
@@ -178,9 +211,13 @@ section {
               padding: 0px;
 
               table {
+                th{
+                  border-right: 1px solid gainsboro;
+                }
                 td {
                   color: #606167;
-                  // border-right: 1px solid gainsboro;
+                  border-right: 1px solid gainsboro;
+                  // padding: 15px;
                 }
               }
             }
@@ -194,16 +231,18 @@ section {
 
 }
 
-@media only screen and (max-width: 1000px){
-  section{
-    .first{
+@media only screen and (max-width: 1000px) {
+  section {
+    .first {
       display: block !important;
 
     }
-    .second{
-      main{
+
+    .second {
+      main {
         display: block !important;
-        .right{
+
+        .right {
           margin-top: 20px;
         }
       }
@@ -211,17 +250,20 @@ section {
 
   }
 }
-@media only screen and (max-width: 550px){
-  section{
+
+@media only screen and (max-width: 550px) {
+  section {
 
 
-    .second{
-      main{
+    .second {
+      main {
         display: block !important;
-        .left{
-          .date-select{
+
+        .left {
+          .date-select {
             flex-direction: column;
-            .last-date{
+
+            .last-date {
               margin: 0px !important;
             }
           }

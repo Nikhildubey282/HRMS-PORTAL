@@ -5,26 +5,19 @@
   </div>
   <div class="content">
     <div class="inputs">
-      <div class="input1">
-        <label>Department</label>
-        <mat-form-field class=form-field appearance="outline">
-          <mat-select>
-            <mat-option>
-              food.viewValue
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <div class="input">
+        <span>
+          <app-dropdown [label]="departmentLabel" [Data]="departmentData"
+          ></app-dropdown>
+        </span>
       </div>
-      <div class="input1">
-        <label>Status</label>
-        <mat-form-field class=form-field appearance="outline">
-          <mat-select>
-            <mat-option>
-              food.viewValue
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+      <div class="input">
+        <span>
+          <app-dropdown [label]="statusLabel" [Data]="statusData"
+          ></app-dropdown>
+        </span>
       </div>
+
     </div>
     <div class="table">
       <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>

@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { slideAnimation } from 'src/animation';
 import { FormService } from 'src/app/services/form.service';
 import { QUALIFICATION_MESSAGE } from 'src/app/constant/messages';
 import { MatTableDataSource } from '@angular/material/table';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 
 const today = new Date();
@@ -14,41 +18,75 @@ const year = today.getFullYear();
   selector: 'app-qualification',
   templateUrl: './qualification.component.html',
   styleUrls: ['./qualification.component.scss'],
-  animations:[slideAnimation]
+  animations: [slideAnimation]
 })
 export class QualificationComponent implements OnInit {
-  errorMsg=QUALIFICATION_MESSAGE;
-  labelEducation='Education Level';
-  labelLanguage='language'
-  languageDropdown =['English','Hindi']
-  minDate:Date
-  maxDate:Date
+  errorMsg = QUALIFICATION_MESSAGE;
+  labelEducation = 'Education Level';
+  labelLanguage = 'language'
+  levelData = ['1', '2'];
+  languageDropdown = ['English', 'Hindi']
+  minDate: Date
+  maxDate: Date
 
-  qualificationForm!:FormGroup;
+  qualificationForm!: FormGroup;
 
   dataSource = new MatTableDataSource<any>();
 
   heading = [
-    { heading: 'Action', key:'btn',type:'edit-button'},
-    { heading: 'School/University', key:'school', type: 'text' },
-    { heading: 'Time period ', key:'time_period',type:'text'},
-    { heading: 'Education Level', key:'educationLevel',type:'text'},
+    { heading: 'Action', key: 'btn', type: 'edit-button' },
+    { heading: 'School/University', key: 'university', type: 'text' },
+    { heading: 'Time period ', key: 'startdate', type: 'text' },
+    { heading: 'Education Level', key: 'educationLevel', type: 'text' },
   ]
   Table_DATA: any[] = [
-    {btn:'',school:'st calres',time_period:'4 years',educationLevel:'2'}
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   ];
 
   constructor(
-    private _fb:FormBuilder,
-    private formservice:FormService
-
-
+    private _fb: FormBuilder,
+    private formservice: FormService,
+    public dialog: MatDialog,
+    private snackbar_service:SnackBarService
   ) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 60, 0, 1);
     this.maxDate = new Date(currentYear - 20, 11, 31);
-   }
+  }
 
 
 
@@ -58,15 +96,16 @@ export class QualificationComponent implements OnInit {
 
   }
 
-  createForm(){
-    this.qualificationForm=this. _fb.group({
-      university:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      educationLevel:['',[Validators.required]],
-      startdate:['',Validators.required],
-      enddate:['',Validators.required],
-      language:['',[Validators.required]],
-      professionalCourse:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
+  createForm() {
+    this.qualificationForm = this._fb.group({
+      id:Math.random(),
+      university: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      educationLevel: ['', [Validators.required]],
+      startdate: ['', Validators.required],
+      enddate: ['', Validators.required],
+      language: ['', [Validators.required]],
+      professionalCourse: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      descripition: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
     })
   }
 
@@ -75,32 +114,62 @@ export class QualificationComponent implements OnInit {
 
 
   submitHandler() {
-    console.log(this.qualificationForm.valid,'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
+    console.log(this.qualificationForm.valid, 'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
+    if(this.qualificationForm.valid){
+    this.Table_DATA.push(this.qualificationForm.value);
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createForm();
+    // this.resetForm();
+    console.log(this.qualificationForm.value);
+    this.snackbar_service.showSuccess('Data Added Sucessfully','')
+    }
+    else{
+      this.snackbar_service.showError('Enter a required field','')
+      this.qualificationForm.markAllAsTouched();
 
-      this.Table_DATA.push({
-        school:  this.formCtrl['university'].value,
-        // fromTimetotoTime: this.getDatevalue(),
-        educationLevel: this.formCtrl['educationLevel'].value,
-        // id: Date.now(),
-        // language: this.formCtrl['language'].value,
-        // professionalCourses:
-        // this.formCtrl['professionalCourses'].value,
-        // description: this.formCtrl['description'].value,
-        // fromTime: this.formCtrl['fromTime'].value,
-        // toTime: this.formCtrl['toTime'].value,
-      });
+    }
+  }
+
+
+
+  delete_data(e:any) {
+    console.log(e,'deletedata');
+    const dialogRef = this.dialog.open(DeleteDialogComponent);
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
+      if(res===true){
+        this.Table_DATA=this.Table_DATA.filter(value=>
+          value.id!=e.id
+        );
+      }
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
 
+    });
+  }
 
-      // this.dataSource = new MatTableDataSource<QUALIFICATIONTABLE>(
-      //   this.Table_DATA
-      // );
-      // this.resetForm();
-      this.createForm();
-  //   } else {
-  //     this.qualificationForm.markAllAsTouched();
-  //   }
-   }
 
+  edit_data(e: any) {
+    console.log(e, 'shiva pagal')
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = e;
+    const dialogRef = this.dialog.open(EditDialogComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(result);
+      if(result){
+        this.Table_DATA=this.Table_DATA.filter((value)=>{
+          console.log(value,'niklh dubey');
+          if(value.id=e.id){
+            value.university=result.university;
+            value.educationLevel=result.educationLevel;
+          }
+          // dialogRef.unsubscribe();
+        });
+      }
+
+    });
+  }
 
 }
+
+

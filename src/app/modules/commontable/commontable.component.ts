@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ABS_DSRDETAIL, ABS_DSREDIT, ABS_PROJECTDETAIL } from 'src/app/constant/absolute-route';
 import { TableColumn } from 'src/app/constant/routes';
+import { DeleteDialogComponent } from '../layout/my-profile/components/qualification/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from '../layout/my-profile/components/qualification/edit-dialog/edit-dialog.component';
 
 @Component({
@@ -27,13 +28,16 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @Input() dataSource!: any;
   @Input() Table_DATA!: any;
   @Input() isPageable = true;
-  @Input() paginationSizes: number[] = [2, 10, 15];
+  @Input() paginationSizes: number[] = [2, 5, 10];
   @Input() set pazeSize(size: any) {
     if(size)
       this.changePageSize(size);
   }
   @Output() userDetail: EventEmitter<any> = new EventEmitter();
   @Output() onIconClick: EventEmitter<any> = new EventEmitter();
+  @Output() edit_button:EventEmitter<any>=new EventEmitter();
+  @Output() delete_button:EventEmitter<any>=new EventEmitter();
+
   public displayedColumns!: string[];
   constructor(
     private _route:Router,
@@ -63,16 +67,9 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   changePageSize(size: number) {
     this.matPaginator._changePageSize(size)
   }
-  openDialog() {
-    const options:MatDialogConfig = {
-      panelClass:'full-abc'
-    }
-    const dialogRef = this.dialog.open(EditDialogComponent,options);
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+
+
 
 
 }

@@ -19,7 +19,7 @@
           <div class="input">
             <label>Date</label>
             <mat-form-field appearance="outline">
-              <input matInput formControlName="date" [matDatepicker]="picker">
+              <input matInput placeholder="Date" formControlName="date" [matDatepicker]="picker">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -27,7 +27,8 @@
           <div class="input">
             <label>Estimate Hours</label>
             <mat-form-field appearance="outline">
-              <input type="time" formControlName="hours" matInput>
+              <input placeholder="Time" readonly matInput formControlName="hours" [ngxMatTimepicker]="pickers" [format]="24">
+    <ngx-mat-timepicker #pickers></ngx-mat-timepicker>
             </mat-form-field>
           </div>
         </div>
@@ -92,7 +93,7 @@
       </span>
     </div>
 
-  
+
     <div class="input">
       <span>
         <app-dropdown [label]="labelStatus" [Data]="statusData"

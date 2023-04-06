@@ -13,6 +13,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { ListingComponent } from './side-nav/listing/listing.component';
 import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-routing.module';
 import { CommontableModule } from '../commontable/commontable.module';
+import { HelpDialogComponent } from './layout-parts/help-dialog/help-dialog.component';
 
 
 
@@ -21,7 +22,8 @@ import { CommontableModule } from '../commontable/commontable.module';
     LayoutComponent,
     HeaderComponent,
     SideNavComponent,
-    ListingComponent
+    ListingComponent,
+    HelpDialogComponent
   ],
   imports: [
     CommonModule,

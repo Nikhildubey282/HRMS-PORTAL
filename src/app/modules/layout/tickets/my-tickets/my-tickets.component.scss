@@ -1,4 +1,6 @@
 @import"../../../../../scss/heading";
+@import"../../../../../scss/label";
+@import'../../mylinks/mylinks-parts/policy-document/policy-document.component.scss';
 section {
 
   padding: 20px;
@@ -41,13 +43,6 @@ section {
       display: grid;
       grid-template-columns: 50% 50%;
       .left {
-
-        label{
-          font-size: 14px;
-          font-weight: 500;
-          color: #2f3031;
-          margin-bottom: 5px;
-        }
         .input {
           display: flex;
           flex-direction: column;
@@ -56,12 +51,7 @@ section {
       .right{
         padding: 20px;
 
-          label{
-            font-size: 14px;
-            font-weight: 500;
-            color: #2f3031;
-            margin-bottom: 5px;
-          }
+
 
 
       }
@@ -87,6 +77,8 @@ section {
     section{
       background-color: white;
       border-radius: 10px;
+      main{
+        padding: 0px;
       .head{
         border-bottom: 1px solid rgb(247, 246, 246);
         h1{
@@ -98,6 +90,11 @@ section {
           font-weight: 500;
         }
       }
+      .table{
+        padding: 0px;
+        margin: 0px;
+      }
+    }
     }
 
   }

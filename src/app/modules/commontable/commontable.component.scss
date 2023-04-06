@@ -1,4 +1,5 @@
 section {
+  position: relative;
   .head {
     display: flex;
     justify-content: flex-end;
@@ -6,11 +7,11 @@ section {
 
   .table {
     // overflow-x: scroll;
-    position: relative;
+    // position: relative;
     padding: 20px;
 
     table {
-    // overflow-x: scroll;
+    overflow-x: scroll;
 
       min-width: 800px;
       width: 100%;
@@ -40,8 +41,11 @@ section {
         text-align: center;
         // padding-left: 24px;
       }
-      // tr:nth-child(odd) {
-      //   background-color: #dc1818;
+      // .mat-row:nth-child(2n+1){
+      //   background-color: #e4f0ec;
+      // }
+      // .mat-row:not(:nth-child(4n+1)){
+      //   background-color:#b52121;
       // }
 
       td {
@@ -74,6 +78,9 @@ section {
     .edit:hover{
       font-size: 30px;
     }
+    .edit_qualification{
+      color: #199CFF;
+    }
 
 
     }
@@ -86,11 +93,13 @@ section {
       .mat-paginator-range-actions {}
 
       .mat-paginator-page-size {
-        display: none;
+         display: none;
         position: absolute;
+        top:-30px;
+        left: 12px;
         bottom: 190px;
-        left: 10px;
-        // margin-top: 10px;
+        // left: 10px;
+
       }
     }
   }
@@ -105,7 +114,25 @@ section {
   }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
+  section {
+    .table {
+
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: grey;
+      }
+    }
+  }
+}
+
+@media (max-width: 1550px) {
   section {
     .table {
 

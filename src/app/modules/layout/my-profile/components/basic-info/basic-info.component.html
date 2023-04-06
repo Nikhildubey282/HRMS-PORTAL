@@ -9,7 +9,7 @@
           <div class="input">
             <label>First Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput formControlName="firstName" />
+              <input type="text" matInput placeholder="First Name" formControlName="firstName" />
               <mat-error *ngIf="formCtrl.firstName.hasError('required')">{{
                 errorMsg.FIRSTNAME_REQUIRED
               }}</mat-error>
@@ -20,7 +20,7 @@
           <div class="input">
             <label>Last Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput formControlName="lastName" />
+              <input type="text" matInput placeholder="Last Name" formControlName="lastName" />
               <mat-error *ngIf="formCtrl.lastName.hasError('required')">
                 Please enter a last name
               </mat-error>
@@ -31,7 +31,7 @@
           <div class="input">
             <label>Date Of Birth</label>
             <mat-form-field appearance="outline">
-              <input matInput [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
+              <input matInput placeholder="Date of Birth" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">
@@ -64,7 +64,7 @@
           <div class="input">
             <label>Contact Number</label>
             <mat-form-field class="example-full-width" appearance="outline">
-              <input type="text" matInput formControlName="contactNumber" />
+              <input type="text" matInput  placeholder="Contact Number" formControlName="contactNumber" />
               <mat-error *ngIf="formCtrl.contactNumber.hasError('required')">
                 Please Enter a Contact Number</mat-error>
                 <mat-error *ngIf="formCtrl.contactNumber.hasError('pattern')">
@@ -80,7 +80,7 @@
             <div class="input">
               <label> Years</label>
               <mat-form-field class="example-full-width" appearance="outline">
-                <input type="text" matInput formControlName="years" />
+                <input type="text" matInput  placeholder="Years" formControlName="years" />
                 <mat-error *ngIf="formCtrl.years.hasError('required')">{{
                   errorMsg.YEARS_REQUIRED
                 }}</mat-error>
@@ -92,7 +92,7 @@
             <div class="input">
               <label>Months</label>
               <mat-form-field class="example-full-width" appearance="outline">
-                <input type="text" matInput  formControlName="months" />
+                <input type="text" matInput  placeholder="Months" formControlName="months" />
                 <mat-error *ngIf="formCtrl.months.hasError('required')">{{
                   errorMsg.MONTHS_REQUIRED
                 }}</mat-error>
@@ -109,7 +109,7 @@
             <div class="input">
               <label>Years</label>
               <mat-form-field class="example-full-width" appearance="outline">
-                <input type="text" matInput formControlName="years2" />
+                <input type="text" matInput  placeholder="Years" formControlName="years2" />
                 <mat-error *ngIf="formCtrl.years2.hasError('required')">{{
                   errorMsg.YEARS_REQUIRED
                 }}</mat-error>
@@ -121,7 +121,7 @@
             <div class="input">
               <label>Months</label>
               <mat-form-field class="example-full-width" appearance="outline">
-                <input type="text" matInput formControlName="months2" />
+                <input type="text" matInput  placeholder="Months" formControlName="months2" />
                 <mat-error *ngIf="formCtrl.months2.hasError('required')">{{
                   errorMsg.MONTHS_REQUIRED
                 }}</mat-error>
@@ -142,6 +142,7 @@
                 cdkTextareaAutosize
                 cdkAutosizeMinRows="4"
                 cdkAutosizeMaxRows="5"
+                placeholder="Descripition"
               ></textarea>
               <mat-error *ngIf="formCtrl.descripition.hasError('required')" >Please Enter a Descripition </mat-error>
           <mat-error *ngIf="formCtrl.descripition.hasError('pattern')" >Enter a Valid Descripition </mat-error>

@@ -32,7 +32,7 @@
       <div class="date">
         <label>Required by Date</label>
         <mat-form-field appearance="outline">
-          <input formControlName="date" matInput [matDatepicker]="picker" readonly>
+          <input placeholder="Required by date" formControlName="date" matInput [matDatepicker]="picker" readonly>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error *ngIf="formCtrl.date.hasError('required')">
@@ -55,7 +55,7 @@
     </div>
     <div class="request-reason" >
       <div class="date">
-        <label>Required by Date *</label>
+        <label>Request Reason*</label>
         <mat-form-field  appearance="outline">
           <input formControlName="requestreason" matInput class="example-full-width" >
           <mat-error *ngIf="formCtrl.requestreason.hasError('required')">

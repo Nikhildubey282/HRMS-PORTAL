@@ -1,0 +1,54 @@
+@import'../../../../../../../scss/heading';
+section{
+  padding: 20px;
+  width: 500px;
+
+  .head{
+
+
+    button{
+      border: none;
+      color: black;
+      box-shadow: none;
+      font-size: 20px;
+      margin-bottom: 10px;
+      &:hover{
+        background-color: transparent;
+
+      }
+    }
+  }
+  .content{
+    color: red;
+    padding: 20px 0px;
+    font-size: 20px;
+  }
+  .button-wrapper{
+    padding: 30px 0px 0px 0px;
+    text-align: center;
+    button{
+      background-color:rgb(152, 4, 215);
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      margin: 10px;
+      box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+      width: 30%;
+
+
+    }
+  }
+
+
+
+}
+::ng-deep
+{
+  .mat-dialog-container{
+    padding: 0px !important;
+    border-radius: 20px;
+  }
+}
+

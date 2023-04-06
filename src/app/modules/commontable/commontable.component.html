@@ -1,11 +1,7 @@
 <section>
-  <ng-container >
 
-  </ng-container>
   <div class="head">
-    <!-- <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
-    showFirstLastButtons>
-  </mat-paginator> -->
+
   <div  *ngIf="searchBar">
   <label style="margin-right:10px ;">Search</label>
   <mat-form-field class="example-full-width" appearance="outline">
@@ -43,8 +39,8 @@
            {{element[row.key]}}
           </ng-container>
           <ng-container *ngSwitchCase="'edit-button'" >
-            <button (click)="openDialog()" >Edit</button>
-            <button>Delete</button>
+            <mat-icon class="edit_qualification" (click)="edit_button.emit(element)" >edit</mat-icon>
+            <mat-icon class="edit_qualification" (click)="delete_button.emit(element)" >delete</mat-icon>
           </ng-container>
           <ng-container *ngSwitchCase="'link'">
             <ng-container *ngFor="let icon of row.action; let i=index;" >
@@ -66,8 +62,7 @@
       <td class="mat-cell" colspan="10">No data avaiable in table</td>
     </tr>
   </table>
-   <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"
-    showFirstLastButtons>
+   <mat-paginator  *ngIf="isPageable" [pageSizeOptions]="paginationSizes"  showFirstLastButtons>
   </mat-paginator>
 
 

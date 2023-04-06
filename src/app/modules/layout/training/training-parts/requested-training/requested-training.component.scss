@@ -1,6 +1,9 @@
 @import "../../../../../../scss/var";
+@import"../../../mylinks/mylinks-parts/policy-document/policy-document.component.scss";
 section {
   padding: 20px;
+  main{
+    padding: 0px;
 
   .head {
     h1 {
@@ -11,8 +14,8 @@ section {
     }
   }
   .table {
-    background-color: white;
-    padding: 20px;
+    margin: 0px;
+    padding: 0px;
     ::ng-deep {
 
       table{
@@ -30,5 +33,6 @@ section {
   }
 
 
+  }
   }
 }

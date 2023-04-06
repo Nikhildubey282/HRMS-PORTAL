@@ -13,6 +13,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
 import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 
 
@@ -20,8 +22,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     QualificationComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
+  providers:[SnackBarService],
   imports: [
     CommonModule,
     QualificationRoutingModule,

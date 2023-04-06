@@ -6,31 +6,26 @@
     <div class="input">
       <label>Punch Request</label>
       <mat-form-field  appearance="outline">
-        <input matInput class="example-full-width" >
+        <input placeholder="Punch Request" matInput class="example-full-width" >
       </mat-form-field>
     </div>
+
     <div class="input">
-      <label>Company</label>
-      <mat-form-field  appearance="outline">
-        <input matInput class="example-full-width" >
-      </mat-form-field>
+      <span>
+        <app-dropdown
+          [label]="companyLabel"
+        ></app-dropdown>
+      </span>
     </div>
+
+
     <div class="input">
       <label>Employee</label>
-      <!-- <mat-form-field  appearance="outline">
-        <input matInput class="example-full-width" >
-      </mat-form-field> -->
-      <mat-form-field appearance="outline">
-        <mat-select>
-          <mat-option >
-          food.viewValue
-          </mat-option>
-          <mat-option>
-            option2
-          </mat-option>
-        </mat-select>
+      <mat-form-field  appearance="outline">
+        <input placeholder="Company" matInput class="example-full-width" >
       </mat-form-field>
     </div>
+
 
   </div>
   <div class="right">

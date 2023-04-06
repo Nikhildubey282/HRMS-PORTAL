@@ -5,6 +5,7 @@ import { InterviewListRoutingModule } from './interview-list-routing.module';
 import { InterviewListComponent } from './interview-list.component';
 import {MatSelectModule} from '@angular/material/select';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
 
 
 
@@ -17,7 +18,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
     CommonModule,
     InterviewListRoutingModule,
     MatSelectModule,
-    CommontableModule
+    CommontableModule,
+    DropdownModule
   ]
 })
 export class InterviewListModule { }

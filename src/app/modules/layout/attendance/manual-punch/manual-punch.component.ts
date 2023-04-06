@@ -8,6 +8,9 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ManualPunchComponent implements OnInit {
 
+  companyLabel='Company';
+  companyData=['Appinventiv',];
+
   dataSource = new MatTableDataSource<any>();
 
   heading = [

@@ -24,6 +24,13 @@ section {
         .input {
           display: flex;
           flex-direction: column;
+          label{
+              font-size: 14px;
+              color: black;
+              font-weight: 500;
+              line-height: 1.4;
+              // margin-bottom: 4px;
+          }
 
           ::ng-deep {
 

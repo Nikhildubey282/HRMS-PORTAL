@@ -13,6 +13,7 @@ export class DropdownComponent implements OnInit {
     @Input() label!: any;
     @Input() Data!:any;
     @Input() errorType:any;
+    @Input() placeholder:any;
     // @Input() formfieldCSS;
     // @Input() labelStyle;
     selected = 'test';
@@ -23,6 +24,7 @@ export class DropdownComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.myControlName?.patchValue(this.Data[0])
     this.filteredOptions = this.myControl.valueChanges.pipe(
         startWith(''),
         map((value) => {

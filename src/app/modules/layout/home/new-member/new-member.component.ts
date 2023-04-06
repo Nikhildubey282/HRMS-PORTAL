@@ -15,7 +15,7 @@ export class NewMemberComponent implements OnInit,AfterViewInit {
     grid: { xs: 1, sm: 1, md:2, lg: 1, all: 0 },
     gridBreakpoints:{sm: 400, md: 900, lg: 1300, xl: 1300},
     load: 1,
-    interval: { timing: 4000, initialDelay: 1000 },
+    interval: { timing: 4000 },
     loop: true,
     touch: true,
     velocity: 0.2,

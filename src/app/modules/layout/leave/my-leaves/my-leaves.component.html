@@ -51,13 +51,27 @@
             ></app-dropdown>
           </span>
         </div>
+        <div *ngIf="leaveForm.controls.leavetype.value==='Short Leave'" class="timer-wrapper">
+          <div class="input">
+            <label>Start time</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="time" placeholder="Start Time" matInput>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <label>End time</label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <input type="time" placeholder="End time" matInput>
+            </mat-form-field>
+          </div>
+
+        </div>
         <div class="date-select">
           <div class="input">
             <label>Start Date</label>
             <mat-form-field class="example-form-field" appearance="outline">
-
               <mat-date-range-input>
-                <input matStartDate formControlName="startdate">
+                <input placeholder="from" matStartDate formControlName="startdate">
                 <input matEndDate formControlName="startdate">
               </mat-date-range-input>
               <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
@@ -83,7 +97,7 @@
         <div class="input">
           <label>Remarks</label>
           <mat-form-field class="example-full-width" appearance="outline">
-            <input matInput formControlName="remarks">
+            <input placeholder="Remarks" matInput formControlName="remarks">
           </mat-form-field>
         </div>
         <div class="input1">
@@ -91,6 +105,10 @@
           <div class="fileinput">
           <input type="file">
         </div>
+        </div>
+        <div class="button_wrapper">
+          <button class="left">Save</button>
+          <button class="right">Cancel</button>
         </div>
       </div>
       <div class="right">

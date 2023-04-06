@@ -1,0 +1,83 @@
+section
+{
+  padding: 20px;
+  .close{
+    text-align: end;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.8em;
+    h4{
+    box-sizing: content-box;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    // margin: 1.25em auto 1.875em;
+    margin: 30px;
+    border: 0.2em solid #3fc3ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    font-size: 3.75em;
+    color: #3fc3ee;
+    }
+    a{
+      margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 25px;
+    border: 0;
+    outline: 0 !important;
+    color: #000;
+    text-decoration: none;
+    }
+
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    color: #545454;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    word-wrap: break-word;
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+  }
+  .action{
+    display: flex;
+    z-index: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 1.25em auto 0;
+    button{
+      border: 0;
+      font-size: 20px;
+    border-radius: 0.25em;
+    padding: 10px 30px;
+    background-color: #3085d6;
+    color: #fff;
+    }
+  }
+
+}
+
+::ng-deep{
+  .mat-dialog-container{
+    padding: 0px;
+  }
+}

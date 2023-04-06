@@ -1,5 +1,7 @@
 @import'../../../../../../../scss/heading';
 section{
+  padding: 20px;
+  width: 600px;
   .head{
     button{
       border: none;
@@ -63,6 +65,7 @@ section{
 ::ng-deep
 {
   .mat-dialog-container{
-    width: 600px;
+    padding: 0px !important;
+    border-radius: 20px;
   }
 }

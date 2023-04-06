@@ -230,6 +230,12 @@
   }
 }
 
+::ng-deep{
+  .mat-card:not([class*=mat-elevation-z]){
+    box-shadow: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .main {
     .wrapper-main {

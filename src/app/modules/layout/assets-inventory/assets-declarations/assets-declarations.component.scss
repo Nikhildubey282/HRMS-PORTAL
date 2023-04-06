@@ -1,5 +1,9 @@
+@import"../../mylinks/mylinks-parts/policy-document/policy-document.component.scss";
+@import'../../../../../scss/label';
 section{
   padding: 20px;
+  main{
+    padding: 0px;
   .first{
     background-color: white;
     padding: 10px 0px;
@@ -33,9 +37,6 @@ section{
         margin-left: 10px;
         display: flex;
         flex-direction: column;
-        label{
-          font-weight:500 ;
-        }
       }
     }
     .select2{
@@ -72,6 +73,7 @@ section{
     section{
       background-color: white;
       border-radius: 10px;
+
       .head{
         border-bottom: 1px solid rgb(247, 246, 246);
         h1{
@@ -83,6 +85,7 @@ section{
           font-weight: 500;
         }
       }
+    }
     }
 
   }
@@ -98,6 +101,15 @@ section{
 
 }
 @media only screen and (max-width: 1200px) {
+  section{
+    .first{
+      .select{
+          grid-template-columns: auto auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
   section{
     .first{
       .select{

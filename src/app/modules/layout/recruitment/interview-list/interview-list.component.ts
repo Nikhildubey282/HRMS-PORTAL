@@ -8,6 +8,10 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class InterviewListComponent implements OnInit {
   dataSource = new MatTableDataSource<any>();
+  departmentLabel='Department';
+  statusLabel='Status';
+  departmentData=['Angular','React','Blockchain','Node JS','Andorid'];
+  statusData=['Selected','Rejected','Missed','In Progess'];
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},

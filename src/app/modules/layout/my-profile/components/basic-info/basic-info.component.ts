@@ -21,6 +21,7 @@ export class BasicInfoComponent implements OnInit {
   martialLabel='Matrial Status'
   genderData=['Male','Female'];
   matrialData=['Single','Married','Divoced'];
+  nikhil='shiva'
 
   constructor(
     private _fb:FormBuilder

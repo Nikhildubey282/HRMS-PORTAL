@@ -1,3 +1,4 @@
+@import'../../../../../scss/label';
 section{
   padding: 20px;
   .first{
@@ -34,9 +35,6 @@ section{
         // width: 380px;
       }
       .date{
-        label{
-          font-weight: 500;
-        }
         margin-left: 10px;
         display: flex;
         flex-direction: column;
@@ -64,9 +62,6 @@ section{
     .request-reason{
       padding: 0px 15px;
       .date{
-        label{
-          font-weight: 500;
-        }
         margin-left: 10px;
         display: flex;
         flex-direction: column;

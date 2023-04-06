@@ -11,6 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
+
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -23,6 +26,7 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
   declarations: [
     MyDsrComponent
   ],
+  providers:[SnackBarService],
   imports: [
     CommonModule,
     MyDsrRoutingModule,
@@ -35,6 +39,7 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
     FormsModule,
     ReactiveFormsModule,
     CommontableModule,
+    NgxMatTimepickerModule
 
 
   ]
