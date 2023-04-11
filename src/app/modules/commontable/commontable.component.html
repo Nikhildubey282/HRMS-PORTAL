@@ -3,9 +3,9 @@
   <div class="head">
 
   <div  *ngIf="searchBar">
-  <label style="margin-right:10px ;">Search</label>
+  <label style="margin-right:10px ;">Search :</label>
   <mat-form-field class="example-full-width" appearance="outline">
-    <input (keyup)="applyFilter($event)" matInput >
+    <input placeholder="Search" (keyup)="applyFilter($event)" matInput >
   </mat-form-field>
 </div>
   </div>
@@ -40,7 +40,7 @@
           </ng-container>
           <ng-container *ngSwitchCase="'edit-button'" >
             <mat-icon class="edit_qualification" (click)="edit_button.emit(element)" >edit</mat-icon>
-            <mat-icon class="edit_qualification" (click)="delete_button.emit(element)" >delete</mat-icon>
+            <mat-icon class="delete_qualification" (click)="delete_button.emit(element)" >delete</mat-icon>
           </ng-container>
           <ng-container *ngSwitchCase="'link'">
             <ng-container *ngFor="let icon of row.action; let i=index;" >

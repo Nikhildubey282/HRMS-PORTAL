@@ -5,9 +5,6 @@
       <mat-icon>{{ navlist.logo }}</mat-icon>
       <span class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
     </div>
-
-
-
     <mat-icon class="menu-button" [ngClass]="{ rotated: showSubmenu }" *ngIf="navlist.options">expand_more</mat-icon>
 
   </mat-list-item>

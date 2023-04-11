@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
+import { PATTERN } from 'src/app/constant/patterns';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class AssetsRequestComponent implements OnInit {
   addbutton:boolean=false;
   dataSource = new MatTableDataSource<any>();
   assetsRequest!:FormGroup;
+  pattern=PATTERN
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
@@ -52,7 +54,7 @@ export class AssetsRequestComponent implements OnInit {
       priority:['',[Validators.required]],
       date:['',[Validators.required]],
       type:['',[Validators.required]],
-      requestreason:['',[Validators.required]]
+      requestreason:['',[Validators.required,Validators.pattern(this.pattern.name)]]
 
 
     })

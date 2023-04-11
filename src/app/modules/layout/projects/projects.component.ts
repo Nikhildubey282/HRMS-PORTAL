@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +11,11 @@ export class ProjectsComponent implements OnInit {
 
   @ViewChild('submenu', {static: false}) submenu!: any;
 
-  constructor() { }
+  constructor( private cdref: ChangeDetectorRef) { }
+
+  ngAfterContentChecked() {
+    this.cdref.detectChanges();
+ }
 
   ngOnInit(): void {
   }

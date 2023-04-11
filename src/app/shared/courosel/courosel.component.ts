@@ -18,7 +18,7 @@ export class CouroselComponent implements OnInit,AfterViewInit {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    console.log(this.listToShow);
+    // console.log(this.listToShow);
     setTimeout(() => {
       this.wait = true;
     }, 500);
@@ -29,17 +29,9 @@ export class CouroselComponent implements OnInit,AfterViewInit {
   resetAnim = true;
 
   @ViewChild('myCarousel') myCarousel!: NguCarousel<any>;
-  // carouselConfig: NguCarouselConfig = {
-  //   grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
-  //   load: 1,
-  //   interval: { timing: 4000, initialDelay: 1000 },
-  //   loop: true,
-  //   touch: true,
-  //   velocity: 0.2,
-  // };
   ngAfterViewInit() {
     this.cdr.detectChanges();
-    console.log(this.listToShow);
+    // console.log(this.listToShow);
   }
 
   reset() {
@@ -50,7 +42,7 @@ export class CouroselComponent implements OnInit,AfterViewInit {
     this.myCarousel.moveTo(slide, !this.withAnim);
   }
   ckk(){
-    console.log(this.myCarousel);
+    // console.log(this.myCarousel);
 
   }
 

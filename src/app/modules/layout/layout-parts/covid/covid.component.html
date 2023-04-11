@@ -1,0 +1,78 @@
+<section>
+  <div class="leftContainer">
+    <app-courosel [buttonShow]="false" [carouselConfiguration]="carouselConfig" [listToShow]="dataSource"></app-courosel>
+
+
+    <ng-container *ngFor="let item of listOfNewFamilyMembers">
+      <ng-template #listofDivs>
+        <div class="items">
+          <h1 class="heading">Wash ‘Em, Wash ‘Em Good </h1>
+          <p class="advice">Face masks, gloves and other protective gear can help stop the spread of coronavirus.
+            Wearing a mask doesn’t imply that you disregard social distancing. In addition to social distancing, keep proper hygiene, especially, when you touch your mask.</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+  <div class="rightContainer">
+    <div (click)="crossClick()" class="close"><mat-icon>close</mat-icon></div>
+    <div class="content">
+      <h1 class="title">Need Help!!</h1>
+      <p class="issueHeading">Let us know if you are facing any issue because of the lockdown, We will be giving our best to take care of your problems, Please fill the form below and provide the required details, Concerned person will get in touch with you on the earliest.</p>
+      <form class="inputFields" [formGroup]="covidhelpForm" (ngSubmit)="submit_button()" >
+        <div class="formfield 1">
+          <label>Title</label>
+          <mat-form-field appearance="outline">
+            <input  matInput formControlName="title">
+            <mat-error>{{covidhelpForm |getControl:['title'] |validate:'title'}}</mat-error>
+            <!-- <mat-error *ngFor="let error of errorMessage?.title">
+              <mat-error *ngIf="covidForm?.get('title')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="formfield 2">
+          <label>Monile No.</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="mobile" matInput>
+            <mat-error>{{covidhelpForm |getControl:['mobile'] |validate:'mobile'}}</mat-error>
+            <!-- <mat-error *ngFor="let error of errorMessage?.contact">
+              <mat-error *ngIf="covidForm?.get('contact')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="formfield 3">
+          <label>Address</label>
+          <mat-form-field appearance="outline">
+            <input  matInput formControlName="address">
+            <!-- <mat-error *ngFor="let error of errorMessage?.address">
+              <mat-error *ngIf="covidForm?.get('address')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="formfield 4">
+          <label>Description</label>
+          <mat-form-field appearance="outline">
+            <textarea formControlName="descrpition" type="text" class="inputMessage" matInput cdkTextareaAutosize cdkAutosizeMinRows="4"
+              cdkAutosizeMaxRows="7" ></textarea>
+              <!-- <mat-error *ngFor="let error of errorMessage?.description">
+                <mat-error *ngIf="covidForm?.get('description')?.hasError(error?.type)" class="alertMessage">
+                  <span class="errorMessage">{{error.message}}</span>
+                </mat-error>
+              </mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="buttonGroup">
+          <button type="reset" (click)="crossClick()" class="buttons">Cancel</button>
+          <button type="submit" class="buttons">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+

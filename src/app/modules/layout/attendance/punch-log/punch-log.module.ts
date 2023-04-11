@@ -8,6 +8,11 @@ import { MatInputModule } from '@angular/material/input';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -22,7 +27,12 @@ import { MatSelectModule } from '@angular/material/select';
     CommontableModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    GetControlModule,
+    ValidationErrorModule,
+    DropdownModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ]
 })
 export class PunchLogModule { }

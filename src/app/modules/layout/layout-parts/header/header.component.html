@@ -24,7 +24,7 @@
             <span>Change Password</span>
           </button>
           <hr />
-          <button mat-menu-item>
+          <button (click)="openDialog1()" mat-menu-item>
             <mat-icon>logout</mat-icon>
             <span>Sign Out</span>
           </button>
@@ -32,13 +32,13 @@
       </a>
 
       <button (click)="openDialog()" class="HELP">Help</button>
-      <mat-icon (click)="notification_drawer()" style="color: grey">notifications</mat-icon>
+      <mat-icon (click)="notification=!notification" style="color: grey">notifications</mat-icon>
       <span class="lastlogin">Last login Feb 03 2023 12:00 pm 127.1234.12 </span>
     </div>
 
   </div>
   <div  [@slideinOut] *ngIf="notification"  class="notification-box">
-    <div (click)="notification=false" class="close">X</div>
+    <div (click)="notification=false" class="close"><mat-icon>close</mat-icon></div>
     <div class="notify">
       <div class="head">
         <h1>No new notification</h1>

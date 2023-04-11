@@ -14,6 +14,8 @@ import { TrainingInfoComponent } from './training-info/training-info.component';
 import { SubTopicsComponent } from './sub-topics/sub-topics.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 
 
 
@@ -35,7 +37,9 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
      MatRadioModule,
      MatFormFieldModule,
      MatInputModule,
-     CommontableModule
+     CommontableModule,
+     GetControlModule,
+     ValidationErrorModule
 
 
 

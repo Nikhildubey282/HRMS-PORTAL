@@ -19,7 +19,7 @@ export class DeleteDialogComponent implements OnInit {
   ngOnInit(): void {
   }
   crossClick() {
-    this.dialogRef.close('match');
+    this.dialogRef.close();
   }
 
   confirm(){

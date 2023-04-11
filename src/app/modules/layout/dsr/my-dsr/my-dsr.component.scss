@@ -44,6 +44,7 @@ section {
         .row{
           display: flex;
           gap: 20px;
+          align-items: center;
       .input{
         display: flex;
         flex-direction: column;
@@ -63,7 +64,7 @@ section {
 
     .right{
       padding: 20px;
-      
+
     }
     .buttongrp{
       padding: 5px;
@@ -95,6 +96,14 @@ section {
       .input{
         display: flex;
         flex-direction: column;
+        ::ng-deep{
+          .mat-icon-button{
+            position: absolute;
+            top: -5px;
+            right: -8px;
+            background-color: transparent;
+          }
+        }
       }
       .buttongrp{
       button{
@@ -124,6 +133,12 @@ section {
     background-color: white;
     margin-top: 20px;
     border-radius: 10px;
+  }
+}
+
+::ng-deep{
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #199CFF;
   }
 }
 

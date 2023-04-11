@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PATTERN } from 'src/app/constant/patterns';
 
 @Component({
   selector: 'app-shareideas',
@@ -10,6 +11,8 @@ export class ShareideasComponent implements OnInit {
 
   addbutton:boolean=false;
   pitchForm!:FormGroup;
+  pattern=PATTERN;
+
 
   constructor(
     private _fb:FormBuilder
@@ -24,10 +27,10 @@ export class ShareideasComponent implements OnInit {
       name:[{value:'Nikhil Dubey', disabled: true},Validators.required],
       employeeId:[{value:'AI1612', disabled: true},Validators.required],
       DOB:[{value:'11/02/2002',disabled:true},Validators.required],
-      pitchTitle:['',Validators.required],
-      industry:['',Validators.required],
-      type:['',Validators.required],
-      uploadFile:['',Validators.required]
+      pitchTitle:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      industry:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      type:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      uploadFile:['',[Validators.required]]
     })
   }
 
@@ -35,14 +38,5 @@ export class ShareideasComponent implements OnInit {
     return this.pitchForm.controls
   }
 
-  add(){
-    if(this.addbutton===false)
-    this.addbutton=true;
-
-    else{
-      this.addbutton=false;
-
-    }
-  }
 
 }

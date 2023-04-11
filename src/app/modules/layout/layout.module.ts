@@ -14,6 +14,14 @@ import { ListingComponent } from './side-nav/listing/listing.component';
 import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-routing.module';
 import { CommontableModule } from '../commontable/commontable.module';
 import { HelpDialogComponent } from './layout-parts/help-dialog/help-dialog.component';
+import { CovidComponent } from './layout-parts/covid/covid.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CouroselModule } from 'src/app/shared/courosel/courosel.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { LogoutConfirmationComponent } from './layout-parts/logout-confirmation/logout-confirmation.component';
 
 
 
@@ -23,7 +31,9 @@ import { HelpDialogComponent } from './layout-parts/help-dialog/help-dialog.comp
     HeaderComponent,
     SideNavComponent,
     ListingComponent,
-    HelpDialogComponent
+    HelpDialogComponent,
+    CovidComponent,
+    LogoutConfirmationComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +44,15 @@ import { HelpDialogComponent } from './layout-parts/help-dialog/help-dialog.comp
     MatIconModule,
     MatMenuModule,
     AbsoluteRoutingModule,
-    CommontableModule
-  ]
+    CommontableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    CouroselModule,
+    FormsModule,
+    ReactiveFormsModule,
+    GetControlModule,
+    ValidationErrorModule
+  ],
+
 })
 export class LayoutModule { }

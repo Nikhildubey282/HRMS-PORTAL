@@ -1,5 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
+import { Component, OnInit,Input, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
@@ -14,13 +15,15 @@ export class MyDsrComponent implements OnInit {
   lableProject='Project';
   projectData=['Training Project React JS','Miscellaneous','Interview'];
   labelStatus='Final Approved Status';
-  statusData=['pending','rejected','approved'];
+  statusData=['Pending','rejected','approved'];
   labelHours='Hours';
-  hoursData=['hours','less than 5 hours'];
+  hoursData=['Hours','less than 5 hours'];
   labelsubmission='Submission Status';
   labelProject='Project';
   dsrForm!:FormGroup;
+  filterForm!:FormGroup;
   @Input() ngxMatTimepicker:any;
+  @ViewChild(FormGroupDirective) FormGroupDirective:FormGroupDirective;
 
   dataSource = new MatTableDataSource<any>();
 
@@ -34,9 +37,6 @@ export class MyDsrComponent implements OnInit {
     {heading:	'Date',key:'date',type:'text'},
     {heading:'Total (Logged Hr)',key:'logged_hr',type:'text'},
     {heading:'Final Approved',key:'final_approved',type:'link',action:[2]},
-
-
-
   ]
   Table_DATA: any[] = [
 
@@ -45,21 +45,30 @@ export class MyDsrComponent implements OnInit {
 
   constructor(
     private _fb:FormBuilder,
-    private snackbar_service:SnackBarService
+    private snackbar_service:SnackBarService,
+    private datepipe:DatePipe
   ) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
 
     this.createForm();
+    this.filterForm=this._fb.group({
+      startDate:[''],
+      toDate:[''],
+      submissionStatus:[''],
+      project1:[''],
+      finalStatus:[''],
+      hours1:['']
+    })
   }
 
   createForm(){
     this.dsrForm=this._fb.group({
       project:['',[Validators.required]],
       date:['',[Validators.required]],
-      hours:[''],
-      dsr:['',[Validators.required]]
+      hours:['',[Validators.required]],
+      dsr:['',[Validators.required]],
 
     })
   }
@@ -68,26 +77,35 @@ export class MyDsrComponent implements OnInit {
     return this.dsrForm.controls
   }
 
+  toggle(e:any){
+    console.log(e);
+    if(e.checked===true){
+      this.dsrForm.controls.hours.setValue('00:00');
+      this.formCtrl.dsr.setValue('Today no work has been done on this project');
+    }
+    else{
+      this.dsrForm.controls.hours.setValue('');
+      this.formCtrl.dsr.setValue('');
+
+
+
+    }
+  }
+
+
   add(){
     console.log('nikhbjdjbjdkjnksdjndjnsjnksdjks')
     if(this.addbutton===false)
     this.addbutton=true;
-
     else{
       this.addbutton=false;
 
     }
   }
 
-  showSuccess() {
-    this.snackbar_service.showSuccess('Dsr add Successfully','')
-
-  }
-
   submitHandler() {
-
-    console.log(this.dsrForm.value,'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
-
+    console.log(this.dsrForm.valid,'sdfhhsdfjhsdjhjhsdjhjsdjjsd');
+    if(this.dsrForm.valid){
       this.Table_DATA.push({
         sNo:this.Table_DATA.length+1,
         emp_name: 'Nikhil Dubey',
@@ -95,22 +113,17 @@ export class MyDsrComponent implements OnInit {
         email:'nikhildubey282@gmail.com',
         emp_type:'Permanmnet',
         // date: new Date().toISOString().slice(0, 10),
-        date:this.formCtrl['date'].value,
+        date:this.datepipe.transform(this.formCtrl['date'].value,'dd-MM-YYYY'),
         logged_hr:'8:30',
         final_approved:''
       });
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
-    this.showSuccess();
-    this.dsrForm.reset();
-
-      // this.dataSource = new MatTableDataSource<QUALIFICATIONTABLE>(
-      //   this.Table_DATA
-      // );
-      // this.resetForm();
-      // this.createForm();
-  //   } else {
-  //     this.qualificationForm.markAllAsTouched();
-  //   }
+    this.FormGroupDirective.resetForm();
+    this.snackbar_service.showSuccess('DSR add Successfully','');
+    }
+    else{
+      this.dsrForm.markAllAsTouched();
+    }
    }
 
 }

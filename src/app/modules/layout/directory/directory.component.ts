@@ -11,6 +11,8 @@ import { map, startWith } from 'rxjs/operators';
 })
 export class DirectoryComponent implements OnInit {
   DATA:any[]=DIRECTORY_EMPLOYEE_DATA;
+  options=['ALL','Angular','Android','Finance'];
+
 
   directoryForm!:FormGroup;
   filteredOptions!: Observable<string[]>;
@@ -29,6 +31,7 @@ export class DirectoryComponent implements OnInit {
   createForm(){
     this.directoryForm=this._fb.group({
       name:['',[]],
+      dropdown:['']
     })
   }
 
@@ -57,6 +60,16 @@ export class DirectoryComponent implements OnInit {
   RESET(){
     this.DATA=DIRECTORY_EMPLOYEE_DATA;
 
+  }
+
+  Arr(e:any){
+    console.log(e);
+    if(e.value==='ALL')
+    this.DATA=DIRECTORY_EMPLOYEE_DATA;
+    else{
+    this.DATA=DIRECTORY_EMPLOYEE_DATA;
+    this.DATA = this.DATA.filter(item => item.EMP_TECHNOLOGY === e.value);
+    }
   }
   }
 

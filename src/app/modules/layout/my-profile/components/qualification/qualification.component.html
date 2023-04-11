@@ -3,15 +3,14 @@
   <div class="heading">
     <h6>Add New Qualification</h6>
   </div>
-  <div [formGroup]="qualificationForm">
+  <form [formGroup]="qualificationForm" (ngSubmit)="submitHandler()"  >
   <div class="input-field">
     <div class="inputs1">
       <div class="input">
         <label> School/University</label>
         <mat-form-field class="example-full-width" appearance="outline">
           <input placeholder="School/University" type="text" matInput formControlName="university">
-          <mat-error *ngIf="formCtrl.university.hasError('required')" >{{errorMsg.UNIVERSITY_REQUIRED}}</mat-error>
-          <mat-error *ngIf="formCtrl.university.hasError('pattern')" >Enter a valid University Name</mat-error>
+          <mat-error>{{qualificationForm | getControl:['university'] | validate:'university'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
@@ -34,8 +33,7 @@
           <input matInput placeholder="From" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="startdate">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-          <mat-error *ngIf="formCtrl.startdate.hasError('required')">
-            Please Enter a date</mat-error>
+          <mat-error>{{qualificationForm | getControl:['startdate'] | validate:'startdate'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="to_date">
@@ -43,8 +41,8 @@
           <input matInput placeholder="To"  [matDatepicker]="picker1" formControlName="enddate">
           <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
-          <mat-error *ngIf="formCtrl.enddate.hasError('required')">
-            Please Enter a date</mat-error>
+          <mat-error>{{qualificationForm | getControl:['enddate'] | validate:'enddate'}}</mat-error>
+
         </mat-form-field>
       </div>
 
@@ -67,9 +65,7 @@
         <label>Professional course</label>
         <mat-form-field class="example-full-width" appearance="outline">
           <input type="text" placeholder="Professional Course" matInput formControlName="professionalCourse">
-          <mat-error *ngIf="formCtrl.professionalCourse.hasError('required')" >{{errorMsg.PROFESSIONAL_REQUIRED}}</mat-error>
-          <mat-error *ngIf="formCtrl.professionalCourse.hasError('pattern')" >Enter a valid course name</mat-error>
-
+          <mat-error>{{qualificationForm | getControl:['professionalCourse'] | validate:'professionalCourse'}}</mat-error>
         </mat-form-field>
 
       </div>
@@ -79,19 +75,17 @@
         <label>Description</label>
         <mat-form-field class="text" appearance="outline">
           <textarea  placeholder="Description" formControlName="descripition" matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
-          <mat-error *ngIf="formCtrl.descripition.hasError('required')" >{{errorMsg.DESCRIPITION_REQUIRED}}</mat-error>
-          <mat-error *ngIf="formCtrl.descripition.hasError('pattern')" >Enter a Valid Descripition </mat-error>
+          <mat-error>{{qualificationForm | getControl:['descripition'] | validate:'descripition'}}</mat-error>
+
         </mat-form-field>
       </div>
     </div>
   </div>
 
   <div class="group">
-    <button (click)="submitHandler()" >SAVE</button>
+    <button type="submit" >SAVE</button>
   </div>
-</div>
-
-
+</form>
 </div>
 
 <div  [@slideinOut] class="list">
@@ -99,7 +93,7 @@
     <h6>List of qualification</h6>
   </div>
   <div class="table">
-    <app-commontable (edit_button)="edit_data($event)" (delete_button)="delete_data($event)" [columns]="heading" [dataSource]="dataSource"></app-commontable>
+    <app-commontable [searchBar]="true" (edit_button)="edit_data($event)" (delete_button)="delete_data($event)" [columns]="heading" [dataSource]="dataSource"></app-commontable>
   </div>
 
 </div>

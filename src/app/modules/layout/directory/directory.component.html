@@ -13,13 +13,16 @@
 
     <div class="input">
       <label>Department</label>
-      <mat-form-field appearance="outline">
-        <mat-select>
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
+        <app-dropdown
+        [Data]="options"
+        [myControlName]="this.directoryForm.controls.dropdown"
+        (directory)="Arr($event)"
+
+         ></app-dropdown>
+        <!-- <mat-select (selectionChange)='Arr($event)' >
+          <mat-option *ngFor="let item of options" value={{item}}>{{item}}</mat-option>
+        </mat-select> -->
+
     </div>
     <div class="btn_grp">
       <button (click)="RESET()" class="reset">Reset</button>

@@ -72,19 +72,43 @@
         <div class="select">
         <label>Select Year:</label>
         <mat-form-field appearance="outline">
-          <mat-select >
-            <mat-option value="option1">Option 1</mat-option>
-            <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-            <mat-option value="option3">Option 3</mat-option>
+          <mat-select (selectionChange)="onSelect()"
+          [formControl]="selectControl"
+           >
+           <ng-container *ngFor="let item of data.reviewData">
+            <mat-option [value]="item.year">{{item.year}}</mat-option>
+           </ng-container>
+
           </mat-select>
         </mat-form-field>
       </div>
       </div>
       <div class="months_list">
-        <ng-container *ngFor="let items of data ">
+        <ng-container *ngFor="let items of currentData?.monthlyRating ">
+          <div *ngIf="items.isRating; else ratings">
+          <div class="list">
+            <h3 class="head">
+              <span class="month__name">{{items.month}}</span>
+              <span class="month__rate">{{items.rating}}</span>
+            </h3>
+            <div class="main">
+              <div class="award_count">
+                AWARDS:
+                <span>0</span>
+              </div>
+              <div class="honours_count">
+                HONOURS:0
+                <mat-icon>chevron_right</mat-icon>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #ratings>
           <div  class="months">
             <h3>{{items.month}}</h3>
           </div>
+        </ng-template>
 
         </ng-container>
 

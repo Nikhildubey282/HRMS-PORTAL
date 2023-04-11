@@ -43,27 +43,21 @@
         <label>Pitch Title</label>
         <mat-form-field appearance="outline" class="example-full-width">
           <input type="text" formControlName="pitchTitle" matInput>
-          <mat-error *ngIf="Formctrl.pitchTitle.hasError('required')" >
-            Please Enter a Pitch Title
-          </mat-error>
+          <mat-error>{{pitchForm | getControl:['pitchTitle'] | validate:'pitchTitle'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Industry</label>
         <mat-form-field appearance="outline" class="example-full-width">
           <input type="text" formControlName="industry" matInput>
-          <mat-error *ngIf="Formctrl.industry.hasError('required')" >
-            Please Enter a industry name
-          </mat-error>
+          <mat-error>{{pitchForm | getControl:['industry'] | validate:'industry'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Type</label>
         <mat-form-field appearance="outline" class="example-full-width">
           <input type="text"  formControlName="type" matInput>
-          <mat-error *ngIf="Formctrl.type.hasError('required')" >
-           Please Enter a Type
-          </mat-error>
+          <mat-error>{{pitchForm | getControl:['type'] | validate:'type'}}</mat-error>
         </mat-form-field>
       </div>
       <div>
@@ -86,11 +80,6 @@
       <div class="document">
         <input formControlName="uploadFile" type="file">
       </div>
-
-
-
-
-
     </div>
   </div>
 </form>

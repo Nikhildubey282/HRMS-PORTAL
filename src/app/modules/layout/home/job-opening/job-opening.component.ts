@@ -60,7 +60,10 @@ export class JobOpeningComponent implements OnInit,AfterViewInit {
   open_viewdetail(){
     console.log('open              kdkdkjkdajk')
     this.routes.navigate(['./layout/refer-candidate/view-detail'])
+  }
 
+  viewAll(){
+    this.routes.navigate(['./layout/refer-candidate/job-opening'])
   }
 
 }

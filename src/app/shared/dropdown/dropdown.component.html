@@ -1,7 +1,7 @@
 <div class="formfield 2">
     <label class="label">{{label}}</label>
     <mat-form-field appearance="outline">
-      <mat-select [formControl]="myControlName">
+      <mat-select (selectionChange)="directory.emit($event)" [formControl]="myControlName">
         <input [formControl]="myControl"   class="filter">
         <mat-option *ngFor="let item of filteredOptions | async" [value]="item" [disabled]="item=='no results Found'">
           {{item}}

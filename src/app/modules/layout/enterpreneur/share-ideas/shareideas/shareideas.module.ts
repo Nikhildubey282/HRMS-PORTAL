@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 
 
 
@@ -21,7 +23,9 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     FormsModule,ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    EditorModule
+    EditorModule,
+    GetControlModule,
+    ValidationErrorModule
 
 
 

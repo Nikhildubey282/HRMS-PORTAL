@@ -25,11 +25,13 @@ export class MytrainingComponent implements OnInit {
   viewDetails(item){
     console.log('jkdddddd')
     // this.route.navigate(['layout/freshers/training-details']);
-      console.log(item,'item');
-      const url = this.route.serializeUrl(
-        this.route.createUrlTree([`/layout/freshers/training-details/${item.id}`])
-      );
-      window.open(url, '_blank');
+      // console.log(item,'item');
+      // const url = this.route.serializeUrl(
+      //   this.route.createUrlTree([`/layout/freshers/training-details/${item.id}`])
+      // );
+      // window.open(url, '_blank');
+    this.route.navigate([`/layout/freshers/training-details/${item.id}`])
+
     }
 
     openDialog() {

@@ -94,10 +94,10 @@
         <div class="formfield 12">
           <label class="label">Skill Set</label>
           <mat-form-field appearance="outline">
-            <textarea  #textarea matInput></textarea>
+            <textarea maxlength=200  #textarea matInput></textarea>
           </mat-form-field>
           <p class="maxlength">
-          0/200</p>
+          {{textarea.value.length}}/{{total}}</p>
         </div>
       </div>
         <div class="buttonGroup">

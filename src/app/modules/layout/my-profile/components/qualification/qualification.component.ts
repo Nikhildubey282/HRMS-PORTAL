@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { slideAnimation } from 'src/animation';
 import { FormService } from 'src/app/services/form.service';
 import { QUALIFICATION_MESSAGE } from 'src/app/constant/messages';
@@ -26,10 +26,10 @@ export class QualificationComponent implements OnInit {
   labelLanguage = 'language'
   levelData = ['1', '2'];
   languageDropdown = ['English', 'Hindi']
-  minDate: Date
-  maxDate: Date
-
+  minDate: Date;
+  maxDate: Date;
   qualificationForm!: FormGroup;
+  @ViewChild(FormGroupDirective) fromGroupDirective:FormGroupDirective;
 
   dataSource = new MatTableDataSource<any>();
 
@@ -41,40 +41,7 @@ export class QualificationComponent implements OnInit {
   ]
   Table_DATA: any[] = [
     {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
   ];
 
   constructor(
@@ -118,9 +85,8 @@ export class QualificationComponent implements OnInit {
     if(this.qualificationForm.valid){
     this.Table_DATA.push(this.qualificationForm.value);
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
-    this.createForm();
-    // this.resetForm();
-    console.log(this.qualificationForm.value);
+    this.fromGroupDirective.resetForm();
+
     this.snackbar_service.showSuccess('Data Added Sucessfully','')
     }
     else{

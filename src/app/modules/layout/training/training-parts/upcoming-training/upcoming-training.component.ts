@@ -28,10 +28,12 @@ export class UpcomingTrainingComponent implements OnInit {
     });
   }
   viewDetails(item){
-    const url = this.route.serializeUrl(
-      this.route.createUrlTree([`/layout/training/trainingdetails/${item.id}`])
-    );
-    window.open(url, '_blank');
+    // const url = this.route.serializeUrl(
+    //   this.route.createUrlTree([`/layout/training/trainingdetails/${item.id}`])
+    // );
+    // window.open(url, '_blank');
+    this.route.navigate([`/layout/training/trainingdetails/${item.id}`])
+
   }
 }
 

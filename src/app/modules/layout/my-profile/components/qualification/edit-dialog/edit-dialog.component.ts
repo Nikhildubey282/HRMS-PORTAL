@@ -3,6 +3,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { PATTERN } from 'src/app/constant/patterns';
+
 
 @Component({
   selector: 'app-edit-dialog',
@@ -15,6 +17,9 @@ export class EditDialogComponent implements OnInit {
   levelData=['1','2'];
   languageData=['Hindi','English']
   editForm!:FormGroup;
+  Pattern=PATTERN;
+
+
 
 
   constructor(
@@ -36,13 +41,12 @@ export class EditDialogComponent implements OnInit {
 
   createForm(){
     this.editForm=this._fb.group({
-      university:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      university:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
       educationLevel:['',[Validators.required]],
-      startdate:[''],
-      // enddate:['',Validators.required],
+      date:['',[Validators.required]],
       language:[''],
-      professionalCourse:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
+      professionalCourse:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
+      descripition:['',[Validators.required,Validators.pattern(this.Pattern.name)]]
 
     })
   }
@@ -52,7 +56,7 @@ export class EditDialogComponent implements OnInit {
 
   }
   crossClick() {
-    this.dialogRef.close('cancel');
+    this.dialogRef.close();
   }
 
 

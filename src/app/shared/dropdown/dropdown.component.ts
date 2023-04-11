@@ -1,7 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component,EventEmitter, OnInit,Input, Output } from '@angular/core';
 import { FormControl, FormControlName } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+// import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-dropdown',
@@ -14,6 +15,8 @@ export class DropdownComponent implements OnInit {
     @Input() Data!:any;
     @Input() errorType:any;
     @Input() placeholder:any;
+    @Output() directory:EventEmitter<any>=new EventEmitter();
+
     // @Input() formfieldCSS;
     // @Input() labelStyle;
     selected = 'test';

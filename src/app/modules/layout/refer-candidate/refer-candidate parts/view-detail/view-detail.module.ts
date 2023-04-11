@@ -3,15 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { ViewDetailRoutingModule } from './view-detail-routing.module';
 import { ViewDetailComponent } from './view-detail.component';
+import { TermsComponent } from './terms/terms.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
-    ViewDetailComponent
+    ViewDetailComponent,
+    TermsComponent
   ],
   imports: [
     CommonModule,
-    ViewDetailRoutingModule
+    ViewDetailRoutingModule,
+    MatDialogModule,
+    MatIconModule
   ]
 })
 export class ViewDetailModule { }

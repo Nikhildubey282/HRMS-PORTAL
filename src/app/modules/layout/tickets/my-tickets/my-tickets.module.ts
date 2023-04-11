@@ -9,9 +9,8 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
 import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 
 
 @NgModule({
@@ -26,7 +25,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommontableModule,
     DropdownModule,
     EditorModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    GetControlModule,
+    ValidationErrorModule
 
   ]
 })

@@ -10,6 +10,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 
 
 
@@ -27,7 +29,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatRadioModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    GetControlModule,
+    ValidationErrorModule
   ]
 })
 export class MytrainingModule { }

@@ -15,18 +15,33 @@ export class InterviewListComponent implements OnInit {
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
-    { heading: 'Department', key: 'fName', type: 'link', link: '/dashboard/client-details' },
-    { heading: 'Name', key:'mName',type:'text'},
-    { heading: 'Email', key:'lName',type:'text'},
-    {heading:'Mobile No.',key:'Name',type:'text'},
-    {heading:'Round Type',key:'rd',type:'text'},
-    {heading:'Interview Date',},
-    {heading:'Interview Time'},
-    {heading:'Final Status'},
-    {heading:'Action'}
+    { heading: 'Department', key: 'department', type: 'text' },
+    { heading: 'Name', key:'name',type:'text'},
+    { heading: 'Email', key:'email',type:'text'},
+    {heading:'Mobile No.',key:'mobile',type:'text'},
+    {heading:'Round Type',key:'roundtype',type:'text'},
+    {heading:'Interview Date',type:'text',key:'interviewdate'},
+    {heading:'Interview Time',type:'text',key:'interviewtime'},
+    {heading:'Final Status',type:'text',key:'status'},
+    {heading:'Action',type:'text'}
 
   ]
   Table_DATA: any[] = [
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+    {sNo:'1',department:'angular',name:'Nikhil Dubey',email:'nikhildubey@gmail.com',mobile:'9634821432',roundtype:'Selected',interviewdate:'22/03/2023',interviewtime:'2:00 pm',status:'selected'},
+
+
+
+
+
+
+
 
   ];
 

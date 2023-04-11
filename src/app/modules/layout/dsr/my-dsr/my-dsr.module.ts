@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { MyDsrRoutingModule } from './my-dsr-routing.module';
 import { MyDsrComponent } from './my-dsr.component';
@@ -13,6 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -26,7 +30,7 @@ import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
   declarations: [
     MyDsrComponent
   ],
-  providers:[SnackBarService],
+  providers:[SnackBarService,DatePipe],
   imports: [
     CommonModule,
     MyDsrRoutingModule,
@@ -39,7 +43,10 @@ import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
     FormsModule,
     ReactiveFormsModule,
     CommontableModule,
-    NgxMatTimepickerModule
+    NgxMatTimepickerModule,
+    ValidationErrorModule,
+    GetControlModule,
+    MatCheckboxModule
 
 
   ]

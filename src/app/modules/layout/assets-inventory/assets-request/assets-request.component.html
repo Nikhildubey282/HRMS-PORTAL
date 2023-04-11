@@ -35,9 +35,9 @@
           <input placeholder="Required by date" formControlName="date" matInput [matDatepicker]="picker" readonly>
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-          <mat-error *ngIf="formCtrl.date.hasError('required')">
-            Please enter date
-          </mat-error>
+          <mat-error>{{assetsRequest | getControl:['date']| validate:'date'}}</mat-error>
+
+
         </mat-form-field>
       </div>
     </div>
@@ -58,9 +58,8 @@
         <label>Request Reason*</label>
         <mat-form-field  appearance="outline">
           <input formControlName="requestreason" matInput class="example-full-width" >
-          <mat-error *ngIf="formCtrl.requestreason.hasError('required')">
-            Please enter request reason
-          </mat-error>
+          <mat-error>{{assetsRequest | getControl:['requestreason'] | validate:'requestreason'}}</mat-error>
+
         </mat-form-field>
       </div>
 

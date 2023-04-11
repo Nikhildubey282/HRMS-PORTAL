@@ -1,6 +1,7 @@
 <section>
   <div class="head">
     <h5>Add Tags</h5>
+    <mat-icon (click)="crossClick()">close</mat-icon>
   </div>
   <div class="body">
     <form [formGroup]="addForm">
@@ -11,7 +12,7 @@
   </form>
   </div>
   <div class="button-wrap">
-    <button>Cancel</button>
-    <button class="add" [mat-dialog-close]="this.addForm.controls.addTag.value" >add</button>
+    <button (click)="crossClick()" >Cancel</button>
+    <button class="add" [mat-dialog-close]="this.addForm.controls.addTag.value" >Add</button>
   </div>
 </section>

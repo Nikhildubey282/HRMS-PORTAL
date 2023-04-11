@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DropdownModule } from 'src/app/shared/dropdown/dropdown.module';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 
 
 
@@ -28,7 +30,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     DropdownModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    
+    ValidationErrorModule,
+    GetControlModule
+
     ]
 })
 export class BasicInfoModule { }

@@ -4,35 +4,21 @@ section {
     .name{
       display: flex;
       align-items: center;
-
-
       .mat-icon{
         font-size: 22px;
       }
-
       .full-width{
         padding: 10px 0px 10px 5px;
         width: 180px;
         // padding-top: 20px;
       }
     }
-
-
-
   ::ng-deep{
     .mat-list-item-content{
       justify-content: space-between;
       font-size: 16px;
       font-weight: 500;
       padding: 0px 16px 10px 16px;
-
-
-
-      // :hover{
-      //   color: rgb(67, 67, 225);
-      //   background-color: transparent;
-
-      // }
     }
   }
 }
@@ -64,17 +50,17 @@ section {
     transform: scaleY(1);
   }
   .active{
-    color: rgb(67, 67, 225);
+    // color: rgb(67, 67, 225);
+    color: #199CFF;
       background-color: transparent;
-
   }
 
 }
 
-// .mat-list-item{
-//   &:disabled{
-//     background-color: rgb(125, 100, 100);
-//   }
-// }
+.mat-list-item-content{
+  &:disabled{
+    background-color:red;
+  }
+}
 
 

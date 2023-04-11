@@ -3,39 +3,39 @@
     <div class="heading">
       <h5>Basic Information</h5>
     </div>
-    <form [formGroup]="basicinfoForm">
+    <form [formGroup]="basicinfoForm"  (ngSubmit)="submit()">
       <div class="content">
         <div class="row">
           <div class="input">
             <label>First Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
               <input type="text" matInput placeholder="First Name" formControlName="firstName" />
-              <mat-error *ngIf="formCtrl.firstName.hasError('required')">{{
-                errorMsg.FIRSTNAME_REQUIRED
-              }}</mat-error>
-              <mat-error *ngIf="formCtrl.firstName.hasError('pattern')">
-                Invalid FirstName</mat-error>
+
+                <mat-error>{{basicinfoForm | getControl:['firstName']| validate:'firstName'}}</mat-error>
             </mat-form-field>
           </div>
           <div class="input">
             <label>Last Name</label>
             <mat-form-field class="example-full-width" appearance="outline">
               <input type="text" matInput placeholder="Last Name" formControlName="lastName" />
-              <mat-error *ngIf="formCtrl.lastName.hasError('required')">
+              <!-- <mat-error *ngIf="formCtrl.lastName.hasError('required')">
                 Please enter a last name
               </mat-error>
               <mat-error *ngIf="formCtrl.lastName.hasError('pattern')">
-                Invalid Lastname</mat-error>
+                Invalid Lastname</mat-error> -->
+                <mat-error>{{basicinfoForm | getControl:['lastName']| validate:'lastName'}}</mat-error>
             </mat-form-field>
           </div>
           <div class="input">
             <label>Date Of Birth</label>
             <mat-form-field appearance="outline">
-              <input matInput placeholder="Date of Birth" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
+                <input readonly="" matInput placeholder="Date of Birth" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">
-                Please Enter a date</mat-error>
+              <!-- <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">
+                Please Enter a date</mat-error> -->
+                <mat-error>{{basicinfoForm | getControl:['dateofBirth']| validate:'dateofBirth'}}</mat-error>
+
             </mat-form-field>
           </div>
         </div>
@@ -65,10 +65,7 @@
             <label>Contact Number</label>
             <mat-form-field class="example-full-width" appearance="outline">
               <input type="text" matInput  placeholder="Contact Number" formControlName="contactNumber" />
-              <mat-error *ngIf="formCtrl.contactNumber.hasError('required')">
-                Please Enter a Contact Number</mat-error>
-                <mat-error *ngIf="formCtrl.contactNumber.hasError('pattern')">
-                  Invalid Contact Number</mat-error>
+              <mat-error>{{basicinfoForm | getControl:['contactNumber']| validate:'contactNumber'}}</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -81,24 +78,21 @@
               <label> Years</label>
               <mat-form-field class="example-full-width" appearance="outline">
                 <input type="text" matInput  placeholder="Years" formControlName="years" />
-                <mat-error *ngIf="formCtrl.years.hasError('required')">{{
+                <!-- <mat-error *ngIf="formCtrl.years.hasError('required')">{{
                   errorMsg.YEARS_REQUIRED
                 }}</mat-error>
                 <mat-error *ngIf="formCtrl.years.hasError('pattern')">
                   Enter a valid input
-                </mat-error>
+                </mat-error> -->
+                <mat-error>{{basicinfoForm | getControl:['years']| validate:'years'}}</mat-error>
+
               </mat-form-field>
             </div>
             <div class="input">
               <label>Months</label>
               <mat-form-field class="example-full-width" appearance="outline">
                 <input type="text" matInput  placeholder="Months" formControlName="months" />
-                <mat-error *ngIf="formCtrl.months.hasError('required')">{{
-                  errorMsg.MONTHS_REQUIRED
-                }}</mat-error>
-                <mat-error *ngIf="formCtrl.months.hasError('pattern')">
-                  Enter a valid input
-                </mat-error>
+                <mat-error>{{basicinfoForm | getControl:['months']| validate:'months'}}</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -110,24 +104,14 @@
               <label>Years</label>
               <mat-form-field class="example-full-width" appearance="outline">
                 <input type="text" matInput  placeholder="Years" formControlName="years2" />
-                <mat-error *ngIf="formCtrl.years2.hasError('required')">{{
-                  errorMsg.YEARS_REQUIRED
-                }}</mat-error>
-                <mat-error *ngIf="formCtrl.years2.hasError('pattern')">
-                  Enter a valid input
-                </mat-error>
+                <mat-error>{{basicinfoForm | getControl:['years2']| validate:'years2'}}</mat-error>
               </mat-form-field>
             </div>
             <div class="input">
               <label>Months</label>
               <mat-form-field class="example-full-width" appearance="outline">
                 <input type="text" matInput  placeholder="Months" formControlName="months2" />
-                <mat-error *ngIf="formCtrl.months2.hasError('required')">{{
-                  errorMsg.MONTHS_REQUIRED
-                }}</mat-error>
-                <mat-error *ngIf="formCtrl.months2.hasError('pattern')">
-                  Enter a valid input
-                </mat-error>
+                <mat-error>{{basicinfoForm | getControl:['months2']| validate:'months2'}}</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -144,13 +128,12 @@
                 cdkAutosizeMaxRows="5"
                 placeholder="Descripition"
               ></textarea>
-              <mat-error *ngIf="formCtrl.descripition.hasError('required')" >Please Enter a Descripition </mat-error>
-          <mat-error *ngIf="formCtrl.descripition.hasError('pattern')" >Enter a Valid Descripition </mat-error>
+              <mat-error>{{basicinfoForm | getControl:['descripition']| validate:'descripition'}}</mat-error>
             </mat-form-field>
           </div>
         </div>
         <div class="group">
-          <button>SAVE</button>
+          <button type="submit">SAVE</button>
         </div>
       </div>
     </form>

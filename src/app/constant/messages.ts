@@ -29,6 +29,17 @@ export const ACCOUNT_ERROR_MESSAGES = {
 
 };
 
+export const VALIDATION_MESSAGES = {
+  "confirm password": {
+    matchPassword: "Confirm password does not matches with password",
+  },
+};
+export const toTitleCase = (str) => {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
+
 export const QUALIFICATION_MESSAGE={
   UNIVERSITY_REQUIRED:'Please Enter a university name',
   EDUCATION_LEVEL:'Please choose a education level',

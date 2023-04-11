@@ -38,7 +38,7 @@
       <h1>Add Leave</h1>
       <button (click)="add()">+ Add New</button>
     </div>
-    <form [formGroup]="leaveForm">
+    <form [formGroup]="leaveForm" (ngSubmit)="sumbit()" >
 
     <main *ngIf="addButton">
 
@@ -50,6 +50,14 @@
             [errorType]="leaveForm.controls.leavetype"
             ></app-dropdown>
           </span>
+        </div>
+        <div class="checkbox">
+        <mat-checkbox (change)="toogle($event)" class="example-margin">Half Day?</mat-checkbox>
+        <mat-radio-group *ngIf="checked===true" aria-label="Select an option">
+          <mat-radio-button value="1">1st half</mat-radio-button>
+          <mat-radio-button value="2">2nd half</mat-radio-button>
+        </mat-radio-group>
+
         </div>
         <div *ngIf="leaveForm.controls.leavetype.value==='Short Leave'" class="timer-wrapper">
           <div class="input">
@@ -70,12 +78,10 @@
           <div class="input">
             <label>Start Date</label>
             <mat-form-field class="example-form-field" appearance="outline">
-              <mat-date-range-input>
-                <input placeholder="from" matStartDate formControlName="startdate">
-                <input matEndDate formControlName="startdate">
-              </mat-date-range-input>
-              <mat-datepicker-toggle matIconSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
-              <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+              <input readonly matInput placeholder="Start date"    [matDatepicker]="picker" formControlName="startdate">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error>{{leaveForm | getControl:['startdate'] |validate:'startdate' }}</mat-error>
             </mat-form-field>
           </div>
 
@@ -83,12 +89,10 @@
             <div class="input">
               <label>End Date</label>
               <mat-form-field class="example-form-field" appearance="outline">
-                <mat-date-range-input>
-                  <input matStartDate formControlName="enddate">
-                  <input matEndDate formControlName="enddate">
-                </mat-date-range-input>
-                <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
-                <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+                <input readonly matInput placeholder="End date"   [matDatepicker]="picker1" formControlName="enddate">
+                <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              <mat-error>{{leaveForm | getControl:['enddate'] |validate:'enddate' }}</mat-error>
               </mat-form-field>
             </div>
           </div>
@@ -98,6 +102,8 @@
           <label>Remarks</label>
           <mat-form-field class="example-full-width" appearance="outline">
             <input placeholder="Remarks" matInput formControlName="remarks">
+            <mat-error>{{leaveForm | getControl:['remarks'] |validate:'remarks' }}</mat-error>
+
           </mat-form-field>
         </div>
         <div class="input1">
@@ -107,8 +113,8 @@
         </div>
         </div>
         <div class="button_wrapper">
-          <button class="left">Save</button>
-          <button class="right">Cancel</button>
+          <button type="submit" class="left">Save</button>
+          <button (click)="this.addButton=false" class="right">Cancel</button>
         </div>
       </div>
       <div class="right">

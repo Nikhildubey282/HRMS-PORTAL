@@ -3,12 +3,13 @@
     <div class="head">
       <h1>Filters</h1>
     </div>
+    <form [formGroup]="dsrreportForm">
     <div class="main">
       <div class="row1">
       <div class="input">
         <label>Date Form</label>
         <mat-form-field appearance="outline">
-          <input readonly matInput [matDatepicker]="picker">
+          <input placeholder="Date From" formControlName="dateFrom" readonly matInput [matDatepicker]="picker">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -16,35 +17,35 @@
       <div class="input">
         <label>Date To</label>
         <mat-form-field appearance="outline">
-          <input matInput  readonly [matDatepicker]="picker1">
+          <input placeholder="Date To" formControlName="dateTo" matInput  readonly [matDatepicker]="picker1">
           <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
       </div>
       <div>
-        <span><app-dropdown [label]="labelDepartment" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.department" [label]="labelDepartment" [Data]="projectData"></app-dropdown></span>
       </div>
       <div>
-        <span> <app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span> <app-dropdown [myControlName]="formCtrl.projectResource" [label]="labelResource" [Data]="resourceData"></app-dropdown></span>
       </div>
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.submissionStatus" [label]="labelSubmission" [Data]="submissionData"></app-dropdown></span>
       </div>
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.pmApproval" [label]="labelpmApproval" [Data]="approval"></app-dropdown></span>
       </div>
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.amApproval" [label]="labelamApproval" [Data]="approval"></app-dropdown></span>
       </div>
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.rmApproval" [label]="labelrmApproval" [Data]="approval"></app-dropdown></span>
       </div>
 
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.finalApproval" [label]="labelfinalApproval" [Data]="approval"></app-dropdown></span>
       </div>
       <div>
-        <span><app-dropdown [label]="labelResource" [Data]="projectData"></app-dropdown></span>
+        <span><app-dropdown [myControlName]="formCtrl.hours" [label]="labelHours" [Data]="hours"></app-dropdown></span>
       </div>
       <div class="button-wrapper">
         <button>Apply</button>
@@ -53,6 +54,7 @@
 
     </div>
     </div>
+  </form>
   </div>
   <div class="analysis">
     <div class="head">

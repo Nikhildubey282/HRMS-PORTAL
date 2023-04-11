@@ -89,23 +89,88 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   },
 ]
 
-export const monthdata=[
-  {month:'January'},
-  {month:'February'},
-  {month:'March'},
-  {month:'April'},
-  {month:'May'},
-  {
-    month:'June'
-  },
-  {month:'July'},
-  {month:'August'},
-  {month:'September'},
-  {month:'October'},
-  {month:'November'},
-  {month:'December'}
+export const monthdata={
+  // {month:'January'},
+  // {month:'February'},
+  // {month:'March'},
+  // {month:'April'},
+  // {month:'May'},
+  // {
+  //   month:'June'
+  // },
+  // {month:'July'},
+  // {month:'August'},
+  // {month:'September'},
+  // {month:'October'},
+  // {month:'November'},
+  // {month:'December'}
+  reviewData: [
+    {
+      year: 2022,
+      monthlyRating: [
+        { month: 'January', isRating: false },
+        { month: 'February', isRating: false },
+        { month: 'March', isRating: false },
+        { month: 'April', isRating: false },
+        { month: 'May', isRating: false },
+        { month: 'June', isRating: false },
+        {
+          month: 'July',
+          isRating: true,
+          rating: 4.0,
+          Awards: 0,
+          Honour: 0,
+          award_title: 'AWARDS:',
+          honour_title: 'HONOURS:',
+          technical_rating: 4,
+          ownership_rating: 5,
+          teamWork_rating: 4,
+          process_rating: 4,
+        },
+        { month: 'August', isRating: false },
+        {
+          month: 'September',
+          isRating: true,
+          rating: 4.0,
+          Awards: 0,
+          Honour: 0,
+          award_title: 'AWARDS:',
+          honour_title: 'HONOURS:',
+          technical_rating: 5,
+          ownership_rating: 4,
+          teamWork_rating: 4,
+          process_rating: 4,
+        },
+        { month: 'October', isRating: false },
+        { month: 'November', isRating: false },
+        { month: 'December', isRating: false },
+      ],
+    },
+    {
+      year: 2023,
+      monthlyRating: [
+        { month: 'January', isRating: false },
+        { month: 'February', isRating: false },
+        { month: 'March', isRating: false },
+        { month: 'April', isRating: false },
+        { month: 'May', isRating: false },
+        { month: 'June', isRating: false },
+        { month: 'July', isRating: false },
+        { month: 'August', isRating: false },
+        { month: 'September', isRating: false },
+        { month: 'October', isRating: false },
+        { month: 'November', isRating: false },
+        { month: 'December', isRating: false },
+      ],
+    },
+  ],
+  project_name: 'PROJECT NAME: ',
+  project_tech: 'Training Project React JS',
+  reviewed_by: 'REVIEWED BY: ',
+  pm_name: 'Rabban Ahmad (Project Manager)',
+};
 
-]
+
 
 export const JOBOPENING:JOBOPENING_DATA[]=[
   {
@@ -362,7 +427,7 @@ export const TRAINING=[
 //dropdown data
 
 export const PRIORITYDROPDOWN=[
-  'LOW','NORMAL','HIGH'
+  'Low','Normal','High'
 ]
 
 export const DEPARTMENTDROPDOWN=['IT','ADMIN','FRONTEND']

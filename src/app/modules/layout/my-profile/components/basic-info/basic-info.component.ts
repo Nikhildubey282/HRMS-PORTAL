@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { slideAnimation } from 'src/animation';
 import { BASIC_INFO_MESSAGE } from 'src/app/constant/messages';
+import { PATTERN } from 'src/app/constant/patterns';
 
 @Component({
   selector: 'app-basic-info',
@@ -21,7 +22,10 @@ export class BasicInfoComponent implements OnInit {
   martialLabel='Matrial Status'
   genderData=['Male','Female'];
   matrialData=['Single','Married','Divoced'];
-  nikhil='shiva'
+  nikhil='shiva';
+  Pattern=PATTERN;
+  @ViewChild(FormGroupDirective) formRef: FormGroupDirective;
+
 
   constructor(
     private _fb:FormBuilder
@@ -37,16 +41,16 @@ export class BasicInfoComponent implements OnInit {
 
   createForm(){
     this.basicinfoForm=this._fb.group({
-      firstName:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      lastName:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      firstName:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
+      lastName:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
       dateofBirth:['',[Validators.required]],
       gender:['',[Validators.required]],
       martialStatus:['',[Validators.required]],
-      contactNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
-      years:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
-      months:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
-      years2:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
-      months2:['',[Validators.required,Validators.pattern(/^\d{10}/)]],
+      contactNumber:['',[Validators.required,Validators.pattern(this.Pattern.phone)]],
+      years:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
+      months:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
+      years2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
+      months2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
       descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
 
 
@@ -54,6 +58,13 @@ export class BasicInfoComponent implements OnInit {
     })
   }
   get formCtrl() { return this.basicinfoForm.controls; }
+
+  submit(){
+
+    if(this.basicinfoForm.valid){
+      this.formRef.resetForm();
+    }
+  }
 
 
 }

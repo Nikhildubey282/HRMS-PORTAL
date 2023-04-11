@@ -28,7 +28,7 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @Input() dataSource!: any;
   @Input() Table_DATA!: any;
   @Input() isPageable = true;
-  @Input() paginationSizes: number[] = [2, 5, 10];
+  @Input() paginationSizes: number[] = [5, 10, 15];
   @Input() set pazeSize(size: any) {
     if(size)
       this.changePageSize(size);

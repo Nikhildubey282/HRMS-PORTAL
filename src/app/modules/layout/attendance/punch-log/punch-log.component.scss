@@ -24,6 +24,16 @@ section{
       margin-left: 15px;
       display: flex;
       flex-direction: column;
+      ::ng-deep{
+
+
+        .mat-icon-button{
+          position: absolute;
+          top: -5px;
+          right: -8px;
+          background-color: transparent;
+        }
+      }
     }
     .getbutton{
       margin-left: 15px;

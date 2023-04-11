@@ -5,7 +5,7 @@ export const sideNavList = [
   { title: 'My Profile', logo: 'person', isActiv: true,routerLink:ABS_PROFILE },
   { title: 'Directory', logo: 'description', isActiv: true,routerLink:ABS_DIRECTORY },
   { title: 'Enterpreneurship Program', logo: 'person', options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule',routerLink:ABS_ENTERPRENEUR }], isActiv: true, },
-  { title: 'My Links', logo: 'grid_view', options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist',routerLink:ABS_INSURANCEVERIFICATIONS },{subTitle: 'holiday calendar', subLogo: 'calendar_today',routerLink:ABS_HOLIDAYCALENDAR},{subTitle: 'Policy Documents', subLogo: 'insert_drive_file',routerLink:ABS_POLICYDOCUMENT}], isActiv: true, },
+  { title: 'My Links', logo: 'grid_view', options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist',routerLink:ABS_HOME },{subTitle: 'holiday calendar', subLogo: 'calendar_today',routerLink:ABS_HOLIDAYCALENDAR},{subTitle: 'Policy Documents', subLogo: 'insert_drive_file',routerLink:ABS_POLICYDOCUMENT}], isActiv: true, },
   { title: 'Finance', logo: 'payments',
   options: [{ subTitle: 'Salary slip', subLogo: 'horizontal_rule',type:'external',link:'https://hrms.easysourceindia.com/Payroll/' },{subTitle: 'Form 16', subLogo: 'horizontal_rule',type:'external',link:'https://hrms.easysourceindia.com/Payroll/'},{subTitle: 'Investment Declaration', subLogo: 'horizontal_rule',link:'https://hrms.easysourceindia.com/Payroll/'},], isActiv: true, },
   { title: 'Reviews', logo: 'grid_view', options: [{ subTitle: 'My performance', subLogo: 'event_available',routerLink:ABS_MYPERFORMANCE }], isActiv: true, },
@@ -20,9 +20,9 @@ export const sideNavList = [
   { title: 'Tickets', logo: 'view_day', options: [{ subTitle: 'Tickets',subLogo: 'horizontal_rule',routerLink:ABS_MYTICKETS }], isActiv: true, },
   { title: 'DSR', logo: 'calendar_today', options: [{ subTitle: 'My DSR',subLogo: 'horizontal_rule',routerLink:ABS_MYDSR }], isActiv: true, },
   { title: 'Projects', logo: 'view_day',routerLink:ABS_PROJECTS, isActiv: true, },
-  { title: 'Expense', logo: 'monetization_on', routerLink:'hweiuewiuieu',isActiv: false, },
-  { title: 'Announcements', logo: 'campaign',routerLink:'hweiuewiuieu', isActiv: false, },
-  { title: 'Travels', logo: 'flight',routerLink:'hweiuewiuieu', isActiv: false, },
+  { title: 'Expense', logo: 'monetization_on',isActiv: false, },
+  { title: 'Announcements', logo: 'campaign', isActiv: false, },
+  { title: 'Travels', logo: 'flight', isActiv: false, },
   { title: 'Logout', logo: 'logout',routerLink:'hweiuewiuieu', isActiv: true, },
 ]
 

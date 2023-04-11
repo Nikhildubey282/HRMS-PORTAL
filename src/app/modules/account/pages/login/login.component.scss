@@ -17,19 +17,19 @@
 
 
     .example-card {
-      min-width: 340px;
-      min-height: 430px;
+      min-width: 380px;
+      min-height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 30px 7px 7px 7px;
+      padding: 40px 10px 10px 10px;
 
       .header{
         display: flex;
         justify-content: center;
         .header-image{
           img{
-            width: 230px;
+            width: 250px;
           }
 
         }
@@ -49,18 +49,20 @@
           color:$white;
           border: none;
           width: auto;
-          height: 35px;
+          height: 40px;
           .googlebutton{
             display: flex;
             .google-logo{
               padding: 1px;
-              height: 35px;
+              height: 40px;
               width: 35px;
 
             }
             .signup{
               color: $white;
-              padding: 7px 30px 0px 30px;
+              padding: 10px 50px 10px 50px;
+                font-size: 16px;
+
             }
           }
         }
@@ -79,7 +81,7 @@
           background-color:$primary;
           color: $white;
           border: none;
-          padding: 8px 80px;
+          padding: 8px 120px;
           font-size: 12px;
 
         }
@@ -87,7 +89,7 @@
           background-color:$primary ;
           color: $white;
           border: none;
-          padding: 8px 70px;
+          padding: 8px 120px;
           font-size: 12px;
           margin-top: 45px;
 
@@ -119,7 +121,7 @@
         }
 
         .buttonss{
-          font-size: 12px;
+          font-size: 15px;
           display: flex;
           justify-content: flex-end;
           padding-top: 15px;

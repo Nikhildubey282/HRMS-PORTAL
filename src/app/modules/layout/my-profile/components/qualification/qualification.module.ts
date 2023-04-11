@@ -15,6 +15,8 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 
 
 
@@ -38,7 +40,9 @@ import { SnackBarService } from 'src/app/services/snack-bar.service';
     ReactiveFormsModule,
     CommontableModule,
     DropdownModule,
-    MatDialogModule
+    MatDialogModule,
+    GetControlModule,
+    ValidationErrorModule
   ]
 })
 export class QualificationModule { }

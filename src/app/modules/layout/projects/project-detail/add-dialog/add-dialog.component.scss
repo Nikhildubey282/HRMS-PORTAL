@@ -1,11 +1,13 @@
 section
 {
   width: 600px;
-  padding: 20px;
+  padding: 10px;
 
   .head{
-    padding: 20px;
+    padding: 20px 0px;
   border-bottom: 1px solid #393a3a;
+  display: flex;
+  justify-content: space-between;
 
     h5{
       font-size: 28px;
@@ -14,12 +16,16 @@ section
     }
   }
   .body{
-    padding: 20px;
+    padding: 20px 20px 20px 0px;
+
+    .example-full-width{
+      width: 600px;
+    }
 
 
   }
   .button-wrap{
-    gap:20px;
+    padding: 10px;
     button{
       min-width: 100px;
     background: #3246d3;
@@ -45,10 +51,15 @@ section
 
   .mat-dialog-container{
     border-radius: 20px;
-    // width: 700px !important;
     padding: 0px !important;
   }
   // .cdk-overlay-dark-backdrop{
   //   background: rgba(0, 0, 0, 0.80);
   // }
 }
+
+// ::ng-deep{
+//   .mat-form-field{
+//     width: 600px;
+//   }
+// }

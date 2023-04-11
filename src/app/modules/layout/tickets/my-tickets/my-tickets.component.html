@@ -4,17 +4,16 @@
       <h1>Create New Ticket</h1>
       <button (click)="add()" >+ Add New</button>
     </div>
+    <form [formGroup]="ticketForm" (ngSubmit)="addTickets()" >
+
 
     <main *ngIf="addbutton">
-      <form [formGroup]="ticketForm" >
     <div class="left">
       <div class="input">
         <label>Subject</label>
         <mat-form-field class="example-full-width" appearance="outline">
           <input placeholder="Subject" formControlName="subject" matInput>
-          <mat-error *ngIf="formCtrl.subject.hasError('required')">
-            Please enter the required field
-          </mat-error>
+          <mat-error>{{ticketForm | getControl:['subject'] | validate:'subject' }}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
@@ -44,7 +43,7 @@
         </span>
       </div>
     </div>
-  </form>
+
     <div class="right">
       <label>Ticket Descripition</label>
       <editor
@@ -65,9 +64,10 @@
 
     </div>
     <div class="save">
-      <button (click)="addTickets()" >Save</button>
+      <button type="submit" >Save</button>
     </div>
     </main>
+    </form>
 
   </div>
   <div class="second">

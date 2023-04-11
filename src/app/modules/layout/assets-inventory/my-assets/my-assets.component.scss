@@ -17,32 +17,32 @@ section {
   .table {
     background-color: white;
     padding: 20px;
-    ::ng-deep {
+  //   ::ng-deep {
 
-      table{
-        tr{
-
-
-          th{
-            text-align: start;
-            padding-left: 15px;
-            font-size: 15px;
-            color: #000000;
-            font-weight: 400;
-
-        }
-        td{
-          text-align: start;
-          padding-left: 15px;
-      border-right: 1px solid gainsboro;
-      font-size: 12px;
-
-        }
-      }
+  //     table{
+  //       tr{
 
 
-    }
-  }
+  //         th{
+  //           text-align: start;
+  //           padding-left: 15px;
+  //           font-size: 15px;
+  //           color: #000000;
+  //           font-weight: 400;
+
+  //       }
+  //       td{
+  //         text-align: start;
+  //         padding-left: 15px;
+  //     border-right: 1px solid gainsboro;
+  //     font-size: 12px;
+
+  //       }
+  //     }
+
+
+  //   }
+  // }
 
 
   }

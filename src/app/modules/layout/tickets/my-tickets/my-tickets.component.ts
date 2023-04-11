@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { DEPARTMENTDROPDOWN, PRIORITYDROPDOWN } from 'src/app/constant/constant';
+import { PATTERN } from 'src/app/constant/patterns';
 
 @Component({
   selector: 'app-my-tickets',
@@ -16,7 +17,8 @@ export class MyTicketsComponent implements OnInit {
   departmentData=DEPARTMENTDROPDOWN;
   addbutton:boolean=false;
   ticketForm!:FormGroup;
-
+  @ViewChild(FormGroupDirective) formGroupDirective:FormGroupDirective;
+  pattern=PATTERN
 
   dataSource = new MatTableDataSource<any>();
 
@@ -48,7 +50,7 @@ export class MyTicketsComponent implements OnInit {
 
   createForm(){
     this.ticketForm=this._fb.group({
-      subject:['',[Validators.required]],
+      subject:['',[Validators.required,Validators.pattern(this.pattern.name)]],
       department:['',Validators.required],
       ticketCategory:['',[Validators.required]],
       priority:['',[Validators.required]]
@@ -71,8 +73,7 @@ export class MyTicketsComponent implements OnInit {
   }
 
   addTickets() {
-    console.log(this.ticketForm.value,'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
-
+    if(this.ticketForm.valid){
       this.Table_DATA.push({
         action:'',
         ticket_code: 'APP-25032023/0082',
@@ -81,11 +82,11 @@ export class MyTicketsComponent implements OnInit {
         subject:this.formCtrl['subject'].value,
         status:'Open',
         date:'25/04/2023 05:00pm',
-
       });
-    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
-      this.ticketForm.reset();
-      // this.createForm();
+      this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+      this.formGroupDirective.resetForm();
+    }
+
   //   } else {
   //     this.qualificationForm.markAllAsTouched();
   //   }

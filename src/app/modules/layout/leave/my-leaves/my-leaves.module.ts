@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { MyLeavesRoutingModule } from './my-leaves-routing.module';
 import { MyLeavesComponent } from './my-leaves.component';
@@ -12,6 +12,10 @@ import {MatInputModule} from '@angular/material/input';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 
@@ -34,7 +38,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     EditorModule,
     CommontableModule,
-    FormsModule,ReactiveFormsModule
-  ]
+    FormsModule,ReactiveFormsModule,
+    ValidationErrorModule,
+    GetControlModule,
+    MatCheckboxModule,
+    MatRadioModule
+  ],
+  providers:[DatePipe]
 })
 export class MyLeavesModule { }

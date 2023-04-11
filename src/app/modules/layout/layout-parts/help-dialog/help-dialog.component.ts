@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,12 +9,21 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class HelpDialogComponent implements OnInit {
 
+  covidhelpForm!:FormGroup;
+
   constructor(
     private dialogRef: MatDialogRef<HelpDialogComponent>,
+    private _fb:FormBuilder
 
   ) { }
 
   ngOnInit(): void {
+  }
+
+  createForm(){
+    this.covidhelpForm=this._fb.group({
+      
+    })
   }
 
   crossClick() {

@@ -1,16 +1,19 @@
 <section>
+  <form [formGroup]="editForm">
+
   <div class="head">
     <h1>Edit Qualication</h1>
     <button (click)="crossClick()">X</button>
   </div>
   <main>
-    <form [formGroup]="editForm">
+    <!-- <form [formGroup]="editForm"> -->
     <div class="row">
       <div class="input">
         <label>School/university</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input matInput formControlName="university" placeholder="Ex. It makes me feel...">
+          <input matInput formControlName="university" placeholder="School/university">
         </mat-form-field>
+        <mat-error>{{editForm | getControl:['university'] | validate:'university'}}</mat-error>
       </div>
       <div>
         <span><app-dropdown [label]="labelEducationLevel"
@@ -19,9 +22,11 @@
       <div class="input">
         <label>Date Form</label>
         <mat-form-field appearance="outline" appearance="outline">
-          <input readonly matInput formControlName="startdate" [matDatepicker]="picker">
+          <input placeholder="Date" readonly matInput formControlName="date" [matDatepicker]="picker">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+        <mat-error>{{editForm | getControl:['date'] | validate:'date'}}</mat-error>
+
         </mat-form-field>
       </div>
       <div>
@@ -30,20 +35,24 @@
       <div class="input">
         <label>Professional course</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <input matInput formControlName="professionalCourse" placeholder="Ex. It makes me feel...">
+          <input matInput formControlName="professionalCourse" placeholder="Professional course">
+        <mat-error>{{editForm | getControl:['professionalCourse'] | validate:'professionalCourse'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Description</label>
         <mat-form-field class="example-full-width" appearance="outline">
-          <textarea matInput formControlName="descripition" placeholder="Ex. It makes me feel..."></textarea>
+          <textarea matInput formControlName="descripition" placeholder="Description"></textarea>
+        <mat-error>{{editForm | getControl:['descripition'] | validate:'descripition'}}</mat-error>
         </mat-form-field>
       </div>
     </div>
-  </form>
+
   </main>
   <div class="button-wrapper">
     <button class="left">Close</button>
     <button (click)="saveData()" class="right">Update</button>
   </div>
+</form>
+
 </section>

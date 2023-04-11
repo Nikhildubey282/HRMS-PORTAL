@@ -24,7 +24,7 @@ import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
     MatSelectModule,
     ToastrModule.forRoot({
       closeButton: true,
-      timeOut: 1500, // 15 seconds
+      timeOut: 1900, // 19 seconds
       progressBar: true,
       positionClass: 'toast-top-center'
     }),

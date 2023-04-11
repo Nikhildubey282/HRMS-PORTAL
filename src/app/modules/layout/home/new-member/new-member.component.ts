@@ -27,8 +27,5 @@ export class NewMemberComponent implements OnInit,AfterViewInit {
     this.listToShow.forEach((item:any)=>{
       this.dataSource.push(item);
     })
-// #ap0052
-// #ap0014 -react
-// #
   }
 }

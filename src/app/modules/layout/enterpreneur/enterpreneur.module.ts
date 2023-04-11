@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     EnterpreneurRoutingModule,
     MatIconModule
+    
   ]
 })
 export class EnterpreneurModule { }

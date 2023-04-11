@@ -26,7 +26,7 @@
       </div>
   </div>
 
-  <form>
+  <form [formGroup]="feedbackForm">
 
       <div class="description col_1">
           <p class="label_text">Do you feel that the objective/goal of the training has been fulfilled? *</p>
@@ -35,16 +35,6 @@
               <mat-radio-button value="no">No</mat-radio-button>
           </mat-radio-group>
       </div>
-      <!-- <div class="description col5" >
-          <label class="label_text"> LABELS.MISSING }}</label>
-          <mat-form-field appearance="outline">
-              <textarea [maxLength]="200" #textarea matInput formControlName="what_is_missing"></textarea>
-              <mat-error> getControl("goal") | validate : LABELS.MISSING }}</mat-error>
-
-          </mat-form-field>
-          <p class="maxlength">
-              {{textarea.value.length}}/{{200}}</p>
-      </div> -->
       <div class="description col_2">
           <p class="label_text">How relevant and helpful do you think it was for your job? *</p>
 
@@ -92,18 +82,17 @@
       <div class="description col5">
           <label class="label_text"> Any overall feedback for the training? *</label>
           <mat-form-field appearance="outline">
-              <textarea [maxLength]="200" #textarea matInput></textarea>
-              <!-- <mat-error> getControl("overall_feedback") | validate : LABELS.OVERALL }}</mat-error> -->
-
+              <textarea [maxLength]="200" formControlName="description" #textarea matInput></textarea>
+              <mat-error>{{feedbackForm | getControl:['description'] | validate:'description' }}</mat-error>
           </mat-form-field>
-          <p class="maxlength">
+          <p style="color: red;" class="maxlength">
               {{textarea.value.length}}/{{200}}</p>
       </div>
       <div class="buttonGroup">
           <button class="btn_cancel"  mat-raised-button type="reset">
               Cancel
           </button>
-          <button class="btn_primary" type="submit" mat-raised-button>Submit</button>
+          <button (click)="submit()" class="btn_primary" type="submit" mat-raised-button>Submit</button>
       </div>
   </form>
 </section>

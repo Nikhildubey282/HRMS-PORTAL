@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSidenav } from '@angular/material/sidenav';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 import { slideAnimation } from 'src/animation';
+import { LogoutConfirmationComponent } from '../logout-confirmation/logout-confirmation.component';
 
 
 @Component({
@@ -37,17 +38,14 @@ export class HeaderComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+  openDialog1() {
+    const dialogRef = this.dialog.open(LogoutConfirmationComponent);
 
-  notification_drawer(){
-    if(this.notification===false){
-      this.notification=true;
-    }
-      else{
-        this.notification=false;
-      }
-
-
-    }
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+    console.log('nikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
+  }
 
   }
 

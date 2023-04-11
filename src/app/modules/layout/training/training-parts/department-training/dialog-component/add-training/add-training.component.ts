@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { PATTERN } from 'src/app/constant/patterns';
 
 @Component({
   selector: 'app-add-training',
@@ -9,6 +10,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddTrainingComponent implements OnInit {
   addTrainingForm!:FormGroup;
+  pattern=PATTERN;
 
   constructor(
     private dialogRef: MatDialogRef<AddTrainingComponent>,
@@ -23,12 +25,8 @@ export class AddTrainingComponent implements OnInit {
     this.addTrainingForm=this._fb.group({
       trainingName:['',[Validators.required]],
       teamName:['',[Validators.required]],
-      learning:['',[Validators.required]],
-      skills:['',[Validators.required]]
-
-
-
-
+      learning:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      skills:['',[Validators.required,Validators.pattern(this.pattern.name)]]
     })
   }
 

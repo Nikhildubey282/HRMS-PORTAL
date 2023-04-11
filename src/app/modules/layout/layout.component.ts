@@ -3,6 +3,8 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Router,NavigationEnd } from '@angular/router';
 import {delay, filter} from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { CovidComponent } from './layout-parts/covid/covid.component';
 
 @Component({
   selector: 'app-layout',
@@ -16,7 +18,7 @@ export class LayoutComponent implements OnInit {
 
 
 
-  constructor(private  observer: BreakpointObserver,private _route :Router) { }
+  constructor(private  observer: BreakpointObserver,private _route :Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -66,5 +68,17 @@ export class LayoutComponent implements OnInit {
       this.isShowing = false;
     }
   }
+
+  openDialog(): void {
+    const dialogRef =this.dialog.open(CovidComponent, {
+      // width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      
+    });
+  }
+
+
 
 }

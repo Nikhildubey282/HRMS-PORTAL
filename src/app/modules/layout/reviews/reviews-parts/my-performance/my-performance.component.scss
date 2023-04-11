@@ -181,13 +181,15 @@ section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         h2 {
           font-size: 24px;
           color: #494949;
           font-weight: 600;
           // margin: 0 0 8px;
         }
-        .select{
+
+        .select {
           display: flex;
           flex-direction: column;
         }
@@ -196,14 +198,69 @@ section {
       .months_list {
         display: grid;
         grid-template-columns: auto auto auto auto;
-        .months{
+
+        .months {
+          margin: 10px;
+          border: 1px solid #c3c2c2;
+          border-radius: 10px;
+          height: 145px;
+          padding: 20px;
+          // margin-bottom: 20px;
+        }
+      }
+
+      .list {
         margin: 10px;
         border: 1px solid #c3c2c2;
         border-radius: 10px;
         height: 145px;
         padding: 20px;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+        background-color: #ebe9e9;
+        cursor: pointer;
+
+        // margin-bottom: 20px;
+        .head {
+          display: flex;
+          justify-content: space-between;
+
+          .month__rate {
+            background: #E7FCC8;
+            padding: 3px 0;
+            border-radius: 3px;
+            color: #000;
+            font-size: 16px;
+            font-weight: 700;
+            width: 52px;
+            text-align: center;
+          }
         }
+
+        .main {
+          font-size: 16px;
+          font-weight: 500;
+          margin: 0;
+          padding-top: 22px;
+          position: relative;
+          .award_count{
+            color: #F7C417;
+            padding: 10px 0px;
+
+          }
+
+          .honours_count {
+            display: flex;
+            justify-content: space-between;
+            color: #0086FF;
+            mat-icon{
+              font-size: 30px;
+            }
+
+          }
+        }
+
+
+
       }
     }
 
@@ -253,9 +310,9 @@ section {
 
 @media only screen and (max-width: 750px) {
   section {
-    .second_card{
-      .monthlycard{
-        .months_list{
+    .second_card {
+      .monthlycard {
+        .months_list {
           grid-template-columns: auto;
         }
       }
@@ -263,11 +320,12 @@ section {
     }
   }
 }
+
 @media only screen and (max-width: 500px) {
   section {
-    .second_card{
-      .monthlycard{
-        .heading{
+    .second_card {
+      .monthlycard {
+        .heading {
           flex-direction: column;
         }
       }

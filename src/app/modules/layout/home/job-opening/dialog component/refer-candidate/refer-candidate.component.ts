@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./refer-candidate.component.scss']
 })
 export class ReferCandidateComponent implements OnInit {
-
+total=200;
   referCandidateForm!:FormGroup;
   constructor(
     private _fb:FormBuilder,
@@ -41,7 +41,7 @@ export class ReferCandidateComponent implements OnInit {
 
 
   crossClick() {
-    this.dialogRef.close('cancel');
+    this.dialogRef.close();
   }
   get formCtrl(){
     return this.referCandidateForm.controls

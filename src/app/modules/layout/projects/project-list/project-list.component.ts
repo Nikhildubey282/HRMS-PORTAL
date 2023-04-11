@@ -12,21 +12,17 @@ export class ProjectListComponent implements OnInit {
 
 
   heading = [
-    { heading: 'Action', key:'sNo',type:'link',action:[4] },
-    { heading: 'Leave Type', key:'type',type:'text'},
-    { heading: 'Request From', key:'request',type:'text'},
-    {heading:'Request To',key:'TO',type:'text'},
-    {heading:	'Applied On',key:'applied',type:'text'},
-    {heading:'Status'},
-    {heading:'Level 1'},
-    {heading:'Level 2'},
-
-
-
-
+    { heading: 'Project Name', key:'sNo',type:'link',action:[4] },
+    { heading: 'Billing Type', key:'type',type:'text'},
+    { heading: 'Resources', key:'resources',type:'text'},
+    {heading:'Hrs.',key:'hrs',type:'text'},
+    {heading:	'Total Milestone',key:'milestone',type:'text'},
+    {heading:'Delivered',type:'text',key:'delivered'},
+    {heading:'Pending',type:'text',key:'pending'},
+    {heading:'% Complete',type:'text',key:'complete'},
   ]
   Table_DATA: any[] = [
-    {sNo:'React Js Training Project',type:'short leave',request:'sdjjkasjk',TO:'bmsbjbsd',applied:'bjhsjhsdjk'},
+    {sNo:'React Js Training Project',type:'',resources:'3',hrs:'1872498',milestone:'1',delivered:'0',pending:'1',complete:'0 %'},
   ];
 
   constructor() { }
