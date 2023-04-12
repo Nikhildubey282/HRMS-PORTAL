@@ -47,11 +47,7 @@
           <label>Address</label>
           <mat-form-field appearance="outline">
             <input  matInput formControlName="address">
-            <!-- <mat-error *ngFor="let error of errorMessage?.address">
-              <mat-error *ngIf="covidForm?.get('address')?.hasError(error?.type)" class="alertMessage">
-                <span class="errorMessage">{{error.message}}</span>
-              </mat-error>
-            </mat-error> -->
+            <mat-error>{{covidhelpForm |getControl:['address'] |validate:'address'}}</mat-error>
           </mat-form-field>
         </div>
         <div class="formfield 4">
@@ -59,11 +55,7 @@
           <mat-form-field appearance="outline">
             <textarea formControlName="descrpition" type="text" class="inputMessage" matInput cdkTextareaAutosize cdkAutosizeMinRows="4"
               cdkAutosizeMaxRows="7" ></textarea>
-              <!-- <mat-error *ngFor="let error of errorMessage?.description">
-                <mat-error *ngIf="covidForm?.get('description')?.hasError(error?.type)" class="alertMessage">
-                  <span class="errorMessage">{{error.message}}</span>
-                </mat-error>
-              </mat-error> -->
+            <mat-error>{{covidhelpForm |getControl:['descrpition'] |validate:'descrpition'}}</mat-error>
           </mat-form-field>
         </div>
         <div class="buttonGroup">

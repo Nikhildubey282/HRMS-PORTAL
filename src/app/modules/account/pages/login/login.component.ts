@@ -32,7 +32,7 @@ errorMsg = ACCOUNT_ERROR_MESSAGES;
     this.loginForm=this._fb.group({
       email:this.formService.getControl('email'),
       password:this.formService.getControl('password')
-     
+
     })
   }
 
@@ -42,9 +42,6 @@ errorMsg = ACCOUNT_ERROR_MESSAGES;
       console.log('login succesful')
 
     }
-
-
-
   }
 
   showcontent(){

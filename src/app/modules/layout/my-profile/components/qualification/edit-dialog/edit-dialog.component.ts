@@ -34,16 +34,16 @@ export class EditDialogComponent implements OnInit {
     console.log(this.data,"lo");
     this.createForm();
     this.editForm.patchValue(this.data);
-    // this.patch_value();
-    console.log(this.editForm.value)
-
+    this.editForm.controls.startdate.patchValue(this.data.startdate);
+    console.log(this.editForm.controls.startdate.value);
+    // console.log(this.editForm.value)
   }
 
   createForm(){
     this.editForm=this._fb.group({
       university:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
       educationLevel:['',[Validators.required]],
-      date:['',[Validators.required]],
+      startdate:['',[Validators.required]],
       language:[''],
       professionalCourse:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
       descripition:['',[Validators.required,Validators.pattern(this.Pattern.name)]]

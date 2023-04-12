@@ -8,11 +8,11 @@
 <div class="input">
 
   <label>Apprasial Cycle</label>
-    <mat-form-field appearance="outline">
+    <mat-form-field  appearance="outline">
       <mat-select formControlName="apprasialCycle" >
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2" disabled>Option 2 (disabled)</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
+        <mat-option disabled value="option1">Option 1</mat-option>
+        <mat-option disabled value="option2" disabled>Option 2 (disabled)</mat-option>
+        <mat-option disabled value="option3">Option 3</mat-option>
       </mat-select>
       <mat-error *ngIf="formCtrl.apprasialCycle.hasError('required')">{{
         errorMsg.APPRASIALCYCLE_REQUIRED

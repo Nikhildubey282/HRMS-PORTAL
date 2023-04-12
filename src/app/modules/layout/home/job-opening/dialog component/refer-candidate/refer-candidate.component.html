@@ -44,59 +44,68 @@
         <div class="formfield 11">
           <label class="label"> Job Location </label>
           <mat-form-field appearance="outline">
-            <input  matInput>
+            <input formControlName="joblocation" matInput>
+            <mat-error>{{referCandidateForm | getControl:['joblocation'] | validate:'joblocation' }}</mat-error>
           </mat-form-field>
         </div>
         <div class="formfield 5">
           <label class="label">Candidate Name</label>
           <mat-form-field appearance="outline">
             <input formControlName="name" matInput>
-            <mat-error *ngIf="formCtrl.name.hasError('required')" >Please Enter a Candidate Name </mat-error>
-          <mat-error *ngIf="formCtrl.name.hasError('pattern')" >Enter a Valid Candidate Name </mat-error>
+            <mat-error>{{referCandidateForm | getControl:['name'] | validate:'name' }}</mat-error>
           </mat-form-field>
         </div>
         <div class="formfield 6">
           <label class="label">Position Title</label>
           <mat-form-field appearance="outline">
             <input formControlName="positiontitle" matInput>
+            <mat-error>{{referCandidateForm | getControl:['positiontitle'] | validate:'positiontitle' }}</mat-error>
+
           </mat-form-field>
         </div>
         <div class="formfield 7">
           <label class="label">Experience</label>
           <mat-form-field appearance="outline">
             <input type="number" formControlName="experienceCandidate" matInput>
-            <mat-error *ngIf="formCtrl.experienceCandidate.hasError('required')" >Please Enter a Experience </mat-error>
+            <mat-error>{{referCandidateForm | getControl:['experienceCandidate'] | validate:'experienceCandidate' }}</mat-error>
+
           </mat-form-field>
         </div>
         <div class="formfield 8">
           <label class="label">Email ID </label>
           <mat-form-field appearance="outline">
             <input type="email" formControlName="email" matInput>
-            <mat-error *ngIf="formCtrl.email.hasError('required')" >Please Enter a Email Id </mat-error>
-            <mat-error *ngIf="formCtrl.email.hasError('email')" >Enter a Valid Email Id </mat-error>
+            <mat-error>{{referCandidateForm | getControl:['email'] | validate:'email' }}</mat-error>
           </mat-form-field>
         </div>
         <div class="formfield 9">
           <label class="label">Phone Number</label>
           <mat-form-field appearance="outline">
             <input type="number" formControlName="phoneNumber" matInput>
-            <mat-error *ngIf="formCtrl.phoneNumber.hasError('required')" >Please Enter a Candidate Name </mat-error>
-          <mat-error *ngIf="formCtrl.phoneNumber.hasError('pattern')" >Enter a Valid Candidate Name </mat-error>
+            <mat-error>{{referCandidateForm | getControl:['phoneNumber'] | validate:'phoneNumber' }}</mat-error>
           </mat-form-field>
         </div>
         <div class="formfield 10">
-          <label class="label">Upload CV</label>
-         <div style=" border:1px solid lightgray; padding: 15px; border-radius: 5px; ">
+          <label class="label">Upload</label>
+          <mat-form-field  appearance="outline">
+            <input  formControlName="cv" matInput>
            <input type="file">
-         </div>
+           <mat-error>{{referCandidateForm | getControl:['cv'] | validate:'cv' }}</mat-error>
+
+
+          </mat-form-field>
+
 
         </div>
+
         <div class="formfield 12">
           <label class="label">Skill Set</label>
           <mat-form-field appearance="outline">
-            <textarea maxlength=200  #textarea matInput></textarea>
+            <textarea formControlName="skillset" maxlength=200  #textarea matInput></textarea>
+            <mat-error>{{referCandidateForm | getControl:['skillset'] | validate:'skillset' }}</mat-error>
+
           </mat-form-field>
-          <p class="maxlength">
+          <p style="text-align:right;" class="maxlength">
           {{textarea.value.length}}/{{total}}</p>
         </div>
       </div>

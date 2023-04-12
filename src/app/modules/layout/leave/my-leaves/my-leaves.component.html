@@ -78,7 +78,7 @@
           <div class="input">
             <label>Start Date</label>
             <mat-form-field class="example-form-field" appearance="outline">
-              <input readonly matInput placeholder="Start date"    [matDatepicker]="picker" formControlName="startdate">
+              <input readonly matInput placeholder="Start date" [min]="minDate"    [matDatepicker]="picker" formControlName="startdate">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error>{{leaveForm | getControl:['startdate'] |validate:'startdate' }}</mat-error>
@@ -89,7 +89,7 @@
             <div class="input">
               <label>End Date</label>
               <mat-form-field class="example-form-field" appearance="outline">
-                <input readonly matInput placeholder="End date"   [matDatepicker]="picker1" formControlName="enddate">
+                <input readonly matInput placeholder="End date" [min]="maxDate"  [matDatepicker]="picker1" formControlName="enddate">
                 <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
               <mat-error>{{leaveForm | getControl:['enddate'] |validate:'enddate' }}</mat-error>

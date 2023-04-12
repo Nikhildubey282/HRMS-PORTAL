@@ -50,7 +50,7 @@ export class MyTicketsComponent implements OnInit {
 
   createForm(){
     this.ticketForm=this._fb.group({
-      subject:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      subject:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(20)]],
       department:['',Validators.required],
       ticketCategory:['',[Validators.required]],
       priority:['',[Validators.required]]

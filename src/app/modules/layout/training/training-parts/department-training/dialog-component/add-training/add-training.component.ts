@@ -25,8 +25,8 @@ export class AddTrainingComponent implements OnInit {
     this.addTrainingForm=this._fb.group({
       trainingName:['',[Validators.required]],
       teamName:['',[Validators.required]],
-      learning:['',[Validators.required,Validators.pattern(this.pattern.name)]],
-      skills:['',[Validators.required,Validators.pattern(this.pattern.name)]]
+      learning:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(200)]],
+      skills:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(200)]]
     })
   }
 

@@ -86,6 +86,8 @@ section {
       }
 
       .HELP {
+        animation-name: help-animation;
+        animation-duration: 2s;
         background-color: #d9534f;
         color: white;
         border: none;
@@ -134,6 +136,14 @@ section {
 
 
 
+}
+
+@keyframes help-animation {
+  0%   {transform: rotate(10deg);left:-5px;}
+  25%  {transform: rotate(-10deg);left:5px;}
+  50%  {transform: rotate(5deg);left:-5px;}
+  75%  {transform: rotate(-5deg);left:5px;}
+  100% {transform: rotate(0deg);left:0px;}
 }
 
 @media only screen and (max-width: 900px) {

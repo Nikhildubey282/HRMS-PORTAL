@@ -3,14 +3,14 @@
 
   <div class="head">
     <h1>Edit Qualication</h1>
-    <button (click)="crossClick()">X</button>
+    <mat-icon (click)="crossClick()">close</mat-icon>
   </div>
   <main>
     <!-- <form [formGroup]="editForm"> -->
     <div class="row">
       <div class="input">
         <label>School/university</label>
-        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-form-field  appearance="outline">
           <input matInput formControlName="university" placeholder="School/university">
         </mat-form-field>
         <mat-error>{{editForm | getControl:['university'] | validate:'university'}}</mat-error>
@@ -22,10 +22,10 @@
       <div class="input">
         <label>Date Form</label>
         <mat-form-field appearance="outline" appearance="outline">
-          <input placeholder="Date" readonly matInput formControlName="date" [matDatepicker]="picker">
+          <input placeholder="Date"  matInput formControlName="startdate" [matDatepicker]="picker">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
-        <mat-error>{{editForm | getControl:['date'] | validate:'date'}}</mat-error>
+        <mat-error>{{editForm | getControl:['startdate'] | validate:'startdate'}}</mat-error>
 
         </mat-form-field>
       </div>

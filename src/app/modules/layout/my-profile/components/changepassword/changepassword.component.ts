@@ -6,6 +6,7 @@ import { CHANGE_PASSWORD } from 'src/app/constant/routes';
 import { FormService } from 'src/app/services/form.service';
 import { ACCOUNT_ERROR_MESSAGES } from 'src/app/constant/messages';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { PATTERN } from 'src/app/constant/patterns';
 
 @Component({
   selector: 'app-changepassword',
@@ -20,6 +21,7 @@ export class ChangepasswordComponent implements OnInit {
   errorMsg = ACCOUNT_ERROR_MESSAGES;
   changepasswordForm!:FormGroup;
   hide:boolean=true;
+  pattern=PATTERN
 
   @ViewChild(FormGroupDirective) formGroupDirective:FormGroupDirective;
 
@@ -39,9 +41,9 @@ export class ChangepasswordComponent implements OnInit {
 
   createForm(){
     this.changepasswordForm=this._fb.group({
-      changepassword:['',Validators.required],
-      newpassword:['',[Validators.required]],
-      confirmpassowrd:['',[Validators.required]]
+      changepassword:['',[Validators.required,Validators.pattern(this.pattern.password),Validators.minLength(6),Validators.maxLength(20)]],
+      newpassword:['',[Validators.required,Validators.pattern(this.pattern.password)]],
+      confirmpassowrd:['',[Validators.required,Validators.pattern(this.pattern.password)]]
     },
 
     )

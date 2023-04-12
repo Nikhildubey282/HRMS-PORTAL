@@ -3,7 +3,7 @@ import { PATTERN } from './patterns';
 
 export const PATTERN_ERRORS = (pattern:string | RegExp, key:string) :any => {
     if (pattern == PATTERN.phone) {
-        return `Please enter a valid ${key.toLowerCase()}`;
+        return `Please enter a valid Mobile no.`;
     }
     if (pattern == PATTERN.email) {
         return `Please enter a valid ${key.toLowerCase()}`;
@@ -15,10 +15,10 @@ export const PATTERN_ERRORS = (pattern:string | RegExp, key:string) :any => {
         return `Please enter a valid ${key.toLowerCase()}`;
     }
     if (pattern == PATTERN.password) {
-        return `${toTitleCase(key)} can not contain blank spaces`;
+        return `Password must contain one capital letter,one special character and one number`;
     }
     if (pattern == PATTERN.name) {
-        return `Spaces,digit and special character are not allowed`;
+        return `Spaces,number and special character are not allowed`;
     }
     if (pattern == PATTERN.boothNumber) {
         return `${toTitleCase(key)} must contain only digits`;

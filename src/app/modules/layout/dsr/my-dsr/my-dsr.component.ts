@@ -22,6 +22,7 @@ export class MyDsrComponent implements OnInit {
   labelProject='Project';
   dsrForm!:FormGroup;
   filterForm!:FormGroup;
+  maxDate:Date
   @Input() ngxMatTimepicker:any;
   @ViewChild(FormGroupDirective) FormGroupDirective:FormGroupDirective;
 
@@ -47,7 +48,9 @@ export class MyDsrComponent implements OnInit {
     private _fb:FormBuilder,
     private snackbar_service:SnackBarService,
     private datepipe:DatePipe
-  ) { }
+  ) {
+    this.maxDate=new Date();
+   }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
@@ -86,20 +89,6 @@ export class MyDsrComponent implements OnInit {
     else{
       this.dsrForm.controls.hours.setValue('');
       this.formCtrl.dsr.setValue('');
-
-
-
-    }
-  }
-
-
-  add(){
-    console.log('nikhbjdjbjdkjnksdjndjnsjnksdjks')
-    if(this.addbutton===false)
-    this.addbutton=true;
-    else{
-      this.addbutton=false;
-
     }
   }
 

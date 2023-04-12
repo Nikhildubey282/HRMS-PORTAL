@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { QualificationRoutingModule } from './qualification-routing.module';
 import { QualificationComponent } from './qualification.component';
@@ -17,6 +17,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -27,7 +28,7 @@ import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation
     EditDialogComponent,
     DeleteDialogComponent
   ],
-  providers:[SnackBarService],
+  providers:[SnackBarService,DatePipe],
   imports: [
     CommonModule,
     QualificationRoutingModule,
@@ -42,7 +43,9 @@ import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation
     DropdownModule,
     MatDialogModule,
     GetControlModule,
-    ValidationErrorModule
-  ]
+    ValidationErrorModule,
+    MatIconModule
+  ],
+
 })
 export class QualificationModule { }

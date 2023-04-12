@@ -21,6 +21,8 @@ export class MyLeavesComponent implements OnInit {
   @ViewChild(FormGroupDirective) formGroupDirective:FormGroupDirective;
   checked:any;
   pattern=PATTERN;
+  minDate:Date;
+  maxDate:Date;
 
 
   heading = [
@@ -36,7 +38,11 @@ export class MyLeavesComponent implements OnInit {
   Table_DATA: any[] = [
   ];
 
-  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService) { }
+  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService) {
+    const currentYear = new Date().getFullYear();
+    this.minDate = new Date();
+    this.maxDate = new Date();
+   }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
@@ -49,7 +55,7 @@ export class MyLeavesComponent implements OnInit {
       leavetype:['',[Validators.required]],
       startdate:['',[Validators.required]],
       enddate:['',[Validators.required]],
-      remarks:['',[Validators.required,Validators.pattern(this.pattern.name)]]
+      remarks:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(20)]]
     })
   }
 

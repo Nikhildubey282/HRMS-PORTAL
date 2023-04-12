@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, QueryList, TemplateRef, ViewChild, ViewC
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NguCarouselConfig } from '@ngu/carousel';
+import { PATTERN } from 'src/app/constant/patterns';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { NguCarouselConfig } from '@ngu/carousel';
 })
 export class CovidComponent implements OnInit {
   covidhelpForm!:FormGroup;
+  pattern=PATTERN
 
 
   constructor(
@@ -43,10 +45,10 @@ export class CovidComponent implements OnInit {
 
   createForm(){
     this.covidhelpForm=this._fb.group({
-      title:['',[Validators.required]],
-      mobile:['',[Validators.required]],
-      address:['',[Validators.required]],
-      descrpition:['',[Validators.required]]
+      title:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
+      mobile:['',[Validators.required,Validators.pattern(this.pattern.phone)]],
+      address:['',[Validators.required,Validators.minLength(10),Validators.maxLength(50)]],
+      descrpition:['',[Validators.required,Validators.maxLength(50)]]
 
 
     })
@@ -57,7 +59,7 @@ export class CovidComponent implements OnInit {
   }
 
   submit_button(){
-    this.formRef.resetForm();
+    // this.formRef.resetForm();
   }
 
 }

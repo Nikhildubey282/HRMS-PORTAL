@@ -8,6 +8,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { DatePipe } from '@angular/common';
 
 
 const today = new Date();
@@ -23,8 +24,8 @@ const year = today.getFullYear();
 export class QualificationComponent implements OnInit {
   errorMsg = QUALIFICATION_MESSAGE;
   labelEducation = 'Education Level';
-  labelLanguage = 'language'
-  levelData = ['1', '2'];
+  labelLanguage = 'Language'
+  levelData = ['High School/Diploma', 'B.tech','M.tech','B.sc'];
   languageDropdown = ['English', 'Hindi']
   minDate: Date;
   maxDate: Date;
@@ -40,19 +41,21 @@ export class QualificationComponent implements OnInit {
     { heading: 'Education Level', key: 'educationLevel', type: 'text' },
   ]
   Table_DATA: any[] = [
-    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
- 
+    // {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+
   ];
 
   constructor(
     private _fb: FormBuilder,
     private formservice: FormService,
     public dialog: MatDialog,
-    private snackbar_service:SnackBarService
+    private snackbar_service:SnackBarService,
+    private datePipe:DatePipe
   ) {
     const currentYear = new Date().getFullYear();
-    this.minDate = new Date(currentYear - 60, 0, 1);
-    this.maxDate = new Date(currentYear - 20, 11, 31);
+
+    this.maxDate = new Date(currentYear + 0, 9, 31);
+    console.log(this.maxDate)
   }
 
 
@@ -66,13 +69,13 @@ export class QualificationComponent implements OnInit {
   createForm() {
     this.qualificationForm = this._fb.group({
       id:Math.random(),
-      university: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
+      university: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.minLength(3),Validators.maxLength(20)]],
       educationLevel: ['', [Validators.required]],
       startdate: ['', Validators.required],
       enddate: ['', Validators.required],
       language: ['', [Validators.required]],
-      professionalCourse: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      descripition: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
+      professionalCourse: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.minLength(5),Validators.maxLength(20)]],
+      descripition: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.maxLength(200),Validators.minLength(5)]]
     })
   }
 
@@ -81,12 +84,20 @@ export class QualificationComponent implements OnInit {
 
 
   submitHandler() {
+    // const time:any=this.datePipe.transform(this.formCtrl['startdate'].value,'dd-MM-YYYY') - this
     console.log(this.qualificationForm.valid, 'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
     if(this.qualificationForm.valid){
-    this.Table_DATA.push(this.qualificationForm.value);
+    this.Table_DATA.push({
+      id:Math.random(),
+      university:this.formCtrl['university'].value,
+      startdate:this.formCtrl['startdate'].value,
+      educationLevel:this.formCtrl['educationLevel'].value,
+      language:this.formCtrl['language'].value,
+      professionalCourse:this.formCtrl['professionalCourse'].value,
+      descripition:this.formCtrl['descripition'].value
+    });
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
     this.fromGroupDirective.resetForm();
-
     this.snackbar_service.showSuccess('Data Added Sucessfully','')
     }
     else{
@@ -100,15 +111,21 @@ export class QualificationComponent implements OnInit {
 
   delete_data(e:any) {
     console.log(e,'deletedata');
+    console.log("table Data >>>>>>>",this.Table_DATA);
+
     const dialogRef = this.dialog.open(DeleteDialogComponent);
     dialogRef.afterClosed().subscribe(res => {
-      console.log(res);
+      console.log("this is dialog response>>>>>>",res);
       if(res===true){
-        this.Table_DATA=this.Table_DATA.filter(value=>
-          value.id!=e.id
+        this.Table_DATA=this.Table_DATA.filter(value=>{
+
+          if(value.id!=e.id){
+            return value
+          }
+        }
         );
-      }
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+      }
 
     });
   }
@@ -123,14 +140,17 @@ export class QualificationComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(result);
       if(result){
-        this.Table_DATA=this.Table_DATA.filter((value)=>{
+        this.Table_DATA.forEach((value)=>{
           console.log(value,'niklh dubey');
-          if(value.id=e.id){
+          if(value.id==e.id){
             value.university=result.university;
             value.educationLevel=result.educationLevel;
+
           }
           // dialogRef.unsubscribe();
         });
+    // this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+
       }
 
     });

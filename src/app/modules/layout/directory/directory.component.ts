@@ -54,6 +54,7 @@ export class DirectoryComponent implements OnInit {
   keyup(value:any){
     console.log(value.target?.value);
     this.data = value.target.value;
+    this.clickSearch()
 
   }
 

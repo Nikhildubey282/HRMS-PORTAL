@@ -2,18 +2,6 @@
 section{
   padding: 20px;
   width: 600px;
-  .head{
-    button{
-      border: none;
-      color: black;
-      box-shadow: none;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    button:hover{
-      background-color: transparent;
-    }
-  }
   main{
     .row{
       display: grid;
@@ -23,7 +11,6 @@ section{
         display: flex;
         flex-direction: column;
         ::ng-deep {
-
           .mat-icon-button {
             position: absolute;
             top: -5px;

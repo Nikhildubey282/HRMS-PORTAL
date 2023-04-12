@@ -41,17 +41,17 @@ export class BasicInfoComponent implements OnInit {
 
   createForm(){
     this.basicinfoForm=this._fb.group({
-      firstName:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
-      lastName:['',[Validators.required,Validators.pattern(this.Pattern.name)]],
+      firstName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
+      lastName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
       dateofBirth:['',[Validators.required]],
       gender:['',[Validators.required]],
       martialStatus:['',[Validators.required]],
       contactNumber:['',[Validators.required,Validators.pattern(this.Pattern.phone)]],
-      years:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
-      months:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
-      years2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
-      months2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber)]],
-      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]]
+      years:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
+      months:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
+      years2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
+      months2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
+      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.maxLength(50)]]
 
 
 

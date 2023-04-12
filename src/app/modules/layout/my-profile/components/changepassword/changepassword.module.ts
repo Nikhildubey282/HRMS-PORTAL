@@ -10,6 +10,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation
     ReactiveFormsModule,
     MatInputModule,
     GetControlModule,
-    ValidationErrorModule
+    ValidationErrorModule,
+    MatIconModule
   ]
 })
 export class ChangepasswordModule { }

@@ -207,28 +207,6 @@ section {
           }
         }
 
-        .table {
-          margin: 0px;
-          padding: 0px;
-
-          ::ng-deep {
-            .table {
-              padding: 0px;
-
-              // table {
-              //   th{
-              //     border-right: 1px solid gainsboro;
-              //   }
-              //   td {
-              //     color: #606167;
-              //     // border-right: 1px solid gainsboro;
-              //     // padding: 15px;
-              //   }
-              // }
-            }
-          }
-        }
-
       }
 
     }

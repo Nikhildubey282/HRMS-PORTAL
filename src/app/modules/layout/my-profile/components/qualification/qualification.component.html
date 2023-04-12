@@ -30,7 +30,7 @@
       <div class="input">
         <label>Time Period</label>
         <mat-form-field appearance="outline">
-          <input matInput placeholder="From" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="startdate">
+          <input readonly matInput placeholder="From" [min]="minDate"   [matDatepicker]="picker" formControlName="startdate">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error>{{qualificationForm | getControl:['startdate'] | validate:'startdate'}}</mat-error>
@@ -38,7 +38,7 @@
       </div>
       <div class="to_date">
         <mat-form-field appearance="outline">
-          <input matInput placeholder="To"  [matDatepicker]="picker1" formControlName="enddate">
+          <input readonly matInput placeholder="To" [max]="maxDate" [matDatepicker]="picker1" formControlName="enddate">
           <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
           <mat-error>{{qualificationForm | getControl:['enddate'] | validate:'enddate'}}</mat-error>

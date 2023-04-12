@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PATTERN } from 'src/app/constant/patterns';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ReferCandidateComponent implements OnInit {
 total=200;
+pattern=PATTERN
   referCandidateForm!:FormGroup;
   constructor(
     private _fb:FormBuilder,
@@ -30,10 +32,13 @@ total=200;
       location:[{value: this.data.location, disabled: true}, Validators.required],
       experience:[{value: this.data.experience, disabled: true}, Validators.required],
       positiontitle:[{value:this.data.positiontitle,disabled:true},Validators.required],
-      name:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/)]],
-      phoneNumber:['',[Validators.required,Validators.pattern(/^\d+$/)]],
+      joblocation:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(3),Validators.maxLength(20)]],
+      name:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(3),Validators.maxLength(20)]],
+      phoneNumber:['',[Validators.required,Validators.pattern(this.pattern.phone)]],
       email:['',[Validators.required,Validators.email]],
-      experienceCandidate:['',[Validators.required]]
+      experienceCandidate:['',[Validators.required]],
+      skillset:['',[Validators.required,Validators.minLength(5),Validators.maxLength(50)]],
+      cv:['',Validators.required]
 
     })
 
