@@ -18,14 +18,24 @@
   .input-field{
     padding: 1.5rem 1.5rem 0px 1.5rem;
     .inputs1{
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: auto auto;
+
 
       .input{
         display: flex;
         flex-direction: column;
         margin-left: 20px;
         padding-bottom: 20px;
+        ::ng-deep{
+
+
+          .mat-icon-button{
+            position: absolute;
+            top: -5px;
+            right: -8px;
+          }
+        }
         // ::ng-deep{
 
         //   .mat-form-field-flex{
@@ -109,6 +119,13 @@
     }
   }
 
+  .input1{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px 0px 1.5rem;
+
+  }
+
   .group{
     padding: 0px 20px 20px 42px ;
     button{
@@ -123,13 +140,7 @@
     }
   }
 
-  ::ng-deep{
 
-    .mat-form-field-flex{
-      width: 550px;
-      box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-    }
-  }
 }
 
 
@@ -158,132 +169,153 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1200px) {
   .main{
     margin: 0px;
 
-    .input-field{
-      .inputs1{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 400px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-
-        }
-      }
-      .inputs2{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 400px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-        }
-
-        .to_date{
-
-            ::ng-deep{
-
-              .mat-form-field-flex{
-                width: 400px;
-                box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-              }
-            }
-
-
-        }
-
-      }
-      .inputs3{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 400px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-
-        }
-      }
-    }
-
-
-
-
-
   }
+
 }
 
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
   .main{
-    margin: 0px;
-
     .input-field{
+      padding: 10px;
       .inputs1{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 220px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-
-        }
-      }
-      .inputs2{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 220px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-        }
-
-        .to_date{
-
-            ::ng-deep{
-
-              .mat-form-field-flex{
-                width: 220px;
-                box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-              }
-            }
-
-
-        }
-
-      }
-      .inputs3{
-        .input{
-          ::ng-deep{
-
-            .mat-form-field-flex{
-              width: 220px;
-              box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
-            }
-          }
-
-        }
+        grid-template-columns: auto;
       }
     }
-
-
-
-
-
   }
+
 }
+
+
+// @media only screen and (max-width: 700px) {
+//   .main{
+//     margin: 0px;
+
+//     .input-field{
+//       .inputs1{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 400px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+
+//         }
+//       }
+//       .inputs2{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 400px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+//         }
+
+//         .to_date{
+
+//             ::ng-deep{
+
+//               .mat-form-field-flex{
+//                 width: 400px;
+//                 box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//               }
+//             }
+
+
+//         }
+
+//       }
+//       .inputs3{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 400px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+
+//         }
+//       }
+//     }
+
+
+
+
+
+//   }
+// }
+
+
+// @media only screen and (max-width: 500px) {
+//   .main{
+//     margin: 0px;
+
+//     .input-field{
+//       .inputs1{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 220px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+
+//         }
+//       }
+//       .inputs2{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 220px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+//         }
+
+//         .to_date{
+
+//             ::ng-deep{
+
+//               .mat-form-field-flex{
+//                 width: 220px;
+//                 box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//               }
+//             }
+
+
+//         }
+
+//       }
+//       .inputs3{
+//         .input{
+//           ::ng-deep{
+
+//             .mat-form-field-flex{
+//               width: 220px;
+//               box-shadow:  0px 4px 8px rgb(44 39 56 / 4%) ;
+//             }
+//           }
+
+//         }
+//       }
+//     }
+
+
+
+
+
+//   }
+// }
 
 
 

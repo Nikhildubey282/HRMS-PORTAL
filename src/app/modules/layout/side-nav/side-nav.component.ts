@@ -40,5 +40,16 @@ export class SideNavComponent implements OnInit {
     this.stateChnage.emit(this.isExpanded)
   }
 
+  submenu(data:any){
+    console.log(data)
+    this.sidenav.map((navBarItem:any)=>{
+      if(navBarItem.title != data.title){
+        navBarItem.subMenuClick = false;
+      }
+    })
+    data.subMenuClick = !data.subMenuClick
+    console.log(this.sidenav,'submenu',data);
+  }
+
 
 }

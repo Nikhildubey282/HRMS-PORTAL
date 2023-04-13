@@ -6,6 +6,7 @@ section {
     justify-content: flex-end;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
     .submenu-buttons{
       ::ng-deep {
 

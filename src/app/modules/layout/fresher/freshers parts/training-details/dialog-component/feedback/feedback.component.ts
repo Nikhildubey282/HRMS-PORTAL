@@ -34,7 +34,7 @@ export class FeedbackComponent implements OnInit {
       relevent:['',Validators.required],
       overall_training:['',Validators.required],
       satisfaction:['',Validators.required],
-      description:['',[Validators.required,Validators.pattern(this.pattern.name)]]
+      description:['',[Validators.required,]]
 
     })
   }
@@ -48,6 +48,11 @@ export class FeedbackComponent implements OnInit {
 
     }
 
+  }
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
   }
 
 }

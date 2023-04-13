@@ -77,3 +77,23 @@ section
     }
   }
 }
+
+@media only screen and (max-width: 820px) {
+  section{
+    .card{
+      width: 50%;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  section{
+    .card{
+      .list{
+        flex-direction: column;
+      }
+
+    }
+  }
+}
+

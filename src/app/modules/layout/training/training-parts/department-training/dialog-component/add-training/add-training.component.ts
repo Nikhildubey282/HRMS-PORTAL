@@ -25,13 +25,18 @@ export class AddTrainingComponent implements OnInit {
     this.addTrainingForm=this._fb.group({
       trainingName:['',[Validators.required]],
       teamName:['',[Validators.required]],
-      learning:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(200)]],
-      skills:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(200)]]
+      learning:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]],
+      skills:['',[Validators.required,Validators.minLength(5),Validators.maxLength(200)]]
     })
   }
 
   crossClick() {
     this.dialogRef.close('cancel');
+  }
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
   }
 
 }

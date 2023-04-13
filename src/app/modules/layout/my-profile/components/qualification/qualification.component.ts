@@ -41,7 +41,7 @@ export class QualificationComponent implements OnInit {
     { heading: 'Education Level', key: 'educationLevel', type: 'text' },
   ]
   Table_DATA: any[] = [
-    // {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
+    {id:Math.random(),btn: '', university: 'st calres', startdate: '4 years', educationLevel: '2' },
 
   ];
 
@@ -75,22 +75,28 @@ export class QualificationComponent implements OnInit {
       enddate: ['', Validators.required],
       language: ['', [Validators.required]],
       professionalCourse: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.minLength(5),Validators.maxLength(20)]],
-      descripition: ['', [Validators.required, Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.maxLength(200),Validators.minLength(5)]]
+      descripition: ['', [Validators.required,Validators.maxLength(200),Validators.minLength(5)]]
     })
   }
 
 
   get formCtrl() { return this.qualificationForm.controls; }
 
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
+  }
 
   submitHandler() {
-    // const time:any=this.datePipe.transform(this.formCtrl['startdate'].value,'dd-MM-YYYY') - this
-    console.log(this.qualificationForm.valid, 'sdfhhsdfjhsdjhjhsdjhjsdjjsd')
     if(this.qualificationForm.valid){
+      const stringified = JSON.stringify(this.formCtrl['startdate'].value);
+      const dob =stringified.substring(1, 11);
+      console.log(dob);
     this.Table_DATA.push({
       id:Math.random(),
       university:this.formCtrl['university'].value,
-      startdate:this.formCtrl['startdate'].value,
+      startdate:dob,
       educationLevel:this.formCtrl['educationLevel'].value,
       language:this.formCtrl['language'].value,
       professionalCourse:this.formCtrl['professionalCourse'].value,

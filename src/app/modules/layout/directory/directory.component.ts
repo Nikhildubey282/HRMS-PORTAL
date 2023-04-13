@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { DIRECTORY_EMPLOYEE_DATA } from 'src/app/constant/constant';
 import { map, startWith } from 'rxjs/operators';
@@ -34,20 +34,45 @@ export class DirectoryComponent implements OnInit {
       dropdown:['']
     })
   }
+  getControl(control:string){
+    return this.directoryForm?.controls[control] as FormControl
+  }
 
-   _filter(value: any){
-    this.DATA=DIRECTORY_EMPLOYEE_DATA;
-    const filterValue = value.trim();
-    this.DATA=this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
-    console.log(this.DATA,'sfjsjkjksjkssjjk')
+  //  _filter(value: any){
+  //   this.DATA=DIRECTORY_EMPLOYEE_DATA;
+  //   const filterValue = value.trim();
+  //   this.DATA=this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
+  //   console.log(this.DATA,'sfjsjkjksjkssjjk')
 
-    return this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
+  //   return this.DATA?.filter((option:any) => option.EMP_NAME?.toLowerCase()?.includes(filterValue));
 
+  // }
+  filter() {
+    if (this.directoryForm.valid) {
+      this.getControl("name").patchValue(this.getControl("name").value?.trim());
+      let tech = this.getControl("dropdown")?.value?.toLowerCase();
+      let name = this.getControl("name").value?.toLowerCase();
+      let newData = this.DATA.filter((item) => {
+        if (tech && !name) {
+          return tech == "all"
+            ? true
+            : item.EMP_TECHNOLOGY?.toLowerCase().includes(tech);
+        } else {
+          return tech == "all"
+            ? item.EMP_NAME.toLocaleLowerCase().includes(name.toLowerCase())
+            : item.EMP_NAME?.toLowerCase()?.includes(name) &&
+                item.EMP_TECHNOLOGY?.toLowerCase().includes(tech);
+        }
+      });
+      this.DATA = newData;
+    }else{
+      // this.notificationService.showError('')
+    }
   }
 
   clickSearch(){
     console.log("this is data>>>>",this.data);
-    this._filter(this.data)
+    this.filter()
 
   }
 

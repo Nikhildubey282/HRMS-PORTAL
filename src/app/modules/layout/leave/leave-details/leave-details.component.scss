@@ -32,6 +32,8 @@ section
     background-color: white;
     padding: 20px;
     width: 35%;
+    overflow: scroll;
+
 
     table {
       font-family: arial, sans-serif;
@@ -76,3 +78,22 @@ section
   }
 
 }
+
+
+@media only screen and (max-width: 550px) {
+  section{
+    .approval{
+      p{
+        font-size: 18px;
+      }
+    }
+    main{
+      flex-direction: column;
+      .leave-detail{
+        width: 80%;
+      }
+    }
+  }
+}
+
+

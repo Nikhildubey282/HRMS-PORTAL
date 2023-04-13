@@ -24,8 +24,8 @@
           </app-dropdown>
         </span>
       </div>
-    </div>
-    <div class="inputs2">
+    <!-- </div>
+    <div class="inputs2"> -->
 
       <div class="input">
         <label>Time Period</label>
@@ -36,18 +36,16 @@
           <mat-error>{{qualificationForm | getControl:['startdate'] | validate:'startdate'}}</mat-error>
         </mat-form-field>
       </div>
-      <div class="to_date">
+      <div style="margin-top:20px" class="input">
+        <label></label>
         <mat-form-field appearance="outline">
-          <input readonly matInput placeholder="To" [max]="maxDate" [matDatepicker]="picker1" formControlName="enddate">
+          <input readonly matInput placeholder="From" [min]="minDate"   [matDatepicker]="picker1" formControlName="enddate">
           <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
-          <mat-error>{{qualificationForm | getControl:['enddate'] | validate:'enddate'}}</mat-error>
-
+          <mat-error>{{qualificationForm | getControl:['startdate'] | validate:'startdate'}}</mat-error>
         </mat-form-field>
       </div>
 
-    </div>
-    <div class="inputs3">
       <div class="input">
 
         <span>
@@ -69,16 +67,15 @@
         </mat-form-field>
 
       </div>
+   
     </div>
-    <div class="inputs4">
-      <div class="input">
-        <label>Description</label>
-        <mat-form-field class="text" appearance="outline">
-          <textarea  placeholder="Description" formControlName="descripition" matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
-          <mat-error>{{qualificationForm | getControl:['descripition'] | validate:'descripition'}}</mat-error>
+    <div style="display: flex; flex-direction:column " class="input1">
+      <label>Description</label>
+      <mat-form-field class="text" appearance="outline">
+        <textarea (keydown)="noSpace($event)" placeholder="Description" formControlName="descripition" matInput cdkTextareaAutosize cdkAutosizeMinRows="4" cdkAutosizeMaxRows="5"></textarea>
+        <mat-error>{{qualificationForm | getControl:['descripition'] | validate:'descripition'}}</mat-error>
 
-        </mat-form-field>
-      </div>
+      </mat-form-field>
     </div>
   </div>
 

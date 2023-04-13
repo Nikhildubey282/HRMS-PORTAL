@@ -40,7 +40,7 @@ section {
         background-color: rgba(24,28,33,0.025);
     }
       td {
-        color: black;
+        color: rgb(91, 88, 88);
       }
 
       mat-icon {
@@ -84,7 +84,7 @@ section {
     .mat-paginator-container {
       .mat-paginator-page-size {
         position: absolute;
-        top:10px;
+        top:30px;
         left: 18px;
       }
     }
@@ -97,6 +97,7 @@ section {
   td.mat-cell:first-of-type,
   td.mat-footer-cell:first-of-type {
     padding-left: 0px !important;
+    text-align: center !important;
   }
 }
 

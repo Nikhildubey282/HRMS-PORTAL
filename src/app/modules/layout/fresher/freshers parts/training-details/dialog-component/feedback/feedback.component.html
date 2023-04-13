@@ -82,7 +82,7 @@
       <div class="description col5">
           <label class="label_text"> Any overall feedback for the training? *</label>
           <mat-form-field appearance="outline">
-              <textarea [maxLength]="200" formControlName="description" #textarea matInput></textarea>
+              <textarea (keydown)="noSpace($event)" [maxLength]="200" formControlName="description" #textarea matInput></textarea>
               <mat-error>{{feedbackForm | getControl:['description'] | validate:'description' }}</mat-error>
           </mat-form-field>
           <p style="color: red;" class="maxlength">

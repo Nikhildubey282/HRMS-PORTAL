@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { AssetsRequestRoutingModule } from './assets-request-routing.module';
 import { AssetsRequestComponent } from './assets-request.component';
@@ -12,6 +12,7 @@ import { CommontableModule } from 'src/app/modules/commontable/commontable.modul
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 
 
@@ -39,5 +40,6 @@ import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation
 
 
   ]
+  ,providers:[DatePipe,SnackBarService]
 })
 export class AssetsRequestModule { }

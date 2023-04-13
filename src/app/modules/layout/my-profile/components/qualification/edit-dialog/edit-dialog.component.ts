@@ -14,7 +14,7 @@ import { PATTERN } from 'src/app/constant/patterns';
 export class EditDialogComponent implements OnInit {
   labelEducationLevel='Education Level';
   labelLanguage='Language';
-  levelData=['1','2'];
+  levelData = ['High School/Diploma', 'B.tech','M.tech','B.sc'];
   languageData=['Hindi','English']
   editForm!:FormGroup;
   Pattern=PATTERN;

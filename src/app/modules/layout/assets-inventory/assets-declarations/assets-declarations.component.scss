@@ -50,6 +50,11 @@ section{
     }
     .request-reason{
       padding: 5px 22px;
+      display: flex;
+      flex-direction: column;
+      .image{
+        width: 30%;
+      }
       label{
         font-weight:500 ;
         span{
@@ -121,7 +126,7 @@ section{
   section{
     .first{
       .select{
-          grid-template-columns: auto auto auto;
+          grid-template-columns: auto auto auto !important;
       }
     }
   }
@@ -130,7 +135,7 @@ section{
   section{
     .first{
       .select{
-          grid-template-columns: auto auto;
+          grid-template-columns: auto auto !important;
       }
     }
   }
@@ -139,29 +144,29 @@ section{
   section{
     .first{
       .select{
-          grid-template-columns: auto;
+          grid-template-columns: auto !important;
       }
       .select2{
         .input{
-          width: auto;
+          width: auto !important;
 
         }
       }
-      .request-reason{
-        .fileinput{
-          width: 100px
-        }
-      }
+      // .request-reason{
+      //   .image{
+      //     width: 100% !important
+      //   }
+      // }
     }
   }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 750px) {
   section{
     .first{
       .request-reason{
-        .fileinput{
-          margin-left: 0px;
-          width: 35%;
+        .image{
+          width: 100% !important;
+
         }
       }
     }

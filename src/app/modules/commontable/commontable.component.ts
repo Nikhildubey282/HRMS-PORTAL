@@ -19,7 +19,11 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   DSREDIT=ABS_DSREDIT;
   PROJECTDETAIL=ABS_PROJECTDETAIL;
   matHeaderRow: any = [];
-  @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
+  @ViewChild(MatPaginator, { static: false })
+  set paginator(value: MatPaginator) {
+    this.dataSource.paginator = value;
+  }
+  // @ViewChild(MatPaginator, { static: false }) matPaginator!: MatPaginator;
   @ViewChild(MatSort) set matSort(sort: MatSort) {
     this.dataSource.sort = sort;
   }
@@ -29,10 +33,10 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @Input() Table_DATA!: any;
   @Input() isPageable = true;
   @Input() paginationSizes: number[] = [5, 10, 15];
-  @Input() set pazeSize(size: any) {
-    if(size)
-      this.changePageSize(size);
-  }
+  // @Input() set pazeSize(size: any) {
+  //   if(size)
+  //     this.changePageSize(size);
+  // }
   @Output() userDetail: EventEmitter<any> = new EventEmitter();
   @Output() onIconClick: EventEmitter<any> = new EventEmitter();
   @Output() edit_button:EventEmitter<any>=new EventEmitter();
@@ -56,7 +60,7 @@ export class CommontableComponent implements OnInit,AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dataSource.sort=this.matSort;
-    this.dataSource.paginator = this.matPaginator;
+    // this.dataSource.paginator = this.matPaginator;
   }
 
   applyFilter(event: Event) {
@@ -64,9 +68,9 @@ export class CommontableComponent implements OnInit,AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
     console.log(this.dataSource.filter,'nikhildubey')
   }
-  changePageSize(size: number) {
-    this.matPaginator._changePageSize(size)
-  }
+  // changePageSize(size: number) {
+  //   this.matPaginator._changePageSize(size)
+  // }
 
 
 

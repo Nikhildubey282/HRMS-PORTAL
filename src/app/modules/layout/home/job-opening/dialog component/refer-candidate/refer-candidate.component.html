@@ -89,7 +89,7 @@
           <label class="label">Upload</label>
           <mat-form-field  appearance="outline">
             <input  formControlName="cv" matInput>
-           <input type="file">
+           <input formControlName="cv" type="file">
            <mat-error>{{referCandidateForm | getControl:['cv'] | validate:'cv' }}</mat-error>
 
 

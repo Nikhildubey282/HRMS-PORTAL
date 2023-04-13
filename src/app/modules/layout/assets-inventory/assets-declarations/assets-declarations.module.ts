@@ -10,6 +10,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { CommontableModule } from 'src/app/modules/commontable/commontable.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     CommontableModule,
     ReactiveFormsModule,
-    FormsModule
-  ]
+    FormsModule,
+    GetControlModule,
+    ValidationErrorModule
+  ],
+  providers:[SnackBarService]
 })
 export class AssetsDeclarationsModule { }

@@ -1,21 +1,21 @@
 <section>
   <div class="first">
     <div class="button">
-      <button (click)="add()" >+ Add New Assets Request</button>
+      <button (click)="addbutton=!addbutton" >+ Add New Assets Request</button>
     </div>
     <form [formGroup]="assetsRequest" >
     <div *ngIf="addbutton" >
     <div class="select">
       <div class="input">
         <span>
-          <app-dropdown [label]="genderLabel" [Data]="genderData"
+          <app-dropdown [label]="genderLabel" [Data]="categoryData"
           [myControlName]="assetsRequest.controls.category"
           [errorType]="assetsRequest.controls.category"></app-dropdown>
         </span>
       </div>
       <div class="input">
         <span>
-          <app-dropdown [label]="quanity" [Data]="genderData"
+          <app-dropdown [label]="quanity" [Data]="quanityData"
           [myControlName]="assetsRequest.controls.quanity"
           [errorType]="assetsRequest.controls.quanity"
           ></app-dropdown>
@@ -23,7 +23,7 @@
       </div>
       <div class="input">
         <span>
-          <app-dropdown [label]="Priority" [Data]="genderData"
+          <app-dropdown [label]="Priority" [Data]="priorityData"
           [myControlName]="assetsRequest.controls.priority"
           [errorType]="assetsRequest.controls.priority"
           ></app-dropdown>
@@ -44,7 +44,7 @@
     <div class="select2">
       <div class="input">
         <span>
-          <app-dropdown [label]="allocation" [Data]="genderData"
+          <app-dropdown [label]="allocation" [Data]="allocationData"
           [myControlName]="assetsRequest.controls.type"
           [errorType]="assetsRequest.controls.type"
 
@@ -57,15 +57,14 @@
       <div class="date">
         <label>Request Reason*</label>
         <mat-form-field  appearance="outline">
-          <input formControlName="requestreason" matInput class="example-full-width" >
+          <input (keydown)="noSpace($event)" formControlName="requestreason" matInput class="example-full-width" >
           <mat-error>{{assetsRequest | getControl:['requestreason'] | validate:'requestreason'}}</mat-error>
-
         </mat-form-field>
       </div>
 
     </div>
     <div class="submitbutton">
-    <button >Submit</button>
+    <button (click)="sumbit()" >Submit</button>
   </div>
   </div>
 </form>

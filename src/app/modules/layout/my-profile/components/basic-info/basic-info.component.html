@@ -38,8 +38,8 @@
 
             </mat-form-field>
           </div>
-        </div>
-        <div class="row">
+        <!-- </div>
+        <div class="row"> -->
           <div class="input">
             <span>
               <app-dropdown
@@ -70,7 +70,7 @@
           </div>
         </div>
         <div style="position: relative" class="row1">
-          <div style="position: absolute; top:-8px; left:14px">
+          <div style="position: absolute; top:-8px; left:20px">
             <label>Total working Experience</label>
           </div>
           <div class="row1">
@@ -97,7 +97,7 @@
             </div>
           </div>
           <div style="position: relative" class="row1">
-            <div style="position: absolute; top:-18px; left:14px" >
+            <div style="position: absolute; top:-18px; left:18px" >
               <label>Revalent Exprience</label>
             </div>
             <div class="input">
@@ -118,7 +118,7 @@
         </div>
         <div class="inputs4">
           <div class="input">
-            <label>Description</label>
+            <label>Address</label>
             <mat-form-field class="text" appearance="outline">
               <textarea
               formControlName="descripition"
@@ -127,6 +127,7 @@
                 cdkAutosizeMinRows="4"
                 cdkAutosizeMaxRows="5"
                 placeholder="Descripition"
+                (keydown)="noSpace($event)"
               ></textarea>
               <mat-error>{{basicinfoForm | getControl:['descripition']| validate:'descripition'}}</mat-error>
             </mat-form-field>

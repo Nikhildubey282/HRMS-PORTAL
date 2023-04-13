@@ -2,7 +2,7 @@
   <main>
   <div class="first">
     <div class="button">
-      <button (click)="add()" > +Add new assets declaration</button>
+      <button (click)="addbutton=!addbutton" > +Add new assets declaration</button>
     </div>
     <form [formGroup]="declareForm">
     <div *ngIf="addbutton" >
@@ -19,33 +19,27 @@
       <div class="input">
         <label>Unique Asset Code</label>
         <mat-form-field  appearance="outline">
-          <input matInput formControlName="code" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.code.hasError('required')">
-            Please enter a Assets code
-          </mat-error>
+          <input (keydown)="noSpace($event)" matInput formControlName="code" class="example-full-width" >
+         <mat-error>{{declareForm | getControl:['code'] | validate:'code' }}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Serial Number </label>
         <mat-form-field  appearance="outline">
-          <input matInput formControlName="serialNo" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.serialNo.hasError('required')">
-            Please enter a serialNo
-          </mat-error>
+          <input (keydown)="noSpace($event)" matInput formControlName="serialNo" class="example-full-width" >
+          <mat-error>{{declareForm | getControl:['serialNo'] | validate:'serialNo' }}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <label>Model Number</label>
-        <mat-form-field  appearance="outline">
+        <mat-form-field (keydown)="noSpace($event)" appearance="outline">
           <input matInput formControlName="modelNo" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.modelNo.hasError('required')">
-            Please enter a assets model
-          </mat-error>
+          <mat-error>{{declareForm | getControl:['modelNo'] | validate:'modelNo' }}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
         <span>
-          <app-dropdown [label]="os" [Data]="genderData"
+          <app-dropdown [label]="os" [Data]="osData"
           [myControlName]="declareForm.controls.os"
           [errorType]="declareForm.controls.os"
           ></app-dropdown>
@@ -54,35 +48,32 @@
       <div class="input">
         <label>OS version</label>
         <mat-form-field  appearance="outline">
-          <input matInput formControlName="osVersion" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.osVersion.hasError('required')">
-            Please enter a Os version
-          </mat-error>
+          <input (keydown)="noSpace($event)" matInput formControlName="osVersion" class="example-full-width" >
+          <mat-error>{{declareForm | getControl:['osVersion'] | validate:'osVersion' }}</mat-error>
+
         </mat-form-field>
       </div>
       <div class="input">
         <label>Brand</label>
         <mat-form-field  appearance="outline">
           <input matInput formControlName="brand" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.brand.hasError('required')">
-            Please enter a brand name
-          </mat-error>
+          <mat-error>{{declareForm | getControl:['brand'] | validate:'brand' }}</mat-error>
+
         </mat-form-field>
       </div>
       <div class="input">
         <label>Color</label>
         <mat-form-field  appearance="outline">
           <input matInput formControlName="color" class="example-full-width" >
-          <mat-error *ngIf="formCtrl.color.hasError('required')">
-            Please enter a color
-          </mat-error>
+          <mat-error>{{declareForm | getControl:['color'] | validate:'color' }}</mat-error>
+
         </mat-form-field>
       </div>
     </div>
     <div class="select2">
       <div class="input">
         <span>
-          <app-dropdown [label]="allocation" [Data]="genderData"
+          <app-dropdown [label]="allocation" [Data]="conditionData"
           [myControlName]="declareForm.controls.status"
           [errorType]="declareForm.controls.status"
           ></app-dropdown>
@@ -92,12 +83,19 @@
     </div>
     <div class="request-reason" >
       <label>Asset Image(Allowed Format: jpg,jpeg,JPEG,JPG,png,PNG,GIF)<span> Upload front and backside image*</span></label>
-      <div class="fileinput">
+      <mat-form-field class="image" appearance="outline">
+        <input readonly formControlName="Image" matInput>
+       <input formControlName="Image"  type="file">
+       <mat-error>{{declareForm | getControl:['Image'] | validate:'Image' }}</mat-error>
+
+
+      </mat-form-field>
+      <!-- <div class="fileinput">
           <input type="file">
-      </div>
+      </div> -->
     </div>
     <div class="submitbutton">
-      <button >Submit</button>
+      <button (click)="submit()" >Submit</button>
     </div>
   </div>
 </form>

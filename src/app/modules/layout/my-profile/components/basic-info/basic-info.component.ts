@@ -41,8 +41,8 @@ export class BasicInfoComponent implements OnInit {
 
   createForm(){
     this.basicinfoForm=this._fb.group({
-      firstName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
-      lastName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
+      firstName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(20)]],
+      lastName:['',[Validators.required,Validators.pattern(this.Pattern.name),Validators.minLength(3),Validators.maxLength(20)]],
       dateofBirth:['',[Validators.required]],
       gender:['',[Validators.required]],
       martialStatus:['',[Validators.required]],
@@ -51,7 +51,7 @@ export class BasicInfoComponent implements OnInit {
       months:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
       years2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
       months2:['',[Validators.required,Validators.pattern(this.Pattern.onlyNUmber),Validators.maxLength(2)]],
-      descripition:['',[Validators.required,Validators.pattern(/^([a-zA-Z]+\s)*[a-zA-Z]+$/),Validators.maxLength(50)]]
+      descripition:['India',[Validators.required,Validators.maxLength(200)]]
 
 
 
@@ -63,6 +63,11 @@ export class BasicInfoComponent implements OnInit {
 
     if(this.basicinfoForm.valid){
       this.formRef.resetForm();
+    }
+  }
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
     }
   }
 
