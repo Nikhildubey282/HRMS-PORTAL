@@ -30,6 +30,7 @@ export class QualificationComponent implements OnInit {
   minDate: Date;
   maxDate: Date;
   qualificationForm!: FormGroup;
+  completeDate:any;
   @ViewChild(FormGroupDirective) fromGroupDirective:FormGroupDirective;
 
   dataSource = new MatTableDataSource<any>();
@@ -53,9 +54,12 @@ export class QualificationComponent implements OnInit {
     private datePipe:DatePipe
   ) {
     const currentYear = new Date().getFullYear();
+    this.minDate=new Date(currentYear - 60,0,1)
 
     this.maxDate = new Date(currentYear + 0, 9, 31);
     console.log(this.maxDate)
+
+
   }
 
 
@@ -78,7 +82,6 @@ export class QualificationComponent implements OnInit {
       descripition: ['', [Validators.required,Validators.maxLength(200),Validators.minLength(5)]]
     })
   }
-
 
   get formCtrl() { return this.qualificationForm.controls; }
 

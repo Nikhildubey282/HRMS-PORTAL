@@ -19,12 +19,12 @@ export class AddDialogComponent implements OnInit {
   this.createForm();
   }
   crossClick() {
-    this.dialogRef.close('cancel');
+    this.dialogRef.close();
   }
 
   createForm(){
     this.addForm=this._fb.group({
-      addTag:['',[Validators.required]]
+      addTag:['',]
     })
   }
 

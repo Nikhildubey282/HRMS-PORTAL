@@ -14,8 +14,11 @@ section
         .table{
           padding: 0px;
           table{
+            th{
+              // border: 1px solid gainsboro;
+            }
             td{
-              color: #606167;
+              color: #101010;
               // border-right: 1px solid gainsboro;
             }
           }

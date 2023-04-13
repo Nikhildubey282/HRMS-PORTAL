@@ -8,12 +8,15 @@
       <div class="input">
         <span>
           <app-dropdown [label]="departmentLabel" [Data]="departmentData"
+          [myControlName]="this.interviewForm.controls.department"
           ></app-dropdown>
         </span>
       </div>
       <div class="input">
         <span>
           <app-dropdown [label]="statusLabel" [Data]="statusData"
+          [myControlName]="this.interviewForm.controls.status"
+
           ></app-dropdown>
         </span>
       </div>

@@ -2,7 +2,7 @@
   <div class="first">
     <div class="head">
       <h1>Create New Ticket</h1>
-      <button (click)="add()" >+ Add New</button>
+      <button (click)="addbutton=!addbutton" >+ Add New</button>
     </div>
     <form [formGroup]="ticketForm" (ngSubmit)="addTickets()" >
 

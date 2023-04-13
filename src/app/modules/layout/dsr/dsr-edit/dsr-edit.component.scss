@@ -105,3 +105,54 @@ section {
   }
 
 }
+
+@media only screen and (max-width: 1200px) {
+  section{
+    .first{
+      main{
+        display: contents;
+        .left{
+          padding: 10px;
+        }
+        .right{
+          padding: 10px;
+        }
+      }
+    }
+    .second{
+      .row1{
+        grid-template-columns: auto auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  section{
+    .second{
+      .row1{
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  section{
+    .first{
+      main{
+        display: contents;
+        .left{
+          padding: 10px;
+          .row{
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    .second{
+      .row1{
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+

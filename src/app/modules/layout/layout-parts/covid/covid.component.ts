@@ -23,7 +23,7 @@ export class CovidComponent implements OnInit {
   listOfNewFamilyMembers=[1,2,3,4]
   @ViewChildren("listofDivs", { read: TemplateRef }) listToShow!: QueryList<ElementRef<HTMLDivElement>>;
   carouselConfig: NguCarouselConfig = {
-    grid: { xs: 1, sm: 1, md:2, lg: 1, all: 0 },
+    grid: { xs: 1, sm: 1, md:1, lg: 1, all: 0 },
     gridBreakpoints:{sm: 400, md: 900, lg: 1300, xl: 1300},
     load: 1,
     interval: { timing: 4000 },
@@ -48,7 +48,7 @@ export class CovidComponent implements OnInit {
       title:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(3),Validators.maxLength(10)]],
       mobile:['',[Validators.required,Validators.pattern(this.pattern.phone)]],
       address:['',[Validators.required,Validators.minLength(10),Validators.maxLength(50)]],
-      descrpition:['',[Validators.required,Validators.maxLength(50)]]
+      descrpition:['',[Validators.required,Validators.maxLength(200)]]
 
 
     })
@@ -60,6 +60,12 @@ export class CovidComponent implements OnInit {
 
   submit_button(){
     // this.formRef.resetForm();
+  }
+
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
+    }
   }
 
 }

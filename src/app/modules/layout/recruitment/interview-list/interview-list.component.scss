@@ -23,20 +23,20 @@ section{
       }
 
     }
-    .table{
-      ::ng-deep{
-        .table{
-          padding: 30px 0px;
-          table{
-            // border: none;
-          }
-          @media only screen and (max-width: 550px) {
-            padding-left: 0px;
-          }
+    // .table{
+    //   ::ng-deep{
+    //     .table{
+    //       padding: 30px 0px;
+    //       table{
+    //         // border: none;
+    //       }
+    //       @media only screen and (max-width: 550px) {
+    //         padding-left: 0px;
+    //       }
 
-        }
-      }
-    }
+    //     }
+    //   }
+    // }
 
   }
 }

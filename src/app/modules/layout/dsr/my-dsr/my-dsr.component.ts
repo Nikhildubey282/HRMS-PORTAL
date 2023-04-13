@@ -103,7 +103,7 @@ export class MyDsrComponent implements OnInit {
         emp_type:'Permanmnet',
         // date: new Date().toISOString().slice(0, 10),
         date:this.datepipe.transform(this.formCtrl['date'].value,'dd-MM-YYYY'),
-        logged_hr:'8:30',
+        logged_hr:this.formCtrl.hours.value,
         final_approved:''
       });
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);

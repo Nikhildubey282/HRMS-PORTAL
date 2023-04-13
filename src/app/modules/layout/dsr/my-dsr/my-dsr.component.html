@@ -17,7 +17,7 @@
             <div class="input">
               <label>Date</label>
               <mat-form-field appearance="outline">
-                <input matInput placeholder="Date" formControlName="date" [max]="maxDate" [matDatepicker]="picker">
+                <input matInput placeholder="Date" (click)="picker.open()"  formControlName="date" [max]="maxDate" [matDatepicker]="picker">
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
                 <mat-error>{{dsrForm | getControl:['date'] |validate:'date'}}</mat-error>

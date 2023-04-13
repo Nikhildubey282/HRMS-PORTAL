@@ -61,16 +61,6 @@ export class MyTicketsComponent implements OnInit {
     return this.ticketForm.controls
   }
 
-  add(){
-    console.log('nikhbjdjbjdkjnksdjndjnsjnksdjks')
-    if(this.addbutton===false)
-    this.addbutton=true;
-
-    else{
-      this.addbutton=false;
-
-    }
-  }
 
   addTickets() {
     if(this.ticketForm.valid){

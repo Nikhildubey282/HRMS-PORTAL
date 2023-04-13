@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
@@ -12,6 +13,9 @@ export class InterviewListComponent implements OnInit {
   statusLabel='Status';
   departmentData=['Angular','React','Blockchain','Node JS','Andorid'];
   statusData=['Selected','Rejected','Missed','In Progess'];
+
+  interviewForm!:FormGroup;
+
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
@@ -45,10 +49,19 @@ export class InterviewListComponent implements OnInit {
 
   ];
 
-  constructor() { }
+  constructor( private _fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.createForm()
+  }
+
+  createForm(){
+    this.interviewForm=this._fb.group({
+      department:['',],
+      status:['']
+
+    })
   }
 
 }

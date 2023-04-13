@@ -77,8 +77,15 @@
 
         ></editor>
       </div>
-      <div class="document">
-        <input formControlName="uploadFile" type="file">
+      <div class="input">
+        <label style="margin-top: 10px;">Presentation - (Share your detailed presentation on the idea)  (ppt,pdf)</label>
+        <mat-form-field class="upload" appearance="outline">
+          <input readonly formControlName="uploadFile" matInput>
+        <input accept=".pdf,.ppt" formControlName="uploadFile" type="file">
+        <mat-error>{{pitchForm | getControl:['uploadFile'] | validate:'uploadFile'}}</mat-error>
+
+        </mat-form-field>
+        <!-- <input formControlName="uploadFile" type="file"> -->
       </div>
     </div>
   </div>

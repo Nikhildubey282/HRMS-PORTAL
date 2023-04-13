@@ -89,6 +89,7 @@ export const DIRECTORY_EMPLOYEE_DATA: IDIRECTORY_DATA[] = [
   },
 ]
 
+//review data
 export const monthdata={
   // {month:'January'},
   // {month:'February'},
@@ -141,8 +142,21 @@ export const monthdata={
           teamWork_rating: 4,
           process_rating: 4,
         },
-        { month: 'October', isRating: false },
-        { month: 'November', isRating: false },
+        { month: 'October', isRating: false
+
+       },
+        { month: 'November',
+         isRating: true,
+        rating: 4.0,
+        Awards: 0,
+        Honour: 0,
+        award_title: 'AWARDS:',
+        honour_title: 'HONOURS:',
+        technical_rating: 5,
+        ownership_rating: 4,
+        teamWork_rating: 4,
+        process_rating:4.5,
+       },
         { month: 'December', isRating: false },
       ],
     },
@@ -318,46 +332,51 @@ export interface IDIRECTORY_DATA {
   BIRTH_DATE?:string,
   BIRTH_MONTH?:string
 }
-
+IMAGE:'/assets/images/award_166719426194.jpeg'
 
 export const Gallery_DATA :IGALLERYDATA[]=[
-  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Republic Day-2023',NUM:5,BUTTON:'View',
+
+  {IMAGE:'https://dashboard.appinventiv.com/uploads/gallery/award_1678334291365.jpg',HEADING:'Holi 2023',NUM:5,BUTTON:'View',
   SUBIMAGE:[
-    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
-    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+    {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_1678334291365.jpg'},
+    {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_1678334291144.jpg'},
   ],
 
 },
-  {IMAGE:'/assets/images/award_1672378171227.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View',
+{IMAGE:'https://dashboard.appinventiv.com/uploads/gallery/award_1676877262312.jpg',HEADING:'Kindness day',NUM:5,BUTTON:'View',
+SUBIMAGE:[
+  {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_1676877274894.jpg'},
+  {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_1676877279350.jpg'},
+],
+
+},
+
+
+  {IMAGE:'/assets/images/award_1672292016846.jpg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View',
+  SUBIMAGE:[
+    {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_167229202066.jpg'},
+    {IMAGES:'https://dashboard.appinventiv.com/uploads/gallery/award_1672292047770.jpg'},
+
+  ],
+},
+  {IMAGE:'/assets/images/award_166719426194.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View',
   SUBIMAGE:[
     {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
     {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+   
   ],
 },
-  {IMAGE:'/assets/images/award_166719426194.jpeg',HEADING:'Christmas Celebration -2022',NUM:5,BUTTON:'View',
-  SUBIMAGE:[
-    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
-    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
-  ],
+
+{IMAGE:'/assets/images/award_1672378171227.jpg',HEADING:'Best Place To Work Award',NUM:5,BUTTON:'View',
+SUBIMAGE:[
+  {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
+  {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
+  // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
+  // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
+  // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
+],
 },
-  {IMAGE:'/assets/images/award_1672292016846.jpeg',HEADING:'Diwali Party -2022',NUM:5,BUTTON:'View',
-  SUBIMAGE:[
-    {IMAGES:'/assets/republic-day/award_1674822366389.jpg'},
-    {IMAGES:'/assets/republic-day/award_1674822472652.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822356821.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822361280.jpg'},
-    // {IMAGES:'/assets/republic-day/award_1674822366389.jpg'}
-  ],
-},
+
 
 ]
 

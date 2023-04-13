@@ -25,6 +25,7 @@ export class ProfilepictureComponent implements OnInit {
 
     this.size = files[0].size
     if(this.size <= 1000000){
+      console.log(this.size)
 
       if (files.length === 0) return;
       var reader = new FileReader();

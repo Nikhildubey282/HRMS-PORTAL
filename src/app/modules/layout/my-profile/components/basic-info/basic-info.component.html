@@ -29,7 +29,7 @@
           <div class="input">
             <label>Date Of Birth</label>
             <mat-form-field appearance="outline">
-                <input readonly="" matInput placeholder="Date of Birth" [min]="minDate" [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
+                <input readonly="" matInput placeholder="Date of Birth" [min]="minDate" (click)="picker.open()"  [max]="maxDate"  [matDatepicker]="picker" formControlName="dateofBirth">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <!-- <mat-error *ngIf="formCtrl.dateofBirth.hasError('required')">

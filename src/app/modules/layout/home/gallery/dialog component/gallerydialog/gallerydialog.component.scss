@@ -37,11 +37,10 @@ section {
   }
 }
 
-@media (max-width:798px){
-  section{
-    width:auto;
-    .image{
-      width: fit-content;
-    }
+@media (max-width:800px){
+
+  .mat-dialog-container{
+    width: unset;
   }
+
 }

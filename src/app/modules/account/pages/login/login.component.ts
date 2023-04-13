@@ -38,6 +38,8 @@ errorMsg = ACCOUNT_ERROR_MESSAGES;
 
   nav_to_dashboard(){
     if(this.loginForm.valid){
+      localStorage.setItem('isAuth', '234');
+
       this.route.navigate(['layout']);
       console.log('login succesful')
 

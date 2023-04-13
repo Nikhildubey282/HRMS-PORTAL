@@ -150,6 +150,7 @@ section {
   section {
     .header {
       display: block;
+      padding: 10px;
 
       .logo_button {
         display: flex;
@@ -159,9 +160,29 @@ section {
       }
 
       .header_right {
-        display: none;
+        justify-content: center;
+        padding: 5px;
+        gap: 10px;
+        .dropdown{
+          .userName{
+            display: none;
+          }
+        }
+        .lastlogin{
+          display: none;
+        }
       }
     }
   }
+
+}
+
+@media only screen and (max-width: 500px) {
+  section{
+    .notification-box{
+      width: 18em;
+    }
+  }
+
 
 }

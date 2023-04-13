@@ -3,11 +3,12 @@
     <h6>Profile Picture</h6>
   </div>
   <div class="inputs-field">
-<div class="input">
+<div  class="input">
 <label>Browse</label>
   <input #logo (change)="preview(logo.files)" type="file" accept="image/png, image/jpeg, image/jpg">
-  <img *ngIf="!imageShow" src="../../../../../../assets/images/profile_icon.jpg">
-  <img *ngIf="imageShow" [src]="imgURL">
+  <img  *ngIf="!imageShow" src="../../../../../../assets/images/profile_icon.jpg">
+  <img  *ngIf="imageShow" [src]="imgURL">
+  <mat-icon *ngIf="imageShow" style="position: absolute; top: 312px; left: 467px;" (click)="imageShow=false" >close</mat-icon>
   </div>
   <div class="group">
     <button>SAVE</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,11 +9,17 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class CancelEnrollmentComponent implements OnInit {
 
+  cancelreasonForm!:FormGroup
+
   constructor(
     private dialogRef: MatDialogRef<CancelEnrollmentComponent>,
+    private _fb:FormBuilder
   ) { }
 
   ngOnInit(): void {
+    this.cancelreasonForm=this._fb.group({
+      reason:['']
+    })
   }
   crossClick() {
     this.dialogRef.close('cancel');

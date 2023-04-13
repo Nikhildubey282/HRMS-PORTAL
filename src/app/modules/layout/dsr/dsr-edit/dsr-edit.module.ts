@@ -10,6 +10,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
+import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
+import {NgxMatTimepickerModule} from 'ngx-mat-timepicker';
+
 
 
 @NgModule({
@@ -27,6 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditorModule,
     FormsModule,
     ReactiveFormsModule,
+    GetControlModule,
+    ValidationErrorModule,
+    NgxMatTimepickerModule
   ]
 })
 export class DsrEditModule { }

@@ -35,7 +35,7 @@ export class DropdownComponent implements OnInit {
           if (!res.length) {
             res = ['no results Found'];
           }
-          console.log(res);
+        //   console.log(res);
           return res;
         })
       );

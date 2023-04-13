@@ -32,7 +32,7 @@ section
     background-color: white;
     padding: 20px;
     width: 35%;
-    overflow: scroll;
+    // overflow: scroll;
 
 
     table {
@@ -94,6 +94,26 @@ section
       }
     }
   }
+}
+
+@media (max-width: 500px) {
+  section {
+    main{
+    .leave-detail {
+
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: grey;
+      }
+    }
+  }
+}
 }
 
 

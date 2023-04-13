@@ -5,6 +5,7 @@
      <mat-icon>close</mat-icon>
     </div>
   </div>
+  <form [formGroup]="cancelreasonForm" >
   <div class="main">
   <div class="text-danger">
     <h5 >After cancelling this enrollment you can re-enroll one time only.</h5>
@@ -15,14 +16,15 @@
       <input matInput  >
     </mat-form-field> -->
     <mat-form-field appearance="outline">
-      <textarea  class="example-full-width" matInput></textarea>
+      <textarea formControlName="reason" #textarea maxlength="200" class="example-full-width" matInput></textarea>
     </mat-form-field>
-     <p class="maxlength">
-    0/200</p>
-  </div>
+     <p style="text-align: right;" class="maxlength">
+      {{textarea.value.length}}/{{200}}</p>
+    </div>
   <div class="buttonGroup">
     <button  (click)="crossClick()"  class="cancelButton">Cancel</button>
     <button class="classyButton">Submit</button>
   </div>
 </div>
+</form>
 </section>

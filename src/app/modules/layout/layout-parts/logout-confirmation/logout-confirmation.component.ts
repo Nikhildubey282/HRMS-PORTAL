@@ -23,6 +23,7 @@ export class LogoutConfirmationComponent implements OnInit {
   }
 
   confirm(){
+    localStorage.clear();
     this._route.navigate(['./login']);
     this.dialogRef.close('match');
     this.snackbar_service.showSuccess('Logout Sucessfully !!','')
