@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { PATTERN } from 'src/app/constant/patterns';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { HelpDialogComponent } from './help-dialog/help-dialog.component';
 
 @Component({
   selector: 'app-assets-declarations',
@@ -18,7 +20,9 @@ export class AssetsDeclarationsComponent implements OnInit {
   addbutton:boolean=false;
   dataSource = new MatTableDataSource<any>();
   declareForm!:FormGroup;
-  pattern=PATTERN
+  pattern=PATTERN;
+  @ViewChild(FormGroupDirective) FormGroupDirective:FormGroupDirective;
+
 
   heading = [
     { heading: 'S.no', key:'sNo',type:'text'},
@@ -43,7 +47,8 @@ export class AssetsDeclarationsComponent implements OnInit {
 
   constructor(
     private _fb:FormBuilder,
-    private snackbar:SnackBarService
+    private snackbar:SnackBarService,
+    private dialog:MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -56,7 +61,7 @@ export class AssetsDeclarationsComponent implements OnInit {
     this.declareForm=this._fb.group({
       employeeId:['AI1612',[Validators.required]],
       code:['',[Validators.required,Validators.maxLength(50)]],
-      serialNo:['',Validators.required,Validators.maxLength(50)],
+      serialNo:['',[Validators.required,Validators.maxLength(50)]],
       modelNo:['',[Validators.required,Validators.maxLength(50)]],
       os:['',[Validators.required]],
       osVersion:['',[Validators.required]],
@@ -82,7 +87,7 @@ export class AssetsDeclarationsComponent implements OnInit {
     console.log(this.declareForm.value);
     console.log(this.declareForm.valid);
 
-    // if(this.declareForm.valid){
+    if(this.declareForm.valid){
     this.Table_DATA.push({
       sNo:this.Table_DATA.length+1,
       employeeId:this.formCtrl.employeeId.value,
@@ -98,12 +103,25 @@ export class AssetsDeclarationsComponent implements OnInit {
       added:'1'
     })
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+    this.FormGroupDirective.resetForm();
     this.addbutton=false;
     this.snackbar.showSuccess('Data Added Successfully','')
-  // }
+  }
+
+
+  }
+
+  openDialog1() {
+    const dialogRef = this.dialog.open(HelpDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log();
+    });
+    console.log('nikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
+  }
 
 
   }
 
 
-}
+

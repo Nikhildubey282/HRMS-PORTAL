@@ -3,6 +3,13 @@ section {
 
   .head {
     p {
+      strong{
+        color: #199CFF;
+        cursor: pointer;
+        &:hover{
+          color: grey;
+        }
+      }
       color: rgb(117, 116, 116);
       font-size: 15px;
     }

@@ -44,6 +44,9 @@ export class ApprasialComponent implements OnInit {
 
     this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
     this.createform();
+    this.apprasialForm.controls['apprasialCycle'].disable()
+    this.apprasialForm.controls['apprasialMonth'].disable()
+
 
   }
 

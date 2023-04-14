@@ -4,7 +4,7 @@
     <div class="button">
       <button (click)="addbutton=!addbutton" > +Add new assets declaration</button>
     </div>
-    <form [formGroup]="declareForm">
+    <form [formGroup]="declareForm" (ngSubmit)="submit()" >
     <div *ngIf="addbutton" >
     <div class="select">
       <div class="input">
@@ -24,14 +24,14 @@
         </mat-form-field>
       </div>
       <div class="input">
-        <label>Serial Number </label>
+        <label>Serial Number <mat-icon (click)="openDialog1()" >help</mat-icon> </label>
         <mat-form-field  appearance="outline">
           <input (keydown)="noSpace($event)" matInput formControlName="serialNo" class="example-full-width" >
-          <mat-error>{{declareForm | getControl:['serialNo'] | validate:'serialNo' }}</mat-error>
+          <mat-error>{{declareForm | getControl:['serialNo'] | validate:'serialNo'}}</mat-error>
         </mat-form-field>
       </div>
       <div class="input">
-        <label>Model Number</label>
+        <label>Model Number <mat-icon>help</mat-icon> </label>
         <mat-form-field (keydown)="noSpace($event)" appearance="outline">
           <input matInput formControlName="modelNo" class="example-full-width" >
           <mat-error>{{declareForm | getControl:['modelNo'] | validate:'modelNo' }}</mat-error>
@@ -95,7 +95,7 @@
       </div> -->
     </div>
     <div class="submitbutton">
-      <button (click)="submit()" >Submit</button>
+      <button type="submit" >Submit</button>
     </div>
   </div>
 </form>

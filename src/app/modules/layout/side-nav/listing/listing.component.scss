@@ -13,15 +13,26 @@ section {
         // padding-top: 20px;
       }
     }
+  }
   ::ng-deep{
     .mat-list-item-content{
-      justify-content: space-between;
+      // justify-content: space-between;
       font-size: 16px;
       font-weight: 500;
-      padding: 0px 16px 10px 16px;
+      padding: 20px 16px 30px 16px !important ;
+
     }
   }
+.disable{
+  color: gray;
+  cursor: not-allowed;
 }
+
+// .focus{
+//   color: #199CFF;
+//       // background-color: #199CFF;
+
+// }
 
   .menu-button {
     transition: 300ms ease-in-out;
@@ -54,13 +65,35 @@ section {
     color: #199CFF;
       background-color: transparent;
   }
+  .focus{
+    color: #199CFF;
+        // background-color: #199CFF;
 
-}
-
-.mat-list-item-content{
-  &:disabled{
-    background-color:red;
   }
+
 }
+
+
+::ng-deep{
+.mat-list-item-content{
+ &:hover{
+  color: #199CFF;
+  background-color:white;
+ }
+
+}
+
+}
+
+::ng-deep{
+  .mat-list-item{
+   &:disabled{
+    color: #199CFF;
+    background-color:white;
+   }
+
+  }
+
+  }
 
 

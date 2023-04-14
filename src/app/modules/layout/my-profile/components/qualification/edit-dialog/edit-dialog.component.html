@@ -1,5 +1,5 @@
 <section>
-  <form [formGroup]="editForm">
+  <form [formGroup]="editForm" (ngSubmit)="saveData()" >
 
   <div class="head">
     <h1>Edit Qualication</h1>
@@ -50,8 +50,8 @@
 
   </main>
   <div class="button-wrapper">
-    <button class="left">Close</button>
-    <button (click)="saveData()" class="right">Update</button>
+    <button (click)="crossClick()" class="left">Close</button>
+    <button type="submit" class="right">Update</button>
   </div>
 </form>
 

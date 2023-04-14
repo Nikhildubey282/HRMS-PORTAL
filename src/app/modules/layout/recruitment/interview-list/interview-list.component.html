@@ -9,6 +9,7 @@
         <span>
           <app-dropdown [label]="departmentLabel" [Data]="departmentData"
           [myControlName]="this.interviewForm.controls.department"
+          (directory)="filter($event)"
           ></app-dropdown>
         </span>
       </div>
@@ -16,6 +17,7 @@
         <span>
           <app-dropdown [label]="statusLabel" [Data]="statusData"
           [myControlName]="this.interviewForm.controls.status"
+          (directory)="statusFilter($event)"
 
           ></app-dropdown>
         </span>

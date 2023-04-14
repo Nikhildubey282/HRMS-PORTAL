@@ -7,10 +7,10 @@ import { LoginGuard } from './guards/login guard/login.guard';
 const routes: Routes = [
   {path:'',redirectTo:'',pathMatch:'full'},
   { path: '', loadChildren: () => import('./modules/account/account.module').then(m => m.AccountModule),
-  // canActivate:[LoginGuard]
+  canActivate:[LoginGuard]
  },
   {path: LAYOUT, loadChildren:() => import('./modules/layout/layout.module').then(m => m.LayoutModule),
-  // canActivate:[DashboardGuard]
+  canActivate:[DashboardGuard]
  },
   {path:'**', loadChildren:() => import('./modules/not-found/not-found.module').then(m => m.NotFoundModule )  }
 ];

@@ -1,6 +1,15 @@
 section{
   padding: 20px;
   .breadcrumbs{
+    P{
+      strong{
+        color: #199CFF;
+        cursor: pointer;
+        &:hover{
+          color: grey;
+        }
+      }
+    }
 
   }
   .heading{

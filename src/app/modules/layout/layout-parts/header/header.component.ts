@@ -4,6 +4,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 import { slideAnimation } from 'src/animation';
 import { LogoutConfirmationComponent } from '../logout-confirmation/logout-confirmation.component';
+import { ABS_PROFILE } from 'src/app/constant/absolute-route';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class HeaderComponent implements OnInit {
   @Output() stateChnage:EventEmitter<boolean> =new EventEmitter<boolean>();
   @Output() ishamburgerCLick = new EventEmitter();
   notification=false;
+  profile=ABS_PROFILE;
 
 
   constructor(public dialog: MatDialog) { }

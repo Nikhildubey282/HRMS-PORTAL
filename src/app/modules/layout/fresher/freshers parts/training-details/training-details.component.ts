@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MYTRAINING } from 'src/app/constant/constant';
 import { FeedbackComponent } from './dialog-component/feedback/feedback.component';
 
@@ -12,9 +12,10 @@ import { FeedbackComponent } from './dialog-component/feedback/feedback.componen
 })
 export class TrainingDetailsComponent implements OnInit {
 
- 
+
 
   constructor(private _activatedRoute:ActivatedRoute,
+    private _route:Router
 
     ) { }
 
@@ -32,6 +33,10 @@ export class TrainingDetailsComponent implements OnInit {
     console.log(this.detailId,'detail');
     this.trainingDetailData= this.data.find(x => x.id ==this.detailId)
     console.log(this.trainingDetailData,'index')
+  }
+
+  navigate_to_home(){
+    this._route.navigate(['./layout'])
   }
 
 

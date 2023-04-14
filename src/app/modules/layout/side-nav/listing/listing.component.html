@@ -1,9 +1,15 @@
 <section>
-  <mat-list-item (click)="showSideNav(navlist)" class="parent" [routerLink]="navlist.routerLink"  [routerLinkActive]="navlist.routerLink?'active':''" >
+  <mat-list-item  [ngClass]="{'disable':!navlist.isActiv}" (click)="showSideNav(navlist)" class="parent" [routerLink]="navlist.routerLink"  [routerLinkActive]="navlist.routerLink?'active':''" >
 
     <div class="name">
-      <mat-icon>{{ navlist.logo }}</mat-icon>
-      <span class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
+      <ng-container  *ngIf="navlist.title==='Logout';else othertitle  ">
+        <mat-icon>{{ navlist.logo }}</mat-icon>
+        <span (click)="openDialog1()" class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
+      </ng-container>
+      <ng-template #othertitle>
+        <mat-icon>{{ navlist.logo }}</mat-icon>
+        <span class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
+      </ng-template>
     </div>
     <mat-icon class="menu-button" [ngClass]="{ rotated: navlist.subMenuClick }" *ngIf="navlist.options">expand_more</mat-icon>
 

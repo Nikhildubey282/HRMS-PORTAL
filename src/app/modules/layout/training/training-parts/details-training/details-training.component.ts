@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TRAINING } from 'src/app/constant/constant';
 
 @Component({
@@ -13,13 +13,17 @@ export class DetailsTrainingComponent implements OnInit {
   detailId
   trainingDetailData;
 
-  constructor(private _activatedRoute:ActivatedRoute,) { }
+  constructor(private _activatedRoute:ActivatedRoute,private _route:Router) { }
 
   ngOnInit(): void {
     this.detailId = this._activatedRoute.snapshot.paramMap.get('id')
     console.log(this.detailId,'detail');
     this.trainingDetailData= this.data.find(x => x.id ==this.detailId)
     console.log(this.trainingDetailData,'index')
+  }
+
+  navigate_to_home(){
+    this._route.navigate(['./layout'])
   }
 
 }

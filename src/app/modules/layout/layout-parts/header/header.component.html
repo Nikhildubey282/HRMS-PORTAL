@@ -15,11 +15,11 @@
         <mat-icon class="down">expand_more</mat-icon>
 
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
+          <button [routerLink]=profile mat-menu-item>
             <mat-icon>person</mat-icon>
             <span>My Profile</span>
           </button>
-          <button mat-menu-item>
+          <button routerLink="./profile/change-password" mat-menu-item>
             <mat-icon>key</mat-icon>
             <span>Change Password</span>
           </button>

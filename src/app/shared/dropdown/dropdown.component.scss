@@ -23,7 +23,7 @@
 
   }
   .filter {
-    width: 90% !important;
+    width: 92% !important;
     padding: 10px 12px !important;
     overflow: hidden;
   }
@@ -39,19 +39,20 @@
   }
 
   .mat-option:hover{
-    background: grey;
+    background:lightgray !important;
     &:focus{
-    background: grey;
+    background: transparent;
 
     }
   }
   .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
-    background: rgb(216, 214, 214);
-    color: balck;
+    background: #199CFF;
+    color: white;
 }
 .mat-select-panel{
     margin-top: 42px;
-    margin-left: 8px;
+    margin-left: 7px;
+    min-width: calc(100% + 21px) !important;
 
 }
 }

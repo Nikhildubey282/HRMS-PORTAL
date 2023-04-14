@@ -29,6 +29,21 @@
         margin-top: 20px;
         border: 2px solid lightgray;
       }
+      .icon{
+        position: absolute;
+        top: 312px;
+        left: 467px;
+        // border: 1px solid;
+        background: black;
+        color: white;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        mat-icon{
+          font-size: 20px;
+        }
+
+      }
     }
     .group{
       padding: 20px ;

@@ -37,6 +37,12 @@ section{
         margin-left: 10px;
         display: flex;
         flex-direction: column;
+        label{
+
+          mat-icon{
+            font-size: 15px;
+          }
+        }
       }
     }
     .select2{

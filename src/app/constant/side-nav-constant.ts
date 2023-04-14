@@ -25,7 +25,7 @@ export const sideNavList = [
   { title: 'Expense', logo: 'monetization_on', isActiv: false, },
   { title: 'Announcements', logo: 'campaign', isActiv: false, },
   { title: 'Travels', logo: 'flight', isActiv: false, },
-  { title: 'Logout', logo: 'logout', routerLink: 'hweiuewiuieu', isActiv: true, },
+  { title: 'Logout', logo: 'logout',isActiv: true, },
 ]
 
 
@@ -34,5 +34,6 @@ export interface IsideNav {
   logo: string,
   options?: Array<any>
   routerLink?: string,
-  subMenuClick?:boolean
+  subMenuClick?:boolean,
+  isActiv?:any
 }

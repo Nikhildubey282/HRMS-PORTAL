@@ -17,7 +17,7 @@ imageData=Gallery_DATA;
 carouselConfig: NguCarouselConfig = {
   grid: { xs: 1, sm: 1, md: 2, lg: 3, all: 0 },
   load: 1,
-  interval: { timing: 9000, initialDelay: 1000 },
+  // interval: {initialDelay: 1000 },
   loop: true,
   touch: true,
   velocity: 0.2,
