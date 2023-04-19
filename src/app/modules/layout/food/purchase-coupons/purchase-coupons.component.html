@@ -1,0 +1,58 @@
+<div class="container">
+  <div (click)="cancelCoupons()" class="backArrow">
+    <mat-icon>keyboard_backspace</mat-icon>
+
+  </div>
+  <div class="top">
+    <h4>Lunch Coupon</h4>
+    <p> You can purchase/cancel a coupon for the upcoming day before 6 p.m. today.</p>
+  </div>
+
+  <div class="left">
+    <div class="amount">
+        <h2>Amount Due</h2>
+        <p>Available coupon for purchase: xxxx</p>
+    </div>
+    <h3 *ngIf="totalAmount==undefined">₹0</h3>
+    <h3>
+      {{totalAmount}}
+    </h3>
+    <div class="details">
+        <p class="text-muted">
+            Note: Amount due need to paid in cash in account office.
+        </p>
+
+
+    </div>
+</div>
+
+
+  <div class="middle" [formGroup]="couponForm">
+      <div class="input mr-10" >
+          <mat-label class="fw-600">Coupon Count</mat-label>
+          <mat-form-field appearance="outline">
+              <input matInput formControlName="coupon_count">
+            </mat-form-field>
+      </div>
+      <div class="input mr-10">
+          <mat-label class="fw-600" >Total Amount</mat-label>
+          <mat-form-field appearance="outline">
+              <input matInput formControlName="total_amount" >
+            </mat-form-field>
+      </div>
+      <div class="buttons-wrapper ">
+
+          <button (click)="buyCoupons()" class="submit-btn mr-10" >submit</button>
+
+          <button class="cancel-btn" (click)="cancelCoupons()"  >Cancel</button>
+      </div>
+  </div>
+
+  <div class="bottom">
+
+
+      <app-lunch-calendar [myCalendar]="myCalendar" [options]="options" (calendarData)="updateCalendarData($event)"   >
+      </app-lunch-calendar>
+
+  </div>
+</div>

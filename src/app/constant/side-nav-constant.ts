@@ -1,10 +1,12 @@
-import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE, ABS_ENTERPRENEUR, ABS_HOLIDAYCALENDAR, ABS_POLICYDOCUMENT, ABS_INSURANCEVERIFICATIONS, ABS_MYPERFORMANCE, ABS_REFERCANDIDATE, ABS_REFERALLIST, ABS_INTERVIEWLIST, ABS_FRESHERTRAINING, ABS_TRAINING, ABS_ONGOINGTRAINING, ABS_MYTRAINING, ABS_REQUESTEDTRAINING, ABS_ASSETSINVENTORY, ABS_REQUESTASSETS, ABS_ASSETSDECLARATIONS, ABS_ATTENDANCECALENDAR, ABS_MANUALPUNCH, ABS_PUNCHLOG, ABS_FLOATINGLEAVE, ABS_MYTICKETS, ABS_MYLEAVE, ABS_MYDSR, ABS_PROJECTS } from "./absolute-route"
+import { ABS_DIRECTORY, ABS_HOME, ABS_PROFILE, ABS_ENTERPRENEUR, ABS_HOLIDAYCALENDAR, ABS_POLICYDOCUMENT, ABS_INSURANCEVERIFICATIONS, ABS_MYPERFORMANCE, ABS_REFERCANDIDATE, ABS_REFERALLIST, ABS_INTERVIEWLIST, ABS_FRESHERTRAINING, ABS_TRAINING, ABS_ONGOINGTRAINING, ABS_MYTRAINING, ABS_REQUESTEDTRAINING, ABS_ASSETSINVENTORY, ABS_REQUESTASSETS, ABS_ASSETSDECLARATIONS, ABS_ATTENDANCECALENDAR, ABS_MANUALPUNCH, ABS_PUNCHLOG, ABS_FLOATINGLEAVE, ABS_MYTICKETS, ABS_MYLEAVE, ABS_MYDSR, ABS_PROJECTS, ABS_FOOD, ABS_REQUESTDINNER } from "./absolute-route"
 
 export const sideNavList = [
   { title: 'Home', logo: 'home', isActiv: true, routerLink: ABS_HOME },
-  { title: 'My Profile', logo: 'person', isActiv: true, routerLink: ABS_PROFILE },
-  { title: 'Directory', logo: 'description', isActiv: true, routerLink: ABS_DIRECTORY },
-  { title: 'Enterpreneurship Program', logo: 'person',subMenuClick:false, options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule', routerLink: ABS_ENTERPRENEUR }], isActiv: true, },
+  { title: 'My Profile', logo: 'person', isActiv: true, starlogo:'verified', routerLink: ABS_PROFILE },
+  { title: 'Directory', logo: 'description', isActiv: true, starlogo:'verified', routerLink: ABS_DIRECTORY },
+  { title: 'Food', logo: 'restaurant',subMenuClick:false, options: [{ subTitle: 'Lunch Coupons', subLogo: 'fastfood', routerLink: ABS_FOOD },{ subTitle: 'Request Dinner', subLogo: 'dinner_dining', routerLink: ABS_REQUESTDINNER }], isActiv: true, },
+
+  { title: 'Enterpreneurship Program', logo: 'person', starlogo:'verified',subMenuClick:false, options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule', routerLink: ABS_ENTERPRENEUR }], isActiv: true, },
   { title: 'My Links', logo: 'grid_view',subMenuClick:false, options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist', routerLink: ABS_HOME }, { subTitle: 'holiday calendar', subLogo: 'calendar_today', routerLink: ABS_HOLIDAYCALENDAR }, { subTitle: 'Policy Documents', subLogo: 'insert_drive_file', routerLink: ABS_POLICYDOCUMENT }], isActiv: true, },
   {
     title: 'Finance', logo: 'payments',subMenuClick:false,
@@ -32,6 +34,7 @@ export const sideNavList = [
 export interface IsideNav {
   title: string,
   logo: string,
+  starlogo?: string,
   options?: Array<any>
   routerLink?: string,
   subMenuClick?:boolean,

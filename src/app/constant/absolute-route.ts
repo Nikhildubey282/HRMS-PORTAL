@@ -36,6 +36,10 @@ export const ABS_DSRDETAIL=`/${routes.LAYOUT}/${routes.DSR}/${routes.DSRDETAIL}`
 export const ABS_DSREDIT=`/${routes.LAYOUT}/${routes.DSR}/${routes.DSREDIT}`;
 export const ABS_PROJECTS=`/${routes.LAYOUT}/${routes.PROJECTS}`;
 export const ABS_PROJECTDETAIL=`/${routes.LAYOUT}/${routes.POJECTDETAIL}`;
+export const ABS_FOOD=`/${routes.LAYOUT}/${routes.FOOD}/${routes.LUNCH}`;
+export const ABS_REQUESTDINNER=`/${routes.LAYOUT}/${routes.FOOD}/${routes.REQUESTDINNER}`;
+
+
 
 
 

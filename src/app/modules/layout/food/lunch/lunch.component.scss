@@ -1,0 +1,139 @@
+
+.container {
+
+  .buy-coupons {
+    display: grid;
+    grid-template-columns: 55% 43%;
+    column-gap: 2%;
+    margin: 25px;
+
+
+    .left {
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #FFFFFF;
+      border: 1px solid #DCE2E9;
+      border-radius: 8px;
+
+      .amount {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          color: #221e1e;
+          font-size: 24px;
+          font-weight: 500;
+        }
+
+        p {
+          color: #469cf8;
+          font-size: 18px;
+        }
+      }
+
+      h3 {
+        padding: 10px 0px 15px 0px;
+
+        font-weight: 500;
+        font-size: 2.5rem;
+        color: #469cf8;
+        margin-bottom: 0px;
+      }
+
+      .details {
+        .text-muted {
+          color: #606167;
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 0px;
+          padding-right: 10px;
+          padding-top: 10px;
+
+        }
+        p {
+          margin-bottom: 0px;
+        }
+
+        button {
+          border: 1px solid #CCD2DA;
+          border-radius: 5px;
+          font-weight: 400;
+          font-size: 14px;
+          padding: 8px 10px;
+          text-align: center;
+          color: #469CF8;
+          max-width: 7rem;
+          width: 100%;
+          background-color: white;
+
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+      }
+    }
+
+    .right {
+      display: grid;
+      justify-content: center;
+      background-color: white;
+      border: 1px solid #DCE2E9;
+      border-radius: 5px;
+      padding: 6px 1rem;
+
+      .purchase {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      .text-muted {
+        color: #606167;
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 0px;
+        padding-right: 10px;
+        padding-top: 10px;
+
+      }
+
+      button {
+        outline: none;
+        box-shadow: none;
+        background: linear-gradient(180deg, #67B0F9 0%, #368CF6 100%);
+        border: 1px solid #67A8EB;
+        border-radius: 5px;
+        font-weight: 700;
+        font-size: 15px;
+        color: #fff;
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 12px 10px;
+        max-width: 332px;
+        margin: 0px auto 20px;
+      }
+    }
+  }
+
+  .main {
+    border-radius: 1rem;
+    background-color: white;
+    margin: 25px;
+    padding: 2%;
+    overflow: auto;
+
+    .table-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+
+    }
+  }
+}

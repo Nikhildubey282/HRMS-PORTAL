@@ -4,6 +4,7 @@ import { Regex } from 'src/app/constant/regex';
 import { ACCOUNT_ERROR_MESSAGES } from 'src/app/constant/messages';
 import { Router } from '@angular/router';
 import { FormService } from 'src/app/services/form.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ errorMsg = ACCOUNT_ERROR_MESSAGES;
   constructor(
     private _fb:FormBuilder,
     private route:Router,
-    private formService:FormService
+    private formService:FormService,
+    public authService:AuthService
   ) { }
 
   ngOnInit(): void {

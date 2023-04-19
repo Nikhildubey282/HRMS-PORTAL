@@ -10,6 +10,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AbsoluteRoutingModule } from 'src/app/pipes/absolute-routing/absolute-routing.module';
 import { FormService } from 'src/app/services/form.service';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AuthService } from './services/auth.service';
+
 
 
 
@@ -18,7 +22,7 @@ import { FormService } from 'src/app/services/form.service';
     LoginComponent,
 
   ],
-  providers:[FormService],
+  providers:[FormService,AuthService],
   imports: [
     CommonModule,
     LoginRoutingModule,
@@ -28,7 +32,14 @@ import { FormService } from 'src/app/services/form.service';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
-    AbsoluteRoutingModule
+    AbsoluteRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase)
+
+
+
+
+
+
 
   ]
 })

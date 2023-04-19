@@ -1,0 +1,60 @@
+<section>
+  <div class="top">
+    <div class="left">
+      <h4>Dinner Request</h4>
+      <p><b>Note:</b> You can request/cancel dinner for today before 6:00 PM</p>
+    </div>
+    <div class="right">
+      <button (click)="request=!request">
+        Request Dinner
+      </button>
+    </div>
+
+  </div>
+  <form [formGroup]="dinnerForm">
+  <div *ngIf="request" class="main">
+
+    <div class="field">
+      <div class="input">
+        <label>Date</label>
+        <mat-form-field appearance="outline">
+          <input formControlName="date" matInput>
+        </mat-form-field>
+      </div>
+      <div class="input">
+        <span>
+          <app-dropdown
+            [label]="projectLabel"
+            [Data]="projectData"
+            [myControlName]="this.dinnerForm.controls.project"
+            [errorType]="this.dinnerForm.controls.project"
+          ></app-dropdown>
+        </span>
+      </div>
+    </div>
+    <div class="editor">
+      <label>Reason for late stay</label>
+      <editor  [init]="{
+        height: 360,
+        plugins: [
+           'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+          'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+          'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        ],
+        toolbar:
+         'undo redo | casechange blocks | bold italic backcolor | \
+         alignleft aligncenter alignright alignjustify | \
+         bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+      }"></editor>
+    </div>
+    <div class="button-wrapper">
+      <button>
+        Submit
+      </button>
+    </div>
+
+
+  </div>
+</form>
+
+</section>

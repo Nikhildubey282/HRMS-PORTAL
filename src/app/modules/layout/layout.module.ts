@@ -25,6 +25,7 @@ import { LogoutConfirmationComponent } from './layout-parts/logout-confirmation/
 
 
 
+
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -51,8 +52,10 @@ import { LogoutConfirmationComponent } from './layout-parts/logout-confirmation/
     FormsModule,
     ReactiveFormsModule,
     GetControlModule,
-    ValidationErrorModule
+    ValidationErrorModule,
+
   ],
+
 
 })
 export class LayoutModule { }

@@ -55,6 +55,9 @@ export const DSRDETAIL='dsr-detail';
 export const DSREDIT='dsr-edit';
 export const PROJECTS='projects';
 export const POJECTDETAIL='project-detail';
+export const FOOD='food';
+export const LUNCH='lunch';
+export const REQUESTDINNER='request-dinner';
 
 
 

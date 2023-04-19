@@ -1,0 +1,72 @@
+@import'../../../../../scss/label';
+section{
+  padding: 20px;
+  .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-bottom: 0.5px solid lightgrey;
+    .left{
+      display: flex;
+      flex-direction: column;
+      h4{
+        color: #221E1E;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.437px;
+    margin-bottom: 10px;
+      }
+      p{
+        color: #221E1E;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0px;
+      }
+    }
+    .right{
+      button{
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), #199CFF;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(150, 165, 184, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+    border-radius: 4px;
+    color: #FFFFFF;
+    padding: 10px;
+    cursor: pointer;
+      }
+    }
+  }
+  .main{
+    background-color: white;
+    padding: 30px 20px;
+    display: grid;
+    grid-template-columns: auto 50%;
+    gap: 15px;
+    .field{
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 10px;
+      .input{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .button-wrapper{
+      button{
+        background: #1da81b !important;
+    border-radius: 0 !important;
+    background-blend-mode: soft-light, normal;
+    border: 1px solid rgba(150, 165, 184, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 12%), inset 0px 2px 0px rgb(255 255 255 / 24%);
+    padding: 10px;
+    font-size: 15px;
+    color: #FFFFFF;
+      }
+    }
+  }
+
+}

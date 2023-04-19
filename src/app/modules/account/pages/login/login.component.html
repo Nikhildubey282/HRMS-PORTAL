@@ -10,8 +10,13 @@
 
          <div class="logingoogle">
           <div class="googlebutton">
-          <img class="google-logo" src="../../../../../assets/images/google_logo.png" >
-          <p class="signup">Sign up with google</p>
+            <!-- <button type="button" (click)="authService.GoogleAuth()">
+              Log in with Google
+            </button> -->
+            <!-- <div (click)="authService.GoogleAuth()"> -->
+              <img class="google-logo" src="../../../../../assets/images/google_logo.png" >
+              <p (click)="authService.GoogleAuth()" class="signup">Sign up with google</p>
+            <!-- </div> -->
         </div>
           </div>
          <p class="official">Please use your official Email id</p>

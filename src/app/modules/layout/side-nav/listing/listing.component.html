@@ -1,6 +1,5 @@
 <section>
   <mat-list-item  [ngClass]="{'disable':!navlist.isActiv}" (click)="showSideNav(navlist)" class="parent" [routerLink]="navlist.routerLink"  [routerLinkActive]="navlist.routerLink?'active':''" >
-
     <div class="name">
       <ng-container  *ngIf="navlist.title==='Logout';else othertitle  ">
         <mat-icon>{{ navlist.logo }}</mat-icon>
@@ -8,7 +7,9 @@
       </ng-container>
       <ng-template #othertitle>
         <mat-icon>{{ navlist.logo }}</mat-icon>
-        <span class="full-width" *ngIf="isShowing">{{ navlist.title }}</span>
+        <span class="full-width" *ngIf="isShowing">{{ navlist.title }}
+        <mat-icon style="color: red; font-size: 18px; margin-left:10px;  ">{{navlist.starlogo}}</mat-icon>
+        </span>
       </ng-template>
     </div>
     <mat-icon class="menu-button" [ngClass]="{ rotated: navlist.subMenuClick }" *ngIf="navlist.options">expand_more</mat-icon>

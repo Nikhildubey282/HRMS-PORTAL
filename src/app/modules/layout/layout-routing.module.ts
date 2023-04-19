@@ -65,6 +65,9 @@ const routes: Routes = [
     {
       path:'project-detail',loadChildren:()=> import('./projects/project-detail/project-detail.module').then((m) =>m.ProjectDetailModule )
     },
+    {
+      path:'food',loadChildren:()=> import('./food/food.module').then((m) =>m.FoodModule )
+    },
 
   ]
 

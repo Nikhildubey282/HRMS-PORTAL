@@ -4,13 +4,17 @@ section {
     .name{
       display: flex;
       align-items: center;
+
       .mat-icon{
         font-size: 22px;
+        line-height: unset;
       }
       .full-width{
         padding: 10px 0px 10px 5px;
         width: 180px;
         // padding-top: 20px;
+        display: flex;
+        align-items: center;
       }
     }
   }
