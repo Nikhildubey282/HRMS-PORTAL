@@ -1,10 +1,13 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ABS_LEAVEDETAIL } from 'src/app/constant/absolute-route';
 import { PATTERN } from 'src/app/constant/patterns';
 import { SnackBarService } from 'src/app/services/snack-bar.service';
+import { LogoutConfirmationComponent } from '../../layout-parts/logout-confirmation/logout-confirmation.component';
+import { RevokedLeaveComponent } from './revoked-leave/revoked-leave.component';
 
 @Component({
   selector: 'app-my-leaves',
@@ -26,7 +29,7 @@ export class MyLeavesComponent implements OnInit {
 
 
   heading = [
-    { heading: 'Action', key:'sNo',type:'link',action:[1] },
+    { heading: 'Action', key:'sNo',type:'link',action:[1,5] },
     { heading: 'Leave Type', key:'leavetype',type:'text'},
     { heading: 'Request From', key:'startdate',type:'text'},
     {heading:'Request To',key:'enddate',type:'text'},
@@ -38,7 +41,7 @@ export class MyLeavesComponent implements OnInit {
   Table_DATA: any[] = [
   ];
 
-  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService) {
+  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService,private dialog:MatDialog) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date();
     this.maxDate = new Date();
@@ -57,6 +60,10 @@ export class MyLeavesComponent implements OnInit {
       enddate:['',[Validators.required]],
       remarks:['',[Validators.required,Validators.pattern(this.pattern.name),Validators.minLength(5),Validators.maxLength(20)]]
     })
+  }
+
+  get formCtrl(){
+    return this.leaveForm.controls
   }
 
   add(){
@@ -78,6 +85,7 @@ export class MyLeavesComponent implements OnInit {
   sumbit(){
     if(this.leaveForm.valid){
     this.Table_DATA.push({
+      id:Math.random(),
       sNo:'/layout/leave/leave-details',
       leavetype:this.leaveForm.controls['leavetype'].value,
       startdate:this.datepipe.transform(this.leaveForm.controls['startdate'].value,'dd-MM-YYYY'),
@@ -95,6 +103,26 @@ export class MyLeavesComponent implements OnInit {
   else{
     this.leaveForm.markAllAsTouched();
   }
+  }
+
+  leaveRevoked(e:any){
+    console.log(e);
+    const dialogRef = this.dialog.open(RevokedLeaveComponent);
+    dialogRef.afterClosed().subscribe(res => {
+      console.log("this is dialog response>>>>>>",res);
+      if(res===true){
+        this.Table_DATA=this.Table_DATA.filter(value=>{
+
+          if(value.id!=e.id){
+            return value
+          }
+        }
+        );
+    this.dataSource = new MatTableDataSource<any>(this.Table_DATA);
+      }
+
+    });
+
   }
 
 

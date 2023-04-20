@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FoodDataService } from '../service/food-data.service';
+import { DetailsComponent } from './dialog-components/details/details.component';
 
 @Component({
   selector: 'app-lunch',
@@ -17,7 +19,7 @@ export class LunchComponent implements OnInit {
     cancel:true
   }
 
-  constructor(private _formBuilder:FormBuilder,private _router:Router,private _foodCalendarService:FoodDataService) { }
+  constructor(private _formBuilder:FormBuilder,private _router:Router,private _foodCalendarService:FoodDataService,private _dialog:MatDialog) { }
   couponForm!:FormGroup;
 
 
@@ -56,7 +58,7 @@ export class LunchComponent implements OnInit {
       minHeight:'50vh',
       panelClass:'app-full-bleed-dialog'
     }
-    // this._dialog.open(CouponsHistoryComponent,config);
+    this._dialog.open(DetailsComponent,config);
   }
 
 

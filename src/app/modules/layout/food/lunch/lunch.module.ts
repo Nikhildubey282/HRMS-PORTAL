@@ -12,11 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { LunchCalendarModule } from '../lunch-calendar/lunch-calendar/lunch-calendar.module';
 import { SelectModule } from '../select/select.module';
+import { DetailsComponent } from './dialog-components/details/details.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     LunchComponent,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -29,7 +32,8 @@ import { SelectModule } from '../select/select.module';
     FormsModule,
     MatInputModule,
     LunchCalendarModule,
-    SelectModule
+    SelectModule,
+    MatDialogModule
   ]
 })
 export class LunchModule { }

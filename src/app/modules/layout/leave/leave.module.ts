@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LeaveRoutingModule } from './leave-routing.module';
 import { LeaveComponent } from './leave.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { LeaveComponent } from './leave.component';
   ],
   imports: [
     CommonModule,
-    LeaveRoutingModule
+    LeaveRoutingModule,
+    MatDialogModule
   ]
 })
 export class LeaveModule { }

@@ -16,6 +16,7 @@ import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { RevokedLeaveComponent } from './revoked-leave/revoked-leave.component';
 
 
 
@@ -25,7 +26,8 @@ import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   declarations: [
-    MyLeavesComponent
+    MyLeavesComponent,
+    RevokedLeaveComponent
   ],
   imports: [
     CommonModule,

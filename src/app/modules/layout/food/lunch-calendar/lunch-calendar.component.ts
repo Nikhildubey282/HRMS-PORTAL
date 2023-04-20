@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-lunch-calendar',
@@ -10,7 +11,7 @@ export class LunchCalendarComponent implements OnInit {
   @Input() options:any;
   @Output() calendarData = new EventEmitter<any>();
 
-  constructor() { }
+  constructor(private snackbar:SnackBarService) { }
 
   ngOnInit(): void {
   }
@@ -91,6 +92,8 @@ export class LunchCalendarComponent implements OnInit {
         item.booked = false;
       }
     })
+    this.snackbar.showSuccess('Coupon cancel sucessfully !!','')
+
     this.calendarData.emit(this.myCalendar);
   }
 

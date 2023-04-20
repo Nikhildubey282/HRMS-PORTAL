@@ -122,11 +122,13 @@
   }
 
   .main {
-    border-radius: 1rem;
+    border-radius: 10px;
     background-color: white;
     margin: 25px;
     padding: 2%;
     overflow: auto;
+    border: 1px solid #DCE2E9;
+
 
     .table-heading {
       display: flex;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 import { FoodDataService } from '../service/food-data.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class PurchaseCouponsComponent implements OnInit {
   }
   totalAmount:any;
 
-  constructor(private _foodCalendarService:FoodDataService,private route:Router,private _formBuilder:FormBuilder ) { }
+  constructor(private _foodCalendarService:FoodDataService,private route:Router,private _formBuilder:FormBuilder,private snackbar:SnackBarService ) { }
 
   ngOnInit(): void {
     console.log(this.totalAmount)
@@ -52,7 +53,9 @@ export class PurchaseCouponsComponent implements OnInit {
         }
       })
     })
-    // this._utility.showSuccess("Successfully Bought Coupons","")
+    this.snackbar.showSuccess('Coupons Bought Sucessfully','')
+    this.route.navigate(['layout/food'])
+
       // console.log(this.myCalendar,"myCalendar");
     this._foodCalendarService.myCalendar = this.myCalendar
 

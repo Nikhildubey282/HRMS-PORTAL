@@ -1,0 +1,29 @@
+<section>
+  <div class="head">
+    <h4>Cancel Leave</h4>
+  </div>
+  <form [formGroup]="reasonForm" (ngSubmit)="confirm()" >
+  <main>
+    <div class="input">
+      <label>Reason</label>
+      <mat-form-field class="text" appearance="outline">
+        <textarea
+        formControlName="Reason"
+          matInput
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="4"
+          cdkAutosizeMaxRows="5"
+          placeholder="Descripition"
+        ></textarea>
+        <mat-error>{{reasonForm | getControl:['Reason']| validate:'Reason'}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="buttonwrapper">
+      <button class="cancel">Close</button>
+      <button type="submit"  class="submit">Confirm</button>
+
+
+    </div>
+  </main>
+</form>
+</section>

@@ -89,7 +89,7 @@
             <div class="input">
               <label>End Date</label>
               <mat-form-field class="example-form-field" appearance="outline">
-                <input readonly matInput placeholder="End date" [min]="maxDate" (click)="picker.open()"   [matDatepicker]="picker1" formControlName="enddate">
+                <input readonly matInput placeholder="End date" [min]="formCtrl.startdate.value" (click)="picker.open()"   [matDatepicker]="picker1" formControlName="enddate">
                 <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
               <mat-error>{{leaveForm | getControl:['enddate'] |validate:'enddate' }}</mat-error>
@@ -148,7 +148,7 @@
           </h1>
       </div>
       <div class="table">
-        <app-commontable [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
+        <app-commontable (undo_leave)="leaveRevoked($event)"  [searchBar]="true" [columns]="heading" [isPageable]="true" [dataSource]="dataSource" [paginationSizes] ></app-commontable>
       </div>
     </section>
   </div>

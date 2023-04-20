@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ABS_DSRDETAIL, ABS_DSREDIT, ABS_PROJECTDETAIL } from 'src/app/constant/absolute-route';
 import { TableColumn } from 'src/app/constant/routes';
+import { SnackBerService } from 'src/app/services/snack-ber.service';
 import { DeleteDialogComponent } from '../layout/my-profile/components/qualification/delete-dialog/delete-dialog.component';
 import { EditDialogComponent } from '../layout/my-profile/components/qualification/edit-dialog/edit-dialog.component';
 
@@ -15,6 +16,7 @@ import { EditDialogComponent } from '../layout/my-profile/components/qualificati
   styleUrls: ['./commontable.component.scss']
 })
 export class CommontableComponent implements OnInit,AfterViewInit {
+  todayDate:any='';
   dsrdetail=ABS_DSRDETAIL;
   DSREDIT=ABS_DSREDIT;
   PROJECTDETAIL=ABS_PROJECTDETAIL;
@@ -41,12 +43,14 @@ export class CommontableComponent implements OnInit,AfterViewInit {
   @Output() onIconClick: EventEmitter<any> = new EventEmitter();
   @Output() edit_button:EventEmitter<any>=new EventEmitter();
   @Output() delete_button:EventEmitter<any>=new EventEmitter();
+  @Output() undo_leave:EventEmitter<any>=new EventEmitter();
 
   public displayedColumns!: string[];
   constructor(
     private _route:Router,
     public sanitizer:DomSanitizer,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private common :SnackBerService
 
   ) { }
 
@@ -55,9 +59,18 @@ export class CommontableComponent implements OnInit,AfterViewInit {
       this.matHeaderRow.push(item.heading)
     });
     this.columns.map((tableColumn: TableColumn) => tableColumn.heading);
-    console.log(this.dataSource,'nikky');
+    this.todayDate=this.common.todayDate();
+    console.log(this.dataSource,'nikky',this.todayDate);
   }
-
+  compareDate(date:any){
+    let date1=date.split('-').map(x=>+x);
+    let date2=this.todayDate.split('-').map(x=>+x);
+    // console.log(date1[0],date2[0] ,'1', date1[1],date2[1] ,'2', date1[2],date2[2]);
+    if(date1[0]>date2[0] && date1[1]>=date2[1] && date1[2]>=date2[2]){
+      return true;
+    }
+    return false
+  }
   ngAfterViewInit(): void {
     this.dataSource.sort=this.matSort;
     // this.dataSource.paginator = this.matPaginator;
