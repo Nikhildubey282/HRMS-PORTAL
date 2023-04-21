@@ -7,7 +7,8 @@ section {
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    .submenu-buttons{
+
+    .submenu-buttons {
       ::ng-deep {
 
         .mat-button-toggle-group-appearance-standard {
@@ -45,6 +46,25 @@ section {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
+      a:link {
+        color: rgba(0, 0, 0, 0.87);
+      }
+
+      /* unvisited link */
+      a:visited {
+        color: rgba(0, 0, 0, 0.87);
+      }
+
+      /* visited link */
+      a:hover {
+        color: rgba(0, 0, 0, 0.87);
+      }
+
+      /* mouse over link */
+      a:active {
+        color: rgba(0, 0, 0, 0.87);
+      }
 
       // mat-icon{
       //   font-size: 30px;

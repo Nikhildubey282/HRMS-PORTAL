@@ -15,9 +15,9 @@ export class MyDsrComponent implements OnInit {
   lableProject='Project';
   projectData=['Training Project React JS','Miscellaneous','Interview'];
   labelStatus='Final Approved Status';
-  statusData=['Pending','rejected','approved'];
+  statusData=['Pending','Rejected','Approved'];
   labelHours='Hours';
-  hoursData=['Hours','less than 5 hours'];
+  hoursData=['Hours','less than 5 hours','More than 5 hours'];
   labelsubmission='Submission Status';
   labelProject='Project';
   dsrForm!:FormGroup;

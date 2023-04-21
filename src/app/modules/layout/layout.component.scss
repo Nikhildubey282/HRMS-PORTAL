@@ -49,12 +49,27 @@ footer {
   user-select: none;
   border-top: 0px;
 
+// ::ng-deep {
+
+//     .mat-drawer-inner-container{
+//         overflow: hidden;
+//         &:hover {
+//             overflow: scroll ;
+
+//         }
+
+//     }
+//   }
+
   ::ng-deep {
     .mat-drawer-inner-container::-webkit-scrollbar {
       display: none;
     }
   }
 }
+
+
+
 
 ::ng-deep {
 

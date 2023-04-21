@@ -7,8 +7,6 @@
 //   height: 20vh;
 @import"../../../.../../../../scss/var";
 
-
-
   .login-card{
     display: flex;
     justify-content: center;
@@ -17,12 +15,13 @@
 
 
     .example-card {
-      min-width: 380px;
+      min-width: 220px;
       min-height: 500px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       padding: 40px 10px 10px 10px;
+      margin: 20px;
 
       .header{
         display: flex;
@@ -149,6 +148,21 @@
     }
 
   }
+
+@media only screen and (max-width: 350px) {
+  .login-card{
+    .example-card{
+      .logincredential{
+        .buttonlogin{
+          button{
+            padding: 8px 80px;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 

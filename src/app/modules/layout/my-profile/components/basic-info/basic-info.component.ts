@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular
 import { slideAnimation } from 'src/animation';
 import { BASIC_INFO_MESSAGE } from 'src/app/constant/messages';
 import { PATTERN } from 'src/app/constant/patterns';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-basic-info',
@@ -28,7 +29,8 @@ export class BasicInfoComponent implements OnInit {
 
 
   constructor(
-    private _fb:FormBuilder
+    private _fb:FormBuilder,
+    private snackbar:SnackBarService
   ) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 60, 0, 1);
@@ -62,7 +64,12 @@ export class BasicInfoComponent implements OnInit {
   submit(){
 
     if(this.basicinfoForm.valid){
+      this.snackbar.showSuccess('Basic info added sucessfully','' )
       this.formRef.resetForm();
+
+    }
+    else{
+      this.snackbar.showError('Enter a required field','')
     }
   }
   noSpace(event:any){

@@ -100,4 +100,18 @@ section {
 
   }
 
+  :host::ng-deep {
+
+    .mat-drawer-inner-container {
+        overflow: hidden;
+
+        &:hover {
+            overflow-y: overlay !important;
+            overflow-y: scroll ;
+
+        }
+
+    }
+  }
+
 
