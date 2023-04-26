@@ -59,3 +59,42 @@ section{
     border-radius: 20px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  section{
+    width: 500px;
+    main{
+      .row{
+      grid-template-columns: auto;
+
+
+      }
+    }
+  }
+  ::ng-deep
+{
+  .mat-dialog-container{
+   height: unset !important;
+  }
+}
+}
+
+@media only screen and (max-width: 650px) {
+  section{
+    width: 400px;
+
+  }
+}
+@media only screen and (max-width: 550px) {
+  section{
+    width: 300px;
+
+  }
+}
+@media only screen and (max-width: 450px) {
+  section{
+    width: 200px;
+
+  }
+}
+

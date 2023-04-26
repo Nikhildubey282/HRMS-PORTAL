@@ -131,7 +131,7 @@ section {
   }
   ::ng-deep{
   .mat-tab-list .mat-tab-labels {
-    width: unset;
+    width: unset !important;
   }
 }
 }
