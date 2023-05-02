@@ -39,6 +39,12 @@ section{
       }
     }
   }
+
+  form{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+
   .main{
     background-color: white;
     padding: 30px 20px;
@@ -68,6 +74,7 @@ section{
       }
     }
   }
+}
 
 }
 

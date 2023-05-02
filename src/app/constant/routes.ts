@@ -18,6 +18,7 @@ export const QUALIFICATION ='qualification';
 export const DIRECTORY='directory';
 export const ENTERPRENEUR='enterpreneurship';
 export const SHAREIDEAS='add_pitch';
+export const MYPITCH='my-pitch';
 export const HOLIDAYCALENDAR='holiday-calendar';
 export const POLICYDOCUMENT='policy-document';
 export const INSURANCEVERIFICATION='insurance-verification';
@@ -58,6 +59,7 @@ export const POJECTDETAIL='project-detail';
 export const FOOD='food';
 export const LUNCH='lunch';
 export const REQUESTDINNER='request-dinner';
+
 
 
 

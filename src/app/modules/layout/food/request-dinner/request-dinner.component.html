@@ -5,14 +5,14 @@
       <p><b>Note:</b> You can request/cancel dinner for today before 6:00 PM</p>
     </div>
     <div class="right">
-      <button (click)="request=!request">
+      <button (click)="toogle()">
         Request Dinner
       </button>
     </div>
 
   </div>
   <form [formGroup]="dinnerForm">
-  <div *ngIf="request" class="main">
+  <div  class="main">
 
     <div class="field">
       <div class="input">

@@ -18,6 +18,7 @@ export class LunchComponent implements OnInit {
     edit:false,
     cancel:true
   }
+  monthNames:any;
 
   constructor(private _formBuilder:FormBuilder,private _router:Router,private _foodCalendarService:FoodDataService,private _dialog:MatDialog) { }
   couponForm!:FormGroup;
@@ -36,6 +37,7 @@ export class LunchComponent implements OnInit {
     }
 
     console.log(this._foodCalendarService.myCalendar,"9999");
+    this.getMonths();
 
   }
 
@@ -59,6 +61,17 @@ export class LunchComponent implements OnInit {
       panelClass:'app-full-bleed-dialog'
     }
     this._dialog.open(DetailsComponent,config);
+  }
+
+  getMonths() {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    const d = new Date();
+    this.monthNames = monthNames[d.getMonth()];
+    console.log(this.monthNames);
+
+
   }
 
 

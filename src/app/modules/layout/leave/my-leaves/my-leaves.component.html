@@ -36,11 +36,10 @@
   <div class="second">
     <div class="head">
       <h1>Add Leave</h1>
-      <button (click)="add()">+ Add New</button>
+      <button (click)="togle()">+ Add New</button>
     </div>
     <form [formGroup]="leaveForm" (ngSubmit)="sumbit()" >
-
-    <main *ngIf="addButton">
+    <main>
 
       <div class="left">
         <div class="dropdown">

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -41,7 +41,7 @@ export class MyLeavesComponent implements OnInit {
   Table_DATA: any[] = [
   ];
 
-  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService,private dialog:MatDialog) {
+  constructor(private _fb:FormBuilder, private datepipe:DatePipe,private notificationService:SnackBarService,private dialog:MatDialog,private _elementRef:ElementRef) {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date();
     this.maxDate = new Date();
@@ -123,6 +123,16 @@ export class MyLeavesComponent implements OnInit {
 
     });
 
+  }
+
+  togle(){
+    var content = this._elementRef.nativeElement.querySelector('form');
+
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = 2*content.scrollHeight + "px";
+    }
   }
 
 

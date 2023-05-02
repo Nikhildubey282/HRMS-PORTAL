@@ -4,6 +4,7 @@
 section {
   padding: 20px;
 
+
   main {
     padding: 0px;
 
@@ -74,6 +75,11 @@ section {
         }
 
       }
+
+      form{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s linear;
 
       main {
         padding: 20px;
@@ -184,6 +190,7 @@ section {
         }
 
       }
+    }
     }
 
     .third {

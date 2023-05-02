@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SnackBerService {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   todayDate() {
     var today:any = new Date();
@@ -15,4 +16,6 @@ export class SnackBerService {
     today = dd + '-' + mm + '-' + yyyy;
     return today;
   }
+
+
 }

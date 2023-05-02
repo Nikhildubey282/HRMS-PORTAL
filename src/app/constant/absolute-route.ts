@@ -9,6 +9,7 @@ export const ABS_PROFILE =`/${routes.LAYOUT}/${routes.PROFILE}`;
 export const ABS_DIRECTORY=`/${routes.LAYOUT}/${routes.DIRECTORY}`;
 export const ABS_ENTERPRENEUR=`/${routes.LAYOUT}/${routes.ENTERPRENEUR}`;
 export const ABS_SHAREIDEAS=`/${routes.LAYOUT}/${routes.SHAREIDEAS}`;
+export const ABS_MYPITCH=`/${routes.LAYOUT}/${routes.MYPITCH}`;
 export const ABS_HOLIDAYCALENDAR=`/${routes.LAYOUT}/${routes.HOLIDAYCALENDAR}`;
 export const ABS_POLICYDOCUMENT=`/${routes.LAYOUT}/${routes.POLICYDOCUMENT}`;
 export const ABS_INSURANCEVERIFICATIONS=`/${routes.LAYOUT}/${routes.INSURANCEVERIFICATION}`;

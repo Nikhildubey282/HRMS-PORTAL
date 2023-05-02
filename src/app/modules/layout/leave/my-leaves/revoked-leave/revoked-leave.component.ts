@@ -31,7 +31,13 @@ export class RevokedLeaveComponent implements OnInit {
   confirm(){
     if(this.reasonForm.valid){
     this.dialogRef.close(true);
-    this.snackbar.showSuccess('Leave Revoked Successfully !!','');
+    this.snackbar.showSuccess('Leave Rollback Successfully !!','');
+    }
+  }
+
+  noSpace(event:any){
+    if(event.target.selectionStart == 0 && event.code == "Space"){
+      event.preventDefault();
     }
   }
 

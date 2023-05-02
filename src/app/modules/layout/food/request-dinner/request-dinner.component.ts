@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,11 +17,13 @@ export class RequestDinnerComponent implements OnInit {
 
  request=false;
 
-  constructor(private _fb:FormBuilder) { }
+  constructor(private _fb:FormBuilder,
+    private _elementRef:ElementRef
+    ) { }
 
   ngOnInit(): void {
     this.createForm();
-   
+
   }
   createForm(){
     this.dinnerForm=this._fb.group({
@@ -29,6 +31,16 @@ export class RequestDinnerComponent implements OnInit {
       project:[''],
       reason:['']
     })
+  }
+
+  toogle(){
+    var content = this._elementRef.nativeElement.querySelector('form');
+
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = 2*content.scrollHeight + "px";
+    }
   }
 
 }

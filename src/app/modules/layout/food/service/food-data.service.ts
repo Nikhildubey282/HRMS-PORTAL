@@ -17,7 +17,7 @@ export class FoodDataService {
     let counter_days = 1;
     for(let i=0; i<35; i++){
       let temp:any = {};
-      if(i >= firstDay.getDay() - 1 && counter_days<=30){   // no of days in month 30 or 31 or 28
+      if(i >= firstDay.getDay() - 1 && counter_days<=this.daysInMonth()){   // no of days in month 30 or 31 or 28
         let currentDay =  this.getWeekDay(counter_days);
         temp['dayInWeek'] = this.weekDayData[currentDay.getDay()];
         temp['date'] = currentDay.getDate();
@@ -58,4 +58,8 @@ export class FoodDataService {
   weekDayData = [
     'Sun','Mon','Tue','Wed','Thu','Fri','Sat'
   ]
+  daysInMonth(){
+    let d = new Date();
+    return new Date(d.getFullYear(), d.getMonth()+ 1, 0).getDate()
+  }
 }

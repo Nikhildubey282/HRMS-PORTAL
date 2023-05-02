@@ -27,6 +27,9 @@ const routes: Routes = [
       path:'add_pitch',loadChildren:() => import('./enterpreneur/share-ideas/shareideas/shareideas.module').then((m)=>m.ShareideasModule)
     },
     {
+      path:'my-pitch',loadChildren:() => import('./enterpreneur/share-ideas/my-pitch/my-pitch.module').then((m)=>m.MyPitchModule)
+    },
+    {
       path:'',loadChildren:()=> import('./mylinks/mylinks.module').then((m) =>m.MylinksModule )
     },
     {

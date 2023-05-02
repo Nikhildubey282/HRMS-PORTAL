@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { PATTERN } from 'src/app/constant/patterns';
@@ -47,7 +47,8 @@ export class AssetsRequestComponent implements OnInit {
   constructor(
     private _fb:FormBuilder,
     private datepipe:DatePipe,
-    private snackbar:SnackBarService
+    private snackbar:SnackBarService,
+    private _elementRef:ElementRef
   ) { }
 
   ngOnInit(): void {
@@ -93,6 +94,17 @@ export class AssetsRequestComponent implements OnInit {
   noSpace(event:any){
     if(event.target.selectionStart == 0 && event.code == "Space"){
       event.preventDefault();
+    }
+  }
+
+
+  toogle(){
+    var content = this._elementRef.nativeElement.querySelector('form');
+
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = 2*content.scrollHeight + "px";
     }
   }
 

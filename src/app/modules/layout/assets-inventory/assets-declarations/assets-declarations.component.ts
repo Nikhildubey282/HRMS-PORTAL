@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
@@ -48,7 +48,8 @@ export class AssetsDeclarationsComponent implements OnInit {
   constructor(
     private _fb:FormBuilder,
     private snackbar:SnackBarService,
-    private dialog:MatDialog
+    private dialog:MatDialog,
+    private _elementRef:ElementRef
   ) { }
 
   ngOnInit(): void {
@@ -118,6 +119,16 @@ export class AssetsDeclarationsComponent implements OnInit {
       console.log();
     });
     console.log('nikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk')
+  }
+
+  toogle(){
+    var content = this._elementRef.nativeElement.querySelector('form');
+
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = 2*content.scrollHeight + "px";
+    }
   }
 
 

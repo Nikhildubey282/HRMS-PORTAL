@@ -2,10 +2,10 @@
   <main>
   <div class="first">
     <div class="button">
-      <button (click)="addbutton=!addbutton" > +Add new assets declaration</button>
+      <button (click)="toogle()" > +Add new assets declaration</button>
     </div>
     <form [formGroup]="declareForm" (ngSubmit)="submit()" >
-    <div *ngIf="addbutton" >
+    <div  >
     <div class="select">
       <div class="input">
         <label>Employee IdAI1612</label>
