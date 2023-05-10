@@ -81,8 +81,8 @@ section{
 @media only screen and (max-width: 1200px) {
 section{
   .main{
-display: flex;
-flex-direction: column;
+display: flex !important;
+flex-direction: column !important;
   }
 
 }
@@ -92,7 +92,7 @@ flex-direction: column;
    .top{
     .left{
 h4{
-  font-size: 22px;
+  font-size: 22px !important;
 }
 
 
@@ -105,8 +105,8 @@ h4{
   section{
     .main{
       .field{
-        display: flex;
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
       }
 
     }

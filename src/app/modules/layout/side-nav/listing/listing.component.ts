@@ -28,7 +28,7 @@ export class ListingComponent implements OnInit {
   }
 
   parentChecker(navBarItem: any): boolean {
-    let checker = this.router.url.slice(7);
+    let checker = this.router.url;
     // console.log(checker);
 
     let subMenuOptions = navBarItem.options;

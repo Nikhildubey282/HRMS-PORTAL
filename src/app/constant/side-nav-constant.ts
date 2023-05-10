@@ -7,7 +7,7 @@ export const sideNavList = [
   { title: 'Food', logo: 'restaurant',subMenuClick:false, options: [{ subTitle: 'Lunch Coupons', subLogo: 'fastfood', routerLink: ABS_FOOD },{ subTitle: 'Request Dinner', subLogo: 'dinner_dining', routerLink: ABS_REQUESTDINNER }], isActiv: true, },
 
   { title: 'Enterpreneurship Program', logo: 'person', starlogo:'verified',subMenuClick:false, options: [{ subTitle: 'Explore', subLogo: 'horizontal_rule', routerLink: ABS_ENTERPRENEUR }], isActiv: true, },
-  { title: 'My Links', logo: 'grid_view',subMenuClick:false, options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist', routerLink: ABS_HOME }, { subTitle: 'holiday calendar', subLogo: 'calendar_today', routerLink: ABS_HOLIDAYCALENDAR }, { subTitle: 'Policy Documents', subLogo: 'insert_drive_file', routerLink: ABS_POLICYDOCUMENT }], isActiv: true, },
+  { title: 'My Links', logo: 'grid_view',subMenuClick:false, options: [{ subTitle: 'Insurance Verification Details', subLogo: 'checklist', routerLink:'' }, { subTitle: 'holiday calendar', subLogo: 'calendar_today', routerLink: ABS_HOLIDAYCALENDAR }, { subTitle: 'Policy Documents', subLogo: 'insert_drive_file', routerLink: ABS_POLICYDOCUMENT }], isActiv: true, },
   {
     title: 'Finance', logo: 'payments',subMenuClick:false,
     options: [{ subTitle: 'Salary slip', subLogo: 'horizontal_rule', type: 'external', link: 'https://hrms.easysourceindia.com/Payroll/' }, { subTitle: 'Form 16', subLogo: 'horizontal_rule', type: 'external', link: 'https://hrms.easysourceindia.com/Payroll/' }, { subTitle: 'Investment Declaration', subLogo: 'horizontal_rule', link: 'https://hrms.easysourceindia.com/Payroll/' },], isActiv: true,

@@ -55,3 +55,29 @@ section{
   }
 }
 
+@media only screen and (max-width: 650px) {
+  section{
+    width: 400px;
+
+  }
+}
+@media only screen and (max-width: 550px) {
+  section{
+    width: 300px;
+    .button-wrapper{
+      button{
+        width: 40%;
+      }
+    }
+
+
+  }
+
+}
+@media only screen and (max-width: 450px) {
+  section{
+    width: 200px;
+
+  }
+}
+

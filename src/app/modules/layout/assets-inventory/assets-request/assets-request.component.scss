@@ -129,7 +129,7 @@ section{
   section{
     .first{
       .select{
-        grid-template-columns: auto auto;
+        grid-template-columns: auto auto !important;
 
       }
     }
@@ -140,12 +140,12 @@ section{
   section{
     .first{
       .select{
-        grid-template-columns:auto;
+        grid-template-columns:auto !important;
 
       }
       .select2{
         .input{
-          width: 100%;
+          width: 100% !important;
         }
       }
     }

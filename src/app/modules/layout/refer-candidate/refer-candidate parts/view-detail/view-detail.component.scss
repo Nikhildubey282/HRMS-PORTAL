@@ -145,3 +145,17 @@ section {
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  section{
+    .main{
+      .summary{
+        flex-direction: column;
+        .right{
+          margin-left: 0px;
+        }
+      }
+    }
+
+  }
+}
