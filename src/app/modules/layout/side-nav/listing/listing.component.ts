@@ -21,6 +21,7 @@ export class ListingComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
   }
 
   showSideNav(item:any){
