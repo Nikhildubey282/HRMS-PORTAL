@@ -5,6 +5,8 @@ import { HelpDialogComponent } from '../help-dialog/help-dialog.component';
 import { slideAnimation } from 'src/animation';
 import { LogoutConfirmationComponent } from '../logout-confirmation/logout-confirmation.component';
 import { ABS_PROFILE } from 'src/app/constant/absolute-route';
+import { Store } from '@ngrx/store';
+import { imageSelector } from 'src/app/shared_store/selector';
 
 
 @Component({
@@ -21,11 +23,21 @@ export class HeaderComponent implements OnInit {
   @Output() ishamburgerCLick = new EventEmitter();
   notification=false;
   profile=ABS_PROFILE;
+  profileSource:any;
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+    private store:Store
+    ) { }
 
   ngOnInit(): void {
+
+    this.store.select(imageSelector).subscribe((data:any)=>
+    {
+      this.profileSource=data;
+
+
+    })
   }
   expand(){
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { foodSelector } from 'src/app/shared_store/selector';
 import { FoodDataService } from '../service/food-data.service';
 import { DetailsComponent } from './dialog-components/details/details.component';
 
@@ -19,8 +21,9 @@ export class LunchComponent implements OnInit {
     cancel:true
   }
   monthNames:any;
+  totalAmount:any;
 
-  constructor(private _formBuilder:FormBuilder,private _router:Router,private _foodCalendarService:FoodDataService,private _dialog:MatDialog) { }
+  constructor(private _formBuilder:FormBuilder,private _router:Router,private _foodCalendarService:FoodDataService,private _dialog:MatDialog,private store:Store) { }
   couponForm!:FormGroup;
 
 
@@ -38,6 +41,12 @@ export class LunchComponent implements OnInit {
 
     console.log(this._foodCalendarService.myCalendar,"9999");
     this.getMonths();
+    this.store.select(foodSelector).subscribe((data:any)=>
+    {
+      this.totalAmount=data;
+
+    }
+    )
 
   }
 

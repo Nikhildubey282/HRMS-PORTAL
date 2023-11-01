@@ -12,8 +12,14 @@
       <label>Training name</label>
     <mat-form-field appearance="outline">
       <mat-select formControlName="trainingName">
-        <mat-option>
-          food.viewValue
+        <mat-option value="Angular Training">
+          Angular Training
+        </mat-option>
+        <mat-option value="React Training">
+          React Training
+        </mat-option>
+        <mat-option  value="Node Training" >
+          Node Training
         </mat-option>
       </mat-select>
     <mat-error>{{addTrainingForm | getControl:['trainingName'] | validate:'trainingName'}}</mat-error>
@@ -24,8 +30,17 @@
     <label>Team name</label>
   <mat-form-field appearance="outline">
     <mat-select formControlName="teamName" >
-      <mat-option>
-        food.viewValue
+      <mat-option value="Angular">
+        Angular
+      </mat-option>
+      <mat-option value="Android">
+        Android
+      </mat-option>
+      <mat-option value="IOS">
+        IOS
+      </mat-option>
+      <mat-option value="Node">
+        Node
       </mat-option>
     </mat-select>
     <mat-error>{{addTrainingForm | getControl:['teamName'] | validate:'teamName'}}</mat-error>
@@ -54,16 +69,16 @@
 </div>
 <div class="input1">
   <label>What should be the timeline to conduct this training? *</label>
-  <mat-radio-group aria-label="Select an option" >
-    <mat-radio-button value="1">Immedaite</mat-radio-button>
-    <mat-radio-button value="2">3-6 Months</mat-radio-button>
-    <mat-radio-button value="2">More than  Months</mat-radio-button>
+  <mat-radio-group aria-label="Select an option" formControlName="coduct" >
+    <mat-radio-button value="Immedaite">Immedaite</mat-radio-button>
+    <mat-radio-button value="3-6 Months">3-6 Months</mat-radio-button>
+    <mat-radio-button value="More than  Months">More than  Months</mat-radio-button>
 
   </mat-radio-group>
 </div>
 <div class="buttonGroup">
   <button  (click)="crossClick()"  class="cancelButton">Cancel</button>
-  <button class="classyButton">Submit</button>
+  <button (click)="submit()" class="classyButton">Submit</button>
 </div>
   </div>
 </form>

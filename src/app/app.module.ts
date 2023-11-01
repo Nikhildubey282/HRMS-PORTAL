@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import { ToastrModule } from 'ngx-toastr';
+import { StoreModule } from '@ngrx/store';
 
 
 
@@ -28,9 +29,8 @@ import { ToastrModule } from 'ngx-toastr';
       progressBar: true,
       positionClass: 'toast-top-center'
     }),
-    // AngularFireAuthModule,
-    // AngularFireAuthModule.
-    // SlickCarouselModule
+    StoreModule.forRoot({})
+
   ],
   providers: [],
   bootstrap: [AppComponent]
