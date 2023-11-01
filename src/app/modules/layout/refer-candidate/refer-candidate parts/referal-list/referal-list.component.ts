@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { ABS_REFERCANDIDATE } from 'src/app/constant/absolute-route';
+import { getReferFriendDataSelector } from 'src/app/shared_store/selector';
 
 @Component({
   selector: 'app-referal-list',
@@ -9,9 +11,19 @@ import { ABS_REFERCANDIDATE } from 'src/app/constant/absolute-route';
 export class ReferalListComponent implements OnInit {
   jobOpening=ABS_REFERCANDIDATE
 
-  constructor() { }
+  constructor(
+    private store:Store
+  ) {
+
+   }
 
   ngOnInit(): void {
+
+    this.store.select(getReferFriendDataSelector).subscribe((data:any)=>
+    {
+      console.log(data);
+    }
+    )
   }
 
 }

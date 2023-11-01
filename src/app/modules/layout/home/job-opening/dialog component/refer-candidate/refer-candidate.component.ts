@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
 import { PATTERN } from 'src/app/constant/patterns';
+import { getReferFriendDataAction } from 'src/app/shared_store/actions';
 
 
 @Component({
@@ -17,6 +19,7 @@ pattern=PATTERN
     private _fb:FormBuilder,
     private dialogRef: MatDialogRef<ReferCandidateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private store:Store
 
   ) { }
 
@@ -50,6 +53,11 @@ pattern=PATTERN
   }
   get formCtrl(){
     return this.referCandidateForm.controls
+  }
+  submit(){
+    this.store.dispatch(getReferFriendDataAction(this.referCandidateForm.value))
+    console.log('jhjsdjsdsdjsdjk')
+
   }
 
 }

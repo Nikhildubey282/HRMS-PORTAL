@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { ABS_MYPITCH } from 'src/app/constant/absolute-route';
 import { PATTERN } from 'src/app/constant/patterns';
+import { myPitchAction } from 'src/app/shared_store/actions';
 
 @Component({
   selector: 'app-shareideas',
@@ -19,7 +21,8 @@ export class ShareideasComponent implements OnInit {
 
   constructor(
     private _fb:FormBuilder,
-    private route:Router
+    private route:Router,
+    private store:Store
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +36,7 @@ export class ShareideasComponent implements OnInit {
       DOB:[{value:'11/02/2002',disabled:true},Validators.required],
       pitchTitle:['',[Validators.required,Validators.pattern(this.pattern.name)]],
       industry:['',[Validators.required,Validators.pattern(this.pattern.name)]],
-      type:['',[Validators.required,Validators.pattern(this.pattern.name)]],
+      type1:['',[Validators.required,Validators.pattern(this.pattern.name)]],
       uploadFile:['',[Validators.required]]
     })
   }
@@ -43,6 +46,14 @@ export class ShareideasComponent implements OnInit {
   }
   cancel(){
     this.route.navigate(['./layout/my-pitch'])
+  }
+
+  submit(){
+    if(this.pitchForm.valid){
+    this.route.navigate(['./layout/my-pitch']);
+    this.store.dispatch(myPitchAction(this.pitchForm.value));
+    }
+
   }
 
 

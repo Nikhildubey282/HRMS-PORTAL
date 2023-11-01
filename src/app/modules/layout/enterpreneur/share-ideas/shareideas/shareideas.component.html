@@ -5,7 +5,7 @@
     <h1>Add Pitch</h1>
     <div class="button-group">
       <button (click)="cancel()" type="reset"  class="left">Cancel</button>
-      <button class="right">Submit</button>
+      <button (click)="submit()" class="right">Submit</button>
     </div>
   </div>
   <div class="main">
@@ -56,8 +56,8 @@
       <div class="input">
         <label>Type</label>
         <mat-form-field appearance="outline" class="example-full-width">
-          <input type="text"  formControlName="type" matInput>
-          <mat-error>{{pitchForm | getControl:['type'] | validate:'type'}}</mat-error>
+          <input type="text"  formControlName="type1" matInput>
+          <mat-error>{{pitchForm | getControl:['type1'] | validate:'type1'}}</mat-error>
         </mat-form-field>
       </div>
       <div>

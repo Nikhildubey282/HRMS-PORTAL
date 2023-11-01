@@ -28,6 +28,7 @@
     "@fullcalendar/list": "^6.1.4",
     "@fullcalendar/multimonth": "^6.1.4",
     "@fullcalendar/timegrid": "^6.1.4",
+    "@ngrx/store": "^12.5.1",
     "@ngu/carousel": "^4.0.0",
     "@tinymce/tinymce-angular": "^4.2.4",
     "firebase": "^9.4.0",

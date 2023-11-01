@@ -22,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetControlModule } from 'src/app/pipes/get-control/get-control.module';
 import { ValidationErrorModule } from 'src/app/pipes/validation-error/validation-error.module';
 import { LogoutConfirmationComponent } from './layout-parts/logout-confirmation/logout-confirmation.component';
+import { Store, StoreModule } from '@ngrx/store';
+import { foodReducer, getReferFriendDataReducer, myPitchReducer, profileReducer, requestTrainingReducer } from 'src/app/shared_store/reducer';
+import { FOOD, GET_REFER_FRIEND, IMAGE, MY_PITCH, REQUEST_FOR_TRAINING } from 'src/app/shared_store/selector';
 
 
 
@@ -53,6 +56,13 @@ import { LogoutConfirmationComponent } from './layout-parts/logout-confirmation/
     ReactiveFormsModule,
     GetControlModule,
     ValidationErrorModule,
+    StoreModule.forFeature(GET_REFER_FRIEND,getReferFriendDataReducer),
+    StoreModule.forFeature(REQUEST_FOR_TRAINING,requestTrainingReducer),
+    StoreModule.forFeature(MY_PITCH,myPitchReducer),
+    StoreModule.forFeature(FOOD,foodReducer),
+    StoreModule.forFeature(IMAGE,profileReducer),
+
+
 
   ],
 

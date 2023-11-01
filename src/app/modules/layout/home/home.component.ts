@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { imageSelector } from 'src/app/shared_store/selector';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  profileSource:any;
+
+  constructor(
+    private store:Store
+  ) { }
 
   ngOnInit(): void {
+
+    this.store.select(imageSelector).subscribe((data:any)=>
+    {
+      this.profileSource = data;
+    }
+    )
   }
 
 }

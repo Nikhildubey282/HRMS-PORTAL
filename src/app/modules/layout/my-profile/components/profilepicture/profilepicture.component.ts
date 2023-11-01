@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { slideAnimation } from 'src/animation';
+import { profileAction } from 'src/app/shared_store/actions';
+import { imageSelector } from 'src/app/shared_store/selector';
 
 @Component({
   selector: 'app-profilepicture',
@@ -14,10 +17,17 @@ export class ProfilepictureComponent implements OnInit {
   imagePath:any;
   imgURL:any;
   imageShow:boolean=false;
+  profileSource='../../../../../../assets/images/profile_icon.jpg';
+  mainImage:any;
 
-  constructor() { }
+  constructor(
+    private store:Store
+  ) { }
 
   ngOnInit(): void {
+    this.store.select(imageSelector).subscribe((data:any)=>{
+      this.mainImage = data;
+    })
   }
 
   preview(files: any) {
@@ -37,6 +47,18 @@ export class ProfilepictureComponent implements OnInit {
       };
     }
     this.imageShow=true;
+
+  }
+
+  submit(){
+    this.store.dispatch(profileAction({data:this.imgURL}));
+    this.imageShow=true;
+
+  }
+
+  crossClick(){
+    this.store.dispatch(profileAction({data:this.profileSource}));
+    this.imageShow=false;
 
   }
 

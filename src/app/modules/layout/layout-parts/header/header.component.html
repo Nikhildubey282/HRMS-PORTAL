@@ -11,7 +11,7 @@
 
       <a class="dropdown" [matMenuTriggerFor]="menu">
         <span class="userName">Nikhil Dubey</span>
-        <img class="profileIcon" src="../../../../assets/images/profile_icon.jpg" />
+        <img class="profileIcon" [src]="profileSource" />
         <mat-icon class="down">expand_more</mat-icon>
 
         <mat-menu #menu="matMenu">
